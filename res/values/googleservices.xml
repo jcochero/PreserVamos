@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="firebase_database_url" translatable="false">https://appear-e237a.firebaseio.com</string>
+  <string name="gcm_defaultSenderId" translatable="false">121879904106</string>
+  <string name="google_storage_bucket" translatable="false">appear-e237a.appspot.com</string>
+  <string name="project_id" translatable="false">appear-e237a</string>
+  <string name="google_app_id" translatable="false">1:121879904106:android:1405e564f30bf3ea</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBi0thXjjODNqwY-gBUWRXFtS2DABmG1RQ</string>
+  <string name="google_api_key" translatable="false">AIzaSyBi0thXjjODNqwY-gBUWRXFtS2DABmG1RQ</string>
+  <string name="default_web_client_id" translatable="false">121879904106-3nrumgk2o8dqkej578vf6g4jsd21qftg.apps.googleusercontent.com</string>
+</resources>
