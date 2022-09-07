@@ -349,24 +349,29 @@ public anywheresoftware.b4a.objects.LabelWrapper _lblline1 = null;
 public b4a.example.dateutils _dateutils = null;
 public appear.pnud.preservamos.main _main = null;
 public appear.pnud.preservamos.form_main _form_main = null;
-public appear.pnud.preservamos.reporte_fotos _reporte_fotos = null;
-public appear.pnud.preservamos.dbutils _dbutils = null;
+public appear.pnud.preservamos.starter _starter = null;
+public appear.pnud.preservamos.inatcheck _inatcheck = null;
 public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
-public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
-public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
+public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
+public appear.pnud.preservamos.alertas _alertas = null;
+public appear.pnud.preservamos.register _register = null;
+public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
+public appear.pnud.preservamos.alerta_fotos _alerta_fotos = null;
+public appear.pnud.preservamos.form_reporte _form_reporte = null;
 public appear.pnud.preservamos.aprender_muestreo _aprender_muestreo = null;
+public appear.pnud.preservamos.dbutils _dbutils = null;
 public appear.pnud.preservamos.downloadservice _downloadservice = null;
 public appear.pnud.preservamos.firebasemessaging _firebasemessaging = null;
-public appear.pnud.preservamos.form_reporte _form_reporte = null;
 public appear.pnud.preservamos.frmdatosanteriores _frmdatosanteriores = null;
-public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
 public appear.pnud.preservamos.frmfelicitaciones _frmfelicitaciones = null;
+public appear.pnud.preservamos.frmmapa _frmmapa = null;
 public appear.pnud.preservamos.frmperfil _frmperfil = null;
 public appear.pnud.preservamos.frmpoliticadatos _frmpoliticadatos = null;
 public appear.pnud.preservamos.httputils2service _httputils2service = null;
-public appear.pnud.preservamos.register _register = null;
-public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
-public appear.pnud.preservamos.starter _starter = null;
+public appear.pnud.preservamos.imagedownloader _imagedownloader = null;
+public appear.pnud.preservamos.reporte_fotos _reporte_fotos = null;
+public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
+public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
 public appear.pnud.preservamos.uploadfiles _uploadfiles = null;
 public appear.pnud.preservamos.utilidades _utilidades = null;
 public appear.pnud.preservamos.xuiviewsutils _xuiviewsutils = null;
@@ -518,6 +523,23 @@ return "";
 public static String  _process_globals() throws Exception{
  //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
  //BA.debugLineNum = 9;BA.debugLine="End Sub";
+return "";
+}
+public static String  _tabstripabout_pageselected(int _position) throws Exception{
+ //BA.debugLineNum = 109;BA.debugLine="Sub tabStripAbout_PageSelected (Position As Int)";
+ //BA.debugLineNum = 110;BA.debugLine="If Position = 0 Then";
+if (_position==0) { 
+ //BA.debugLineNum = 111;BA.debugLine="lblLine1.Visible = True";
+mostCurrent._lblline1.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 112;BA.debugLine="lblLine3.Visible = False";
+mostCurrent._lblline3.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ }else if(_position==1) { 
+ //BA.debugLineNum = 114;BA.debugLine="lblLine1.Visible = False";
+mostCurrent._lblline1.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 115;BA.debugLine="lblLine3.Visible = True";
+mostCurrent._lblline3.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ };
+ //BA.debugLineNum = 117;BA.debugLine="End Sub";
 return "";
 }
 }

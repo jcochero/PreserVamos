@@ -338,6 +338,8 @@ public class reporte_envio extends Activity implements B4AActivity{
 public anywheresoftware.b4a.keywords.Common __c = null;
 public static com.spinter.uploadfilephp.UploadFilePhp _up1 = null;
 public static anywheresoftware.b4a.objects.Timer _timerenvio = null;
+public static String _geopartido = "";
+public anywheresoftware.b4a.objects.RuntimePermissions _rp = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _btncontinuar = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _btnenviar = null;
 public static int _numfotosenviadas = 0;
@@ -385,24 +387,29 @@ public anywheresoftware.b4a.objects.ImageViewWrapper _imglisto = null;
 public b4a.example.dateutils _dateutils = null;
 public appear.pnud.preservamos.main _main = null;
 public appear.pnud.preservamos.form_main _form_main = null;
-public appear.pnud.preservamos.reporte_fotos _reporte_fotos = null;
-public appear.pnud.preservamos.dbutils _dbutils = null;
+public appear.pnud.preservamos.starter _starter = null;
+public appear.pnud.preservamos.inatcheck _inatcheck = null;
 public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
-public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
-public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
+public appear.pnud.preservamos.alertas _alertas = null;
+public appear.pnud.preservamos.register _register = null;
+public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
+public appear.pnud.preservamos.alerta_fotos _alerta_fotos = null;
+public appear.pnud.preservamos.form_reporte _form_reporte = null;
 public appear.pnud.preservamos.aprender_muestreo _aprender_muestreo = null;
+public appear.pnud.preservamos.dbutils _dbutils = null;
 public appear.pnud.preservamos.downloadservice _downloadservice = null;
 public appear.pnud.preservamos.firebasemessaging _firebasemessaging = null;
-public appear.pnud.preservamos.form_reporte _form_reporte = null;
 public appear.pnud.preservamos.frmabout _frmabout = null;
 public appear.pnud.preservamos.frmdatosanteriores _frmdatosanteriores = null;
-public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
 public appear.pnud.preservamos.frmfelicitaciones _frmfelicitaciones = null;
+public appear.pnud.preservamos.frmmapa _frmmapa = null;
 public appear.pnud.preservamos.frmperfil _frmperfil = null;
 public appear.pnud.preservamos.frmpoliticadatos _frmpoliticadatos = null;
 public appear.pnud.preservamos.httputils2service _httputils2service = null;
-public appear.pnud.preservamos.register _register = null;
-public appear.pnud.preservamos.starter _starter = null;
+public appear.pnud.preservamos.imagedownloader _imagedownloader = null;
+public appear.pnud.preservamos.reporte_fotos _reporte_fotos = null;
+public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
+public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
 public appear.pnud.preservamos.uploadfiles _uploadfiles = null;
 public appear.pnud.preservamos.utilidades _utilidades = null;
 public appear.pnud.preservamos.xuiviewsutils _xuiviewsutils = null;
@@ -415,296 +422,106 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 67;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 69;BA.debugLine="Activity.LoadLayout(\"layReporte_Envio_Resumen\")";
+ //BA.debugLineNum = 70;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 72;BA.debugLine="Activity.LoadLayout(\"layReporte_Envio_Resumen\")";
 mostCurrent._activity.LoadLayout("layReporte_Envio_Resumen",mostCurrent.activityBA);
- //BA.debugLineNum = 71;BA.debugLine="Label1.Visible = False";
+ //BA.debugLineNum = 74;BA.debugLine="Label1.Visible = False";
 mostCurrent._label1.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 72;BA.debugLine="Label2.Visible = False";
+ //BA.debugLineNum = 75;BA.debugLine="Label2.Visible = False";
 mostCurrent._label2.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 73;BA.debugLine="Label3.Visible = False";
+ //BA.debugLineNum = 76;BA.debugLine="Label3.Visible = False";
 mostCurrent._label3.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 74;BA.debugLine="Label4.Visible = False";
+ //BA.debugLineNum = 77;BA.debugLine="Label4.Visible = False";
 mostCurrent._label4.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 75;BA.debugLine="Label5.Visible = False";
+ //BA.debugLineNum = 78;BA.debugLine="Label5.Visible = False";
 mostCurrent._label5.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 76;BA.debugLine="imgListo.Visible = False";
+ //BA.debugLineNum = 79;BA.debugLine="imgListo.Visible = False";
 mostCurrent._imglisto.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 77;BA.debugLine="lblFinalizado1.Visible = False";
+ //BA.debugLineNum = 80;BA.debugLine="lblFinalizado1.Visible = False";
 mostCurrent._lblfinalizado1.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 78;BA.debugLine="lblYaTienesTodo.Visible= False";
+ //BA.debugLineNum = 81;BA.debugLine="lblYaTienesTodo.Visible= False";
 mostCurrent._lblyatienestodo.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 79;BA.debugLine="Timer1.Initialize(\"Timer1\",250)";
+ //BA.debugLineNum = 82;BA.debugLine="Timer1.Initialize(\"Timer1\",250)";
 mostCurrent._timer1.Initialize(processBA,"Timer1",(long) (250));
- //BA.debugLineNum = 80;BA.debugLine="Timer1.Enabled = True";
+ //BA.debugLineNum = 83;BA.debugLine="Timer1.Enabled = True";
 mostCurrent._timer1.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 82;BA.debugLine="End Sub";
+ //BA.debugLineNum = 85;BA.debugLine="Main.strUserOrg = Geopartido";
+mostCurrent._main._struserorg /*String*/  = _geopartido;
+ //BA.debugLineNum = 87;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 88;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 90;BA.debugLine="End Sub";
+ //BA.debugLineNum = 93;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 95;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 84;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 86;BA.debugLine="End Sub";
+ //BA.debugLineNum = 89;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 91;BA.debugLine="End Sub";
 return "";
 }
-public static void  _btnenviar_click() throws Exception{
-ResumableSub_btnEnviar_Click rsub = new ResumableSub_btnEnviar_Click(null);
-rsub.resume(processBA, null);
-}
-public static class ResumableSub_btnEnviar_Click extends BA.ResumableSub {
-public ResumableSub_btnEnviar_Click(appear.pnud.preservamos.reporte_envio parent) {
-this.parent = parent;
-}
-appear.pnud.preservamos.reporte_envio parent;
-String _msg = "";
-int _result = 0;
-
-@Override
-public void resume(BA ba, Object[] result) throws Exception{
-
-    while (true) {
-        switch (state) {
-            case -1:
-return;
-
-case 0:
-//C
-this.state = 1;
- //BA.debugLineNum = 147;BA.debugLine="Label1.Visible= False";
-parent.mostCurrent._label1.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 148;BA.debugLine="Label2.Visible= False";
-parent.mostCurrent._label2.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 149;BA.debugLine="Label3.Visible= False";
-parent.mostCurrent._label3.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 154;BA.debugLine="If Main.username = \"guest\" Or Main.username = \"No";
-if (true) break;
-
-case 1:
-//if
-this.state = 13;
-if ((parent.mostCurrent._main._username /*String*/ ).equals("guest") || (parent.mostCurrent._main._username /*String*/ ).equals("None")) { 
-this.state = 3;
-}if (true) break;
-
-case 3:
-//C
-this.state = 4;
- //BA.debugLineNum = 155;BA.debugLine="Dim msg As String";
-_msg = "";
- //BA.debugLineNum = 156;BA.debugLine="If Main.lang = \"es\" Then";
-if (true) break;
-
-case 4:
-//if
-this.state = 9;
-if ((parent.mostCurrent._main._lang /*String*/ ).equals("es")) { 
-this.state = 6;
-}else if((parent.mostCurrent._main._lang /*String*/ ).equals("en")) { 
-this.state = 8;
-}if (true) break;
-
-case 6:
-//C
-this.state = 9;
- //BA.debugLineNum = 157;BA.debugLine="ToastMessageShow(\"Has elegido participar en Mod";
-anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Has elegido participar en Modo de Educación, no se enviarán datos al servidor"),anywheresoftware.b4a.keywords.Common.False);
- if (true) break;
-
-case 8:
-//C
-this.state = 9;
- if (true) break;
-;
- //BA.debugLineNum = 162;BA.debugLine="If msg = DialogResponse.POSITIVE Then";
-
-case 9:
-//if
-this.state = 12;
-if ((_msg).equals(BA.NumberToString(anywheresoftware.b4a.keywords.Common.DialogResponse.POSITIVE))) { 
-this.state = 11;
-}if (true) break;
-
-case 11:
-//C
-this.state = 12;
- //BA.debugLineNum = 163;BA.debugLine="Activity.RemoveAllViews";
-parent.mostCurrent._activity.RemoveAllViews();
- //BA.debugLineNum = 164;BA.debugLine="Activity.Finish";
-parent.mostCurrent._activity.Finish();
- //BA.debugLineNum = 165;BA.debugLine="StartActivity(Form_Main)";
-anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(parent.mostCurrent._form_main.getObject()));
- if (true) break;
-
-case 12:
-//C
-this.state = 13;
-;
- //BA.debugLineNum = 167;BA.debugLine="Return";
-if (true) return ;
- if (true) break;
-
-case 13:
-//C
-this.state = 14;
-;
- //BA.debugLineNum = 172;BA.debugLine="lblFinalizado1.Text = \"Chequeando internet...\"";
-parent.mostCurrent._lblfinalizado1.setText(BA.ObjectToCharSequence("Chequeando internet..."));
- //BA.debugLineNum = 173;BA.debugLine="lblFinalizado1.TextSize = 16";
-parent.mostCurrent._lblfinalizado1.setTextSize((float) (16));
- //BA.debugLineNum = 174;BA.debugLine="lblYaTienesTodo.Visible = False";
-parent.mostCurrent._lblyatienestodo.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 176;BA.debugLine="ProgressBar1.Progress = 0";
-parent.mostCurrent._progressbar1.setProgress((int) (0));
- //BA.debugLineNum = 177;BA.debugLine="ProgressBar2.Progress = 0";
-parent.mostCurrent._progressbar2.setProgress((int) (0));
- //BA.debugLineNum = 178;BA.debugLine="ProgressBar3.Progress = 0";
-parent.mostCurrent._progressbar3.setProgress((int) (0));
- //BA.debugLineNum = 180;BA.debugLine="ProgressBar1.Left = 5000dip";
-parent.mostCurrent._progressbar1.setLeft(anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (5000)));
- //BA.debugLineNum = 181;BA.debugLine="ProgressBar2.Left = 5000dip";
-parent.mostCurrent._progressbar2.setLeft(anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (5000)));
- //BA.debugLineNum = 182;BA.debugLine="ProgressBar3.Left = 5000dip";
-parent.mostCurrent._progressbar3.setLeft(anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (5000)));
- //BA.debugLineNum = 186;BA.debugLine="If Main.modooffline = True Then";
-if (true) break;
-
-case 14:
-//if
-this.state = 21;
-if (parent.mostCurrent._main._modooffline /*boolean*/ ==anywheresoftware.b4a.keywords.Common.True) { 
-this.state = 16;
-}if (true) break;
-
-case 16:
-//C
-this.state = 17;
- //BA.debugLineNum = 187;BA.debugLine="Msgbox2Async(\"Estas en modo sin conexión, se gua";
-anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("Estas en modo sin conexión, se guardarán los datos para que los envíes luego, desde el Menú > Datos Anteriores"),BA.ObjectToCharSequence("No hay internet"),"Ok, entiendo","","",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 188;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
-anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
-this.state = 29;
-return;
-case 29:
-//C
-this.state = 17;
-_result = (Integer) result[0];
-;
- //BA.debugLineNum = 189;BA.debugLine="If Result = DialogResponse.POSITIVE Then";
-if (true) break;
-
-case 17:
-//if
-this.state = 20;
-if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.POSITIVE) { 
-this.state = 19;
-}if (true) break;
-
-case 19:
-//C
-this.state = 20;
- //BA.debugLineNum = 190;BA.debugLine="Main.modooffline = True";
-parent.mostCurrent._main._modooffline /*boolean*/  = anywheresoftware.b4a.keywords.Common.True;
- //BA.debugLineNum = 191;BA.debugLine="Activity.Finish";
-parent.mostCurrent._activity.Finish();
- //BA.debugLineNum = 192;BA.debugLine="Activity.RemoveAllViews";
-parent.mostCurrent._activity.RemoveAllViews();
- //BA.debugLineNum = 193;BA.debugLine="Return";
-if (true) return ;
- if (true) break;
-
-case 20:
-//C
-this.state = 21;
-;
- if (true) break;
-
-case 21:
-//C
-this.state = 22;
-;
- //BA.debugLineNum = 198;BA.debugLine="CheckInternet";
-_checkinternet();
- //BA.debugLineNum = 199;BA.debugLine="Wait For(CheckInternet) Complete (Result As Int)";
-anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, this, (Object)(_checkinternet()));
-this.state = 30;
-return;
-case 30:
-//C
-this.state = 22;
-_result = (Integer) result[0];
-;
- //BA.debugLineNum = 200;BA.debugLine="If Result = 0 Then";
-if (true) break;
-
-case 22:
-//if
-this.state = 25;
-if (_result==0) { 
-this.state = 24;
-}if (true) break;
-
-case 24:
-//C
-this.state = 25;
- //BA.debugLineNum = 201;BA.debugLine="MsgboxAsync(\"No hay conexión a internet, prueba";
-anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("No hay conexión a internet, prueba cuando estés conectado!"),BA.ObjectToCharSequence("No hay internet"),processBA);
- //BA.debugLineNum = 203;BA.debugLine="Activity.Finish";
-parent.mostCurrent._activity.Finish();
- //BA.debugLineNum = 204;BA.debugLine="Activity.RemoveAllViews";
-parent.mostCurrent._activity.RemoveAllViews();
- if (true) break;
-;
- //BA.debugLineNum = 210;BA.debugLine="If Main.lang = \"es\" Then";
-
-case 25:
-//if
-this.state = 28;
-if ((parent.mostCurrent._main._lang /*String*/ ).equals("es")) { 
-this.state = 27;
-}if (true) break;
-
-case 27:
-//C
-this.state = 28;
- //BA.debugLineNum = 211;BA.debugLine="ProgressDialogShow2(\"Enviando proyecto, esto tar";
+public static String  _btnenviar_click() throws Exception{
+String _rndstr = "";
+ //BA.debugLineNum = 150;BA.debugLine="Sub btnEnviar_Click";
+ //BA.debugLineNum = 152;BA.debugLine="Label1.Visible= False";
+mostCurrent._label1.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 153;BA.debugLine="Label2.Visible= False";
+mostCurrent._label2.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 154;BA.debugLine="Label3.Visible= False";
+mostCurrent._label3.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 159;BA.debugLine="If Main.username = \"guest\" Or Main.username = \"No";
+if ((mostCurrent._main._username /*String*/ ).equals("guest") || (mostCurrent._main._username /*String*/ ).equals("None")) { 
+ //BA.debugLineNum = 160;BA.debugLine="ToastMessageShow(\"No estás registrado/a, pero ig";
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("No estás registrado/a, pero igual se enviará tu reporte!"),anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 161;BA.debugLine="Dim RndStr As String";
+_rndstr = "";
+ //BA.debugLineNum = 162;BA.debugLine="RndStr = utilidades.RandomString(6)";
+_rndstr = mostCurrent._utilidades._randomstring /*String*/ (mostCurrent.activityBA,(int) (6));
+ //BA.debugLineNum = 163;BA.debugLine="Main.username = \"guest_\" & RndStr";
+mostCurrent._main._username /*String*/  = "guest_"+_rndstr;
+ };
+ //BA.debugLineNum = 181;BA.debugLine="lblFinalizado1.Text = \"Chequeando internet...\"";
+mostCurrent._lblfinalizado1.setText(BA.ObjectToCharSequence("Chequeando internet..."));
+ //BA.debugLineNum = 182;BA.debugLine="lblFinalizado1.TextSize = 16";
+mostCurrent._lblfinalizado1.setTextSize((float) (16));
+ //BA.debugLineNum = 183;BA.debugLine="lblYaTienesTodo.Visible = False";
+mostCurrent._lblyatienestodo.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 185;BA.debugLine="ProgressBar1.Progress = 0";
+mostCurrent._progressbar1.setProgress((int) (0));
+ //BA.debugLineNum = 186;BA.debugLine="ProgressBar2.Progress = 0";
+mostCurrent._progressbar2.setProgress((int) (0));
+ //BA.debugLineNum = 187;BA.debugLine="ProgressBar3.Progress = 0";
+mostCurrent._progressbar3.setProgress((int) (0));
+ //BA.debugLineNum = 189;BA.debugLine="ProgressBar1.Left = 5000dip";
+mostCurrent._progressbar1.setLeft(anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (5000)));
+ //BA.debugLineNum = 190;BA.debugLine="ProgressBar2.Left = 5000dip";
+mostCurrent._progressbar2.setLeft(anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (5000)));
+ //BA.debugLineNum = 191;BA.debugLine="ProgressBar3.Left = 5000dip";
+mostCurrent._progressbar3.setLeft(anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (5000)));
+ //BA.debugLineNum = 195;BA.debugLine="If Main.lang = \"es\" Then";
+if ((mostCurrent._main._lang /*String*/ ).equals("es")) { 
+ //BA.debugLineNum = 196;BA.debugLine="ProgressDialogShow2(\"Enviando proyecto, esto tar";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow2(mostCurrent.activityBA,BA.ObjectToCharSequence("Enviando proyecto, esto tardará unos minutos"),anywheresoftware.b4a.keywords.Common.False);
- if (true) break;
-
-case 28:
-//C
-this.state = -1;
-;
- //BA.debugLineNum = 215;BA.debugLine="CheckInternet";
+ };
+ //BA.debugLineNum = 202;BA.debugLine="CheckInternet";
 _checkinternet();
- //BA.debugLineNum = 216;BA.debugLine="End Sub";
-if (true) break;
-
-            }
-        }
-    }
-}
-public static void  _msgbox_result(int _result) throws Exception{
-}
-public static void  _complete(int _result) throws Exception{
+ //BA.debugLineNum = 203;BA.debugLine="End Sub";
+return "";
 }
 public static String  _checkinternet() throws Exception{
 appear.pnud.preservamos.downloadservice._downloaddata _dd = null;
- //BA.debugLineNum = 220;BA.debugLine="Sub CheckInternet";
- //BA.debugLineNum = 221;BA.debugLine="Dim dd As DownloadData";
+ //BA.debugLineNum = 207;BA.debugLine="Sub CheckInternet";
+ //BA.debugLineNum = 208;BA.debugLine="Dim dd As DownloadData";
 _dd = new appear.pnud.preservamos.downloadservice._downloaddata();
- //BA.debugLineNum = 222;BA.debugLine="dd.url = Main.serverPath &  \"/\" & Main.serverConn";
+ //BA.debugLineNum = 209;BA.debugLine="dd.url = Main.serverPath &  \"/\" & Main.serverConn";
 _dd.url /*String*/  = mostCurrent._main._serverpath /*String*/ +"/"+mostCurrent._main._serverconnectionfolder /*String*/ +"/connecttest.php";
- //BA.debugLineNum = 223;BA.debugLine="dd.EventName = \"TestInternet\"";
+ //BA.debugLineNum = 210;BA.debugLine="dd.EventName = \"TestInternet\"";
 _dd.EventName /*String*/  = "TestInternet";
- //BA.debugLineNum = 224;BA.debugLine="dd.Target = Me";
+ //BA.debugLineNum = 211;BA.debugLine="dd.Target = Me";
 _dd.Target /*Object*/  = reporte_envio.getObject();
- //BA.debugLineNum = 225;BA.debugLine="CallSubDelayed2(DownloadService, \"StartDownload\",";
+ //BA.debugLineNum = 212;BA.debugLine="CallSubDelayed2(DownloadService, \"StartDownload\",";
 anywheresoftware.b4a.keywords.Common.CallSubDelayed2(processBA,(Object)(mostCurrent._downloadservice.getObject()),"StartDownload",(Object)(_dd));
- //BA.debugLineNum = 226;BA.debugLine="End Sub";
+ //BA.debugLineNum = 213;BA.debugLine="End Sub";
 return "";
 }
 public static String  _enviardatos_complete(appear.pnud.preservamos.httpjob _job) throws Exception{
@@ -714,184 +531,191 @@ anywheresoftware.b4a.objects.collections.JSONParser _parser = null;
 anywheresoftware.b4a.objects.collections.Map _nd = null;
 String _serverid = "";
 anywheresoftware.b4a.objects.collections.Map _map1 = null;
- //BA.debugLineNum = 402;BA.debugLine="Sub EnviarDatos_Complete(Job As HttpJob)";
- //BA.debugLineNum = 403;BA.debugLine="Log(\"Datos enviados : \" & Job.Success)";
-anywheresoftware.b4a.keywords.Common.LogImpl("639190529","Datos enviados : "+BA.ObjectToString(_job._success /*boolean*/ ),0);
- //BA.debugLineNum = 404;BA.debugLine="If Job.Success = True Then";
+ //BA.debugLineNum = 393;BA.debugLine="Sub EnviarDatos_Complete(Job As HttpJob)";
+ //BA.debugLineNum = 394;BA.debugLine="Log(\"Datos enviados : \" & Job.Success)";
+anywheresoftware.b4a.keywords.Common.LogImpl("528246017","Datos enviados : "+BA.ObjectToString(_job._success /*boolean*/ ),0);
+ //BA.debugLineNum = 395;BA.debugLine="If Job.Success = True Then";
 if (_job._success /*boolean*/ ==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 405;BA.debugLine="Dim ret As String";
+ //BA.debugLineNum = 396;BA.debugLine="Dim ret As String";
 _ret = "";
- //BA.debugLineNum = 406;BA.debugLine="Dim act As String";
+ //BA.debugLineNum = 397;BA.debugLine="Dim act As String";
 _act = "";
- //BA.debugLineNum = 407;BA.debugLine="ret = Job.GetString";
+ //BA.debugLineNum = 398;BA.debugLine="ret = Job.GetString";
 _ret = _job._getstring /*String*/ ();
- //BA.debugLineNum = 408;BA.debugLine="Dim parser As JSONParser";
+ //BA.debugLineNum = 399;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
- //BA.debugLineNum = 409;BA.debugLine="parser.Initialize(ret)";
+ //BA.debugLineNum = 400;BA.debugLine="parser.Initialize(ret)";
 _parser.Initialize(_ret);
- //BA.debugLineNum = 410;BA.debugLine="act = parser.NextValue";
+ //BA.debugLineNum = 401;BA.debugLine="act = parser.NextValue";
 _act = BA.ObjectToString(_parser.NextValue());
- //BA.debugLineNum = 411;BA.debugLine="If act = \"Not Found\" Then";
+ //BA.debugLineNum = 402;BA.debugLine="If act = \"Not Found\" Then";
 if ((_act).equals("Not Found")) { 
- //BA.debugLineNum = 412;BA.debugLine="If Main.lang = \"es\" Then";
+ //BA.debugLineNum = 403;BA.debugLine="If Main.lang = \"es\" Then";
 if ((mostCurrent._main._lang /*String*/ ).equals("es")) { 
- //BA.debugLineNum = 413;BA.debugLine="ToastMessageShow(\"Error en la carga de marcado";
+ //BA.debugLineNum = 404;BA.debugLine="ToastMessageShow(\"Error en la carga de marcado";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Error en la carga de marcadores"),anywheresoftware.b4a.keywords.Common.True);
  }else if((mostCurrent._main._lang /*String*/ ).equals("en")) { 
- //BA.debugLineNum = 415;BA.debugLine="ToastMessageShow(\"Error loading markers\", True";
+ //BA.debugLineNum = 406;BA.debugLine="ToastMessageShow(\"Error loading markers\", True";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Error loading markers"),anywheresoftware.b4a.keywords.Common.True);
  };
- //BA.debugLineNum = 417;BA.debugLine="ProgressDialogHide";
+ //BA.debugLineNum = 408;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
  }else if((_act).equals("MarcadorAgregado")) { 
- //BA.debugLineNum = 420;BA.debugLine="Dim nd As Map";
+ //BA.debugLineNum = 411;BA.debugLine="Dim nd As Map";
 _nd = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 421;BA.debugLine="nd = parser.NextObject";
+ //BA.debugLineNum = 412;BA.debugLine="nd = parser.NextObject";
 _nd = _parser.NextObject();
- //BA.debugLineNum = 422;BA.debugLine="Dim serverID As String";
+ //BA.debugLineNum = 413;BA.debugLine="Dim serverID As String";
 _serverid = "";
- //BA.debugLineNum = 423;BA.debugLine="serverID = nd.Get(\"serverId\")";
+ //BA.debugLineNum = 414;BA.debugLine="serverID = nd.Get(\"serverId\")";
 _serverid = BA.ObjectToString(_nd.Get((Object)("serverId")));
- //BA.debugLineNum = 426;BA.debugLine="Dim Map1 As Map";
+ //BA.debugLineNum = 417;BA.debugLine="Dim Map1 As Map";
 _map1 = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 427;BA.debugLine="Map1.Initialize";
+ //BA.debugLineNum = 418;BA.debugLine="Map1.Initialize";
 _map1.Initialize();
- //BA.debugLineNum = 428;BA.debugLine="Map1.Put(\"Id\", Main.currentproject)";
+ //BA.debugLineNum = 419;BA.debugLine="Map1.Put(\"Id\", Main.currentproject)";
 _map1.Put((Object)("Id"),(Object)(mostCurrent._main._currentproject /*String*/ ));
- //BA.debugLineNum = 429;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"e";
+ //BA.debugLineNum = 420;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"e";
 mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","evalsent",(Object)("si"),_map1);
- //BA.debugLineNum = 430;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"s";
+ //BA.debugLineNum = 421;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"s";
 mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","serverId",(Object)(_serverid),_map1);
- //BA.debugLineNum = 431;BA.debugLine="If Main.lang = \"es\" Then";
+ //BA.debugLineNum = 422;BA.debugLine="If Main.lang = \"es\" Then";
 if ((mostCurrent._main._lang /*String*/ ).equals("es")) { 
- //BA.debugLineNum = 432;BA.debugLine="ToastMessageShow(\"Datos enviados, enviando fot";
+ //BA.debugLineNum = 423;BA.debugLine="ToastMessageShow(\"Datos enviados, enviando fot";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Datos enviados, enviando fotos"),anywheresoftware.b4a.keywords.Common.False);
  }else if((mostCurrent._main._lang /*String*/ ).equals("en")) { 
- //BA.debugLineNum = 434;BA.debugLine="ToastMessageShow(\"Report sent, sending photos\"";
+ //BA.debugLineNum = 425;BA.debugLine="ToastMessageShow(\"Report sent, sending photos\"";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Report sent, sending photos"),anywheresoftware.b4a.keywords.Common.False);
  };
- //BA.debugLineNum = 438;BA.debugLine="EnviarFotos";
+ //BA.debugLineNum = 429;BA.debugLine="EnviarFotos";
 _enviarfotos();
  };
  }else {
- //BA.debugLineNum = 441;BA.debugLine="Log(\"envio datos not ok\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("639190567","envio datos not ok",0);
- //BA.debugLineNum = 442;BA.debugLine="If Main.lang = \"es\" Then";
+ //BA.debugLineNum = 432;BA.debugLine="Log(\"envio datos not ok\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("528246055","envio datos not ok",0);
+ //BA.debugLineNum = 433;BA.debugLine="If Main.lang = \"es\" Then";
 if ((mostCurrent._main._lang /*String*/ ).equals("es")) { 
- //BA.debugLineNum = 443;BA.debugLine="MsgboxAsync(\"Al parecer hay un problema en nues";
+ //BA.debugLineNum = 434;BA.debugLine="MsgboxAsync(\"Al parecer hay un problema en nues";
 anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("Al parecer hay un problema en nuestros servidores, lo solucionaremos pronto!"),BA.ObjectToCharSequence("Mala mía"),processBA);
  }else if((mostCurrent._main._lang /*String*/ ).equals("en")) { 
- //BA.debugLineNum = 445;BA.debugLine="MsgboxAsync(\"There seems to be a problem with o";
+ //BA.debugLineNum = 436;BA.debugLine="MsgboxAsync(\"There seems to be a problem with o";
 anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("There seems to be a problem with our servers, we will solve it soon!"),BA.ObjectToCharSequence("My bad"),processBA);
  };
  };
- //BA.debugLineNum = 449;BA.debugLine="Job.Release";
+ //BA.debugLineNum = 440;BA.debugLine="Job.Release";
 _job._release /*String*/ ();
- //BA.debugLineNum = 450;BA.debugLine="End Sub";
+ //BA.debugLineNum = 441;BA.debugLine="End Sub";
 return "";
 }
 public static String  _enviarfotos() throws Exception{
 String _usr = "";
 String _pss = "";
- //BA.debugLineNum = 456;BA.debugLine="Sub EnviarFotos";
- //BA.debugLineNum = 459;BA.debugLine="If foto1 <> \"null\" Then";
+String _filetoupload = "";
+ //BA.debugLineNum = 447;BA.debugLine="Sub EnviarFotos";
+ //BA.debugLineNum = 450;BA.debugLine="If foto1 <> \"null\" Then";
 if ((mostCurrent._foto1).equals("null") == false) { 
- //BA.debugLineNum = 460;BA.debugLine="totalFotos = totalFotos + 1";
+ //BA.debugLineNum = 451;BA.debugLine="totalFotos = totalFotos + 1";
 _totalfotos = (int) (_totalfotos+1);
- //BA.debugLineNum = 461;BA.debugLine="Label1.Text = \"Foto 1\"";
+ //BA.debugLineNum = 452;BA.debugLine="Label1.Text = \"Foto 1\"";
 mostCurrent._label1.setText(BA.ObjectToCharSequence("Foto 1"));
- //BA.debugLineNum = 462;BA.debugLine="Label1.Visible= True";
+ //BA.debugLineNum = 453;BA.debugLine="Label1.Visible= True";
 mostCurrent._label1.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 463;BA.debugLine="ProgressBar1.Visible = False";
+ //BA.debugLineNum = 454;BA.debugLine="ProgressBar1.Visible = False";
 mostCurrent._progressbar1.setVisible(anywheresoftware.b4a.keywords.Common.False);
  };
- //BA.debugLineNum = 465;BA.debugLine="If foto2 <>  \"null\" Then";
+ //BA.debugLineNum = 456;BA.debugLine="If foto2 <>  \"null\" Then";
 if ((mostCurrent._foto2).equals("null") == false) { 
- //BA.debugLineNum = 466;BA.debugLine="totalFotos = totalFotos + 1";
+ //BA.debugLineNum = 457;BA.debugLine="totalFotos = totalFotos + 1";
 _totalfotos = (int) (_totalfotos+1);
- //BA.debugLineNum = 467;BA.debugLine="Label2.Text = \"Foto 2\"";
+ //BA.debugLineNum = 458;BA.debugLine="Label2.Text = \"Foto 2\"";
 mostCurrent._label2.setText(BA.ObjectToCharSequence("Foto 2"));
- //BA.debugLineNum = 468;BA.debugLine="Label2.Visible= True";
+ //BA.debugLineNum = 459;BA.debugLine="Label2.Visible= True";
 mostCurrent._label2.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 469;BA.debugLine="ProgressBar2.Visible = False";
+ //BA.debugLineNum = 460;BA.debugLine="ProgressBar2.Visible = False";
 mostCurrent._progressbar2.setVisible(anywheresoftware.b4a.keywords.Common.False);
  };
- //BA.debugLineNum = 471;BA.debugLine="If foto3 <>  \"null\" Then";
+ //BA.debugLineNum = 462;BA.debugLine="If foto3 <>  \"null\" Then";
 if ((mostCurrent._foto3).equals("null") == false) { 
- //BA.debugLineNum = 472;BA.debugLine="totalFotos = totalFotos + 1";
+ //BA.debugLineNum = 463;BA.debugLine="totalFotos = totalFotos + 1";
 _totalfotos = (int) (_totalfotos+1);
- //BA.debugLineNum = 473;BA.debugLine="Label3.Text = \"Foto 3\"";
+ //BA.debugLineNum = 464;BA.debugLine="Label3.Text = \"Foto 3\"";
 mostCurrent._label3.setText(BA.ObjectToCharSequence("Foto 3"));
- //BA.debugLineNum = 474;BA.debugLine="Label3.Visible= True";
+ //BA.debugLineNum = 465;BA.debugLine="Label3.Visible= True";
 mostCurrent._label3.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 475;BA.debugLine="ProgressBar3.Visible = False";
+ //BA.debugLineNum = 466;BA.debugLine="ProgressBar3.Visible = False";
 mostCurrent._progressbar3.setVisible(anywheresoftware.b4a.keywords.Common.False);
  };
- //BA.debugLineNum = 477;BA.debugLine="If foto4 <>  \"null\" Then";
+ //BA.debugLineNum = 468;BA.debugLine="If foto4 <>  \"null\" Then";
 if ((mostCurrent._foto4).equals("null") == false) { 
- //BA.debugLineNum = 478;BA.debugLine="totalFotos = totalFotos + 1";
+ //BA.debugLineNum = 469;BA.debugLine="totalFotos = totalFotos + 1";
 _totalfotos = (int) (_totalfotos+1);
- //BA.debugLineNum = 479;BA.debugLine="Label4.Text = \"Foto 4\"";
+ //BA.debugLineNum = 470;BA.debugLine="Label4.Text = \"Foto 4\"";
 mostCurrent._label4.setText(BA.ObjectToCharSequence("Foto 4"));
- //BA.debugLineNum = 480;BA.debugLine="Label4.Visible= True";
+ //BA.debugLineNum = 471;BA.debugLine="Label4.Visible= True";
 mostCurrent._label4.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 481;BA.debugLine="ProgressBar4.Visible = False";
+ //BA.debugLineNum = 472;BA.debugLine="ProgressBar4.Visible = False";
 mostCurrent._progressbar4.setVisible(anywheresoftware.b4a.keywords.Common.False);
  };
- //BA.debugLineNum = 483;BA.debugLine="If foto5 <>  \"null\" Then";
+ //BA.debugLineNum = 474;BA.debugLine="If foto5 <>  \"null\" Then";
 if ((mostCurrent._foto5).equals("null") == false) { 
- //BA.debugLineNum = 484;BA.debugLine="totalFotos = totalFotos + 1";
+ //BA.debugLineNum = 475;BA.debugLine="totalFotos = totalFotos + 1";
 _totalfotos = (int) (_totalfotos+1);
- //BA.debugLineNum = 485;BA.debugLine="Label5.Text = \"Foto 5\"";
+ //BA.debugLineNum = 476;BA.debugLine="Label5.Text = \"Foto 5\"";
 mostCurrent._label5.setText(BA.ObjectToCharSequence("Foto 5"));
- //BA.debugLineNum = 486;BA.debugLine="Label5.Visible= True";
+ //BA.debugLineNum = 477;BA.debugLine="Label5.Visible= True";
 mostCurrent._label5.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 487;BA.debugLine="ProgressBar5.Visible = False";
+ //BA.debugLineNum = 478;BA.debugLine="ProgressBar5.Visible = False";
 mostCurrent._progressbar5.setVisible(anywheresoftware.b4a.keywords.Common.False);
  };
- //BA.debugLineNum = 490;BA.debugLine="lblFinalizado1.Text = \"Enviando fotos...\"";
+ //BA.debugLineNum = 481;BA.debugLine="lblFinalizado1.Text = \"Enviando fotos...\"";
 mostCurrent._lblfinalizado1.setText(BA.ObjectToCharSequence("Enviando fotos..."));
- //BA.debugLineNum = 491;BA.debugLine="lblFinalizado1.TextSize = 16";
+ //BA.debugLineNum = 482;BA.debugLine="lblFinalizado1.TextSize = 16";
 mostCurrent._lblfinalizado1.setTextSize((float) (16));
- //BA.debugLineNum = 494;BA.debugLine="TimerEnvio.Initialize(\"TimerEnvio\", 1000)";
+ //BA.debugLineNum = 485;BA.debugLine="TimerEnvio.Initialize(\"TimerEnvio\", 1000)";
 _timerenvio.Initialize(processBA,"TimerEnvio",(long) (1000));
- //BA.debugLineNum = 495;BA.debugLine="TimerEnvio.Enabled = True";
+ //BA.debugLineNum = 486;BA.debugLine="TimerEnvio.Enabled = True";
 _timerenvio.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 497;BA.debugLine="Dim usr As String";
+ //BA.debugLineNum = 488;BA.debugLine="Dim usr As String";
 _usr = "";
- //BA.debugLineNum = 498;BA.debugLine="Dim pss As String";
+ //BA.debugLineNum = 489;BA.debugLine="Dim pss As String";
 _pss = "";
- //BA.debugLineNum = 499;BA.debugLine="usr = \"\"";
+ //BA.debugLineNum = 490;BA.debugLine="usr = \"\"";
 _usr = "";
- //BA.debugLineNum = 500;BA.debugLine="pss = \"\"";
+ //BA.debugLineNum = 491;BA.debugLine="pss = \"\"";
 _pss = "";
- //BA.debugLineNum = 502;BA.debugLine="Up1.B4A_log=True";
+ //BA.debugLineNum = 493;BA.debugLine="Up1.B4A_log=True";
 _up1.B4A_log = anywheresoftware.b4a.keywords.Common.True;
- //BA.debugLineNum = 505;BA.debugLine="Up1.Initialize(\"Up1\")";
+ //BA.debugLineNum = 496;BA.debugLine="Up1.Initialize(\"Up1\")";
 _up1.Initialize(processBA,"Up1");
- //BA.debugLineNum = 510;BA.debugLine="If File.Exists(File.DirRootExternal & \"/PreserVam";
-if (anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/",mostCurrent._foto1+".jpg") && _foto1sent==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 511;BA.debugLine="Log(\"Enviando foto 1 \")";
-anywheresoftware.b4a.keywords.Common.LogImpl("639256119","Enviando foto 1 ",0);
- //BA.debugLineNum = 513;BA.debugLine="foto1ProgressBar.Visible = True";
+ //BA.debugLineNum = 502;BA.debugLine="If File.Exists(Starter.savedir, foto1 & \".jpg\") A";
+if (anywheresoftware.b4a.keywords.Common.File.Exists(mostCurrent._starter._savedir /*String*/ ,mostCurrent._foto1+".jpg") && _foto1sent==anywheresoftware.b4a.keywords.Common.False) { 
+ //BA.debugLineNum = 503;BA.debugLine="Log(\"Enviando foto\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("528311608","Enviando foto",0);
+ //BA.debugLineNum = 504;BA.debugLine="Log(\"Enviando foto 1 \")";
+anywheresoftware.b4a.keywords.Common.LogImpl("528311609","Enviando foto 1 ",0);
+ //BA.debugLineNum = 506;BA.debugLine="foto1ProgressBar.Visible = True";
 mostCurrent._foto1progressbar._setvisible /*boolean*/ (anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 515;BA.debugLine="Up1.doFileUpload(ProgressBar1,Null,File.DirRootE";
-_up1.doFileUpload(processBA,(android.widget.ProgressBar)(mostCurrent._progressbar1.getObject()),(android.widget.TextView)(anywheresoftware.b4a.keywords.Common.Null),anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/"+mostCurrent._foto1+".jpg",mostCurrent._main._serverpath /*String*/ +"/"+mostCurrent._main._serverconnectionfolder /*String*/ +"/upload_file.php?usr="+_usr+"&pss="+_pss);
- //BA.debugLineNum = 516;BA.debugLine="ProgressBar1.Visible = False";
+ //BA.debugLineNum = 507;BA.debugLine="Dim filetoUpload As String";
+_filetoupload = "";
+ //BA.debugLineNum = 508;BA.debugLine="filetoUpload = Starter.savedir & \"/\" & foto1 & \"";
+_filetoupload = mostCurrent._starter._savedir /*String*/ +"/"+mostCurrent._foto1+".jpg";
+ //BA.debugLineNum = 509;BA.debugLine="Up1.doFileUpload(ProgressBar1,Null,filetoUpload,";
+_up1.doFileUpload(processBA,(android.widget.ProgressBar)(mostCurrent._progressbar1.getObject()),(android.widget.TextView)(anywheresoftware.b4a.keywords.Common.Null),_filetoupload,mostCurrent._main._serverpath /*String*/ +"/"+mostCurrent._main._serverconnectionfolder /*String*/ +"/upload_file.php?usr="+_usr+"&pss="+_pss);
+ //BA.debugLineNum = 510;BA.debugLine="ProgressBar1.Visible = False";
 mostCurrent._progressbar1.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 518;BA.debugLine="If Main.lang = \"es\" Then";
+ //BA.debugLineNum = 512;BA.debugLine="If Main.lang = \"es\" Then";
 if ((mostCurrent._main._lang /*String*/ ).equals("es")) { 
- //BA.debugLineNum = 519;BA.debugLine="lblFinalizado1.Text = \"Enviando foto 1...\"";
+ //BA.debugLineNum = 513;BA.debugLine="lblFinalizado1.Text = \"Enviando foto 1...\"";
 mostCurrent._lblfinalizado1.setText(BA.ObjectToCharSequence("Enviando foto 1..."));
  }else if((mostCurrent._main._lang /*String*/ ).equals("en")) { 
- //BA.debugLineNum = 521;BA.debugLine="lblFinalizado1.Text = \"Uploading foto 1...\"";
+ //BA.debugLineNum = 515;BA.debugLine="lblFinalizado1.Text = \"Uploading foto 1...\"";
 mostCurrent._lblfinalizado1.setText(BA.ObjectToCharSequence("Uploading foto 1..."));
  };
  }else {
- //BA.debugLineNum = 524;BA.debugLine="Log(\"no foto 1\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("639256132","no foto 1",0);
+ //BA.debugLineNum = 518;BA.debugLine="Log(\"no foto 1\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("528311623","no foto 1",0);
  };
- //BA.debugLineNum = 527;BA.debugLine="End Sub";
+ //BA.debugLineNum = 521;BA.debugLine="End Sub";
 return "";
 }
 public static String  _enviodatos(String _proyectonumero) throws Exception{
@@ -945,10 +769,10 @@ String _estadovalidacion = "";
 String _deviceid = "";
 anywheresoftware.b4a.objects.collections.Map _datosmap = null;
 appear.pnud.preservamos.downloadservice._downloaddata _dd = null;
- //BA.debugLineNum = 252;BA.debugLine="Sub EnvioDatos(proyectonumero As String)";
- //BA.debugLineNum = 254;BA.debugLine="proyectoIDenviar = proyectonumero";
+ //BA.debugLineNum = 235;BA.debugLine="Sub EnvioDatos(proyectonumero As String)";
+ //BA.debugLineNum = 237;BA.debugLine="proyectoIDenviar = proyectonumero";
 mostCurrent._proyectoidenviar = _proyectonumero;
- //BA.debugLineNum = 256;BA.debugLine="Dim username,dateandtime,nombresitio,tiporio,lat,";
+ //BA.debugLineNum = 239;BA.debugLine="Dim username,dateandtime,nombresitio,tiporio,lat,";
 _username = "";
 _dateandtime = "";
 _nombresitio = "";
@@ -959,7 +783,7 @@ _gpsdetect = "";
 _wifidetect = "";
 _mapadetect = "";
 _partido = "";
- //BA.debugLineNum = 257;BA.debugLine="Dim valorcalidad, valorNS, valorind1,valorind2,va";
+ //BA.debugLineNum = 240;BA.debugLine="Dim valorcalidad, valorNS, valorind1,valorind2,va";
 _valorcalidad = "";
 _valorns = "";
 _valorind1 = "";
@@ -981,7 +805,7 @@ _valorind16 = "";
 _valorind17 = "";
 _valorind18 = "";
 _valorind19 = "";
- //BA.debugLineNum = 259;BA.debugLine="Dim ind_pvm_1, ind_pvm_2, ind_pvm_3, ind_pvm_4, i";
+ //BA.debugLineNum = 242;BA.debugLine="Dim ind_pvm_1, ind_pvm_2, ind_pvm_3, ind_pvm_4, i";
 _ind_pvm_1 = "";
 _ind_pvm_2 = "";
 _ind_pvm_3 = "";
@@ -994,255 +818,257 @@ _ind_pvm_9 = "";
 _ind_pvm_10 = "";
 _ind_pvm_11 = "";
 _ind_pvm_12 = "";
- //BA.debugLineNum = 261;BA.debugLine="Dim notas,bingo As String";
+ //BA.debugLineNum = 244;BA.debugLine="Dim notas,bingo As String";
 _notas = "";
 _bingo = "";
- //BA.debugLineNum = 262;BA.debugLine="Dim terminado, privado,estadovalidacion, deviceID";
+ //BA.debugLineNum = 245;BA.debugLine="Dim terminado, privado,estadovalidacion, deviceID";
 _terminado = "";
 _privado = "";
 _estadovalidacion = "";
 _deviceid = "";
- //BA.debugLineNum = 264;BA.debugLine="Dim datosMap As Map";
+ //BA.debugLineNum = 247;BA.debugLine="Dim datosMap As Map";
 _datosmap = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 265;BA.debugLine="datosMap.Initialize";
+ //BA.debugLineNum = 248;BA.debugLine="datosMap.Initialize";
 _datosmap.Initialize();
- //BA.debugLineNum = 266;BA.debugLine="datosMap = DBUtils.ExecuteMap(Starter.sqlDB, \"SEL";
+ //BA.debugLineNum = 249;BA.debugLine="datosMap = DBUtils.ExecuteMap(Starter.sqlDB, \"SEL";
 _datosmap = mostCurrent._dbutils._executemap /*anywheresoftware.b4a.objects.collections.Map*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"SELECT * FROM evals WHERE Id=?",new String[]{_proyectonumero});
- //BA.debugLineNum = 268;BA.debugLine="If datosMap = Null Or datosMap.IsInitialized = Fa";
+ //BA.debugLineNum = 251;BA.debugLine="If datosMap = Null Or datosMap.IsInitialized = Fa";
 if (_datosmap== null || _datosmap.IsInitialized()==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 269;BA.debugLine="ToastMessageShow(\"Error cargando el análisis\", F";
+ //BA.debugLineNum = 252;BA.debugLine="ToastMessageShow(\"Error cargando el análisis\", F";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Error cargando el análisis"),anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 270;BA.debugLine="ProgressDialogHide";
+ //BA.debugLineNum = 253;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
- //BA.debugLineNum = 271;BA.debugLine="Return";
+ //BA.debugLineNum = 254;BA.debugLine="Return";
 if (true) return "";
  }else {
- //BA.debugLineNum = 273;BA.debugLine="username = datosMap.Get(\"usuario\")";
+ //BA.debugLineNum = 263;BA.debugLine="username = datosMap.Get(\"usuario\")";
 _username = BA.ObjectToString(_datosmap.Get((Object)("usuario")));
- //BA.debugLineNum = 274;BA.debugLine="dateandtime = datosMap.Get(\"georeferenceddate\")";
+ //BA.debugLineNum = 264;BA.debugLine="dateandtime = datosMap.Get(\"georeferenceddate\")";
 _dateandtime = BA.ObjectToString(_datosmap.Get((Object)("georeferenceddate")));
- //BA.debugLineNum = 275;BA.debugLine="nombresitio = datosMap.Get(\"nombresitio\")";
+ //BA.debugLineNum = 265;BA.debugLine="nombresitio = datosMap.Get(\"nombresitio\")";
 _nombresitio = BA.ObjectToString(_datosmap.Get((Object)("nombresitio")));
- //BA.debugLineNum = 276;BA.debugLine="tiporio = datosMap.Get(\"tiporio\")";
+ //BA.debugLineNum = 266;BA.debugLine="tiporio = datosMap.Get(\"tiporio\")";
 mostCurrent._tiporio = BA.ObjectToString(_datosmap.Get((Object)("tiporio")));
- //BA.debugLineNum = 277;BA.debugLine="lat = datosMap.Get(\"decimallatitude\")";
+ //BA.debugLineNum = 267;BA.debugLine="lat = datosMap.Get(\"decimallatitude\")";
 _lat = BA.ObjectToString(_datosmap.Get((Object)("decimallatitude")));
- //BA.debugLineNum = 278;BA.debugLine="lng = datosMap.Get(\"decimallongitude\")";
+ //BA.debugLineNum = 268;BA.debugLine="lng = datosMap.Get(\"decimallongitude\")";
 _lng = BA.ObjectToString(_datosmap.Get((Object)("decimallongitude")));
- //BA.debugLineNum = 279;BA.debugLine="gpsdetect = datosMap.Get(\"gpsdetect\")";
+ //BA.debugLineNum = 269;BA.debugLine="gpsdetect = datosMap.Get(\"gpsdetect\")";
 _gpsdetect = BA.ObjectToString(_datosmap.Get((Object)("gpsdetect")));
- //BA.debugLineNum = 280;BA.debugLine="wifidetect = datosMap.Get(\"wifidetect\")";
+ //BA.debugLineNum = 270;BA.debugLine="wifidetect = datosMap.Get(\"wifidetect\")";
 _wifidetect = BA.ObjectToString(_datosmap.Get((Object)("wifidetect")));
- //BA.debugLineNum = 281;BA.debugLine="mapadetect = datosMap.Get(\"mapadetect\")";
+ //BA.debugLineNum = 271;BA.debugLine="mapadetect = datosMap.Get(\"mapadetect\")";
 _mapadetect = BA.ObjectToString(_datosmap.Get((Object)("mapadetect")));
- //BA.debugLineNum = 282;BA.debugLine="partido = Main.strUserOrg";
-_partido = mostCurrent._main._struserorg /*String*/ ;
- //BA.debugLineNum = 283;BA.debugLine="valorcalidad = datosMap.Get(\"valorcalidad\")";
+ //BA.debugLineNum = 272;BA.debugLine="partido = Geopartido";
+_partido = _geopartido;
+ //BA.debugLineNum = 273;BA.debugLine="valorcalidad = datosMap.Get(\"valorcalidad\")";
 _valorcalidad = BA.ObjectToString(_datosmap.Get((Object)("valorcalidad")));
- //BA.debugLineNum = 284;BA.debugLine="valorNS = datosMap.Get(\"valorind20\")";
+ //BA.debugLineNum = 274;BA.debugLine="valorNS = datosMap.Get(\"valorind20\")";
 _valorns = BA.ObjectToString(_datosmap.Get((Object)("valorind20")));
- //BA.debugLineNum = 285;BA.debugLine="valorind1 = datosMap.Get(\"valorind1\")";
+ //BA.debugLineNum = 275;BA.debugLine="valorind1 = datosMap.Get(\"valorind1\")";
 _valorind1 = BA.ObjectToString(_datosmap.Get((Object)("valorind1")));
- //BA.debugLineNum = 286;BA.debugLine="valorind2 = datosMap.Get(\"valorind2\")";
+ //BA.debugLineNum = 276;BA.debugLine="valorind2 = datosMap.Get(\"valorind2\")";
 _valorind2 = BA.ObjectToString(_datosmap.Get((Object)("valorind2")));
- //BA.debugLineNum = 287;BA.debugLine="valorind3 = datosMap.Get(\"valorind3\")";
+ //BA.debugLineNum = 277;BA.debugLine="valorind3 = datosMap.Get(\"valorind3\")";
 _valorind3 = BA.ObjectToString(_datosmap.Get((Object)("valorind3")));
- //BA.debugLineNum = 288;BA.debugLine="valorind4 = datosMap.Get(\"valorind4\")";
+ //BA.debugLineNum = 278;BA.debugLine="valorind4 = datosMap.Get(\"valorind4\")";
 _valorind4 = BA.ObjectToString(_datosmap.Get((Object)("valorind4")));
- //BA.debugLineNum = 289;BA.debugLine="valorind5 = datosMap.Get(\"valorind5\")";
+ //BA.debugLineNum = 279;BA.debugLine="valorind5 = datosMap.Get(\"valorind5\")";
 _valorind5 = BA.ObjectToString(_datosmap.Get((Object)("valorind5")));
- //BA.debugLineNum = 290;BA.debugLine="valorind6 = datosMap.Get(\"valorind6\")";
+ //BA.debugLineNum = 280;BA.debugLine="valorind6 = datosMap.Get(\"valorind6\")";
 _valorind6 = BA.ObjectToString(_datosmap.Get((Object)("valorind6")));
- //BA.debugLineNum = 291;BA.debugLine="valorind7 = datosMap.Get(\"valorind7\")";
+ //BA.debugLineNum = 281;BA.debugLine="valorind7 = datosMap.Get(\"valorind7\")";
 _valorind7 = BA.ObjectToString(_datosmap.Get((Object)("valorind7")));
- //BA.debugLineNum = 292;BA.debugLine="valorind8 = datosMap.Get(\"valorind8\")";
+ //BA.debugLineNum = 282;BA.debugLine="valorind8 = datosMap.Get(\"valorind8\")";
 _valorind8 = BA.ObjectToString(_datosmap.Get((Object)("valorind8")));
- //BA.debugLineNum = 293;BA.debugLine="valorind9 = datosMap.Get(\"valorind9\")";
+ //BA.debugLineNum = 283;BA.debugLine="valorind9 = datosMap.Get(\"valorind9\")";
 _valorind9 = BA.ObjectToString(_datosmap.Get((Object)("valorind9")));
- //BA.debugLineNum = 294;BA.debugLine="valorind10 = datosMap.Get(\"valorind10\")";
+ //BA.debugLineNum = 284;BA.debugLine="valorind10 = datosMap.Get(\"valorind10\")";
 _valorind10 = BA.ObjectToString(_datosmap.Get((Object)("valorind10")));
- //BA.debugLineNum = 295;BA.debugLine="valorind11 = datosMap.Get(\"valorind11\")";
+ //BA.debugLineNum = 285;BA.debugLine="valorind11 = datosMap.Get(\"valorind11\")";
 _valorind11 = BA.ObjectToString(_datosmap.Get((Object)("valorind11")));
- //BA.debugLineNum = 296;BA.debugLine="valorind12 = datosMap.Get(\"valorind12\")";
+ //BA.debugLineNum = 286;BA.debugLine="valorind12 = datosMap.Get(\"valorind12\")";
 _valorind12 = BA.ObjectToString(_datosmap.Get((Object)("valorind12")));
- //BA.debugLineNum = 297;BA.debugLine="valorind13 = datosMap.Get(\"valorind13\")";
+ //BA.debugLineNum = 287;BA.debugLine="valorind13 = datosMap.Get(\"valorind13\")";
 _valorind13 = BA.ObjectToString(_datosmap.Get((Object)("valorind13")));
- //BA.debugLineNum = 298;BA.debugLine="valorind14 = datosMap.Get(\"valorind14\")";
+ //BA.debugLineNum = 288;BA.debugLine="valorind14 = datosMap.Get(\"valorind14\")";
 _valorind14 = BA.ObjectToString(_datosmap.Get((Object)("valorind14")));
- //BA.debugLineNum = 299;BA.debugLine="valorind15 = datosMap.Get(\"valorind15\")";
+ //BA.debugLineNum = 289;BA.debugLine="valorind15 = datosMap.Get(\"valorind15\")";
 _valorind15 = BA.ObjectToString(_datosmap.Get((Object)("valorind15")));
- //BA.debugLineNum = 300;BA.debugLine="valorind16 = datosMap.Get(\"valorind16\")";
+ //BA.debugLineNum = 290;BA.debugLine="valorind16 = datosMap.Get(\"valorind16\")";
 _valorind16 = BA.ObjectToString(_datosmap.Get((Object)("valorind16")));
- //BA.debugLineNum = 301;BA.debugLine="valorind17 = datosMap.Get(\"valorind17\")";
+ //BA.debugLineNum = 291;BA.debugLine="valorind17 = datosMap.Get(\"valorind17\")";
 _valorind17 = BA.ObjectToString(_datosmap.Get((Object)("valorind17")));
- //BA.debugLineNum = 302;BA.debugLine="valorind18 = datosMap.Get(\"valorind18\")";
+ //BA.debugLineNum = 292;BA.debugLine="valorind18 = datosMap.Get(\"valorind18\")";
 _valorind18 = BA.ObjectToString(_datosmap.Get((Object)("valorind18")));
- //BA.debugLineNum = 303;BA.debugLine="valorind19 = datosMap.Get(\"valorind19\")";
+ //BA.debugLineNum = 293;BA.debugLine="valorind19 = datosMap.Get(\"valorind19\")";
 _valorind19 = BA.ObjectToString(_datosmap.Get((Object)("valorind19")));
- //BA.debugLineNum = 304;BA.debugLine="ind_pvm_1 = datosMap.Get(\"ind_pvm_1\")";
+ //BA.debugLineNum = 294;BA.debugLine="ind_pvm_1 = datosMap.Get(\"ind_pvm_1\")";
 _ind_pvm_1 = BA.ObjectToString(_datosmap.Get((Object)("ind_pvm_1")));
- //BA.debugLineNum = 305;BA.debugLine="ind_pvm_2 = datosMap.Get(\"ind_pvm_2\")";
+ //BA.debugLineNum = 295;BA.debugLine="ind_pvm_2 = datosMap.Get(\"ind_pvm_2\")";
 _ind_pvm_2 = BA.ObjectToString(_datosmap.Get((Object)("ind_pvm_2")));
- //BA.debugLineNum = 306;BA.debugLine="ind_pvm_3 = datosMap.Get(\"ind_pvm_3\")";
+ //BA.debugLineNum = 296;BA.debugLine="ind_pvm_3 = datosMap.Get(\"ind_pvm_3\")";
 _ind_pvm_3 = BA.ObjectToString(_datosmap.Get((Object)("ind_pvm_3")));
- //BA.debugLineNum = 307;BA.debugLine="ind_pvm_4 = datosMap.Get(\"ind_pvm_4\")";
+ //BA.debugLineNum = 297;BA.debugLine="ind_pvm_4 = datosMap.Get(\"ind_pvm_4\")";
 _ind_pvm_4 = BA.ObjectToString(_datosmap.Get((Object)("ind_pvm_4")));
- //BA.debugLineNum = 308;BA.debugLine="ind_pvm_5 = datosMap.Get(\"ind_pvm_5\")";
+ //BA.debugLineNum = 298;BA.debugLine="ind_pvm_5 = datosMap.Get(\"ind_pvm_5\")";
 _ind_pvm_5 = BA.ObjectToString(_datosmap.Get((Object)("ind_pvm_5")));
- //BA.debugLineNum = 309;BA.debugLine="ind_pvm_6 = datosMap.Get(\"ind_pvm_6\")";
+ //BA.debugLineNum = 299;BA.debugLine="ind_pvm_6 = datosMap.Get(\"ind_pvm_6\")";
 _ind_pvm_6 = BA.ObjectToString(_datosmap.Get((Object)("ind_pvm_6")));
- //BA.debugLineNum = 310;BA.debugLine="ind_pvm_7 = datosMap.Get(\"ind_pvm_7\")";
+ //BA.debugLineNum = 300;BA.debugLine="ind_pvm_7 = datosMap.Get(\"ind_pvm_7\")";
 _ind_pvm_7 = BA.ObjectToString(_datosmap.Get((Object)("ind_pvm_7")));
- //BA.debugLineNum = 311;BA.debugLine="ind_pvm_8 = datosMap.Get(\"ind_pvm_8\")";
+ //BA.debugLineNum = 301;BA.debugLine="ind_pvm_8 = datosMap.Get(\"ind_pvm_8\")";
 _ind_pvm_8 = BA.ObjectToString(_datosmap.Get((Object)("ind_pvm_8")));
- //BA.debugLineNum = 312;BA.debugLine="ind_pvm_9 = datosMap.Get(\"ind_pvm_9\")";
+ //BA.debugLineNum = 302;BA.debugLine="ind_pvm_9 = datosMap.Get(\"ind_pvm_9\")";
 _ind_pvm_9 = BA.ObjectToString(_datosmap.Get((Object)("ind_pvm_9")));
- //BA.debugLineNum = 313;BA.debugLine="ind_pvm_10 = datosMap.Get(\"ind_pvm_10\")";
+ //BA.debugLineNum = 303;BA.debugLine="ind_pvm_10 = datosMap.Get(\"ind_pvm_10\")";
 _ind_pvm_10 = BA.ObjectToString(_datosmap.Get((Object)("ind_pvm_10")));
- //BA.debugLineNum = 314;BA.debugLine="ind_pvm_11 = datosMap.Get(\"ind_pvm_11\")";
+ //BA.debugLineNum = 304;BA.debugLine="ind_pvm_11 = datosMap.Get(\"ind_pvm_11\")";
 _ind_pvm_11 = BA.ObjectToString(_datosmap.Get((Object)("ind_pvm_11")));
- //BA.debugLineNum = 315;BA.debugLine="ind_pvm_12 = datosMap.Get(\"ind_pvm_12\")";
+ //BA.debugLineNum = 305;BA.debugLine="ind_pvm_12 = datosMap.Get(\"ind_pvm_12\")";
 _ind_pvm_12 = BA.ObjectToString(_datosmap.Get((Object)("ind_pvm_12")));
- //BA.debugLineNum = 317;BA.debugLine="notas = datosMap.Get(\"notas\")";
+ //BA.debugLineNum = 307;BA.debugLine="notas = datosMap.Get(\"notas\")";
 _notas = BA.ObjectToString(_datosmap.Get((Object)("notas")));
- //BA.debugLineNum = 318;BA.debugLine="bingo = datosMap.Get(\"bingo\")";
+ //BA.debugLineNum = 308;BA.debugLine="bingo = datosMap.Get(\"bingo\")";
 _bingo = BA.ObjectToString(_datosmap.Get((Object)("bingo")));
- //BA.debugLineNum = 319;BA.debugLine="foto1 = datosMap.Get(\"foto1\")";
+ //BA.debugLineNum = 309;BA.debugLine="foto1 = datosMap.Get(\"foto1\")";
 mostCurrent._foto1 = BA.ObjectToString(_datosmap.Get((Object)("foto1")));
- //BA.debugLineNum = 320;BA.debugLine="foto2 = datosMap.Get(\"foto2\")";
+ //BA.debugLineNum = 310;BA.debugLine="foto2 = datosMap.Get(\"foto2\")";
 mostCurrent._foto2 = BA.ObjectToString(_datosmap.Get((Object)("foto2")));
- //BA.debugLineNum = 321;BA.debugLine="foto3 = datosMap.Get(\"foto3\")";
+ //BA.debugLineNum = 311;BA.debugLine="foto3 = datosMap.Get(\"foto3\")";
 mostCurrent._foto3 = BA.ObjectToString(_datosmap.Get((Object)("foto3")));
- //BA.debugLineNum = 322;BA.debugLine="foto4 = datosMap.Get(\"foto4\")";
+ //BA.debugLineNum = 312;BA.debugLine="foto4 = datosMap.Get(\"foto4\")";
 mostCurrent._foto4 = BA.ObjectToString(_datosmap.Get((Object)("foto4")));
- //BA.debugLineNum = 323;BA.debugLine="foto5 = datosMap.Get(\"foto5\")";
+ //BA.debugLineNum = 313;BA.debugLine="foto5 = datosMap.Get(\"foto5\")";
 mostCurrent._foto5 = BA.ObjectToString(_datosmap.Get((Object)("foto5")));
- //BA.debugLineNum = 324;BA.debugLine="terminado = datosMap.Get(\"terminado\")";
+ //BA.debugLineNum = 314;BA.debugLine="terminado = datosMap.Get(\"terminado\")";
 _terminado = BA.ObjectToString(_datosmap.Get((Object)("terminado")));
- //BA.debugLineNum = 325;BA.debugLine="privado = datosMap.Get(\"privado\")";
+ //BA.debugLineNum = 315;BA.debugLine="privado = datosMap.Get(\"privado\")";
 _privado = BA.ObjectToString(_datosmap.Get((Object)("privado")));
- //BA.debugLineNum = 326;BA.debugLine="If privado = Null Or privado = \"null\" Then";
-if (_privado== null || (_privado).equals("null")) { 
- //BA.debugLineNum = 327;BA.debugLine="privado = \"no\"";
+ //BA.debugLineNum = 316;BA.debugLine="If privado = Null Or privado = \"null\" Or privado";
+if (_privado== null || (_privado).equals("null") || (_privado).equals("")) { 
+ //BA.debugLineNum = 317;BA.debugLine="privado = \"no\"";
 _privado = "no";
  };
- //BA.debugLineNum = 329;BA.debugLine="estadovalidacion = datosMap.Get(\"estadovalidacio";
+ //BA.debugLineNum = 319;BA.debugLine="estadovalidacion = datosMap.Get(\"estadovalidacio";
 _estadovalidacion = BA.ObjectToString(_datosmap.Get((Object)("estadovalidacion")));
- //BA.debugLineNum = 330;BA.debugLine="If estadovalidacion = \"null\" Then";
+ //BA.debugLineNum = 320;BA.debugLine="If estadovalidacion = \"null\" Then";
 if ((_estadovalidacion).equals("null")) { 
- //BA.debugLineNum = 331;BA.debugLine="estadovalidacion = \"No Verificado\"";
+ //BA.debugLineNum = 321;BA.debugLine="estadovalidacion = \"No Verificado\"";
 _estadovalidacion = "No Verificado";
  };
- //BA.debugLineNum = 333;BA.debugLine="deviceID = datosMap.Get(\"deviceID\")";
+ //BA.debugLineNum = 323;BA.debugLine="deviceID = datosMap.Get(\"deviceID\")";
 _deviceid = BA.ObjectToString(_datosmap.Get((Object)("deviceID")));
- //BA.debugLineNum = 334;BA.debugLine="If deviceID = Null Or deviceID = \"\" Or deviceID";
+ //BA.debugLineNum = 324;BA.debugLine="If deviceID = Null Or deviceID = \"\" Or deviceID";
 if (_deviceid== null || (_deviceid).equals("") || (_deviceid).equals("null")) { 
- //BA.debugLineNum = 335;BA.debugLine="deviceID = utilidades.GetDeviceId";
+ //BA.debugLineNum = 325;BA.debugLine="deviceID = utilidades.GetDeviceId";
 _deviceid = mostCurrent._utilidades._getdeviceid /*String*/ (mostCurrent.activityBA);
  };
  };
- //BA.debugLineNum = 343;BA.debugLine="Log(\"Comienza envio de datos\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("639125083","Comienza envio de datos",0);
- //BA.debugLineNum = 344;BA.debugLine="Dim dd As DownloadData";
+ //BA.debugLineNum = 333;BA.debugLine="Log(\"Comienza envio de datos\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("528180578","Comienza envio de datos",0);
+ //BA.debugLineNum = 334;BA.debugLine="Dim dd As DownloadData";
 _dd = new appear.pnud.preservamos.downloadservice._downloaddata();
- //BA.debugLineNum = 345;BA.debugLine="dd.url = Main.serverPath & \"/\" & Main.serverConne";
-_dd.url /*String*/  = mostCurrent._main._serverpath /*String*/ +"/"+mostCurrent._main._serverconnectionfolder /*String*/ +"/addpuntomapa.php?"+"username="+_username+"&"+"deviceID="+mostCurrent._main._deviceid /*String*/ +"&"+"dateandtime="+_dateandtime+"&"+"nombresitio="+_nombresitio+"&"+"lat="+_lat+"&"+"lng="+_lng+"&"+"tiporio="+mostCurrent._tiporio+"&"+"indice="+_valorcalidad+"&"+"precision="+_valorns+"&"+"valorind1="+_valorind1+"&"+"valorind2="+_valorind2+"&"+"valorind3="+_valorind3+"&"+"valorind4="+_valorind4+"&"+"valorind5="+_valorind5+"&"+"valorind6="+_valorind6+"&"+"valorind7="+_valorind7+"&"+"valorind8="+_valorind8+"&"+"valorind9="+_valorind9+"&"+"valorind10="+_valorind10+"&"+"valorind11="+_valorind11+"&"+"valorind12="+_valorind12+"&"+"valorind13="+_valorind13+"&"+"valorind14="+_valorind14+"&"+"valorind15="+_valorind15+"&"+"valorind16="+_valorind16+"&"+"valorind17="+_valorind17+"&"+"valorind18="+_valorind18+"&"+"valorind19="+_valorind19+"&"+"ind_pvm_1="+_ind_pvm_1+"&"+"ind_pvm_2="+_ind_pvm_2+"&"+"ind_pvm_3="+_ind_pvm_3+"&"+"ind_pvm_4="+_ind_pvm_4+"&"+"ind_pvm_5="+_ind_pvm_5+"&"+"ind_pvm_6="+_ind_pvm_6+"&"+"ind_pvm_7="+_ind_pvm_7+"&"+"ind_pvm_8="+_ind_pvm_8+"&"+"ind_pvm_9="+_ind_pvm_9+"&"+"ind_pvm_10="+_ind_pvm_10+"&"+"ind_pvm_11="+_ind_pvm_11+"&"+"ind_pvm_12="+_ind_pvm_12+"&"+"foto1path="+mostCurrent._foto1+"&"+"foto2path="+mostCurrent._foto2+"&"+"foto3path="+mostCurrent._foto3+"&"+"foto4path="+mostCurrent._foto4+"&"+"foto5path="+mostCurrent._foto5+"&"+"terminado="+_terminado+"&"+"verificado="+_estadovalidacion+"&"+"bingo="+_bingo+"&"+"notas="+_notas+"&"+"partido="+_partido+"&"+"mapadetect="+_mapadetect+"&"+"wifidetect="+_wifidetect+"&"+"gpsdetect="+_gpsdetect;
- //BA.debugLineNum = 396;BA.debugLine="dd.EventName = \"EnviarDatos\"";
+ //BA.debugLineNum = 335;BA.debugLine="dd.url = Main.serverPath & \"/\" & Main.serverConne";
+_dd.url /*String*/  = mostCurrent._main._serverpath /*String*/ +"/"+mostCurrent._main._serverconnectionfolder /*String*/ +"/addpuntomapa.php?"+"username="+_username+"&"+"deviceID="+mostCurrent._main._deviceid /*String*/ +"&"+"dateandtime="+_dateandtime+"&"+"nombresitio="+_nombresitio+"&"+"lat="+_lat+"&"+"lng="+_lng+"&"+"tiporio="+mostCurrent._tiporio+"&"+"indice="+_valorcalidad+"&"+"precision="+_valorns+"&"+"valorind1="+_valorind1+"&"+"valorind2="+_valorind2+"&"+"valorind3="+_valorind3+"&"+"valorind4="+_valorind4+"&"+"valorind5="+_valorind5+"&"+"valorind6="+_valorind6+"&"+"valorind7="+_valorind7+"&"+"valorind8="+_valorind8+"&"+"valorind9="+_valorind9+"&"+"valorind10="+_valorind10+"&"+"valorind11="+_valorind11+"&"+"valorind12="+_valorind12+"&"+"valorind13="+_valorind13+"&"+"valorind14="+_valorind14+"&"+"valorind15="+_valorind15+"&"+"valorind16="+_valorind16+"&"+"valorind17="+_valorind17+"&"+"valorind18="+_valorind18+"&"+"valorind19="+_valorind19+"&"+"ind_pvm_1="+_ind_pvm_1+"&"+"ind_pvm_2="+_ind_pvm_2+"&"+"ind_pvm_3="+_ind_pvm_3+"&"+"ind_pvm_4="+_ind_pvm_4+"&"+"ind_pvm_5="+_ind_pvm_5+"&"+"ind_pvm_6="+_ind_pvm_6+"&"+"ind_pvm_7="+_ind_pvm_7+"&"+"ind_pvm_8="+_ind_pvm_8+"&"+"ind_pvm_9="+_ind_pvm_9+"&"+"ind_pvm_10="+_ind_pvm_10+"&"+"ind_pvm_11="+_ind_pvm_11+"&"+"ind_pvm_12="+_ind_pvm_12+"&"+"foto1path="+mostCurrent._foto1+"&"+"foto2path="+mostCurrent._foto2+"&"+"foto3path="+mostCurrent._foto3+"&"+"foto4path="+mostCurrent._foto4+"&"+"foto5path="+mostCurrent._foto5+"&"+"terminado="+_terminado+"&"+"verificado="+_estadovalidacion+"&"+"privado="+_privado+"&"+"bingo="+_bingo+"&"+"notas="+_notas+"&"+"partido="+_partido+"&"+"mapadetect="+_mapadetect+"&"+"wifidetect="+_wifidetect+"&"+"gpsdetect="+_gpsdetect;
+ //BA.debugLineNum = 387;BA.debugLine="dd.EventName = \"EnviarDatos\"";
 _dd.EventName /*String*/  = "EnviarDatos";
- //BA.debugLineNum = 397;BA.debugLine="dd.Target = Me";
+ //BA.debugLineNum = 388;BA.debugLine="dd.Target = Me";
 _dd.Target /*Object*/  = reporte_envio.getObject();
- //BA.debugLineNum = 398;BA.debugLine="CallSubDelayed2(DownloadService, \"StartDownload\",";
+ //BA.debugLineNum = 389;BA.debugLine="CallSubDelayed2(DownloadService, \"StartDownload\",";
 anywheresoftware.b4a.keywords.Common.CallSubDelayed2(processBA,(Object)(mostCurrent._downloadservice.getObject()),"StartDownload",(Object)(_dd));
- //BA.debugLineNum = 401;BA.debugLine="End Sub";
+ //BA.debugLineNum = 392;BA.debugLine="End Sub";
 return "";
 }
 public static String  _globals() throws Exception{
- //BA.debugLineNum = 14;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 16;BA.debugLine="Private btnContinuar As Button";
+ //BA.debugLineNum = 17;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 18;BA.debugLine="Private rp As RuntimePermissions";
+mostCurrent._rp = new anywheresoftware.b4a.objects.RuntimePermissions();
+ //BA.debugLineNum = 19;BA.debugLine="Private btnContinuar As Button";
 mostCurrent._btncontinuar = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 17;BA.debugLine="Private btnEnviar As Button";
+ //BA.debugLineNum = 20;BA.debugLine="Private btnEnviar As Button";
 mostCurrent._btnenviar = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 20;BA.debugLine="Dim numfotosenviadas As Int";
+ //BA.debugLineNum = 23;BA.debugLine="Dim numfotosenviadas As Int";
 _numfotosenviadas = 0;
- //BA.debugLineNum = 21;BA.debugLine="Dim tiporio As String";
+ //BA.debugLineNum = 24;BA.debugLine="Dim tiporio As String";
 mostCurrent._tiporio = "";
- //BA.debugLineNum = 22;BA.debugLine="Dim PuntosFotos As String";
+ //BA.debugLineNum = 25;BA.debugLine="Dim PuntosFotos As String";
 mostCurrent._puntosfotos = "";
- //BA.debugLineNum = 23;BA.debugLine="Dim PuntosEvals As String";
+ //BA.debugLineNum = 26;BA.debugLine="Dim PuntosEvals As String";
 mostCurrent._puntosevals = "";
- //BA.debugLineNum = 24;BA.debugLine="Dim PuntosTotal As String";
+ //BA.debugLineNum = 27;BA.debugLine="Dim PuntosTotal As String";
 mostCurrent._puntostotal = "";
- //BA.debugLineNum = 25;BA.debugLine="Dim numriollanura As String";
+ //BA.debugLineNum = 28;BA.debugLine="Dim numriollanura As String";
 mostCurrent._numriollanura = "";
- //BA.debugLineNum = 26;BA.debugLine="Dim numriomontana As String";
+ //BA.debugLineNum = 29;BA.debugLine="Dim numriomontana As String";
 mostCurrent._numriomontana = "";
- //BA.debugLineNum = 27;BA.debugLine="Dim numlaguna As String";
+ //BA.debugLineNum = 30;BA.debugLine="Dim numlaguna As String";
 mostCurrent._numlaguna = "";
- //BA.debugLineNum = 28;BA.debugLine="Dim numestuario As String";
+ //BA.debugLineNum = 31;BA.debugLine="Dim numestuario As String";
 mostCurrent._numestuario = "";
- //BA.debugLineNum = 29;BA.debugLine="Dim proyectoIDenviar As String";
+ //BA.debugLineNum = 32;BA.debugLine="Dim proyectoIDenviar As String";
 mostCurrent._proyectoidenviar = "";
- //BA.debugLineNum = 30;BA.debugLine="Dim files As List";
+ //BA.debugLineNum = 33;BA.debugLine="Dim files As List";
 mostCurrent._files = new anywheresoftware.b4a.objects.collections.List();
- //BA.debugLineNum = 34;BA.debugLine="Dim Timer1 As Timer";
+ //BA.debugLineNum = 37;BA.debugLine="Dim Timer1 As Timer";
 mostCurrent._timer1 = new anywheresoftware.b4a.objects.Timer();
- //BA.debugLineNum = 35;BA.debugLine="Private Label1 As Label";
+ //BA.debugLineNum = 38;BA.debugLine="Private Label1 As Label";
 mostCurrent._label1 = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 36;BA.debugLine="Private Label2 As Label";
+ //BA.debugLineNum = 39;BA.debugLine="Private Label2 As Label";
 mostCurrent._label2 = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 37;BA.debugLine="Private Label3 As Label";
+ //BA.debugLineNum = 40;BA.debugLine="Private Label3 As Label";
 mostCurrent._label3 = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 38;BA.debugLine="Private Label4 As Label";
+ //BA.debugLineNum = 41;BA.debugLine="Private Label4 As Label";
 mostCurrent._label4 = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 39;BA.debugLine="Private Label5 As Label";
+ //BA.debugLineNum = 42;BA.debugLine="Private Label5 As Label";
 mostCurrent._label5 = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 40;BA.debugLine="Private lblFinalizado1 As Label";
+ //BA.debugLineNum = 43;BA.debugLine="Private lblFinalizado1 As Label";
 mostCurrent._lblfinalizado1 = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 41;BA.debugLine="Private lblYaTienesTodo As Label";
+ //BA.debugLineNum = 44;BA.debugLine="Private lblYaTienesTodo As Label";
 mostCurrent._lblyatienestodo = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 46;BA.debugLine="Dim foto1, foto2, foto3, foto4,foto5 As String";
+ //BA.debugLineNum = 49;BA.debugLine="Dim foto1, foto2, foto3, foto4,foto5 As String";
 mostCurrent._foto1 = "";
 mostCurrent._foto2 = "";
 mostCurrent._foto3 = "";
 mostCurrent._foto4 = "";
 mostCurrent._foto5 = "";
- //BA.debugLineNum = 47;BA.debugLine="Private totalFotos As Int";
+ //BA.debugLineNum = 50;BA.debugLine="Private totalFotos As Int";
 _totalfotos = 0;
- //BA.debugLineNum = 48;BA.debugLine="Private foto1Sent As Boolean = False";
+ //BA.debugLineNum = 51;BA.debugLine="Private foto1Sent As Boolean = False";
 _foto1sent = anywheresoftware.b4a.keywords.Common.False;
- //BA.debugLineNum = 49;BA.debugLine="Private foto2Sent As Boolean = False";
+ //BA.debugLineNum = 52;BA.debugLine="Private foto2Sent As Boolean = False";
 _foto2sent = anywheresoftware.b4a.keywords.Common.False;
- //BA.debugLineNum = 50;BA.debugLine="Private foto3Sent As Boolean = False";
+ //BA.debugLineNum = 53;BA.debugLine="Private foto3Sent As Boolean = False";
 _foto3sent = anywheresoftware.b4a.keywords.Common.False;
- //BA.debugLineNum = 51;BA.debugLine="Private foto4Sent As Boolean = False";
+ //BA.debugLineNum = 54;BA.debugLine="Private foto4Sent As Boolean = False";
 _foto4sent = anywheresoftware.b4a.keywords.Common.False;
- //BA.debugLineNum = 52;BA.debugLine="Private foto5Sent As Boolean = False";
+ //BA.debugLineNum = 55;BA.debugLine="Private foto5Sent As Boolean = False";
 _foto5sent = anywheresoftware.b4a.keywords.Common.False;
- //BA.debugLineNum = 53;BA.debugLine="Private ProgressBar1 As ProgressBar";
+ //BA.debugLineNum = 56;BA.debugLine="Private ProgressBar1 As ProgressBar";
 mostCurrent._progressbar1 = new anywheresoftware.b4a.objects.ProgressBarWrapper();
- //BA.debugLineNum = 54;BA.debugLine="Private ProgressBar2 As ProgressBar";
+ //BA.debugLineNum = 57;BA.debugLine="Private ProgressBar2 As ProgressBar";
 mostCurrent._progressbar2 = new anywheresoftware.b4a.objects.ProgressBarWrapper();
- //BA.debugLineNum = 55;BA.debugLine="Private ProgressBar3 As ProgressBar";
+ //BA.debugLineNum = 58;BA.debugLine="Private ProgressBar3 As ProgressBar";
 mostCurrent._progressbar3 = new anywheresoftware.b4a.objects.ProgressBarWrapper();
- //BA.debugLineNum = 56;BA.debugLine="Private ProgressBar4 As ProgressBar";
+ //BA.debugLineNum = 59;BA.debugLine="Private ProgressBar4 As ProgressBar";
 mostCurrent._progressbar4 = new anywheresoftware.b4a.objects.ProgressBarWrapper();
- //BA.debugLineNum = 57;BA.debugLine="Private ProgressBar5 As ProgressBar";
+ //BA.debugLineNum = 60;BA.debugLine="Private ProgressBar5 As ProgressBar";
 mostCurrent._progressbar5 = new anywheresoftware.b4a.objects.ProgressBarWrapper();
- //BA.debugLineNum = 58;BA.debugLine="Private foto1ProgressBar As CircularProgressBar";
+ //BA.debugLineNum = 61;BA.debugLine="Private foto1ProgressBar As CircularProgressBar";
 mostCurrent._foto1progressbar = new appear.pnud.preservamos.circularprogressbar();
- //BA.debugLineNum = 59;BA.debugLine="Private foto2ProgressBar As CircularProgressBar";
+ //BA.debugLineNum = 62;BA.debugLine="Private foto2ProgressBar As CircularProgressBar";
 mostCurrent._foto2progressbar = new appear.pnud.preservamos.circularprogressbar();
- //BA.debugLineNum = 60;BA.debugLine="Private foto3ProgressBar As CircularProgressBar";
+ //BA.debugLineNum = 63;BA.debugLine="Private foto3ProgressBar As CircularProgressBar";
 mostCurrent._foto3progressbar = new appear.pnud.preservamos.circularprogressbar();
- //BA.debugLineNum = 61;BA.debugLine="Private foto4ProgressBar As CircularProgressBar";
+ //BA.debugLineNum = 64;BA.debugLine="Private foto4ProgressBar As CircularProgressBar";
 mostCurrent._foto4progressbar = new appear.pnud.preservamos.circularprogressbar();
- //BA.debugLineNum = 62;BA.debugLine="Dim fotosEnviadas As Int";
+ //BA.debugLineNum = 65;BA.debugLine="Dim fotosEnviadas As Int";
 _fotosenviadas = 0;
- //BA.debugLineNum = 63;BA.debugLine="Dim pw As PhoneWakeState";
+ //BA.debugLineNum = 66;BA.debugLine="Dim pw As PhoneWakeState";
 mostCurrent._pw = new anywheresoftware.b4a.phone.Phone.PhoneWakeState();
- //BA.debugLineNum = 64;BA.debugLine="Private imgListo As ImageView";
+ //BA.debugLineNum = 67;BA.debugLine="Private imgListo As ImageView";
 mostCurrent._imglisto = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 65;BA.debugLine="End Sub";
+ //BA.debugLineNum = 68;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{
@@ -1251,7 +1077,9 @@ public static String  _process_globals() throws Exception{
 _up1 = new com.spinter.uploadfilephp.UploadFilePhp();
  //BA.debugLineNum = 11;BA.debugLine="Private TimerEnvio As Timer";
 _timerenvio = new anywheresoftware.b4a.objects.Timer();
- //BA.debugLineNum = 12;BA.debugLine="End Sub";
+ //BA.debugLineNum = 14;BA.debugLine="Dim Geopartido As String";
+_geopartido = "";
+ //BA.debugLineNum = 15;BA.debugLine="End Sub";
 return "";
 }
 public static void  _testinternet_complete(appear.pnud.preservamos.httpjob _job) throws Exception{
@@ -1278,14 +1106,14 @@ return;
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 228;BA.debugLine="Log(\"Chequeo de internet: \" & Job.Success)";
-anywheresoftware.b4a.keywords.Common.LogImpl("639059457","Chequeo de internet: "+BA.ObjectToString(_job._success /*boolean*/ ),0);
- //BA.debugLineNum = 229;BA.debugLine="If Job.Success = True Then";
+ //BA.debugLineNum = 215;BA.debugLine="Log(\"Chequeo de internet: \" & Job.Success)";
+anywheresoftware.b4a.keywords.Common.LogImpl("528114945","Chequeo de internet: "+BA.ObjectToString(_job._success /*boolean*/ ),0);
+ //BA.debugLineNum = 216;BA.debugLine="If Job.Success = True Then";
 if (true) break;
 
 case 1:
 //if
-this.state = 14;
+this.state = 10;
 if (_job._success /*boolean*/ ==anywheresoftware.b4a.keywords.Common.True) { 
 this.state = 3;
 }else {
@@ -1294,358 +1122,354 @@ this.state = 5;
 
 case 3:
 //C
-this.state = 14;
- //BA.debugLineNum = 231;BA.debugLine="Main.modooffline = False";
-parent.mostCurrent._main._modooffline /*boolean*/  = anywheresoftware.b4a.keywords.Common.False;
- //BA.debugLineNum = 232;BA.debugLine="Job.Release";
+this.state = 10;
+ //BA.debugLineNum = 218;BA.debugLine="Job.Release";
 _job._release /*String*/ ();
- //BA.debugLineNum = 234;BA.debugLine="EnvioDatos(Form_Reporte.currentproject)";
+ //BA.debugLineNum = 221;BA.debugLine="EnvioDatos(Form_Reporte.currentproject)";
 _enviodatos(parent.mostCurrent._form_reporte._currentproject /*String*/ );
  if (true) break;
 
 case 5:
 //C
 this.state = 6;
- //BA.debugLineNum = 236;BA.debugLine="If Main.modooffline = True Then";
+ //BA.debugLineNum = 223;BA.debugLine="Msgbox2Async(\"No tienes conexión a Internet, pru";
+anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("No tienes conexión a Internet, prueba enviar tu dato cuando estés conectado, desde el Menú > Datos Anteriores"),BA.ObjectToCharSequence("No hay internet"),"Ok, entiendo","","",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 224;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
+anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
+this.state = 11;
+return;
+case 11:
+//C
+this.state = 6;
+_result = (Integer) result[0];
+;
+ //BA.debugLineNum = 225;BA.debugLine="If Result = DialogResponse.POSITIVE Then";
 if (true) break;
 
 case 6:
 //if
 this.state = 9;
-if (parent.mostCurrent._main._modooffline /*boolean*/ ==anywheresoftware.b4a.keywords.Common.True) { 
+if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.POSITIVE) { 
 this.state = 8;
 }if (true) break;
 
 case 8:
 //C
 this.state = 9;
+ //BA.debugLineNum = 226;BA.debugLine="ProgressDialogHide";
+anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
+ //BA.debugLineNum = 227;BA.debugLine="Job.Release";
+_job._release /*String*/ ();
+ //BA.debugLineNum = 228;BA.debugLine="Activity.Finish";
+parent.mostCurrent._activity.Finish();
+ //BA.debugLineNum = 229;BA.debugLine="Activity.RemoveAllViews";
+parent.mostCurrent._activity.RemoveAllViews();
  if (true) break;
 
 case 9:
 //C
 this.state = 10;
 ;
- //BA.debugLineNum = 239;BA.debugLine="Msgbox2Async(\"No tienes conexión a Internet, pru";
-anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("No tienes conexión a Internet, prueba enviar tu dato cuando estés conectado, desde el Menú > Datos Anteriores"),BA.ObjectToCharSequence("No hay internet"),"Ok, entiendo","","",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 240;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
-anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
-this.state = 15;
-return;
-case 15:
-//C
-this.state = 10;
-_result = (Integer) result[0];
-;
- //BA.debugLineNum = 241;BA.debugLine="If Result = DialogResponse.POSITIVE Then";
-if (true) break;
+ if (true) break;
 
 case 10:
-//if
-this.state = 13;
-if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.POSITIVE) { 
-this.state = 12;
-}if (true) break;
-
-case 12:
-//C
-this.state = 13;
- //BA.debugLineNum = 242;BA.debugLine="Main.modooffline = True";
-parent.mostCurrent._main._modooffline /*boolean*/  = anywheresoftware.b4a.keywords.Common.True;
- //BA.debugLineNum = 243;BA.debugLine="ProgressDialogHide";
-anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
- //BA.debugLineNum = 244;BA.debugLine="Job.Release";
-_job._release /*String*/ ();
- //BA.debugLineNum = 245;BA.debugLine="Activity.Finish";
-parent.mostCurrent._activity.Finish();
- //BA.debugLineNum = 246;BA.debugLine="Activity.RemoveAllViews";
-parent.mostCurrent._activity.RemoveAllViews();
- if (true) break;
-
-case 13:
-//C
-this.state = 14;
-;
- if (true) break;
-
-case 14:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 249;BA.debugLine="End Sub";
+ //BA.debugLineNum = 232;BA.debugLine="End Sub";
 if (true) break;
 
             }
         }
     }
 }
+public static void  _msgbox_result(int _result) throws Exception{
+}
 public static String  _timer1_tick() throws Exception{
- //BA.debugLineNum = 93;BA.debugLine="Sub Timer1_Tick";
- //BA.debugLineNum = 94;BA.debugLine="If Label1.Visible = False Then";
+ //BA.debugLineNum = 98;BA.debugLine="Sub Timer1_Tick";
+ //BA.debugLineNum = 99;BA.debugLine="If Label1.Visible = False Then";
 if (mostCurrent._label1.getVisible()==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 95;BA.debugLine="Label1.Visible = True";
+ //BA.debugLineNum = 100;BA.debugLine="Label1.Visible = True";
 mostCurrent._label1.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 96;BA.debugLine="Return";
+ //BA.debugLineNum = 101;BA.debugLine="Return";
 if (true) return "";
  };
- //BA.debugLineNum = 98;BA.debugLine="If Label1.Visible = True And Label2.Visible = Fal";
+ //BA.debugLineNum = 103;BA.debugLine="If Label1.Visible = True And Label2.Visible = Fal";
 if (mostCurrent._label1.getVisible()==anywheresoftware.b4a.keywords.Common.True && mostCurrent._label2.getVisible()==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 99;BA.debugLine="Label2.Visible = True";
+ //BA.debugLineNum = 104;BA.debugLine="Label2.Visible = True";
 mostCurrent._label2.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 100;BA.debugLine="Return";
+ //BA.debugLineNum = 105;BA.debugLine="Return";
 if (true) return "";
  };
- //BA.debugLineNum = 102;BA.debugLine="If Label2.Visible = True And Label3.Visible = Fal";
+ //BA.debugLineNum = 107;BA.debugLine="If Label2.Visible = True And Label3.Visible = Fal";
 if (mostCurrent._label2.getVisible()==anywheresoftware.b4a.keywords.Common.True && mostCurrent._label3.getVisible()==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 103;BA.debugLine="Label3.Visible = True";
+ //BA.debugLineNum = 108;BA.debugLine="Label3.Visible = True";
 mostCurrent._label3.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 104;BA.debugLine="Return";
-if (true) return "";
- };
- //BA.debugLineNum = 106;BA.debugLine="If Label3.Visible = True And lblFinalizado1.Visib";
-if (mostCurrent._label3.getVisible()==anywheresoftware.b4a.keywords.Common.True && mostCurrent._lblfinalizado1.getVisible()==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 107;BA.debugLine="lblFinalizado1.Visible = True";
-mostCurrent._lblfinalizado1.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 108;BA.debugLine="imgListo.Visible = True";
-mostCurrent._imglisto.setVisible(anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 109;BA.debugLine="Return";
 if (true) return "";
  };
- //BA.debugLineNum = 124;BA.debugLine="If lblFinalizado1.Visible = True Then";
-if (mostCurrent._lblfinalizado1.getVisible()==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 125;BA.debugLine="imgListo.Visible = True";
-mostCurrent._imglisto.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 126;BA.debugLine="lblYaTienesTodo.Visible = True";
-mostCurrent._lblyatienestodo.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 127;BA.debugLine="lblFinalizado1.Visible = True";
+ //BA.debugLineNum = 111;BA.debugLine="If Label3.Visible = True And lblFinalizado1.Visib";
+if (mostCurrent._label3.getVisible()==anywheresoftware.b4a.keywords.Common.True && mostCurrent._lblfinalizado1.getVisible()==anywheresoftware.b4a.keywords.Common.False) { 
+ //BA.debugLineNum = 112;BA.debugLine="lblFinalizado1.Visible = True";
 mostCurrent._lblfinalizado1.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 128;BA.debugLine="btnEnviar.Visible = True";
+ //BA.debugLineNum = 113;BA.debugLine="imgListo.Visible = True";
+mostCurrent._imglisto.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 114;BA.debugLine="Return";
+if (true) return "";
+ };
+ //BA.debugLineNum = 129;BA.debugLine="If lblFinalizado1.Visible = True Then";
+if (mostCurrent._lblfinalizado1.getVisible()==anywheresoftware.b4a.keywords.Common.True) { 
+ //BA.debugLineNum = 130;BA.debugLine="imgListo.Visible = True";
+mostCurrent._imglisto.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 131;BA.debugLine="lblYaTienesTodo.Visible = True";
+mostCurrent._lblyatienestodo.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 132;BA.debugLine="lblFinalizado1.Visible = True";
+mostCurrent._lblfinalizado1.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 133;BA.debugLine="btnEnviar.Visible = True";
 mostCurrent._btnenviar.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 129;BA.debugLine="Timer1.Enabled = False";
+ //BA.debugLineNum = 134;BA.debugLine="Timer1.Enabled = False";
 mostCurrent._timer1.setEnabled(anywheresoftware.b4a.keywords.Common.False);
  };
- //BA.debugLineNum = 132;BA.debugLine="End Sub";
+ //BA.debugLineNum = 137;BA.debugLine="End Sub";
 return "";
 }
 public static String  _timerenvio_tick() throws Exception{
 anywheresoftware.b4a.objects.collections.Map _map1 = null;
- //BA.debugLineNum = 530;BA.debugLine="Sub TimerEnvio_Tick";
- //BA.debugLineNum = 531;BA.debugLine="foto1ProgressBar.Value = ProgressBar1.Progress";
+ //BA.debugLineNum = 524;BA.debugLine="Sub TimerEnvio_Tick";
+ //BA.debugLineNum = 525;BA.debugLine="foto1ProgressBar.Value = ProgressBar1.Progress";
 mostCurrent._foto1progressbar._setvalue /*float*/ ((float) (mostCurrent._progressbar1.getProgress()));
- //BA.debugLineNum = 532;BA.debugLine="foto2ProgressBar.Value = ProgressBar2.Progress";
+ //BA.debugLineNum = 526;BA.debugLine="foto2ProgressBar.Value = ProgressBar2.Progress";
 mostCurrent._foto2progressbar._setvalue /*float*/ ((float) (mostCurrent._progressbar2.getProgress()));
- //BA.debugLineNum = 533;BA.debugLine="foto3ProgressBar.Value = ProgressBar3.Progress";
+ //BA.debugLineNum = 527;BA.debugLine="foto3ProgressBar.Value = ProgressBar3.Progress";
 mostCurrent._foto3progressbar._setvalue /*float*/ ((float) (mostCurrent._progressbar3.getProgress()));
- //BA.debugLineNum = 534;BA.debugLine="foto4ProgressBar.Value = ProgressBar4.Progress";
+ //BA.debugLineNum = 528;BA.debugLine="foto4ProgressBar.Value = ProgressBar4.Progress";
 mostCurrent._foto4progressbar._setvalue /*float*/ ((float) (mostCurrent._progressbar4.getProgress()));
- //BA.debugLineNum = 535;BA.debugLine="If fotosEnviadas = totalFotos Then";
+ //BA.debugLineNum = 529;BA.debugLine="If fotosEnviadas = totalFotos Then";
 if (_fotosenviadas==_totalfotos) { 
- //BA.debugLineNum = 536;BA.debugLine="Log(\"TODAS LAS FOTOS FUERON ENVIADAS CORRECTAMEN";
-anywheresoftware.b4a.keywords.Common.LogImpl("639321606","TODAS LAS FOTOS FUERON ENVIADAS CORRECTAMENTE",0);
- //BA.debugLineNum = 537;BA.debugLine="lblFinalizado1.Text = \"Fotos enviadas!\"";
+ //BA.debugLineNum = 530;BA.debugLine="Log(\"TODAS LAS FOTOS FUERON ENVIADAS CORRECTAMEN";
+anywheresoftware.b4a.keywords.Common.LogImpl("528377094","TODAS LAS FOTOS FUERON ENVIADAS CORRECTAMENTE",0);
+ //BA.debugLineNum = 531;BA.debugLine="lblFinalizado1.Text = \"Fotos enviadas!\"";
 mostCurrent._lblfinalizado1.setText(BA.ObjectToCharSequence("Fotos enviadas!"));
- //BA.debugLineNum = 538;BA.debugLine="Up1.UploadKill";
+ //BA.debugLineNum = 532;BA.debugLine="Up1.UploadKill";
 _up1.UploadKill(processBA);
- //BA.debugLineNum = 544;BA.debugLine="If Main.lang = \"es\" Then";
+ //BA.debugLineNum = 538;BA.debugLine="If Main.lang = \"es\" Then";
 if ((mostCurrent._main._lang /*String*/ ).equals("es")) { 
- //BA.debugLineNum = 545;BA.debugLine="ToastMessageShow(\"Evaluación enviada\", False)";
+ //BA.debugLineNum = 539;BA.debugLine="ToastMessageShow(\"Evaluación enviada\", False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Evaluación enviada"),anywheresoftware.b4a.keywords.Common.False);
  }else if((mostCurrent._main._lang /*String*/ ).equals("en")) { 
- //BA.debugLineNum = 547;BA.debugLine="ToastMessageShow(\"Report sent\", False)";
+ //BA.debugLineNum = 541;BA.debugLine="ToastMessageShow(\"Report sent\", False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Report sent"),anywheresoftware.b4a.keywords.Common.False);
  };
- //BA.debugLineNum = 551;BA.debugLine="Dim Map1 As Map";
+ //BA.debugLineNum = 545;BA.debugLine="Dim Map1 As Map";
 _map1 = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 552;BA.debugLine="Map1.Initialize";
+ //BA.debugLineNum = 546;BA.debugLine="Map1.Initialize";
 _map1.Initialize();
- //BA.debugLineNum = 553;BA.debugLine="Map1.Put(\"Id\", Main.currentproject)";
+ //BA.debugLineNum = 547;BA.debugLine="Map1.Put(\"Id\", Main.currentproject)";
 _map1.Put((Object)("Id"),(Object)(mostCurrent._main._currentproject /*String*/ ));
- //BA.debugLineNum = 554;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"fo";
+ //BA.debugLineNum = 548;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"fo";
 mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","foto1sent",(Object)("si"),_map1);
- //BA.debugLineNum = 555;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"fo";
+ //BA.debugLineNum = 549;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"fo";
 mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","foto2sent",(Object)("si"),_map1);
- //BA.debugLineNum = 556;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"fo";
+ //BA.debugLineNum = 550;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"fo";
 mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","foto3sent",(Object)("si"),_map1);
- //BA.debugLineNum = 557;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"fo";
+ //BA.debugLineNum = 551;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"fo";
 mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","foto4sent",(Object)("si"),_map1);
- //BA.debugLineNum = 558;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"fo";
+ //BA.debugLineNum = 552;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"fo";
 mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","foto5sent",(Object)("si"),_map1);
- //BA.debugLineNum = 560;BA.debugLine="lblFinalizado1.Text = \"Enviando puntos\"";
+ //BA.debugLineNum = 554;BA.debugLine="lblFinalizado1.Text = \"Enviando puntos\"";
 mostCurrent._lblfinalizado1.setText(BA.ObjectToCharSequence("Enviando puntos"));
- //BA.debugLineNum = 562;BA.debugLine="frmFelicitaciones.tiporio = tiporio";
+ //BA.debugLineNum = 556;BA.debugLine="frmFelicitaciones.tiporio = tiporio";
 mostCurrent._frmfelicitaciones._tiporio /*String*/  = mostCurrent._tiporio;
- //BA.debugLineNum = 563;BA.debugLine="StartActivity(frmFelicitaciones)";
+ //BA.debugLineNum = 557;BA.debugLine="StartActivity(frmFelicitaciones)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._frmfelicitaciones.getObject()));
- //BA.debugLineNum = 565;BA.debugLine="TimerEnvio.Enabled = False";
+ //BA.debugLineNum = 559;BA.debugLine="TimerEnvio.Enabled = False";
 _timerenvio.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 566;BA.debugLine="Activity.RemoveAllViews";
+ //BA.debugLineNum = 560;BA.debugLine="Activity.RemoveAllViews";
 mostCurrent._activity.RemoveAllViews();
- //BA.debugLineNum = 567;BA.debugLine="Activity.finish";
+ //BA.debugLineNum = 561;BA.debugLine="Activity.finish";
 mostCurrent._activity.Finish();
  };
- //BA.debugLineNum = 569;BA.debugLine="End Sub";
+ //BA.debugLineNum = 563;BA.debugLine="End Sub";
 return "";
 }
 public static String  _up1_sendfile(String _value) throws Exception{
- //BA.debugLineNum = 576;BA.debugLine="Sub Up1_sendFile (value As String)";
- //BA.debugLineNum = 577;BA.debugLine="Log(\"sendfile event:\" & value)";
-anywheresoftware.b4a.keywords.Common.LogImpl("639452673","sendfile event:"+_value,0);
- //BA.debugLineNum = 578;BA.debugLine="If value = \"success\" Then";
+String _filetoupload = "";
+ //BA.debugLineNum = 570;BA.debugLine="Sub Up1_sendFile (value As String)";
+ //BA.debugLineNum = 571;BA.debugLine="Log(\"sendfile event:\" & value)";
+anywheresoftware.b4a.keywords.Common.LogImpl("528508161","sendfile event:"+_value,0);
+ //BA.debugLineNum = 572;BA.debugLine="If value = \"success\" Then";
 if ((_value).equals("success")) { 
- //BA.debugLineNum = 580;BA.debugLine="If fotosEnviadas = 0 And totalFotos = 1 Then";
+ //BA.debugLineNum = 574;BA.debugLine="If fotosEnviadas = 0 And totalFotos = 1 Then";
 if (_fotosenviadas==0 && _totalfotos==1) { 
- //BA.debugLineNum = 581;BA.debugLine="fotosEnviadas = 1";
+ //BA.debugLineNum = 575;BA.debugLine="fotosEnviadas = 1";
 _fotosenviadas = (int) (1);
- //BA.debugLineNum = 582;BA.debugLine="Return";
+ //BA.debugLineNum = 576;BA.debugLine="Return";
 if (true) return "";
  };
- //BA.debugLineNum = 584;BA.debugLine="If fotosEnviadas = 1 And totalFotos = 2 Then";
+ //BA.debugLineNum = 578;BA.debugLine="If fotosEnviadas = 1 And totalFotos = 2 Then";
 if (_fotosenviadas==1 && _totalfotos==2) { 
- //BA.debugLineNum = 585;BA.debugLine="fotosEnviadas = 2";
+ //BA.debugLineNum = 579;BA.debugLine="fotosEnviadas = 2";
 _fotosenviadas = (int) (2);
- //BA.debugLineNum = 586;BA.debugLine="Return";
+ //BA.debugLineNum = 580;BA.debugLine="Return";
 if (true) return "";
  };
- //BA.debugLineNum = 588;BA.debugLine="If fotosEnviadas = 2 And totalFotos = 3 Then";
+ //BA.debugLineNum = 582;BA.debugLine="If fotosEnviadas = 2 And totalFotos = 3 Then";
 if (_fotosenviadas==2 && _totalfotos==3) { 
- //BA.debugLineNum = 589;BA.debugLine="fotosEnviadas = 3";
+ //BA.debugLineNum = 583;BA.debugLine="fotosEnviadas = 3";
 _fotosenviadas = (int) (3);
- //BA.debugLineNum = 590;BA.debugLine="Return";
+ //BA.debugLineNum = 584;BA.debugLine="Return";
 if (true) return "";
  };
- //BA.debugLineNum = 592;BA.debugLine="If fotosEnviadas = 3 And totalFotos = 4 Then";
+ //BA.debugLineNum = 586;BA.debugLine="If fotosEnviadas = 3 And totalFotos = 4 Then";
 if (_fotosenviadas==3 && _totalfotos==4) { 
- //BA.debugLineNum = 593;BA.debugLine="fotosEnviadas = 4";
+ //BA.debugLineNum = 587;BA.debugLine="fotosEnviadas = 4";
 _fotosenviadas = (int) (4);
- //BA.debugLineNum = 594;BA.debugLine="Return";
+ //BA.debugLineNum = 588;BA.debugLine="Return";
 if (true) return "";
  };
- //BA.debugLineNum = 596;BA.debugLine="If fotosEnviadas = 4 And totalFotos = 5 Then";
+ //BA.debugLineNum = 590;BA.debugLine="If fotosEnviadas = 4 And totalFotos = 5 Then";
 if (_fotosenviadas==4 && _totalfotos==5) { 
- //BA.debugLineNum = 597;BA.debugLine="fotosEnviadas = 5";
+ //BA.debugLineNum = 591;BA.debugLine="fotosEnviadas = 5";
 _fotosenviadas = (int) (5);
- //BA.debugLineNum = 598;BA.debugLine="Return";
+ //BA.debugLineNum = 592;BA.debugLine="Return";
 if (true) return "";
  };
- //BA.debugLineNum = 602;BA.debugLine="If fotosEnviadas = 0 And totalFotos > 1 Then";
+ //BA.debugLineNum = 596;BA.debugLine="If fotosEnviadas = 0 And totalFotos > 1 Then";
 if (_fotosenviadas==0 && _totalfotos>1) { 
- //BA.debugLineNum = 603;BA.debugLine="fotosEnviadas = 1";
+ //BA.debugLineNum = 597;BA.debugLine="fotosEnviadas = 1";
 _fotosenviadas = (int) (1);
- //BA.debugLineNum = 604;BA.debugLine="If File.Exists(File.DirRootExternal & \"/PreserV";
-if (anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/",mostCurrent._foto2+".jpg") && _foto2sent==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 605;BA.debugLine="Log(\"Enviando foto 2 \")";
-anywheresoftware.b4a.keywords.Common.LogImpl("639452701","Enviando foto 2 ",0);
- //BA.debugLineNum = 606;BA.debugLine="lblFinalizado1.Text = \"Enviando foto 2...\"";
+ //BA.debugLineNum = 598;BA.debugLine="If File.Exists(rp.GetSafeDirDefaultExternal(\"Pr";
+if (anywheresoftware.b4a.keywords.Common.File.Exists(mostCurrent._rp.GetSafeDirDefaultExternal("PreserVamos"),mostCurrent._foto2+".jpg") && _foto2sent==anywheresoftware.b4a.keywords.Common.False) { 
+ //BA.debugLineNum = 599;BA.debugLine="Log(\"Enviando foto 2 \")";
+anywheresoftware.b4a.keywords.Common.LogImpl("528508189","Enviando foto 2 ",0);
+ //BA.debugLineNum = 600;BA.debugLine="lblFinalizado1.Text = \"Enviando foto 2...\"";
 mostCurrent._lblfinalizado1.setText(BA.ObjectToCharSequence("Enviando foto 2..."));
- //BA.debugLineNum = 607;BA.debugLine="ProgressBar2.Progress  = 0";
+ //BA.debugLineNum = 601;BA.debugLine="ProgressBar2.Progress  = 0";
 mostCurrent._progressbar2.setProgress((int) (0));
- //BA.debugLineNum = 609;BA.debugLine="foto2ProgressBar.Visible = True";
+ //BA.debugLineNum = 603;BA.debugLine="foto2ProgressBar.Visible = True";
 mostCurrent._foto2progressbar._setvisible /*boolean*/ (anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 610;BA.debugLine="Up1.doFileUpload(ProgressBar2,Null,File.DirRoo";
-_up1.doFileUpload(processBA,(android.widget.ProgressBar)(mostCurrent._progressbar2.getObject()),(android.widget.TextView)(anywheresoftware.b4a.keywords.Common.Null),anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/"+mostCurrent._foto2+".jpg",mostCurrent._main._serverpath /*String*/ +"/"+mostCurrent._main._serverconnectionfolder /*String*/ +"/upload_file.php");
- //BA.debugLineNum = 611;BA.debugLine="ProgressBar2.Visible = False";
+ //BA.debugLineNum = 604;BA.debugLine="Dim filetoUpload As String";
+_filetoupload = "";
+ //BA.debugLineNum = 605;BA.debugLine="filetoUpload = Starter.savedir & \"/\" & foto2 &";
+_filetoupload = mostCurrent._starter._savedir /*String*/ +"/"+mostCurrent._foto2+".jpg";
+ //BA.debugLineNum = 606;BA.debugLine="Up1.doFileUpload(ProgressBar2,Null,filetoUploa";
+_up1.doFileUpload(processBA,(android.widget.ProgressBar)(mostCurrent._progressbar2.getObject()),(android.widget.TextView)(anywheresoftware.b4a.keywords.Common.Null),_filetoupload,mostCurrent._main._serverpath /*String*/ +"/"+mostCurrent._main._serverconnectionfolder /*String*/ +"/upload_file.php");
+ //BA.debugLineNum = 607;BA.debugLine="ProgressBar2.Visible = False";
 mostCurrent._progressbar2.setVisible(anywheresoftware.b4a.keywords.Common.False);
  }else {
- //BA.debugLineNum = 613;BA.debugLine="Log(\"no foto 2\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("639452709","no foto 2",0);
+ //BA.debugLineNum = 609;BA.debugLine="Log(\"no foto 2\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("528508199","no foto 2",0);
  };
  };
- //BA.debugLineNum = 616;BA.debugLine="If fotosEnviadas = 1 And totalFotos > 2 Then";
+ //BA.debugLineNum = 612;BA.debugLine="If fotosEnviadas = 1 And totalFotos > 2 Then";
 if (_fotosenviadas==1 && _totalfotos>2) { 
- //BA.debugLineNum = 617;BA.debugLine="fotosEnviadas = 2";
+ //BA.debugLineNum = 613;BA.debugLine="fotosEnviadas = 2";
 _fotosenviadas = (int) (2);
- //BA.debugLineNum = 618;BA.debugLine="If File.Exists(File.DirRootExternal & \"/PreserV";
-if (anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/",mostCurrent._foto3+".jpg") && _foto3sent==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 619;BA.debugLine="Log(\"Enviando foto 3 \")";
-anywheresoftware.b4a.keywords.Common.LogImpl("639452715","Enviando foto 3 ",0);
- //BA.debugLineNum = 620;BA.debugLine="lblFinalizado1.Text = \"Enviando foto 3...\"";
+ //BA.debugLineNum = 614;BA.debugLine="If File.Exists(rp.GetSafeDirDefaultExternal(\"Pr";
+if (anywheresoftware.b4a.keywords.Common.File.Exists(mostCurrent._rp.GetSafeDirDefaultExternal("PreserVamos"),mostCurrent._foto3+".jpg") && _foto3sent==anywheresoftware.b4a.keywords.Common.False) { 
+ //BA.debugLineNum = 615;BA.debugLine="Log(\"Enviando foto 3 \")";
+anywheresoftware.b4a.keywords.Common.LogImpl("528508205","Enviando foto 3 ",0);
+ //BA.debugLineNum = 616;BA.debugLine="lblFinalizado1.Text = \"Enviando foto 3...\"";
 mostCurrent._lblfinalizado1.setText(BA.ObjectToCharSequence("Enviando foto 3..."));
- //BA.debugLineNum = 621;BA.debugLine="ProgressBar3.Progress  = 0";
+ //BA.debugLineNum = 617;BA.debugLine="ProgressBar3.Progress  = 0";
 mostCurrent._progressbar3.setProgress((int) (0));
- //BA.debugLineNum = 622;BA.debugLine="ProgressBar3.Visible = False";
+ //BA.debugLineNum = 618;BA.debugLine="ProgressBar3.Visible = False";
 mostCurrent._progressbar3.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 623;BA.debugLine="foto3ProgressBar.Visible = True";
+ //BA.debugLineNum = 619;BA.debugLine="foto3ProgressBar.Visible = True";
 mostCurrent._foto3progressbar._setvisible /*boolean*/ (anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 624;BA.debugLine="Up1.doFileUpload(ProgressBar3,Null,File.DirRoo";
-_up1.doFileUpload(processBA,(android.widget.ProgressBar)(mostCurrent._progressbar3.getObject()),(android.widget.TextView)(anywheresoftware.b4a.keywords.Common.Null),anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/"+mostCurrent._foto3+".jpg",mostCurrent._main._serverpath /*String*/ +"/"+mostCurrent._main._serverconnectionfolder /*String*/ +"/upload_file.php");
+ //BA.debugLineNum = 620;BA.debugLine="Dim filetoUpload As String";
+_filetoupload = "";
+ //BA.debugLineNum = 621;BA.debugLine="filetoUpload = Starter.savedir & \"/\" & foto3 &";
+_filetoupload = mostCurrent._starter._savedir /*String*/ +"/"+mostCurrent._foto3+".jpg";
+ //BA.debugLineNum = 622;BA.debugLine="Up1.doFileUpload(ProgressBar3,Null,filetoUploa";
+_up1.doFileUpload(processBA,(android.widget.ProgressBar)(mostCurrent._progressbar3.getObject()),(android.widget.TextView)(anywheresoftware.b4a.keywords.Common.Null),_filetoupload,mostCurrent._main._serverpath /*String*/ +"/"+mostCurrent._main._serverconnectionfolder /*String*/ +"/upload_file.php");
  }else {
- //BA.debugLineNum = 626;BA.debugLine="Log(\"no foto 3\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("639452722","no foto 3",0);
+ //BA.debugLineNum = 624;BA.debugLine="Log(\"no foto 3\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("528508214","no foto 3",0);
  };
  };
- //BA.debugLineNum = 629;BA.debugLine="If fotosEnviadas = 2 And totalFotos > 3 Then";
+ //BA.debugLineNum = 627;BA.debugLine="If fotosEnviadas = 2 And totalFotos > 3 Then";
 if (_fotosenviadas==2 && _totalfotos>3) { 
- //BA.debugLineNum = 630;BA.debugLine="fotosEnviadas = 3";
+ //BA.debugLineNum = 628;BA.debugLine="fotosEnviadas = 3";
 _fotosenviadas = (int) (3);
- //BA.debugLineNum = 631;BA.debugLine="If File.Exists(File.DirRootExternal & \"/PreserV";
-if (anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/",mostCurrent._foto4+".jpg") && _foto4sent==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 632;BA.debugLine="Log(\"Enviando foto 4 \")";
-anywheresoftware.b4a.keywords.Common.LogImpl("639452728","Enviando foto 4 ",0);
- //BA.debugLineNum = 633;BA.debugLine="lblFinalizado1.Text = \"Enviando foto 4...\"";
+ //BA.debugLineNum = 629;BA.debugLine="If File.Exists(rp.GetSafeDirDefaultExternal(\"Pr";
+if (anywheresoftware.b4a.keywords.Common.File.Exists(mostCurrent._rp.GetSafeDirDefaultExternal("PreserVamos"),mostCurrent._foto4+".jpg") && _foto4sent==anywheresoftware.b4a.keywords.Common.False) { 
+ //BA.debugLineNum = 630;BA.debugLine="Log(\"Enviando foto 4 \")";
+anywheresoftware.b4a.keywords.Common.LogImpl("528508220","Enviando foto 4 ",0);
+ //BA.debugLineNum = 631;BA.debugLine="lblFinalizado1.Text = \"Enviando foto 4...\"";
 mostCurrent._lblfinalizado1.setText(BA.ObjectToCharSequence("Enviando foto 4..."));
- //BA.debugLineNum = 634;BA.debugLine="ProgressBar4.Progress  = 0";
+ //BA.debugLineNum = 632;BA.debugLine="ProgressBar4.Progress  = 0";
 mostCurrent._progressbar4.setProgress((int) (0));
- //BA.debugLineNum = 635;BA.debugLine="ProgressBar4.Visible = False";
+ //BA.debugLineNum = 633;BA.debugLine="ProgressBar4.Visible = False";
 mostCurrent._progressbar4.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 636;BA.debugLine="foto4ProgressBar.Visible = True";
+ //BA.debugLineNum = 634;BA.debugLine="foto4ProgressBar.Visible = True";
 mostCurrent._foto4progressbar._setvisible /*boolean*/ (anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 637;BA.debugLine="Up1.doFileUpload(ProgressBar4,Null,File.DirRoo";
-_up1.doFileUpload(processBA,(android.widget.ProgressBar)(mostCurrent._progressbar4.getObject()),(android.widget.TextView)(anywheresoftware.b4a.keywords.Common.Null),anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/"+mostCurrent._foto4+".jpg",mostCurrent._main._serverpath /*String*/ +"/"+mostCurrent._main._serverconnectionfolder /*String*/ +"/upload_file.php");
+ //BA.debugLineNum = 635;BA.debugLine="Dim filetoUpload As String";
+_filetoupload = "";
+ //BA.debugLineNum = 636;BA.debugLine="filetoUpload = Starter.savedir & \"/\" & foto4 &";
+_filetoupload = mostCurrent._starter._savedir /*String*/ +"/"+mostCurrent._foto4+".jpg";
+ //BA.debugLineNum = 637;BA.debugLine="Up1.doFileUpload(ProgressBar4,Null,filetoUploa";
+_up1.doFileUpload(processBA,(android.widget.ProgressBar)(mostCurrent._progressbar4.getObject()),(android.widget.TextView)(anywheresoftware.b4a.keywords.Common.Null),_filetoupload,mostCurrent._main._serverpath /*String*/ +"/"+mostCurrent._main._serverconnectionfolder /*String*/ +"/upload_file.php");
  }else {
  //BA.debugLineNum = 639;BA.debugLine="Log(\"no foto 4\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("639452735","no foto 4",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("528508229","no foto 4",0);
  };
  };
  //BA.debugLineNum = 642;BA.debugLine="If fotosEnviadas = 3 And totalFotos > 4 Then";
 if (_fotosenviadas==3 && _totalfotos>4) { 
  //BA.debugLineNum = 643;BA.debugLine="fotosEnviadas = 4";
 _fotosenviadas = (int) (4);
- //BA.debugLineNum = 644;BA.debugLine="If File.Exists(File.DirRootExternal & \"/PreserV";
-if (anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/",mostCurrent._foto5+".jpg") && _foto5sent==anywheresoftware.b4a.keywords.Common.False) { 
+ //BA.debugLineNum = 644;BA.debugLine="If File.Exists(rp.GetSafeDirDefaultExternal(\"Pr";
+if (anywheresoftware.b4a.keywords.Common.File.Exists(mostCurrent._rp.GetSafeDirDefaultExternal("PreserVamos"),mostCurrent._foto5+".jpg") && _foto5sent==anywheresoftware.b4a.keywords.Common.False) { 
  //BA.debugLineNum = 645;BA.debugLine="Log(\"Enviando foto 5 \")";
-anywheresoftware.b4a.keywords.Common.LogImpl("639452741","Enviando foto 5 ",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("528508235","Enviando foto 5 ",0);
  //BA.debugLineNum = 646;BA.debugLine="lblFinalizado1.Text = \"Enviando foto 5...\"";
 mostCurrent._lblfinalizado1.setText(BA.ObjectToCharSequence("Enviando foto 5..."));
  //BA.debugLineNum = 647;BA.debugLine="ProgressBar5.Progress  = 0";
 mostCurrent._progressbar5.setProgress((int) (0));
  //BA.debugLineNum = 648;BA.debugLine="ProgressBar5.Visible = False";
 mostCurrent._progressbar5.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 649;BA.debugLine="Up1.doFileUpload(ProgressBar5,Null,File.DirRoo";
-_up1.doFileUpload(processBA,(android.widget.ProgressBar)(mostCurrent._progressbar5.getObject()),(android.widget.TextView)(anywheresoftware.b4a.keywords.Common.Null),anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/"+mostCurrent._foto5+".jpg",mostCurrent._main._serverpath /*String*/ +"/"+mostCurrent._main._serverconnectionfolder /*String*/ +"/upload_file.php");
+ //BA.debugLineNum = 649;BA.debugLine="Dim filetoUpload As String";
+_filetoupload = "";
+ //BA.debugLineNum = 650;BA.debugLine="filetoUpload = Starter.savedir & \"/\" & foto5 &";
+_filetoupload = mostCurrent._starter._savedir /*String*/ +"/"+mostCurrent._foto5+".jpg";
+ //BA.debugLineNum = 651;BA.debugLine="Up1.doFileUpload(ProgressBar5,Null,filetoUploa";
+_up1.doFileUpload(processBA,(android.widget.ProgressBar)(mostCurrent._progressbar5.getObject()),(android.widget.TextView)(anywheresoftware.b4a.keywords.Common.Null),_filetoupload,mostCurrent._main._serverpath /*String*/ +"/"+mostCurrent._main._serverconnectionfolder /*String*/ +"/upload_file.php");
  }else {
- //BA.debugLineNum = 651;BA.debugLine="Log(\"no foto 5\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("639452747","no foto 5",0);
+ //BA.debugLineNum = 653;BA.debugLine="Log(\"no foto 5\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("528508243","no foto 5",0);
  };
  };
  }else if((_value).equals("Error!")) { 
- //BA.debugLineNum = 657;BA.debugLine="Log(\"FOTO error\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("639452753","FOTO error",0);
- //BA.debugLineNum = 658;BA.debugLine="If Main.lang = \"es\" Then";
+ //BA.debugLineNum = 659;BA.debugLine="Log(\"FOTO error\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("528508249","FOTO error",0);
+ //BA.debugLineNum = 660;BA.debugLine="If Main.lang = \"es\" Then";
 if ((mostCurrent._main._lang /*String*/ ).equals("es")) { 
- //BA.debugLineNum = 659;BA.debugLine="MsgboxAsync(\"Ha habido un error en el envío. Re";
+ //BA.debugLineNum = 661;BA.debugLine="MsgboxAsync(\"Ha habido un error en el envío. Re";
 anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("Ha habido un error en el envío. Revisa tu conexión a Internet e intenta de nuevo desde 'Datos Anteriores'"),BA.ObjectToCharSequence("Oops!"),processBA);
  };
- //BA.debugLineNum = 661;BA.debugLine="Up1.UploadKill";
+ //BA.debugLineNum = 663;BA.debugLine="Up1.UploadKill";
 _up1.UploadKill(processBA);
- //BA.debugLineNum = 666;BA.debugLine="TimerEnvio.Enabled = False";
+ //BA.debugLineNum = 668;BA.debugLine="TimerEnvio.Enabled = False";
 _timerenvio.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 667;BA.debugLine="Activity.RemoveAllViews";
+ //BA.debugLineNum = 669;BA.debugLine="Activity.RemoveAllViews";
 mostCurrent._activity.RemoveAllViews();
- //BA.debugLineNum = 668;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 670;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 669;BA.debugLine="Activity_Create(False)";
+ //BA.debugLineNum = 671;BA.debugLine="Activity_Create(False)";
 _activity_create(anywheresoftware.b4a.keywords.Common.False);
  };
- //BA.debugLineNum = 672;BA.debugLine="End Sub";
+ //BA.debugLineNum = 674;BA.debugLine="End Sub";
 return "";
 }
 public static String  _up1_statusupload(String _value) throws Exception{
- //BA.debugLineNum = 572;BA.debugLine="Sub Up1_statusUpload (value As String)";
- //BA.debugLineNum = 574;BA.debugLine="End Sub";
+ //BA.debugLineNum = 566;BA.debugLine="Sub Up1_statusUpload (value As String)";
+ //BA.debugLineNum = 568;BA.debugLine="End Sub";
 return "";
 }
 public static String  _up1_statusvisible(boolean _onoff,String _value) throws Exception{
- //BA.debugLineNum = 673;BA.debugLine="Sub Up1_statusVISIBLE (onoff As Boolean,value As S";
- //BA.debugLineNum = 675;BA.debugLine="End Sub";
+ //BA.debugLineNum = 675;BA.debugLine="Sub Up1_statusVISIBLE (onoff As Boolean,value As S";
+ //BA.debugLineNum = 677;BA.debugLine="End Sub";
 return "";
 }
 }

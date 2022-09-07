@@ -2,8 +2,8 @@
 <manifest
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	package="appear.pnud.preservamos"
-	android:versionCode="1"
-	android:versionName="1.0.0"
+	android:versionCode="8"
+	android:versionName="1.1"
 	android:installLocation="internalOnly">
 	
 	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="30"/>
@@ -16,18 +16,17 @@
 	  android:protectionLevel="signature" />
 	<permission android:name="appear.pnud.preservamos.permission.C2D_MESSAGE"
 	  android:protectionLevel="signature" />
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 	<uses-permission android:name="android.permission.INTERNET"/>
 	<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 	<uses-permission android:name="appear.pnud.preservamos.permission.MAPS_RECEIVE"/>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-	<uses-permission android:name="android.permission.CAMERA"/>
 	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+	<uses-permission android:name="android.permission.CAMERA"/>
 	<uses-permission android:name="android.permission.VIBRATE"/>
-	<uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
 	<uses-permission android:name="appear.pnud.preservamos.permission.C2D_MESSAGE"/>
 	<uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
@@ -147,7 +146,7 @@
 		  <action android:name="com.google.firebase.MESSAGING_EVENT" />
 		  </intent-filter>
 		  </service>
-		   <service android:name="anywheresoftware.b4a.objects.FirebaseNotificationsService">
+		   <service android:name="anywheresoftware.b4a.objects.FirebaseNotificationsService"  android:exported="true">
 		     <intent-filter>
 		  <action android:name="com.google.firebase.MESSAGING_EVENT"/>
 		     </intent-filter>
@@ -254,7 +253,7 @@
 		  android:value="@integer/google_play_services_version" />
 		<meta-data
 		  android:name="com.google.android.geo.API_KEY"
-		  android:value="API KEY REMOVED FOR SAFETY REASONS"/>
+		  android:value="AIzaSyBfRS9SZ_6Q797PdyOqywGtpYlWV2lNuYg"/>
 		<uses-library
 		      android:name="org.apache.http.legacy"
 		      android:required="false" />
@@ -263,7 +262,8 @@
 			android:launchMode="singleTop"
 			android:name=".main"
 			android:label="PreserVamos"
-			android:screenOrientation="portrait">
+			android:screenOrientation="portrait"
+			android:exported="true">
 			<intent-filter>
 			   <action android:name="android.intent.action.MAIN" />
 			   <category android:name="android.intent.category.LAUNCHER" />
@@ -275,127 +275,198 @@
 			android:launchMode="singleTop"
 			android:name=".form_main"
 			android:label="PreserVamos"
-			android:screenOrientation="portrait">
+			android:screenOrientation="portrait"
+			android:exported="true">
 		</activity>
+		<service
+			android:name=".starter"
+			android:exported="true">
+		</service>
+		<receiver
+			android:name=".starter$starter_BR"
+			android:exported="true">
+			<intent-filter>
+			<action android:name="android.intent.action.BOOT_COMPLETED"/>
+			</intent-filter>
+		</receiver>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".reporte_fotos"
+			android:name=".inatcheck"
 			android:label="PreserVamos"
-			android:screenOrientation="portrait">
+			android:screenOrientation="portrait"
+			android:exported="true">
 		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".frmlocalizacion"
 			android:label="PreserVamos"
-			android:screenOrientation="portrait">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".reporte_habitat_laguna"
-			android:label="PreserVamos"
-			android:screenOrientation="portrait">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".reporte_habitat_rio"
-			android:label="PreserVamos"
-			android:screenOrientation="portrait">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".aprender_muestreo"
-			android:label="PreserVamos"
-			android:screenOrientation="portrait">
-		</activity>
-		<service android:name=".downloadservice">
-		</service>
-		<receiver android:name=".downloadservice$downloadservice_BR">
-		</receiver>
-		<service android:name=".firebasemessaging">
-		</service>
-		<receiver android:name=".firebasemessaging$firebasemessaging_BR">
-			<intent-filter>
-			<action android:name="android.intent.action.BOOT_COMPLETED"/>
-			</intent-filter>
-		</receiver>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".form_reporte"
-			android:label="PreserVamos"
-			android:screenOrientation="portrait">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".frmabout"
-			android:label="PreserVamos"
-			android:screenOrientation="portrait">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".frmdatosanteriores"
-			android:label="PreserVamos"
-			android:screenOrientation="portrait">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".frmeditprofile"
-			android:label="PreserVamos"
-			android:screenOrientation="portrait">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".frmfelicitaciones"
-			android:label="PreserVamos"
-			android:screenOrientation="portrait">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".frmperfil"
-			android:label="PreserVamos"
-			android:screenOrientation="portrait">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".frmpoliticadatos"
-			android:label="PreserVamos"
-			android:screenOrientation="portrait">
-		</activity>
-		<service android:name=".httputils2service">
-		</service>
-		<receiver android:name=".httputils2service$httputils2service_BR">
-		</receiver>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".register"
-			android:label="PreserVamos"
-			android:screenOrientation="portrait">
+			android:screenOrientation="portrait"
+			android:exported="true">
 		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".reporte_envio"
 			android:label="PreserVamos"
-			android:screenOrientation="portrait">
+			android:screenOrientation="portrait"
+			android:exported="true">
 		</activity>
-		<service android:name=".starter">
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".alertas"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".register"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".frmeditprofile"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".alerta_fotos"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".form_reporte"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".aprender_muestreo"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<service
+			android:name=".downloadservice"
+			android:exported="true">
 		</service>
-		<receiver android:name=".starter$starter_BR">
+		<receiver
+			android:name=".downloadservice$downloadservice_BR"
+			android:exported="true">
+		</receiver>
+		<service
+			android:name=".firebasemessaging"
+			android:exported="true">
+		</service>
+		<receiver
+			android:name=".firebasemessaging$firebasemessaging_BR"
+			android:exported="true">
 			<intent-filter>
 			<action android:name="android.intent.action.BOOT_COMPLETED"/>
 			</intent-filter>
 		</receiver>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".frmabout"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".frmdatosanteriores"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".frmfelicitaciones"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".frmmapa"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".frmperfil"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".frmpoliticadatos"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<service
+			android:name=".httputils2service"
+			android:exported="true">
+		</service>
+		<receiver
+			android:name=".httputils2service$httputils2service_BR"
+			android:exported="true">
+		</receiver>
+		<service
+			android:name=".imagedownloader"
+			android:exported="true">
+		</service>
+		<receiver
+			android:name=".imagedownloader$imagedownloader_BR"
+			android:exported="true">
+		</receiver>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".reporte_fotos"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".reporte_habitat_laguna"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".reporte_habitat_rio"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
 	</application>
 </manifest>

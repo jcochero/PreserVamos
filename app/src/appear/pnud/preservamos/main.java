@@ -340,8 +340,6 @@ public static String _deviceid = "";
 public static String _lang = "";
 public static String _username = "";
 public static String _pass = "";
-public static boolean _modooffline = false;
-public static boolean _forceoffline = false;
 public static String _serverversion = "";
 public static String _servernewstitulo = "";
 public static String _servernewstext = "";
@@ -388,25 +386,30 @@ public anywheresoftware.b4a.sql.SQL.CursorWrapper _cursor1 = null;
 public appear.pnud.preservamos.b4xgifview _logo_load_gif = null;
 public b4a.example.dateutils _dateutils = null;
 public appear.pnud.preservamos.form_main _form_main = null;
-public appear.pnud.preservamos.reporte_fotos _reporte_fotos = null;
-public appear.pnud.preservamos.dbutils _dbutils = null;
+public appear.pnud.preservamos.starter _starter = null;
+public appear.pnud.preservamos.inatcheck _inatcheck = null;
 public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
-public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
-public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
+public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
+public appear.pnud.preservamos.alertas _alertas = null;
+public appear.pnud.preservamos.register _register = null;
+public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
+public appear.pnud.preservamos.alerta_fotos _alerta_fotos = null;
+public appear.pnud.preservamos.form_reporte _form_reporte = null;
 public appear.pnud.preservamos.aprender_muestreo _aprender_muestreo = null;
+public appear.pnud.preservamos.dbutils _dbutils = null;
 public appear.pnud.preservamos.downloadservice _downloadservice = null;
 public appear.pnud.preservamos.firebasemessaging _firebasemessaging = null;
-public appear.pnud.preservamos.form_reporte _form_reporte = null;
 public appear.pnud.preservamos.frmabout _frmabout = null;
 public appear.pnud.preservamos.frmdatosanteriores _frmdatosanteriores = null;
-public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
 public appear.pnud.preservamos.frmfelicitaciones _frmfelicitaciones = null;
+public appear.pnud.preservamos.frmmapa _frmmapa = null;
 public appear.pnud.preservamos.frmperfil _frmperfil = null;
 public appear.pnud.preservamos.frmpoliticadatos _frmpoliticadatos = null;
 public appear.pnud.preservamos.httputils2service _httputils2service = null;
-public appear.pnud.preservamos.register _register = null;
-public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
-public appear.pnud.preservamos.starter _starter = null;
+public appear.pnud.preservamos.imagedownloader _imagedownloader = null;
+public appear.pnud.preservamos.reporte_fotos _reporte_fotos = null;
+public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
+public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
 public appear.pnud.preservamos.uploadfiles _uploadfiles = null;
 public appear.pnud.preservamos.utilidades _utilidades = null;
 public appear.pnud.preservamos.xuiviewsutils _xuiviewsutils = null;
@@ -415,20 +418,24 @@ public static boolean isAnyActivityVisible() {
     boolean vis = false;
 vis = vis | (main.mostCurrent != null);
 vis = vis | (form_main.mostCurrent != null);
-vis = vis | (reporte_fotos.mostCurrent != null);
+vis = vis | (inatcheck.mostCurrent != null);
 vis = vis | (frmlocalizacion.mostCurrent != null);
-vis = vis | (reporte_habitat_laguna.mostCurrent != null);
-vis = vis | (reporte_habitat_rio.mostCurrent != null);
-vis = vis | (aprender_muestreo.mostCurrent != null);
+vis = vis | (reporte_envio.mostCurrent != null);
+vis = vis | (alertas.mostCurrent != null);
+vis = vis | (register.mostCurrent != null);
+vis = vis | (frmeditprofile.mostCurrent != null);
+vis = vis | (alerta_fotos.mostCurrent != null);
 vis = vis | (form_reporte.mostCurrent != null);
+vis = vis | (aprender_muestreo.mostCurrent != null);
 vis = vis | (frmabout.mostCurrent != null);
 vis = vis | (frmdatosanteriores.mostCurrent != null);
-vis = vis | (frmeditprofile.mostCurrent != null);
 vis = vis | (frmfelicitaciones.mostCurrent != null);
+vis = vis | (frmmapa.mostCurrent != null);
 vis = vis | (frmperfil.mostCurrent != null);
 vis = vis | (frmpoliticadatos.mostCurrent != null);
-vis = vis | (register.mostCurrent != null);
-vis = vis | (reporte_envio.mostCurrent != null);
+vis = vis | (reporte_fotos.mostCurrent != null);
+vis = vis | (reporte_habitat_laguna.mostCurrent != null);
+vis = vis | (reporte_habitat_rio.mostCurrent != null);
 return vis;}
 public static void  _activity_create(boolean _firsttime) throws Exception{
 ResumableSub_Activity_Create rsub = new ResumableSub_Activity_Create(null,_firsttime);
@@ -442,78 +449,11 @@ this._firsttime = _firsttime;
 appear.pnud.preservamos.main parent;
 boolean _firsttime;
 anywheresoftware.b4a.phone.Phone _p = null;
-
-@Override
-public void resume(BA ba, Object[] result) throws Exception{
-
-    while (true) {
-        switch (state) {
-            case -1:
-return;
-
-case 0:
-//C
-this.state = -1;
- //BA.debugLineNum = 122;BA.debugLine="Dim p As Phone";
-_p = new anywheresoftware.b4a.phone.Phone();
- //BA.debugLineNum = 123;BA.debugLine="p.SetScreenOrientation(1)";
-_p.SetScreenOrientation(processBA,(int) (1));
- //BA.debugLineNum = 127;BA.debugLine="Sleep(500)";
-anywheresoftware.b4a.keywords.Common.Sleep(mostCurrent.activityBA,this,(int) (500));
-this.state = 1;
-return;
-case 1:
-//C
-this.state = -1;
-;
- //BA.debugLineNum = 131;BA.debugLine="BuscarConfiguracion";
-_buscarconfiguracion();
- //BA.debugLineNum = 133;BA.debugLine="Activity.LoadLayout(\"layload\")";
-parent.mostCurrent._activity.LoadLayout("layload",mostCurrent.activityBA);
- //BA.debugLineNum = 136;BA.debugLine="logo_load_gif.SetGif(File.DirAssets, \"Preservamos";
-parent.mostCurrent._logo_load_gif._setgif /*String*/ (anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"Preservamos_Logo_Ani.gif");
- //BA.debugLineNum = 137;BA.debugLine="Sleep(3000)";
-anywheresoftware.b4a.keywords.Common.Sleep(mostCurrent.activityBA,this,(int) (3000));
-this.state = 2;
-return;
-case 2:
-//C
-this.state = -1;
-;
- //BA.debugLineNum = 143;BA.debugLine="lblEstado.Text = \"Comprobando conexión a internet";
-parent.mostCurrent._lblestado.setText(BA.ObjectToCharSequence("Comprobando conexión a internet"));
- //BA.debugLineNum = 144;BA.debugLine="btnOffline.Text = \"Trabajar sin conexión\"";
-parent.mostCurrent._btnoffline.setText(BA.ObjectToCharSequence("Trabajar sin conexión"));
- //BA.debugLineNum = 145;BA.debugLine="timer1.Initialize(\"Timer1\", 1000)";
-parent._timer1.Initialize(processBA,"Timer1",(long) (1000));
- //BA.debugLineNum = 146;BA.debugLine="timer1.Enabled = True";
-parent._timer1.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 148;BA.debugLine="End Sub";
-if (true) break;
-
-            }
-        }
-    }
-}
-public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 192;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 194;BA.debugLine="End Sub";
-return "";
-}
-public static void  _activity_resume() throws Exception{
-ResumableSub_Activity_Resume rsub = new ResumableSub_Activity_Resume(null);
-rsub.resume(processBA, null);
-}
-public static class ResumableSub_Activity_Resume extends BA.ResumableSub {
-public ResumableSub_Activity_Resume(appear.pnud.preservamos.main parent) {
-this.parent = parent;
-}
-appear.pnud.preservamos.main parent;
 String _permission = "";
 boolean _result = false;
-Object[] group1;
-int index1;
-int groupLen1;
+Object[] group15;
+int index15;
+int groupLen15;
 
 @Override
 public void resume(BA ba, Object[] result) throws Exception{
@@ -526,159 +466,155 @@ return;
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 151;BA.debugLine="For Each Permission As String In Array(rp.PERMISS";
+ //BA.debugLineNum = 118;BA.debugLine="Dim p As Phone";
+_p = new anywheresoftware.b4a.phone.Phone();
+ //BA.debugLineNum = 119;BA.debugLine="p.SetScreenOrientation(1)";
+_p.SetScreenOrientation(processBA,(int) (1));
+ //BA.debugLineNum = 123;BA.debugLine="Sleep(500)";
+anywheresoftware.b4a.keywords.Common.Sleep(mostCurrent.activityBA,this,(int) (500));
+this.state = 16;
+return;
+case 16:
+//C
+this.state = 1;
+;
+ //BA.debugLineNum = 127;BA.debugLine="BuscarConfiguracion";
+_buscarconfiguracion();
+ //BA.debugLineNum = 129;BA.debugLine="Activity.LoadLayout(\"layload\")";
+parent.mostCurrent._activity.LoadLayout("layload",mostCurrent.activityBA);
+ //BA.debugLineNum = 134;BA.debugLine="Starter.dbdir = DBUtils.CopyDBFromAssets(\"preserv";
+parent.mostCurrent._starter._dbdir /*String*/  = parent.mostCurrent._dbutils._copydbfromassets /*String*/ (mostCurrent.activityBA,"preservamosdb.db");
+ //BA.debugLineNum = 136;BA.debugLine="Starter.savedir = rp.GetSafeDirDefaultExternal(\"\"";
+parent.mostCurrent._starter._savedir /*String*/  = parent._rp.GetSafeDirDefaultExternal("");
+ //BA.debugLineNum = 139;BA.debugLine="If File.Exists(Starter.savedir & \"/PreserVamos/\",";
 if (true) break;
 
 case 1:
-//for
-this.state = 8;
-group1 = new Object[]{(Object)(parent._rp.PERMISSION_ACCESS_FINE_LOCATION),(Object)(parent._rp.PERMISSION_CAMERA),(Object)(parent._rp.PERMISSION_WRITE_EXTERNAL_STORAGE)};
-index1 = 0;
-groupLen1 = group1.length;
-this.state = 22;
-if (true) break;
-
-case 22:
-//C
-this.state = 8;
-if (index1 < groupLen1) {
+//if
+this.state = 4;
+if (anywheresoftware.b4a.keywords.Common.File.Exists(parent.mostCurrent._starter._savedir /*String*/ +"/PreserVamos/","")==anywheresoftware.b4a.keywords.Common.False) { 
 this.state = 3;
-_permission = BA.ObjectToString(group1[index1]);}
-if (true) break;
-
-case 23:
-//C
-this.state = 22;
-index1++;
-if (true) break;
+}if (true) break;
 
 case 3:
 //C
 this.state = 4;
- //BA.debugLineNum = 152;BA.debugLine="Sleep(100)";
-anywheresoftware.b4a.keywords.Common.Sleep(mostCurrent.activityBA,this,(int) (100));
-this.state = 24;
-return;
-case 24:
-//C
-this.state = 4;
+ //BA.debugLineNum = 140;BA.debugLine="File.MakeDir(Starter.savedir, \"PreserVamos\")";
+anywheresoftware.b4a.keywords.Common.File.MakeDir(parent.mostCurrent._starter._savedir /*String*/ ,"PreserVamos");
+ if (true) break;
 ;
- //BA.debugLineNum = 153;BA.debugLine="rp.CheckAndRequest(Permission)";
-parent._rp.CheckAndRequest(processBA,_permission);
- //BA.debugLineNum = 154;BA.debugLine="Wait For Activity_PermissionResult (Permission A";
-anywheresoftware.b4a.keywords.Common.WaitFor("activity_permissionresult", processBA, this, null);
-this.state = 25;
-return;
-case 25:
-//C
-this.state = 4;
-_permission = (String) result[0];
-_result = (Boolean) result[1];
-;
- //BA.debugLineNum = 155;BA.debugLine="If Result = False Then";
-if (true) break;
+ //BA.debugLineNum = 146;BA.debugLine="If File.Exists(Starter.savedir & \"/PreserVamos/se";
 
 case 4:
 //if
 this.state = 7;
-if (_result==anywheresoftware.b4a.keywords.Common.False) { 
+if (anywheresoftware.b4a.keywords.Common.File.Exists(parent.mostCurrent._starter._savedir /*String*/ +"/PreserVamos/sent/","")==anywheresoftware.b4a.keywords.Common.False) { 
 this.state = 6;
 }if (true) break;
 
 case 6:
 //C
 this.state = 7;
- //BA.debugLineNum = 156;BA.debugLine="ToastMessageShow(\"Para usar la app, se necesita";
-anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Para usar la app, se necesitan permisos para usar la cámara, el GPS y para guardar archivos en tu móvil"),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 157;BA.debugLine="Activity.Finish";
-parent.mostCurrent._activity.Finish();
- //BA.debugLineNum = 158;BA.debugLine="Return";
-if (true) return ;
+ //BA.debugLineNum = 147;BA.debugLine="File.MakeDir(Starter.savedir & \"/PreserVamos/\",";
+anywheresoftware.b4a.keywords.Common.File.MakeDir(parent.mostCurrent._starter._savedir /*String*/ +"/PreserVamos/","sent");
  if (true) break;
 
 case 7:
 //C
-this.state = 23;
+this.state = 8;
 ;
- if (true) break;
+ //BA.debugLineNum = 153;BA.debugLine="logo_load_gif.SetGif(File.DirAssets, \"Preservamos";
+parent.mostCurrent._logo_load_gif._setgif /*String*/ (anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"Preservamos_Logo_Ani.gif");
+ //BA.debugLineNum = 155;BA.debugLine="For Each permission As String In Array(rp.PERMISS";
 if (true) break;
 
 case 8:
-//C
-this.state = 9;
-;
- //BA.debugLineNum = 164;BA.debugLine="CheckForGooglePlayServices";
-_checkforgoogleplayservices();
- //BA.debugLineNum = 168;BA.debugLine="If File.ExternalWritable = True Then";
+//for
+this.state = 15;
+group15 = new Object[]{(Object)(parent._rp.PERMISSION_ACCESS_FINE_LOCATION),(Object)(parent._rp.PERMISSION_CAMERA)};
+index15 = 0;
+groupLen15 = group15.length;
+this.state = 17;
 if (true) break;
 
-case 9:
-//if
-this.state = 14;
-if (anywheresoftware.b4a.keywords.Common.File.getExternalWritable()==anywheresoftware.b4a.keywords.Common.True) { 
+case 17:
+//C
+this.state = 15;
+if (index15 < groupLen15) {
+this.state = 10;
+_permission = BA.ObjectToString(group15[index15]);}
+if (true) break;
+
+case 18:
+//C
+this.state = 17;
+index15++;
+if (true) break;
+
+case 10:
+//C
 this.state = 11;
-}else {
-this.state = 13;
-}if (true) break;
+ //BA.debugLineNum = 156;BA.debugLine="rp.CheckAndRequest(permission)";
+parent._rp.CheckAndRequest(processBA,_permission);
+ //BA.debugLineNum = 157;BA.debugLine="Wait For Activity_PermissionResult (permission A";
+anywheresoftware.b4a.keywords.Common.WaitFor("activity_permissionresult", processBA, this, null);
+this.state = 19;
+return;
+case 19:
+//C
+this.state = 11;
+_permission = (String) result[0];
+_result = (Boolean) result[1];
+;
+ //BA.debugLineNum = 158;BA.debugLine="If Result = False Then";
+if (true) break;
 
 case 11:
-//C
+//if
 this.state = 14;
- //BA.debugLineNum = 169;BA.debugLine="Starter.savedir = File.DirRootExternal";
-parent.mostCurrent._starter._savedir /*String*/  = anywheresoftware.b4a.keywords.Common.File.getDirRootExternal();
- if (true) break;
+if (_result==anywheresoftware.b4a.keywords.Common.False) { 
+this.state = 13;
+}if (true) break;
 
 case 13:
 //C
 this.state = 14;
- //BA.debugLineNum = 171;BA.debugLine="Starter.savedir = File.DirInternal";
-parent.mostCurrent._starter._savedir /*String*/  = anywheresoftware.b4a.keywords.Common.File.getDirInternal();
+ //BA.debugLineNum = 159;BA.debugLine="ToastMessageShow(\"Para usar la app, se necesita";
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Para usar la app, se necesitan permisos para usar la cámara, el GPS y para guardar archivos en tu móvil"),anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 160;BA.debugLine="Activity.Finish";
+parent.mostCurrent._activity.Finish();
+ //BA.debugLineNum = 161;BA.debugLine="Return";
+if (true) return ;
  if (true) break;
 
 case 14:
 //C
-this.state = 15;
+this.state = 18;
 ;
- //BA.debugLineNum = 175;BA.debugLine="Starter.dbdir = DBUtils.CopyDBFromAssets(\"preserv";
-parent.mostCurrent._starter._dbdir /*String*/  = parent.mostCurrent._dbutils._copydbfromassets /*String*/ (mostCurrent.activityBA,"preservamosdb.db");
- //BA.debugLineNum = 179;BA.debugLine="If File.Exists(Starter.savedir & \"/PreserVamos/\",";
+ if (true) break;
 if (true) break;
 
 case 15:
-//if
-this.state = 18;
-if (anywheresoftware.b4a.keywords.Common.File.Exists(parent.mostCurrent._starter._savedir /*String*/ +"/PreserVamos/","")==anywheresoftware.b4a.keywords.Common.False) { 
-this.state = 17;
-}if (true) break;
-
-case 17:
-//C
-this.state = 18;
- //BA.debugLineNum = 180;BA.debugLine="File.MakeDir(Starter.savedir, \"PreserVamos\")";
-anywheresoftware.b4a.keywords.Common.File.MakeDir(parent.mostCurrent._starter._savedir /*String*/ ,"PreserVamos");
- if (true) break;
-;
- //BA.debugLineNum = 186;BA.debugLine="If File.Exists(Starter.savedir & \"/PreserVamos/se";
-
-case 18:
-//if
-this.state = 21;
-if (anywheresoftware.b4a.keywords.Common.File.Exists(parent.mostCurrent._starter._savedir /*String*/ +"/PreserVamos/sent/","")==anywheresoftware.b4a.keywords.Common.False) { 
-this.state = 20;
-}if (true) break;
-
-case 20:
-//C
-this.state = 21;
- //BA.debugLineNum = 187;BA.debugLine="File.MakeDir(Starter.savedir & \"/PreserVamos/\",";
-anywheresoftware.b4a.keywords.Common.File.MakeDir(parent.mostCurrent._starter._savedir /*String*/ +"/PreserVamos/","sent");
- if (true) break;
-
-case 21:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 191;BA.debugLine="End Sub";
+ //BA.debugLineNum = 166;BA.debugLine="Sleep(1500)";
+anywheresoftware.b4a.keywords.Common.Sleep(mostCurrent.activityBA,this,(int) (1500));
+this.state = 20;
+return;
+case 20:
+//C
+this.state = -1;
+;
+ //BA.debugLineNum = 172;BA.debugLine="lblEstado.Text = \"Comprobando conexión a internet";
+parent.mostCurrent._lblestado.setText(BA.ObjectToCharSequence("Comprobando conexión a internet"));
+ //BA.debugLineNum = 173;BA.debugLine="btnOffline.Text = \"Trabajar sin conexión\"";
+parent.mostCurrent._btnoffline.setText(BA.ObjectToCharSequence("Trabajar sin conexión"));
+ //BA.debugLineNum = 174;BA.debugLine="timer1.Initialize(\"Timer1\", 1000)";
+parent._timer1.Initialize(processBA,"Timer1",(long) (1000));
+ //BA.debugLineNum = 175;BA.debugLine="timer1.Enabled = True";
+parent._timer1.setEnabled(anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 177;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -687,135 +623,143 @@ if (true) break;
 }
 public static void  _activity_permissionresult(String _permission,boolean _result) throws Exception{
 }
+public static String  _activity_pause(boolean _userclosed) throws Exception{
+ //BA.debugLineNum = 185;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 187;BA.debugLine="End Sub";
+return "";
+}
+public static String  _activity_resume() throws Exception{
+ //BA.debugLineNum = 178;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 181;BA.debugLine="CheckForGooglePlayServices";
+_checkforgoogleplayservices();
+ //BA.debugLineNum = 184;BA.debugLine="End Sub";
+return "";
+}
 public static String  _btnoffline_click() throws Exception{
- //BA.debugLineNum = 371;BA.debugLine="Sub btnOffline_Click";
- //BA.debugLineNum = 374;BA.debugLine="CallSubDelayed2(DownloadService, \"CancelDownload\"";
+ //BA.debugLineNum = 360;BA.debugLine="Sub btnOffline_Click";
+ //BA.debugLineNum = 363;BA.debugLine="CallSubDelayed2(DownloadService, \"CancelDownload\"";
 anywheresoftware.b4a.keywords.Common.CallSubDelayed2(processBA,(Object)(mostCurrent._downloadservice.getObject()),"CancelDownload",(Object)(_serverpath+"/"+_serverconnectionfolder+"/connecttest.php"));
- //BA.debugLineNum = 376;BA.debugLine="modooffline = True";
-_modooffline = anywheresoftware.b4a.keywords.Common.True;
- //BA.debugLineNum = 377;BA.debugLine="forceoffline = True";
-_forceoffline = anywheresoftware.b4a.keywords.Common.True;
- //BA.debugLineNum = 378;BA.debugLine="Activity.RemoveAllViews";
+ //BA.debugLineNum = 365;BA.debugLine="Activity.RemoveAllViews";
 mostCurrent._activity.RemoveAllViews();
- //BA.debugLineNum = 379;BA.debugLine="If lang = \"es\" Then";
+ //BA.debugLineNum = 366;BA.debugLine="If lang = \"es\" Then";
 if ((_lang).equals("es")) { 
- //BA.debugLineNum = 380;BA.debugLine="ToastMessageShow(\"Has seleccionado el modo sin c";
+ //BA.debugLineNum = 367;BA.debugLine="ToastMessageShow(\"Has seleccionado el modo sin c";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Has seleccionado el modo sin conexión. PreserVamos iniciará con el último usuario que utilizaste, pero no podrás ver ni cargar puntos hasta que no te conectes."),anywheresoftware.b4a.keywords.Common.False);
  }else if((_lang).equals("en")) { 
  };
- //BA.debugLineNum = 384;BA.debugLine="Activity.RemoveAllViews";
+ //BA.debugLineNum = 371;BA.debugLine="Activity.RemoveAllViews";
 mostCurrent._activity.RemoveAllViews();
- //BA.debugLineNum = 385;BA.debugLine="StartActivity(Form_Main)";
+ //BA.debugLineNum = 372;BA.debugLine="StartActivity(Form_Main)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._form_main.getObject()));
- //BA.debugLineNum = 388;BA.debugLine="End Sub";
+ //BA.debugLineNum = 375;BA.debugLine="End Sub";
 return "";
 }
 public static String  _buscarconfiguracion() throws Exception{
 anywheresoftware.b4a.objects.collections.Map _deviceidmap = null;
 String _deviceactual = "";
 anywheresoftware.b4a.objects.collections.Map _usermap = null;
- //BA.debugLineNum = 227;BA.debugLine="Sub BuscarConfiguracion";
- //BA.debugLineNum = 228;BA.debugLine="lang = \"es\"";
+ //BA.debugLineNum = 220;BA.debugLine="Sub BuscarConfiguracion";
+ //BA.debugLineNum = 221;BA.debugLine="lang = \"es\"";
 _lang = "es";
- //BA.debugLineNum = 231;BA.debugLine="Dim deviceIdMap As Map";
+ //BA.debugLineNum = 224;BA.debugLine="Dim deviceIdMap As Map";
 _deviceidmap = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 232;BA.debugLine="deviceIdMap.Initialize";
+ //BA.debugLineNum = 225;BA.debugLine="deviceIdMap.Initialize";
 _deviceidmap.Initialize();
- //BA.debugLineNum = 233;BA.debugLine="deviceIdMap = DBUtils.ExecuteMap(Starter.sqlDB, \"";
+ //BA.debugLineNum = 226;BA.debugLine="deviceIdMap = DBUtils.ExecuteMap(Starter.sqlDB, \"";
 _deviceidmap = mostCurrent._dbutils._executemap /*anywheresoftware.b4a.objects.collections.Map*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"SELECT deviceID FROM appconfig WHERE configID = '1'",(String[])(anywheresoftware.b4a.keywords.Common.Null));
- //BA.debugLineNum = 234;BA.debugLine="If deviceIdMap = Null Or deviceIdMap.IsInitialize";
+ //BA.debugLineNum = 227;BA.debugLine="If deviceIdMap = Null Or deviceIdMap.IsInitialize";
 if (_deviceidmap== null || _deviceidmap.IsInitialized()==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 235;BA.debugLine="deviceID = \"noID\"";
+ //BA.debugLineNum = 228;BA.debugLine="deviceID = \"noID\"";
 _deviceid = "noID";
  }else {
- //BA.debugLineNum = 237;BA.debugLine="deviceID = deviceIdMap.Get(\"deviceID\")";
+ //BA.debugLineNum = 230;BA.debugLine="deviceID = deviceIdMap.Get(\"deviceID\")";
 _deviceid = BA.ObjectToString(_deviceidmap.Get((Object)("deviceID")));
- //BA.debugLineNum = 238;BA.debugLine="Log(\"deviceID de DB:\" & deviceID)";
-anywheresoftware.b4a.keywords.Common.LogImpl("6458763","deviceID de DB:"+_deviceid,0);
- //BA.debugLineNum = 239;BA.debugLine="Log(\"deviceID de codigo:\" & utilidades.GetDevice";
-anywheresoftware.b4a.keywords.Common.LogImpl("6458764","deviceID de codigo:"+mostCurrent._utilidades._getdeviceid /*String*/ (mostCurrent.activityBA),0);
+ //BA.debugLineNum = 231;BA.debugLine="Log(\"deviceID de DB:\" & deviceID)";
+anywheresoftware.b4a.keywords.Common.LogImpl("522544395","deviceID de DB:"+_deviceid,0);
+ //BA.debugLineNum = 232;BA.debugLine="Log(\"deviceID de codigo:\" & utilidades.GetDevice";
+anywheresoftware.b4a.keywords.Common.LogImpl("522544396","deviceID de codigo:"+mostCurrent._utilidades._getdeviceid /*String*/ (mostCurrent.activityBA),0);
  };
- //BA.debugLineNum = 243;BA.debugLine="Dim deviceactual As String";
+ //BA.debugLineNum = 236;BA.debugLine="Dim deviceactual As String";
 _deviceactual = "";
- //BA.debugLineNum = 244;BA.debugLine="deviceactual = utilidades.GetDeviceId";
+ //BA.debugLineNum = 237;BA.debugLine="deviceactual = utilidades.GetDeviceId";
 _deviceactual = mostCurrent._utilidades._getdeviceid /*String*/ (mostCurrent.activityBA);
- //BA.debugLineNum = 245;BA.debugLine="If deviceactual <> deviceID Then";
+ //BA.debugLineNum = 238;BA.debugLine="If deviceactual <> deviceID Then";
 if ((_deviceactual).equals(_deviceid) == false) { 
- //BA.debugLineNum = 246;BA.debugLine="deviceID = deviceactual";
+ //BA.debugLineNum = 239;BA.debugLine="deviceID = deviceactual";
 _deviceid = _deviceactual;
  };
- //BA.debugLineNum = 250;BA.debugLine="Dim userMap As Map";
+ //BA.debugLineNum = 243;BA.debugLine="Dim userMap As Map";
 _usermap = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 251;BA.debugLine="userMap.Initialize";
+ //BA.debugLineNum = 244;BA.debugLine="userMap.Initialize";
 _usermap.Initialize();
- //BA.debugLineNum = 252;BA.debugLine="userMap = DBUtils.ExecuteMap(Starter.sqlDB, \"SELE";
+ //BA.debugLineNum = 245;BA.debugLine="userMap = DBUtils.ExecuteMap(Starter.sqlDB, \"SELE";
 _usermap = mostCurrent._dbutils._executemap /*anywheresoftware.b4a.objects.collections.Map*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"SELECT * FROM userconfig WHERE lastUser=?",new String[]{"si"});
- //BA.debugLineNum = 253;BA.debugLine="If userMap = Null Or userMap.IsInitialized = Fals";
+ //BA.debugLineNum = 246;BA.debugLine="If userMap = Null Or userMap.IsInitialized = Fals";
 if (_usermap== null || _usermap.IsInitialized()==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 254;BA.debugLine="username = \"None\"";
+ //BA.debugLineNum = 247;BA.debugLine="username = \"None\"";
 _username = "None";
- //BA.debugLineNum = 255;BA.debugLine="pass = \"None\"";
+ //BA.debugLineNum = 248;BA.debugLine="pass = \"None\"";
 _pass = "None";
  }else {
- //BA.debugLineNum = 257;BA.debugLine="username = userMap.Get(\"username\")";
+ //BA.debugLineNum = 250;BA.debugLine="username = userMap.Get(\"username\")";
 _username = BA.ObjectToString(_usermap.Get((Object)("username")));
- //BA.debugLineNum = 258;BA.debugLine="strUserName = username";
+ //BA.debugLineNum = 251;BA.debugLine="strUserName = username";
 _strusername = _username;
- //BA.debugLineNum = 259;BA.debugLine="pass = userMap.Get(\"pass\")";
+ //BA.debugLineNum = 252;BA.debugLine="pass = userMap.Get(\"pass\")";
 _pass = BA.ObjectToString(_usermap.Get((Object)("pass")));
- //BA.debugLineNum = 260;BA.debugLine="strUserLocation = userMap.Get(\"userlocation\")";
+ //BA.debugLineNum = 253;BA.debugLine="strUserLocation = userMap.Get(\"userlocation\")";
 _struserlocation = BA.ObjectToString(_usermap.Get((Object)("userlocation")));
- //BA.debugLineNum = 261;BA.debugLine="strUserFullName = userMap.Get(\"username\")";
+ //BA.debugLineNum = 254;BA.debugLine="strUserFullName = userMap.Get(\"username\")";
 _struserfullname = BA.ObjectToString(_usermap.Get((Object)("username")));
- //BA.debugLineNum = 262;BA.debugLine="strUserOrg = userMap.Get(\"userorg\")";
+ //BA.debugLineNum = 255;BA.debugLine="strUserOrg = userMap.Get(\"userorg\")";
 _struserorg = BA.ObjectToString(_usermap.Get((Object)("userorg")));
- //BA.debugLineNum = 263;BA.debugLine="strUserTipoUsuario = userMap.Get(\"usertipousuari";
+ //BA.debugLineNum = 256;BA.debugLine="strUserTipoUsuario = userMap.Get(\"usertipousuari";
 _strusertipousuario = BA.ObjectToString(_usermap.Get((Object)("usertipousuario")));
- //BA.debugLineNum = 264;BA.debugLine="userFechadeNacimiento = userMap.Get(\"fechadenaci";
+ //BA.debugLineNum = 257;BA.debugLine="userFechadeNacimiento = userMap.Get(\"fechadenaci";
 _userfechadenacimiento = BA.ObjectToString(_usermap.Get((Object)("fechadenacimiento")));
- //BA.debugLineNum = 265;BA.debugLine="userSexo = userMap.Get(\"sexo\")";
+ //BA.debugLineNum = 258;BA.debugLine="userSexo = userMap.Get(\"sexo\")";
 _usersexo = BA.ObjectToString(_usermap.Get((Object)("sexo")));
- //BA.debugLineNum = 266;BA.debugLine="strUserEmail = userMap.Get(\"useremail\")";
+ //BA.debugLineNum = 259;BA.debugLine="strUserEmail = userMap.Get(\"useremail\")";
 _struseremail = BA.ObjectToString(_usermap.Get((Object)("useremail")));
  };
- //BA.debugLineNum = 270;BA.debugLine="End Sub";
+ //BA.debugLineNum = 263;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _checkforgoogleplayservices() throws Exception{
 anywheresoftware.b4j.object.JavaObject _googleapiavailablity = null;
 anywheresoftware.b4j.object.JavaObject _context = null;
- //BA.debugLineNum = 197;BA.debugLine="Sub CheckForGooglePlayServices As Boolean";
- //BA.debugLineNum = 198;BA.debugLine="Dim GoogleApiAvailablity As JavaObject";
+ //BA.debugLineNum = 190;BA.debugLine="Sub CheckForGooglePlayServices As Boolean";
+ //BA.debugLineNum = 191;BA.debugLine="Dim GoogleApiAvailablity As JavaObject";
 _googleapiavailablity = new anywheresoftware.b4j.object.JavaObject();
- //BA.debugLineNum = 199;BA.debugLine="GoogleApiAvailablity = GoogleApiAvailablity.Initi";
+ //BA.debugLineNum = 192;BA.debugLine="GoogleApiAvailablity = GoogleApiAvailablity.Initi";
 _googleapiavailablity = (anywheresoftware.b4j.object.JavaObject) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4j.object.JavaObject(), (java.lang.Object)(_googleapiavailablity.InitializeStatic("com.google.android.gms.common.GoogleApiAvailability").RunMethod("getInstance",(Object[])(anywheresoftware.b4a.keywords.Common.Null))));
- //BA.debugLineNum = 200;BA.debugLine="Dim context As JavaObject";
+ //BA.debugLineNum = 193;BA.debugLine="Dim context As JavaObject";
 _context = new anywheresoftware.b4j.object.JavaObject();
- //BA.debugLineNum = 201;BA.debugLine="context.InitializeContext";
+ //BA.debugLineNum = 194;BA.debugLine="context.InitializeContext";
 _context.InitializeContext(processBA);
- //BA.debugLineNum = 202;BA.debugLine="If GoogleApiAvailablity.RunMethod(\"isGooglePlaySe";
+ //BA.debugLineNum = 195;BA.debugLine="If GoogleApiAvailablity.RunMethod(\"isGooglePlaySe";
 if ((_googleapiavailablity.RunMethod("isGooglePlayServicesAvailable",new Object[]{(Object)(_context.getObject())})).equals((Object)(0)) == false) { 
- //BA.debugLineNum = 203;BA.debugLine="GoogleApiAvailablity.RunMethod(\"makeGooglePlaySe";
+ //BA.debugLineNum = 196;BA.debugLine="GoogleApiAvailablity.RunMethod(\"makeGooglePlaySe";
 _googleapiavailablity.RunMethod("makeGooglePlayServicesAvailable",new Object[]{(Object)(_context.getObject())});
- //BA.debugLineNum = 204;BA.debugLine="Return False";
+ //BA.debugLineNum = 197;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
- //BA.debugLineNum = 206;BA.debugLine="Return True";
+ //BA.debugLineNum = 199;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
- //BA.debugLineNum = 207;BA.debugLine="End Sub";
+ //BA.debugLineNum = 200;BA.debugLine="End Sub";
 return false;
 }
 public static String  _globals() throws Exception{
- //BA.debugLineNum = 108;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 112;BA.debugLine="Private btnOffline As Button";
+ //BA.debugLineNum = 104;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 108;BA.debugLine="Private btnOffline As Button";
 mostCurrent._btnoffline = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 113;BA.debugLine="Private lblEstado As Label";
+ //BA.debugLineNum = 109;BA.debugLine="Private lblEstado As Label";
 mostCurrent._lblestado = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 116;BA.debugLine="Dim Cursor1 As Cursor";
+ //BA.debugLineNum = 112;BA.debugLine="Dim Cursor1 As Cursor";
 mostCurrent._cursor1 = new anywheresoftware.b4a.sql.SQL.CursorWrapper();
- //BA.debugLineNum = 117;BA.debugLine="Private logo_load_gif As B4XGifView";
+ //BA.debugLineNum = 113;BA.debugLine="Private logo_load_gif As B4XGifView";
 mostCurrent._logo_load_gif = new appear.pnud.preservamos.b4xgifview();
- //BA.debugLineNum = 118;BA.debugLine="End Sub";
+ //BA.debugLineNum = 114;BA.debugLine="End Sub";
 return "";
 }
 
@@ -827,25 +771,30 @@ public static void initializeProcessGlobals() {
 		        b4a.example.dateutils._process_globals();
 main._process_globals();
 form_main._process_globals();
-reporte_fotos._process_globals();
-dbutils._process_globals();
+starter._process_globals();
+inatcheck._process_globals();
 frmlocalizacion._process_globals();
-reporte_habitat_laguna._process_globals();
-reporte_habitat_rio._process_globals();
+reporte_envio._process_globals();
+alertas._process_globals();
+register._process_globals();
+frmeditprofile._process_globals();
+alerta_fotos._process_globals();
+form_reporte._process_globals();
 aprender_muestreo._process_globals();
+dbutils._process_globals();
 downloadservice._process_globals();
 firebasemessaging._process_globals();
-form_reporte._process_globals();
 frmabout._process_globals();
 frmdatosanteriores._process_globals();
-frmeditprofile._process_globals();
 frmfelicitaciones._process_globals();
+frmmapa._process_globals();
 frmperfil._process_globals();
 frmpoliticadatos._process_globals();
 httputils2service._process_globals();
-register._process_globals();
-reporte_envio._process_globals();
-starter._process_globals();
+imagedownloader._process_globals();
+reporte_fotos._process_globals();
+reporte_habitat_laguna._process_globals();
+reporte_habitat_rio._process_globals();
 uploadfiles._process_globals();
 utilidades._process_globals();
 xuiviewsutils._process_globals();
@@ -855,122 +804,118 @@ xuiviewsutils._process_globals();
 		}
     }
 }public static String  _process_globals() throws Exception{
- //BA.debugLineNum = 27;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 36;BA.debugLine="Dim deviceID As String";
+ //BA.debugLineNum = 31;BA.debugLine="Sub Process_Globals";
+ //BA.debugLineNum = 40;BA.debugLine="Dim deviceID As String";
 _deviceid = "";
- //BA.debugLineNum = 38;BA.debugLine="Dim lang As String";
+ //BA.debugLineNum = 42;BA.debugLine="Dim lang As String";
 _lang = "";
- //BA.debugLineNum = 40;BA.debugLine="Dim username As String";
+ //BA.debugLineNum = 44;BA.debugLine="Dim username As String";
 _username = "";
- //BA.debugLineNum = 41;BA.debugLine="Dim pass As String";
+ //BA.debugLineNum = 45;BA.debugLine="Dim pass As String";
 _pass = "";
- //BA.debugLineNum = 45;BA.debugLine="Dim modooffline As Boolean";
-_modooffline = false;
- //BA.debugLineNum = 46;BA.debugLine="Dim forceoffline As Boolean";
-_forceoffline = false;
- //BA.debugLineNum = 51;BA.debugLine="Dim serverversion As String";
+ //BA.debugLineNum = 47;BA.debugLine="Dim serverversion As String";
 _serverversion = "";
- //BA.debugLineNum = 52;BA.debugLine="Dim servernewstitulo As String";
+ //BA.debugLineNum = 48;BA.debugLine="Dim servernewstitulo As String";
 _servernewstitulo = "";
- //BA.debugLineNum = 53;BA.debugLine="Dim servernewstext As String";
+ //BA.debugLineNum = 49;BA.debugLine="Dim servernewstext As String";
 _servernewstext = "";
- //BA.debugLineNum = 54;BA.debugLine="Dim versionactual As String";
+ //BA.debugLineNum = 50;BA.debugLine="Dim versionactual As String";
 _versionactual = "";
- //BA.debugLineNum = 55;BA.debugLine="Dim serverPath As String = \"https://preservamos.a";
+ //BA.debugLineNum = 51;BA.debugLine="Dim serverPath As String = \"https://preservamos.a";
 _serverpath = "https://preservamos.ar";
- //BA.debugLineNum = 56;BA.debugLine="Dim serverConnectionFolder As String = \"connect_a";
+ //BA.debugLineNum = 52;BA.debugLine="Dim serverConnectionFolder As String = \"connect_a";
 _serverconnectionfolder = "connect_app";
- //BA.debugLineNum = 59;BA.debugLine="Dim strUserID As String";
+ //BA.debugLineNum = 55;BA.debugLine="Dim strUserID As String";
 _struserid = "";
- //BA.debugLineNum = 60;BA.debugLine="Dim strUserName As String";
+ //BA.debugLineNum = 56;BA.debugLine="Dim strUserName As String";
 _strusername = "";
- //BA.debugLineNum = 61;BA.debugLine="Dim strUserFullName As String";
+ //BA.debugLineNum = 57;BA.debugLine="Dim strUserFullName As String";
 _struserfullname = "";
- //BA.debugLineNum = 62;BA.debugLine="Dim strUserLocation As String";
+ //BA.debugLineNum = 58;BA.debugLine="Dim strUserLocation As String";
 _struserlocation = "";
- //BA.debugLineNum = 63;BA.debugLine="Dim strUserEmail As String";
+ //BA.debugLineNum = 59;BA.debugLine="Dim strUserEmail As String";
 _struseremail = "";
- //BA.debugLineNum = 64;BA.debugLine="Dim strUserOrg As String  ' municipio";
+ //BA.debugLineNum = 60;BA.debugLine="Dim strUserOrg As String  ' municipio";
 _struserorg = "";
- //BA.debugLineNum = 65;BA.debugLine="Dim strUserTipoUsuario As String";
+ //BA.debugLineNum = 61;BA.debugLine="Dim strUserTipoUsuario As String";
 _strusertipousuario = "";
- //BA.debugLineNum = 66;BA.debugLine="Dim userFechadeNacimiento As String";
+ //BA.debugLineNum = 62;BA.debugLine="Dim userFechadeNacimiento As String";
 _userfechadenacimiento = "";
- //BA.debugLineNum = 67;BA.debugLine="Dim userSexo As String";
+ //BA.debugLineNum = 63;BA.debugLine="Dim userSexo As String";
 _usersexo = "";
- //BA.debugLineNum = 69;BA.debugLine="Dim numfotosok As String  = 0";
+ //BA.debugLineNum = 65;BA.debugLine="Dim numfotosok As String  = 0";
 _numfotosok = BA.NumberToString(0);
- //BA.debugLineNum = 70;BA.debugLine="Dim numevalsok As String  = 0";
+ //BA.debugLineNum = 66;BA.debugLine="Dim numevalsok As String  = 0";
 _numevalsok = BA.NumberToString(0);
- //BA.debugLineNum = 71;BA.debugLine="Dim username As String";
+ //BA.debugLineNum = 67;BA.debugLine="Dim username As String";
 _username = "";
- //BA.debugLineNum = 72;BA.debugLine="Dim pass As String";
+ //BA.debugLineNum = 68;BA.debugLine="Dim pass As String";
 _pass = "";
- //BA.debugLineNum = 73;BA.debugLine="Dim msjprivadouser As String";
+ //BA.debugLineNum = 69;BA.debugLine="Dim msjprivadouser As String";
 _msjprivadouser = "";
- //BA.debugLineNum = 74;BA.debugLine="Dim userlang As String = \"es\"";
+ //BA.debugLineNum = 70;BA.debugLine="Dim userlang As String = \"es\"";
 _userlang = "es";
- //BA.debugLineNum = 75;BA.debugLine="Dim evalsOK As String";
+ //BA.debugLineNum = 71;BA.debugLine="Dim evalsOK As String";
 _evalsok = "";
- //BA.debugLineNum = 76;BA.debugLine="Dim evalsCorregidas As String";
+ //BA.debugLineNum = 72;BA.debugLine="Dim evalsCorregidas As String";
 _evalscorregidas = "";
- //BA.debugLineNum = 77;BA.debugLine="Dim evalsInvalidas As String";
+ //BA.debugLineNum = 73;BA.debugLine="Dim evalsInvalidas As String";
 _evalsinvalidas = "";
- //BA.debugLineNum = 78;BA.debugLine="Dim evalsSospechosas As String";
+ //BA.debugLineNum = 74;BA.debugLine="Dim evalsSospechosas As String";
 _evalssospechosas = "";
- //BA.debugLineNum = 79;BA.debugLine="Dim validacionTotal As String";
+ //BA.debugLineNum = 75;BA.debugLine="Dim validacionTotal As String";
 _validaciontotal = "";
- //BA.debugLineNum = 80;BA.debugLine="Dim userCategoria As String";
+ //BA.debugLineNum = 76;BA.debugLine="Dim userCategoria As String";
 _usercategoria = "";
- //BA.debugLineNum = 83;BA.debugLine="Dim puntostotales As String = 0";
+ //BA.debugLineNum = 79;BA.debugLine="Dim puntostotales As String = 0";
 _puntostotales = BA.NumberToString(0);
- //BA.debugLineNum = 84;BA.debugLine="Dim puntosnumfotos As String = 0";
+ //BA.debugLineNum = 80;BA.debugLine="Dim puntosnumfotos As String = 0";
 _puntosnumfotos = BA.NumberToString(0);
- //BA.debugLineNum = 85;BA.debugLine="Dim puntosnumevals As String = 0";
+ //BA.debugLineNum = 81;BA.debugLine="Dim puntosnumevals As String = 0";
 _puntosnumevals = BA.NumberToString(0);
- //BA.debugLineNum = 86;BA.debugLine="Dim numriollanura As String = 0";
+ //BA.debugLineNum = 82;BA.debugLine="Dim numriollanura As String = 0";
 _numriollanura = BA.NumberToString(0);
- //BA.debugLineNum = 87;BA.debugLine="Dim numriomontana As String = 0";
+ //BA.debugLineNum = 83;BA.debugLine="Dim numriomontana As String = 0";
 _numriomontana = BA.NumberToString(0);
- //BA.debugLineNum = 88;BA.debugLine="Dim numlaguna As String = 0";
+ //BA.debugLineNum = 84;BA.debugLine="Dim numlaguna As String = 0";
 _numlaguna = BA.NumberToString(0);
- //BA.debugLineNum = 89;BA.debugLine="Dim numestuario As String = 0";
+ //BA.debugLineNum = 85;BA.debugLine="Dim numestuario As String = 0";
 _numestuario = BA.NumberToString(0);
- //BA.debugLineNum = 90;BA.debugLine="Dim numshares As String = 0";
+ //BA.debugLineNum = 86;BA.debugLine="Dim numshares As String = 0";
 _numshares = BA.NumberToString(0);
- //BA.debugLineNum = 91;BA.debugLine="Dim latitud As String";
+ //BA.debugLineNum = 87;BA.debugLine="Dim latitud As String";
 _latitud = "";
- //BA.debugLineNum = 92;BA.debugLine="Dim longitud As String";
+ //BA.debugLineNum = 88;BA.debugLine="Dim longitud As String";
 _longitud = "";
- //BA.debugLineNum = 93;BA.debugLine="Dim dateandtime As String";
+ //BA.debugLineNum = 89;BA.debugLine="Dim dateandtime As String";
 _dateandtime = "";
- //BA.debugLineNum = 94;BA.debugLine="Dim currentproject As String";
+ //BA.debugLineNum = 90;BA.debugLine="Dim currentproject As String";
 _currentproject = "";
- //BA.debugLineNum = 97;BA.debugLine="Dim screenshotpath As String";
+ //BA.debugLineNum = 93;BA.debugLine="Dim screenshotpath As String";
 _screenshotpath = "";
- //BA.debugLineNum = 100;BA.debugLine="Dim rp As RuntimePermissions";
+ //BA.debugLineNum = 96;BA.debugLine="Dim rp As RuntimePermissions";
 _rp = new anywheresoftware.b4a.objects.RuntimePermissions();
- //BA.debugLineNum = 101;BA.debugLine="Private timer1 As Timer";
+ //BA.debugLineNum = 97;BA.debugLine="Private timer1 As Timer";
 _timer1 = new anywheresoftware.b4a.objects.Timer();
- //BA.debugLineNum = 107;BA.debugLine="End Sub";
+ //BA.debugLineNum = 103;BA.debugLine="End Sub";
 return "";
 }
 public static String  _testinternet() throws Exception{
 appear.pnud.preservamos.downloadservice._downloaddata _dd = null;
- //BA.debugLineNum = 277;BA.debugLine="Sub TestInternet";
- //BA.debugLineNum = 278;BA.debugLine="Log(\"Testing internet\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("6524289","Testing internet",0);
- //BA.debugLineNum = 279;BA.debugLine="Dim dd As DownloadData";
+ //BA.debugLineNum = 270;BA.debugLine="Sub TestInternet";
+ //BA.debugLineNum = 271;BA.debugLine="Log(\"Testing internet\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("522609921","Testing internet",0);
+ //BA.debugLineNum = 272;BA.debugLine="Dim dd As DownloadData";
 _dd = new appear.pnud.preservamos.downloadservice._downloaddata();
- //BA.debugLineNum = 280;BA.debugLine="dd.url = serverPath & \"/\" & serverConnectionFolde";
+ //BA.debugLineNum = 273;BA.debugLine="dd.url = serverPath & \"/\" & serverConnectionFolde";
 _dd.url /*String*/  = _serverpath+"/"+_serverconnectionfolder+"/connecttest.php";
- //BA.debugLineNum = 281;BA.debugLine="dd.EventName = \"TestInternet\"";
+ //BA.debugLineNum = 274;BA.debugLine="dd.EventName = \"TestInternet\"";
 _dd.EventName /*String*/  = "TestInternet";
- //BA.debugLineNum = 282;BA.debugLine="dd.Target = Me";
+ //BA.debugLineNum = 275;BA.debugLine="dd.Target = Me";
 _dd.Target /*Object*/  = main.getObject();
- //BA.debugLineNum = 284;BA.debugLine="CallSubDelayed2(DownloadService, \"StartDownload\",";
+ //BA.debugLineNum = 277;BA.debugLine="CallSubDelayed2(DownloadService, \"StartDownload\",";
 anywheresoftware.b4a.keywords.Common.CallSubDelayed2(processBA,(Object)(mostCurrent._downloadservice.getObject()),"StartDownload",(Object)(_dd));
- //BA.debugLineNum = 285;BA.debugLine="End Sub";
+ //BA.debugLineNum = 278;BA.debugLine="End Sub";
 return "";
 }
 public static void  _testinternet_complete(appear.pnud.preservamos.httpjob _job) throws Exception{
@@ -1003,9 +948,9 @@ return;
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 288;BA.debugLine="Log(\"Job completed: \" & Job.Success)";
-anywheresoftware.b4a.keywords.Common.LogImpl("6589825","Job completed: "+BA.ObjectToString(_job._success /*boolean*/ ),0);
- //BA.debugLineNum = 289;BA.debugLine="If Job.Success = True Then";
+ //BA.debugLineNum = 281;BA.debugLine="Log(\"Job completed: \" & Job.Success)";
+anywheresoftware.b4a.keywords.Common.LogImpl("522675457","Job completed: "+BA.ObjectToString(_job._success /*boolean*/ ),0);
+ //BA.debugLineNum = 282;BA.debugLine="If Job.Success = True Then";
 if (true) break;
 
 case 1:
@@ -1020,23 +965,23 @@ this.state = 25;
 case 3:
 //C
 this.state = 4;
- //BA.debugLineNum = 290;BA.debugLine="Log(\"Internet test successful\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("6589827","Internet test successful",0);
- //BA.debugLineNum = 291;BA.debugLine="versionactual = Application.VersionCode";
+ //BA.debugLineNum = 283;BA.debugLine="Log(\"Internet test successful\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("522675459","Internet test successful",0);
+ //BA.debugLineNum = 284;BA.debugLine="versionactual = Application.VersionCode";
 parent._versionactual = BA.NumberToString(anywheresoftware.b4a.keywords.Common.Application.getVersionCode());
- //BA.debugLineNum = 292;BA.debugLine="Dim ret As String";
+ //BA.debugLineNum = 285;BA.debugLine="Dim ret As String";
 _ret = "";
- //BA.debugLineNum = 293;BA.debugLine="Dim act As String";
+ //BA.debugLineNum = 286;BA.debugLine="Dim act As String";
 _act = "";
- //BA.debugLineNum = 294;BA.debugLine="ret = Job.GetString";
+ //BA.debugLineNum = 287;BA.debugLine="ret = Job.GetString";
 _ret = _job._getstring /*String*/ ();
- //BA.debugLineNum = 295;BA.debugLine="Dim parser As JSONParser";
+ //BA.debugLineNum = 288;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
- //BA.debugLineNum = 296;BA.debugLine="parser.Initialize(ret)";
+ //BA.debugLineNum = 289;BA.debugLine="parser.Initialize(ret)";
 _parser.Initialize(_ret);
- //BA.debugLineNum = 297;BA.debugLine="act = parser.NextValue";
+ //BA.debugLineNum = 290;BA.debugLine="act = parser.NextValue";
 _act = BA.ObjectToString(_parser.NextValue());
- //BA.debugLineNum = 298;BA.debugLine="If act = \"Connected\" Then";
+ //BA.debugLineNum = 291;BA.debugLine="If act = \"Connected\" Then";
 if (true) break;
 
 case 4:
@@ -1049,19 +994,17 @@ this.state = 6;
 case 6:
 //C
 this.state = 7;
- //BA.debugLineNum = 302;BA.debugLine="modooffline = False";
-parent._modooffline = anywheresoftware.b4a.keywords.Common.False;
- //BA.debugLineNum = 303;BA.debugLine="Dim nd As Map";
+ //BA.debugLineNum = 294;BA.debugLine="Dim nd As Map";
 _nd = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 304;BA.debugLine="nd = parser.NextObject";
+ //BA.debugLineNum = 295;BA.debugLine="nd = parser.NextObject";
 _nd = _parser.NextObject();
- //BA.debugLineNum = 305;BA.debugLine="serverversion = nd.Get(\"currentversion\")";
+ //BA.debugLineNum = 296;BA.debugLine="serverversion = nd.Get(\"currentversion\")";
 parent._serverversion = BA.ObjectToString(_nd.Get((Object)("currentversion")));
- //BA.debugLineNum = 306;BA.debugLine="servernewstitulo = nd.Get(\"newstitulo\")";
+ //BA.debugLineNum = 297;BA.debugLine="servernewstitulo = nd.Get(\"newstitulo\")";
 parent._servernewstitulo = BA.ObjectToString(_nd.Get((Object)("newstitulo")));
- //BA.debugLineNum = 307;BA.debugLine="servernewstext = nd.Get(\"newstext\")";
+ //BA.debugLineNum = 298;BA.debugLine="servernewstext = nd.Get(\"newstext\")";
 parent._servernewstext = BA.ObjectToString(_nd.Get((Object)("newstext")));
- //BA.debugLineNum = 308;BA.debugLine="If serverversion > versionactual Then";
+ //BA.debugLineNum = 299;BA.debugLine="If serverversion > versionactual Then";
 if (true) break;
 
 case 7:
@@ -1076,9 +1019,9 @@ this.state = 17;
 case 9:
 //C
 this.state = 10;
- //BA.debugLineNum = 309;BA.debugLine="Msgbox2Async(\"Para continuar, debe descargar u";
+ //BA.debugLineNum = 300;BA.debugLine="Msgbox2Async(\"Para continuar, debe descargar u";
 anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("Para continuar, debe descargar una actualización importante"),BA.ObjectToCharSequence("Actualización"),"Ir a GooglePlay","Lo haré después","",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 310;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
+ //BA.debugLineNum = 301;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
 anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
 this.state = 31;
 return;
@@ -1087,7 +1030,7 @@ case 31:
 this.state = 10;
 _result = (Integer) result[0];
 ;
- //BA.debugLineNum = 311;BA.debugLine="If Result = DialogResponse.POSITIVE Then";
+ //BA.debugLineNum = 302;BA.debugLine="If Result = DialogResponse.POSITIVE Then";
 if (true) break;
 
 case 10:
@@ -1102,35 +1045,35 @@ this.state = 14;
 case 12:
 //C
 this.state = 15;
- //BA.debugLineNum = 313;BA.debugLine="Dim market As Intent, uri As String";
+ //BA.debugLineNum = 304;BA.debugLine="Dim market As Intent, uri As String";
 _market = new anywheresoftware.b4a.objects.IntentWrapper();
 _uri = "";
- //BA.debugLineNum = 314;BA.debugLine="uri=\"market://details?id=ilpla.appear\"";
+ //BA.debugLineNum = 305;BA.debugLine="uri=\"market://details?id=ilpla.appear\"";
 _uri = "market://details?id=ilpla.appear";
- //BA.debugLineNum = 315;BA.debugLine="market.Initialize(market.ACTION_VIEW,uri)";
+ //BA.debugLineNum = 306;BA.debugLine="market.Initialize(market.ACTION_VIEW,uri)";
 _market.Initialize(_market.ACTION_VIEW,_uri);
- //BA.debugLineNum = 316;BA.debugLine="StartActivity(market)";
+ //BA.debugLineNum = 307;BA.debugLine="StartActivity(market)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_market.getObject()));
- //BA.debugLineNum = 317;BA.debugLine="Log(\"Yes, update\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("6589854","Yes, update",0);
- //BA.debugLineNum = 319;BA.debugLine="Activity.RemoveAllViews";
+ //BA.debugLineNum = 308;BA.debugLine="Log(\"Yes, update\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("522675484","Yes, update",0);
+ //BA.debugLineNum = 310;BA.debugLine="Activity.RemoveAllViews";
 parent.mostCurrent._activity.RemoveAllViews();
- //BA.debugLineNum = 320;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 311;BA.debugLine="Activity.Finish";
 parent.mostCurrent._activity.Finish();
- //BA.debugLineNum = 321;BA.debugLine="StartActivity(Form_Main)";
+ //BA.debugLineNum = 312;BA.debugLine="StartActivity(Form_Main)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(parent.mostCurrent._form_main.getObject()));
  if (true) break;
 
 case 14:
 //C
 this.state = 15;
- //BA.debugLineNum = 323;BA.debugLine="Log(\"No, no update\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("6589860","No, no update",0);
- //BA.debugLineNum = 325;BA.debugLine="Activity.RemoveAllViews";
+ //BA.debugLineNum = 314;BA.debugLine="Log(\"No, no update\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("522675490","No, no update",0);
+ //BA.debugLineNum = 316;BA.debugLine="Activity.RemoveAllViews";
 parent.mostCurrent._activity.RemoveAllViews();
- //BA.debugLineNum = 326;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 317;BA.debugLine="Activity.Finish";
 parent.mostCurrent._activity.Finish();
- //BA.debugLineNum = 327;BA.debugLine="StartActivity(Form_Main)";
+ //BA.debugLineNum = 318;BA.debugLine="StartActivity(Form_Main)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(parent.mostCurrent._form_main.getObject()));
  if (true) break;
 
@@ -1143,7 +1086,7 @@ this.state = 22;
 case 17:
 //C
 this.state = 18;
- //BA.debugLineNum = 331;BA.debugLine="If servernewstitulo <> \"\" And servernewstitulo";
+ //BA.debugLineNum = 322;BA.debugLine="If servernewstitulo <> \"\" And servernewstitulo";
 if (true) break;
 
 case 18:
@@ -1156,7 +1099,7 @@ this.state = 20;
 case 20:
 //C
 this.state = 21;
- //BA.debugLineNum = 332;BA.debugLine="MsgboxAsync(servernewstext, servernewstitulo)";
+ //BA.debugLineNum = 323;BA.debugLine="MsgboxAsync(servernewstext, servernewstitulo)";
 anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence(parent._servernewstext),BA.ObjectToCharSequence(parent._servernewstitulo),processBA);
  if (true) break;
 
@@ -1164,11 +1107,11 @@ case 21:
 //C
 this.state = 22;
 ;
- //BA.debugLineNum = 338;BA.debugLine="Activity.RemoveAllViews";
+ //BA.debugLineNum = 329;BA.debugLine="Activity.RemoveAllViews";
 parent.mostCurrent._activity.RemoveAllViews();
- //BA.debugLineNum = 339;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 330;BA.debugLine="Activity.Finish";
 parent.mostCurrent._activity.Finish();
- //BA.debugLineNum = 340;BA.debugLine="StartActivity(Form_Main)";
+ //BA.debugLineNum = 331;BA.debugLine="StartActivity(Form_Main)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(parent.mostCurrent._form_main.getObject()));
  if (true) break;
 
@@ -1187,9 +1130,9 @@ this.state = 30;
 case 25:
 //C
 this.state = 26;
- //BA.debugLineNum = 345;BA.debugLine="Msgbox2Async(\"No tienes conexión a Internet. Pre";
+ //BA.debugLineNum = 336;BA.debugLine="Msgbox2Async(\"No tienes conexión a Internet. Pre";
 anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("No tienes conexión a Internet. PreserVamos iniciará con el último usuario que utilizaste, pero no podrás ver ni cargar puntos hasta que no te conectes!"),BA.ObjectToCharSequence("Advertencia"),"Ok, entiendo","","",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 346;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
+ //BA.debugLineNum = 337;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
 anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
 this.state = 32;
 return;
@@ -1198,7 +1141,7 @@ case 32:
 this.state = 26;
 _result = (Integer) result[0];
 ;
- //BA.debugLineNum = 347;BA.debugLine="If Result = DialogResponse.POSITIVE Then";
+ //BA.debugLineNum = 338;BA.debugLine="If Result = DialogResponse.POSITIVE Then";
 if (true) break;
 
 case 26:
@@ -1211,15 +1154,13 @@ this.state = 28;
 case 28:
 //C
 this.state = 29;
- //BA.debugLineNum = 348;BA.debugLine="modooffline = True";
-parent._modooffline = anywheresoftware.b4a.keywords.Common.True;
- //BA.debugLineNum = 350;BA.debugLine="ProgressDialogHide";
+ //BA.debugLineNum = 339;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
- //BA.debugLineNum = 352;BA.debugLine="Activity.RemoveAllViews";
+ //BA.debugLineNum = 341;BA.debugLine="Activity.RemoveAllViews";
 parent.mostCurrent._activity.RemoveAllViews();
- //BA.debugLineNum = 353;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 342;BA.debugLine="Activity.Finish";
 parent.mostCurrent._activity.Finish();
- //BA.debugLineNum = 354;BA.debugLine="StartActivity(Form_Main)";
+ //BA.debugLineNum = 343;BA.debugLine="StartActivity(Form_Main)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(parent.mostCurrent._form_main.getObject()));
  if (true) break;
 
@@ -1233,9 +1174,9 @@ case 30:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 361;BA.debugLine="Job.Release";
+ //BA.debugLineNum = 350;BA.debugLine="Job.Release";
 _job._release /*String*/ ();
- //BA.debugLineNum = 362;BA.debugLine="End Sub";
+ //BA.debugLineNum = 351;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -1245,20 +1186,20 @@ if (true) break;
 public static void  _msgbox_result(int _result) throws Exception{
 }
 public static String  _timer1_tick() throws Exception{
- //BA.debugLineNum = 214;BA.debugLine="Sub timer1_Tick";
- //BA.debugLineNum = 215;BA.debugLine="If lang = \"es\" Then";
+ //BA.debugLineNum = 207;BA.debugLine="Sub timer1_Tick";
+ //BA.debugLineNum = 208;BA.debugLine="If lang = \"es\" Then";
 if ((_lang).equals("es")) { 
- //BA.debugLineNum = 216;BA.debugLine="lblEstado.Text = \"Comprobando conexión a interne";
+ //BA.debugLineNum = 209;BA.debugLine="lblEstado.Text = \"Comprobando conexión a interne";
 mostCurrent._lblestado.setText(BA.ObjectToCharSequence("Comprobando conexión a internet"));
  }else if((_lang).equals("en")) { 
- //BA.debugLineNum = 218;BA.debugLine="lblEstado.Text = \"Checking the connection to the";
+ //BA.debugLineNum = 211;BA.debugLine="lblEstado.Text = \"Checking the connection to the";
 mostCurrent._lblestado.setText(BA.ObjectToCharSequence("Checking the connection to the internet"));
  };
- //BA.debugLineNum = 223;BA.debugLine="TestInternet";
+ //BA.debugLineNum = 216;BA.debugLine="TestInternet";
 _testinternet();
- //BA.debugLineNum = 225;BA.debugLine="timer1.Enabled = False";
+ //BA.debugLineNum = 218;BA.debugLine="timer1.Enabled = False";
 _timer1.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 226;BA.debugLine="End Sub";
+ //BA.debugLineNum = 219;BA.debugLine="End Sub";
 return "";
 }
 }

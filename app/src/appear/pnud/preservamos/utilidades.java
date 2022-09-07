@@ -14,25 +14,30 @@ public static Object getObject() {
 public b4a.example.dateutils _dateutils = null;
 public appear.pnud.preservamos.main _main = null;
 public appear.pnud.preservamos.form_main _form_main = null;
-public appear.pnud.preservamos.reporte_fotos _reporte_fotos = null;
-public appear.pnud.preservamos.dbutils _dbutils = null;
+public appear.pnud.preservamos.starter _starter = null;
+public appear.pnud.preservamos.inatcheck _inatcheck = null;
 public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
-public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
-public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
+public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
+public appear.pnud.preservamos.alertas _alertas = null;
+public appear.pnud.preservamos.register _register = null;
+public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
+public appear.pnud.preservamos.alerta_fotos _alerta_fotos = null;
+public appear.pnud.preservamos.form_reporte _form_reporte = null;
 public appear.pnud.preservamos.aprender_muestreo _aprender_muestreo = null;
+public appear.pnud.preservamos.dbutils _dbutils = null;
 public appear.pnud.preservamos.downloadservice _downloadservice = null;
 public appear.pnud.preservamos.firebasemessaging _firebasemessaging = null;
-public appear.pnud.preservamos.form_reporte _form_reporte = null;
 public appear.pnud.preservamos.frmabout _frmabout = null;
 public appear.pnud.preservamos.frmdatosanteriores _frmdatosanteriores = null;
-public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
 public appear.pnud.preservamos.frmfelicitaciones _frmfelicitaciones = null;
+public appear.pnud.preservamos.frmmapa _frmmapa = null;
 public appear.pnud.preservamos.frmperfil _frmperfil = null;
 public appear.pnud.preservamos.frmpoliticadatos _frmpoliticadatos = null;
 public appear.pnud.preservamos.httputils2service _httputils2service = null;
-public appear.pnud.preservamos.register _register = null;
-public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
-public appear.pnud.preservamos.starter _starter = null;
+public appear.pnud.preservamos.imagedownloader _imagedownloader = null;
+public appear.pnud.preservamos.reporte_fotos _reporte_fotos = null;
+public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
+public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
 public appear.pnud.preservamos.uploadfiles _uploadfiles = null;
 public appear.pnud.preservamos.xuiviewsutils _xuiviewsutils = null;
 public static String  _bmsgbox3_click(anywheresoftware.b4a.BA _ba) throws Exception{
@@ -272,6 +277,54 @@ return "";
 public static String  _process_globals() throws Exception{
  //BA.debugLineNum = 3;BA.debugLine="Sub Process_Globals";
  //BA.debugLineNum = 7;BA.debugLine="End Sub";
+return "";
+}
+public static String  _randomnumber(anywheresoftware.b4a.BA _ba,int _length) throws Exception{
+String _abc = "";
+String _randomstr = "";
+int _i = 0;
+ //BA.debugLineNum = 150;BA.debugLine="Sub RandomNumber(length As Int) As String";
+ //BA.debugLineNum = 151;BA.debugLine="Dim abc As String = \"0123456789\"";
+_abc = "0123456789";
+ //BA.debugLineNum = 152;BA.debugLine="Dim RandomStr As String = \"\"";
+_randomstr = "";
+ //BA.debugLineNum = 153;BA.debugLine="For i = 0 To length - 1";
+{
+final int step3 = 1;
+final int limit3 = (int) (_length-1);
+_i = (int) (0) ;
+for (;_i <= limit3 ;_i = _i + step3 ) {
+ //BA.debugLineNum = 154;BA.debugLine="RandomStr = RandomStr & (abc.CharAt(Rnd(0,abc.Le";
+_randomstr = _randomstr+BA.ObjectToString((_abc.charAt(anywheresoftware.b4a.keywords.Common.Rnd((int) (0),_abc.length()))));
+ }
+};
+ //BA.debugLineNum = 156;BA.debugLine="Return RandomStr";
+if (true) return _randomstr;
+ //BA.debugLineNum = 157;BA.debugLine="End Sub";
+return "";
+}
+public static String  _randomstring(anywheresoftware.b4a.BA _ba,int _length) throws Exception{
+String _abc = "";
+String _randomstr = "";
+int _i = 0;
+ //BA.debugLineNum = 141;BA.debugLine="Sub RandomString(length As Int) As String";
+ //BA.debugLineNum = 142;BA.debugLine="Dim abc As String = \"0123456789ABCDEFGHIJKLMNOPQR";
+_abc = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+ //BA.debugLineNum = 143;BA.debugLine="Dim RandomStr As String = \"\"";
+_randomstr = "";
+ //BA.debugLineNum = 144;BA.debugLine="For i = 0 To length - 1";
+{
+final int step3 = 1;
+final int limit3 = (int) (_length-1);
+_i = (int) (0) ;
+for (;_i <= limit3 ;_i = _i + step3 ) {
+ //BA.debugLineNum = 145;BA.debugLine="RandomStr = RandomStr & (abc.CharAt(Rnd(0,abc.Le";
+_randomstr = _randomstr+BA.ObjectToString((_abc.charAt(anywheresoftware.b4a.keywords.Common.Rnd((int) (0),_abc.length()))));
+ }
+};
+ //BA.debugLineNum = 147;BA.debugLine="Return RandomStr";
+if (true) return _randomstr;
+ //BA.debugLineNum = 148;BA.debugLine="End Sub";
 return "";
 }
 public static String  _setprogressdrawable(anywheresoftware.b4a.BA _ba,anywheresoftware.b4a.objects.ProgressBarWrapper _p,Object _drawable,Object _backgrounddrawable) throws Exception{

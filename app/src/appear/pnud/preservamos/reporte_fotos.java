@@ -374,24 +374,29 @@ public appear.pnud.preservamos.b4ximageview _b4ximageview1 = null;
 public b4a.example.dateutils _dateutils = null;
 public appear.pnud.preservamos.main _main = null;
 public appear.pnud.preservamos.form_main _form_main = null;
-public appear.pnud.preservamos.dbutils _dbutils = null;
+public appear.pnud.preservamos.starter _starter = null;
+public appear.pnud.preservamos.inatcheck _inatcheck = null;
 public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
-public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
-public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
+public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
+public appear.pnud.preservamos.alertas _alertas = null;
+public appear.pnud.preservamos.register _register = null;
+public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
+public appear.pnud.preservamos.alerta_fotos _alerta_fotos = null;
+public appear.pnud.preservamos.form_reporte _form_reporte = null;
 public appear.pnud.preservamos.aprender_muestreo _aprender_muestreo = null;
+public appear.pnud.preservamos.dbutils _dbutils = null;
 public appear.pnud.preservamos.downloadservice _downloadservice = null;
 public appear.pnud.preservamos.firebasemessaging _firebasemessaging = null;
-public appear.pnud.preservamos.form_reporte _form_reporte = null;
 public appear.pnud.preservamos.frmabout _frmabout = null;
 public appear.pnud.preservamos.frmdatosanteriores _frmdatosanteriores = null;
-public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
 public appear.pnud.preservamos.frmfelicitaciones _frmfelicitaciones = null;
+public appear.pnud.preservamos.frmmapa _frmmapa = null;
 public appear.pnud.preservamos.frmperfil _frmperfil = null;
 public appear.pnud.preservamos.frmpoliticadatos _frmpoliticadatos = null;
 public appear.pnud.preservamos.httputils2service _httputils2service = null;
-public appear.pnud.preservamos.register _register = null;
-public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
-public appear.pnud.preservamos.starter _starter = null;
+public appear.pnud.preservamos.imagedownloader _imagedownloader = null;
+public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
+public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
 public appear.pnud.preservamos.uploadfiles _uploadfiles = null;
 public appear.pnud.preservamos.utilidades _utilidades = null;
 public appear.pnud.preservamos.xuiviewsutils _xuiviewsutils = null;
@@ -404,65 +409,65 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 71;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 74;BA.debugLine="If File.ExternalWritable = True Then";
+ //BA.debugLineNum = 68;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 71;BA.debugLine="If File.ExternalWritable = True Then";
 if (anywheresoftware.b4a.keywords.Common.File.getExternalWritable()==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 75;BA.debugLine="If File.IsDirectory(File.DirRootExternal,\"Preser";
-if (anywheresoftware.b4a.keywords.Common.File.IsDirectory(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal(),"PreserVamos/")==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 76;BA.debugLine="File.MakeDir(File.DirRootExternal, \"PreserVamos";
-anywheresoftware.b4a.keywords.Common.File.MakeDir(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal(),"PreserVamos");
+ //BA.debugLineNum = 72;BA.debugLine="If File.IsDirectory(rp.GetSafeDirDefaultExternal";
+if (anywheresoftware.b4a.keywords.Common.File.IsDirectory(mostCurrent._rp.GetSafeDirDefaultExternal(""),"PreserVamos")==anywheresoftware.b4a.keywords.Common.False) { 
+ //BA.debugLineNum = 73;BA.debugLine="File.MakeDir(rp.GetSafeDirDefaultExternal(\"\"),";
+anywheresoftware.b4a.keywords.Common.File.MakeDir(mostCurrent._rp.GetSafeDirDefaultExternal(""),"PreserVamos");
  };
  }else {
- //BA.debugLineNum = 79;BA.debugLine="If File.IsDirectory(File.DirInternal,\"PreserVamo";
-if (anywheresoftware.b4a.keywords.Common.File.IsDirectory(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"PreserVamos/")==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 80;BA.debugLine="File.MakeDir(File.DirInternal, \"PreserVamos\")";
-anywheresoftware.b4a.keywords.Common.File.MakeDir(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"PreserVamos");
+ //BA.debugLineNum = 76;BA.debugLine="If File.IsDirectory(rp.GetSafeDirDefaultExternal";
+if (anywheresoftware.b4a.keywords.Common.File.IsDirectory(mostCurrent._rp.GetSafeDirDefaultExternal(""),"PreserVamos")==anywheresoftware.b4a.keywords.Common.False) { 
+ //BA.debugLineNum = 77;BA.debugLine="File.MakeDir(rp.GetSafeDirDefaultExternal(\"\"),";
+anywheresoftware.b4a.keywords.Common.File.MakeDir(mostCurrent._rp.GetSafeDirDefaultExternal(""),"PreserVamos");
  };
  };
- //BA.debugLineNum = 84;BA.debugLine="Activity.LoadLayout(\"Camera_New\")";
+ //BA.debugLineNum = 81;BA.debugLine="Activity.LoadLayout(\"Camera_New\")";
 mostCurrent._activity.LoadLayout("Camera_New",mostCurrent.activityBA);
- //BA.debugLineNum = 85;BA.debugLine="Activity.LoadLayout(\"Camera_New_StillPicture\")";
+ //BA.debugLineNum = 82;BA.debugLine="Activity.LoadLayout(\"Camera_New_StillPicture\")";
 mostCurrent._activity.LoadLayout("Camera_New_StillPicture",mostCurrent.activityBA);
- //BA.debugLineNum = 86;BA.debugLine="cam.Initialize(pnlCamera)";
+ //BA.debugLineNum = 83;BA.debugLine="cam.Initialize(pnlCamera)";
 mostCurrent._cam._initialize /*String*/ (mostCurrent.activityBA,(anywheresoftware.b4a.objects.PanelWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.PanelWrapper(), (android.view.ViewGroup)(mostCurrent._pnlcamera.getObject())));
- //BA.debugLineNum = 87;BA.debugLine="Log(cam.SupportedHardwareLevel)";
-anywheresoftware.b4a.keywords.Common.LogImpl("63145744",mostCurrent._cam._getsupportedhardwarelevel /*String*/ (),0);
- //BA.debugLineNum = 89;BA.debugLine="SetState(False, False, VideoMode)";
+ //BA.debugLineNum = 84;BA.debugLine="Log(cam.SupportedHardwareLevel)";
+anywheresoftware.b4a.keywords.Common.LogImpl("554657040",mostCurrent._cam._getsupportedhardwarelevel /*String*/ (),0);
+ //BA.debugLineNum = 86;BA.debugLine="SetState(False, False, VideoMode)";
 _setstate(anywheresoftware.b4a.keywords.Common.False,anywheresoftware.b4a.keywords.Common.False,_videomode);
- //BA.debugLineNum = 93;BA.debugLine="Activity.AddMenuItem(\"Adjuntar foto\", \"mnuAdjunta";
+ //BA.debugLineNum = 90;BA.debugLine="Activity.AddMenuItem(\"Adjuntar foto\", \"mnuAdjunta";
 mostCurrent._activity.AddMenuItem(BA.ObjectToCharSequence("Adjuntar foto"),"mnuAdjuntar");
- //BA.debugLineNum = 95;BA.debugLine="DesignaFoto";
+ //BA.debugLineNum = 92;BA.debugLine="DesignaFoto";
 _designafoto();
- //BA.debugLineNum = 96;BA.debugLine="End Sub";
+ //BA.debugLineNum = 93;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
- //BA.debugLineNum = 108;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
- //BA.debugLineNum = 109;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+ //BA.debugLineNum = 105;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+ //BA.debugLineNum = 106;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
- //BA.debugLineNum = 110;BA.debugLine="closeAppMsgBox";
+ //BA.debugLineNum = 107;BA.debugLine="closeAppMsgBox";
 _closeappmsgbox();
- //BA.debugLineNum = 111;BA.debugLine="Return True";
+ //BA.debugLineNum = 108;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  }else {
- //BA.debugLineNum = 113;BA.debugLine="Return False";
+ //BA.debugLineNum = 110;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
- //BA.debugLineNum = 115;BA.debugLine="End Sub";
+ //BA.debugLineNum = 112;BA.debugLine="End Sub";
 return false;
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 103;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 104;BA.debugLine="cam.Stop";
+ //BA.debugLineNum = 100;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 101;BA.debugLine="cam.Stop";
 mostCurrent._cam._stop /*String*/ ();
- //BA.debugLineNum = 105;BA.debugLine="End Sub";
+ //BA.debugLineNum = 102;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 98;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 100;BA.debugLine="OpenCamera(frontCamera)";
+ //BA.debugLineNum = 95;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 97;BA.debugLine="OpenCamera(frontCamera)";
 _opencamera(_frontcamera);
- //BA.debugLineNum = 101;BA.debugLine="End Sub";
+ //BA.debugLineNum = 98;BA.debugLine="End Sub";
 return "";
 }
 public static String  _barzoom_valuechanged(int _value,boolean _userchanged) throws Exception{
@@ -471,111 +476,111 @@ float _zoom = 0f;
 anywheresoftware.b4a.objects.drawable.CanvasWrapper.RectWrapper _crop = null;
 int _newwidth = 0;
 int _newheight = 0;
- //BA.debugLineNum = 307;BA.debugLine="Sub barZoom_ValueChanged (Value As Int, UserChange";
- //BA.debugLineNum = 308;BA.debugLine="Dim OriginalSize As Rect = cam.ActiveArraySize";
+ //BA.debugLineNum = 279;BA.debugLine="Sub barZoom_ValueChanged (Value As Int, UserChange";
+ //BA.debugLineNum = 280;BA.debugLine="Dim OriginalSize As Rect = cam.ActiveArraySize";
 _originalsize = new anywheresoftware.b4a.objects.drawable.CanvasWrapper.RectWrapper();
 _originalsize = mostCurrent._cam._getactivearraysize /*anywheresoftware.b4a.objects.drawable.CanvasWrapper.RectWrapper*/ ();
- //BA.debugLineNum = 309;BA.debugLine="Dim Zoom As Float = 1 + Value / 100 * (cam.MaxDig";
+ //BA.debugLineNum = 281;BA.debugLine="Dim Zoom As Float = 1 + Value / 100 * (cam.MaxDig";
 _zoom = (float) (1+_value/(double)100*(mostCurrent._cam._getmaxdigitalzoom /*float*/ ()-1));
- //BA.debugLineNum = 310;BA.debugLine="Dim Crop As Rect";
+ //BA.debugLineNum = 282;BA.debugLine="Dim Crop As Rect";
 _crop = new anywheresoftware.b4a.objects.drawable.CanvasWrapper.RectWrapper();
- //BA.debugLineNum = 311;BA.debugLine="Dim NewWidth As Int = OriginalSize.Width / Zoom";
+ //BA.debugLineNum = 283;BA.debugLine="Dim NewWidth As Int = OriginalSize.Width / Zoom";
 _newwidth = (int) (_originalsize.getWidth()/(double)_zoom);
- //BA.debugLineNum = 312;BA.debugLine="Dim NewHeight As Int = OriginalSize.Height / Zoom";
+ //BA.debugLineNum = 284;BA.debugLine="Dim NewHeight As Int = OriginalSize.Height / Zoom";
 _newheight = (int) (_originalsize.getHeight()/(double)_zoom);
- //BA.debugLineNum = 313;BA.debugLine="Crop.Initialize(OriginalSize.CenterX - NewWidth /";
+ //BA.debugLineNum = 285;BA.debugLine="Crop.Initialize(OriginalSize.CenterX - NewWidth /";
 _crop.Initialize((int) (_originalsize.getCenterX()-_newwidth/(double)2),(int) (_originalsize.getCenterY()-_newheight/(double)2),(int) (_originalsize.getCenterX()+_newwidth/(double)2),(int) (_originalsize.getCenterY()+_newheight/(double)2));
- //BA.debugLineNum = 315;BA.debugLine="cam.PreviewCropRegion = Crop";
+ //BA.debugLineNum = 287;BA.debugLine="cam.PreviewCropRegion = Crop";
 mostCurrent._cam._setpreviewcropregion(_crop);
- //BA.debugLineNum = 316;BA.debugLine="cam.StartPreview(MyTaskIndex, VideoMode)";
+ //BA.debugLineNum = 288;BA.debugLine="cam.StartPreview(MyTaskIndex, VideoMode)";
 mostCurrent._cam._startpreview /*String*/ (_mytaskindex,_videomode);
- //BA.debugLineNum = 317;BA.debugLine="End Sub";
+ //BA.debugLineNum = 289;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnadjuntarfoto_click() throws Exception{
- //BA.debugLineNum = 389;BA.debugLine="Sub btnAdjuntarFoto_Click";
- //BA.debugLineNum = 391;BA.debugLine="cam.Stop";
+ //BA.debugLineNum = 361;BA.debugLine="Sub btnAdjuntarFoto_Click";
+ //BA.debugLineNum = 363;BA.debugLine="cam.Stop";
 mostCurrent._cam._stop /*String*/ ();
- //BA.debugLineNum = 393;BA.debugLine="CC.Initialize(\"CC\")";
+ //BA.debugLineNum = 365;BA.debugLine="CC.Initialize(\"CC\")";
 _cc.Initialize("CC");
- //BA.debugLineNum = 394;BA.debugLine="CC.Show(\"image/\", \"Elija la foto\")";
+ //BA.debugLineNum = 366;BA.debugLine="CC.Show(\"image/\", \"Elija la foto\")";
 _cc.Show(processBA,"image/","Elija la foto");
- //BA.debugLineNum = 395;BA.debugLine="End Sub";
+ //BA.debugLineNum = 367;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btncamera_click() throws Exception{
- //BA.debugLineNum = 192;BA.debugLine="Sub btnCamera_Click";
- //BA.debugLineNum = 193;BA.debugLine="frontCamera = Not(frontCamera)";
+ //BA.debugLineNum = 190;BA.debugLine="Sub btnCamera_Click";
+ //BA.debugLineNum = 191;BA.debugLine="frontCamera = Not(frontCamera)";
 _frontcamera = anywheresoftware.b4a.keywords.Common.Not(_frontcamera);
- //BA.debugLineNum = 194;BA.debugLine="OpenCamera(frontCamera)";
+ //BA.debugLineNum = 192;BA.debugLine="OpenCamera(frontCamera)";
 _opencamera(_frontcamera);
- //BA.debugLineNum = 195;BA.debugLine="End Sub";
+ //BA.debugLineNum = 193;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btncontinuar_click() throws Exception{
- //BA.debugLineNum = 578;BA.debugLine="Sub btnContinuar_Click";
- //BA.debugLineNum = 580;BA.debugLine="cam.Stop";
+ //BA.debugLineNum = 553;BA.debugLine="Sub btnContinuar_Click";
+ //BA.debugLineNum = 555;BA.debugLine="cam.Stop";
 mostCurrent._cam._stop /*String*/ ();
- //BA.debugLineNum = 584;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 559;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 585;BA.debugLine="Activity.RemoveAllViews";
+ //BA.debugLineNum = 560;BA.debugLine="Activity.RemoveAllViews";
 mostCurrent._activity.RemoveAllViews();
- //BA.debugLineNum = 586;BA.debugLine="StartActivity(Reporte_Envio)";
+ //BA.debugLineNum = 561;BA.debugLine="StartActivity(Reporte_Envio)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._reporte_envio.getObject()));
- //BA.debugLineNum = 597;BA.debugLine="End Sub";
+ //BA.debugLineNum = 572;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnrecord_click() throws Exception{
- //BA.debugLineNum = 204;BA.debugLine="Sub btnRecord_Click";
- //BA.debugLineNum = 205;BA.debugLine="TakePicture";
+ //BA.debugLineNum = 202;BA.debugLine="Sub btnRecord_Click";
+ //BA.debugLineNum = 203;BA.debugLine="TakePicture";
 _takepicture();
- //BA.debugLineNum = 206;BA.debugLine="End Sub";
+ //BA.debugLineNum = 204;BA.debugLine="End Sub";
 return "";
 }
 public static String  _cc_result(boolean _success,String _dir,String _filename) throws Exception{
 anywheresoftware.b4a.objects.collections.Map _map1 = null;
- //BA.debugLineNum = 397;BA.debugLine="Sub CC_Result (Success As Boolean, Dir As String,";
- //BA.debugLineNum = 398;BA.debugLine="If Success = True Then";
+ //BA.debugLineNum = 369;BA.debugLine="Sub CC_Result (Success As Boolean, Dir As String,";
+ //BA.debugLineNum = 370;BA.debugLine="If Success = True Then";
 if (_success==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 401;BA.debugLine="Dim Map1 As Map";
+ //BA.debugLineNum = 373;BA.debugLine="Dim Map1 As Map";
 _map1 = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 402;BA.debugLine="Map1.Initialize";
+ //BA.debugLineNum = 374;BA.debugLine="Map1.Initialize";
 _map1.Initialize();
- //BA.debugLineNum = 403;BA.debugLine="Map1.Put(\"Id\", Form_Reporte.currentproject)";
+ //BA.debugLineNum = 375;BA.debugLine="Map1.Put(\"Id\", Form_Reporte.currentproject)";
 _map1.Put((Object)("Id"),(Object)(mostCurrent._form_reporte._currentproject /*String*/ ));
- //BA.debugLineNum = 404;BA.debugLine="DateTime.DateFormat = \"dd-MM-yyyy\"";
+ //BA.debugLineNum = 376;BA.debugLine="DateTime.DateFormat = \"dd-MM-yyyy\"";
 anywheresoftware.b4a.keywords.Common.DateTime.setDateFormat("dd-MM-yyyy");
- //BA.debugLineNum = 405;BA.debugLine="If fotoNombreDestino.EndsWith(\"_1\") Then";
+ //BA.debugLineNum = 377;BA.debugLine="If fotoNombreDestino.EndsWith(\"_1\") Then";
 if (mostCurrent._fotonombredestino.endsWith("_1")) { 
- //BA.debugLineNum = 406;BA.debugLine="File.Copy(Dir, FileName, File.DirRootExternal &";
-anywheresoftware.b4a.keywords.Common.File.Copy(_dir,_filename,anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/",mostCurrent._fotonombredestino+".jpg");
- //BA.debugLineNum = 407;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
+ //BA.debugLineNum = 379;BA.debugLine="File.Copy(Dir, FileName, Starter.savedir, fotoN";
+anywheresoftware.b4a.keywords.Common.File.Copy(_dir,_filename,mostCurrent._starter._savedir /*String*/ ,mostCurrent._fotonombredestino+".jpg");
+ //BA.debugLineNum = 380;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
 mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","foto1",(Object)(mostCurrent._fotonombredestino),_map1);
  }else if(mostCurrent._fotonombredestino.endsWith("_2")) { 
- //BA.debugLineNum = 409;BA.debugLine="File.Copy(Dir, FileName, File.DirRootExternal &";
-anywheresoftware.b4a.keywords.Common.File.Copy(_dir,_filename,anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/",mostCurrent._fotonombredestino+".jpg");
- //BA.debugLineNum = 410;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
+ //BA.debugLineNum = 382;BA.debugLine="File.Copy(Dir, FileName, Starter.savedir, fotoN";
+anywheresoftware.b4a.keywords.Common.File.Copy(_dir,_filename,mostCurrent._starter._savedir /*String*/ ,mostCurrent._fotonombredestino+".jpg");
+ //BA.debugLineNum = 383;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
 mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","foto2",(Object)(mostCurrent._fotonombredestino),_map1);
  }else if(mostCurrent._fotonombredestino.endsWith("_3")) { 
- //BA.debugLineNum = 412;BA.debugLine="File.Copy(Dir, FileName, File.DirRootExternal &";
-anywheresoftware.b4a.keywords.Common.File.Copy(_dir,_filename,anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/",mostCurrent._fotonombredestino+".jpg");
- //BA.debugLineNum = 413;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
+ //BA.debugLineNum = 385;BA.debugLine="File.Copy(Dir, FileName, Starter.savedir, fotoN";
+anywheresoftware.b4a.keywords.Common.File.Copy(_dir,_filename,mostCurrent._starter._savedir /*String*/ ,mostCurrent._fotonombredestino+".jpg");
+ //BA.debugLineNum = 386;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
 mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","foto3",(Object)(mostCurrent._fotonombredestino),_map1);
  }else if(mostCurrent._fotonombredestino.endsWith("_4")) { 
- //BA.debugLineNum = 415;BA.debugLine="File.Copy(Dir, FileName, File.DirRootExternal &";
-anywheresoftware.b4a.keywords.Common.File.Copy(_dir,_filename,anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/",mostCurrent._fotonombredestino+".jpg");
- //BA.debugLineNum = 416;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
+ //BA.debugLineNum = 388;BA.debugLine="File.Copy(Dir, FileName, Starter.savedir, fotoN";
+anywheresoftware.b4a.keywords.Common.File.Copy(_dir,_filename,mostCurrent._starter._savedir /*String*/ ,mostCurrent._fotonombredestino+".jpg");
+ //BA.debugLineNum = 389;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
 mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","foto4",(Object)(mostCurrent._fotonombredestino),_map1);
  }else if(mostCurrent._fotonombredestino.endsWith("_5")) { 
- //BA.debugLineNum = 418;BA.debugLine="File.Copy(Dir, FileName, File.DirRootExternal &";
-anywheresoftware.b4a.keywords.Common.File.Copy(_dir,_filename,anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/",mostCurrent._fotonombredestino+".jpg");
- //BA.debugLineNum = 419;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
+ //BA.debugLineNum = 391;BA.debugLine="File.Copy(Dir, FileName, Starter.savedir, fotoN";
+anywheresoftware.b4a.keywords.Common.File.Copy(_dir,_filename,mostCurrent._starter._savedir /*String*/ ,mostCurrent._fotonombredestino+".jpg");
+ //BA.debugLineNum = 392;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
 mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","foto5",(Object)(mostCurrent._fotonombredestino),_map1);
  };
- //BA.debugLineNum = 423;BA.debugLine="DesignaFoto";
+ //BA.debugLineNum = 396;BA.debugLine="DesignaFoto";
 _designafoto();
  };
- //BA.debugLineNum = 425;BA.debugLine="End Sub";
+ //BA.debugLineNum = 398;BA.debugLine="End Sub";
 return "";
 }
 public static void  _closeappmsgbox() throws Exception{
@@ -600,7 +605,7 @@ return;
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 118;BA.debugLine="If Main.lang = \"es\" Then";
+ //BA.debugLineNum = 115;BA.debugLine="If Main.lang = \"es\" Then";
 if (true) break;
 
 case 1:
@@ -615,14 +620,14 @@ this.state = 5;
 case 3:
 //C
 this.state = 6;
- //BA.debugLineNum = 119;BA.debugLine="Msgbox2Async(\"Volver al inicio?\", \"SALIR\", \"Si\",";
+ //BA.debugLineNum = 116;BA.debugLine="Msgbox2Async(\"Volver al inicio?\", \"SALIR\", \"Si\",";
 anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("Volver al inicio?"),BA.ObjectToCharSequence("SALIR"),"Si","","No",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
  if (true) break;
 
 case 5:
 //C
 this.state = 6;
- //BA.debugLineNum = 121;BA.debugLine="Msgbox2Async(\"Back to the beginning?\", \"Exit\", \"";
+ //BA.debugLineNum = 118;BA.debugLine="Msgbox2Async(\"Back to the beginning?\", \"Exit\", \"";
 anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("Back to the beginning?"),BA.ObjectToCharSequence("Exit"),"Yes","","No",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
  if (true) break;
 
@@ -630,7 +635,7 @@ case 6:
 //C
 this.state = 7;
 ;
- //BA.debugLineNum = 123;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
+ //BA.debugLineNum = 120;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
 anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
 this.state = 11;
 return;
@@ -639,7 +644,7 @@ case 11:
 this.state = 7;
 _result = (Integer) result[0];
 ;
- //BA.debugLineNum = 124;BA.debugLine="If Result = DialogResponse.POSITIVE Then";
+ //BA.debugLineNum = 121;BA.debugLine="If Result = DialogResponse.POSITIVE Then";
 if (true) break;
 
 case 7:
@@ -652,9 +657,11 @@ this.state = 9;
 case 9:
 //C
 this.state = 10;
- //BA.debugLineNum = 125;BA.debugLine="Activity.finish";
+ //BA.debugLineNum = 122;BA.debugLine="cam.Stop";
+parent.mostCurrent._cam._stop /*String*/ ();
+ //BA.debugLineNum = 123;BA.debugLine="Activity.finish";
 parent.mostCurrent._activity.Finish();
- //BA.debugLineNum = 126;BA.debugLine="Activity.RemoveAllViews";
+ //BA.debugLineNum = 124;BA.debugLine="Activity.RemoveAllViews";
 parent.mostCurrent._activity.RemoveAllViews();
  if (true) break;
 
@@ -662,7 +669,7 @@ case 10:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 128;BA.debugLine="End Sub";
+ //BA.debugLineNum = 126;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -699,25 +706,25 @@ return;
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 438;BA.debugLine="DateTime.DateFormat = \"dd-MM-yyyy\"";
+ //BA.debugLineNum = 411;BA.debugLine="DateTime.DateFormat = \"dd-MM-yyyy\"";
 anywheresoftware.b4a.keywords.Common.DateTime.setDateFormat("dd-MM-yyyy");
- //BA.debugLineNum = 439;BA.debugLine="ProgressDialogShow(\"Preparando cámara...\")";
+ //BA.debugLineNum = 412;BA.debugLine="ProgressDialogShow(\"Preparando cámara...\")";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("Preparando cámara..."));
- //BA.debugLineNum = 442;BA.debugLine="Log(\"Designando foto\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("64456454","Designando foto",0);
- //BA.debugLineNum = 443;BA.debugLine="Dim fotoMap As Map";
+ //BA.debugLineNum = 415;BA.debugLine="Log(\"Designando foto\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("555967750","Designando foto",0);
+ //BA.debugLineNum = 416;BA.debugLine="Dim fotoMap As Map";
 _fotomap = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 444;BA.debugLine="fotoMap.Initialize";
+ //BA.debugLineNum = 417;BA.debugLine="fotoMap.Initialize";
 _fotomap.Initialize();
- //BA.debugLineNum = 445;BA.debugLine="Dim currentpr As String";
+ //BA.debugLineNum = 418;BA.debugLine="Dim currentpr As String";
 _currentpr = "";
- //BA.debugLineNum = 446;BA.debugLine="currentpr = Form_Reporte.currentproject";
+ //BA.debugLineNum = 419;BA.debugLine="currentpr = Form_Reporte.currentproject";
 _currentpr = parent.mostCurrent._form_reporte._currentproject /*String*/ ;
- //BA.debugLineNum = 447;BA.debugLine="Log(\"currentproject=\" & currentpr)";
-anywheresoftware.b4a.keywords.Common.LogImpl("64456459","currentproject="+_currentpr,0);
- //BA.debugLineNum = 448;BA.debugLine="fotoMap = DBUtils.ExecuteMap(Starter.sqlDB, \"SELE";
+ //BA.debugLineNum = 420;BA.debugLine="Log(\"currentproject=\" & currentpr)";
+anywheresoftware.b4a.keywords.Common.LogImpl("555967755","currentproject="+_currentpr,0);
+ //BA.debugLineNum = 421;BA.debugLine="fotoMap = DBUtils.ExecuteMap(Starter.sqlDB, \"SELE";
 _fotomap = parent.mostCurrent._dbutils._executemap /*anywheresoftware.b4a.objects.collections.Map*/ (mostCurrent.activityBA,parent.mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"SELECT * FROM evals WHERE Id = ?",new String[]{_currentpr});
- //BA.debugLineNum = 450;BA.debugLine="Sleep(200)";
+ //BA.debugLineNum = 423;BA.debugLine="Sleep(200)";
 anywheresoftware.b4a.keywords.Common.Sleep(mostCurrent.activityBA,this,(int) (200));
 this.state = 66;
 return;
@@ -725,7 +732,7 @@ case 66:
 //C
 this.state = 1;
 ;
- //BA.debugLineNum = 451;BA.debugLine="If fotoMap = Null Or fotoMap.IsInitialized = Fals";
+ //BA.debugLineNum = 424;BA.debugLine="If fotoMap = Null Or fotoMap.IsInitialized = Fals";
 if (true) break;
 
 case 1:
@@ -740,42 +747,42 @@ this.state = 5;
 case 3:
 //C
 this.state = 65;
- //BA.debugLineNum = 452;BA.debugLine="Log(\"no hay fotomap\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("64456464","no hay fotomap",0);
- //BA.debugLineNum = 453;BA.debugLine="fotoNombreDestino = \"\"";
+ //BA.debugLineNum = 425;BA.debugLine="Log(\"no hay fotomap\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("555967760","no hay fotomap",0);
+ //BA.debugLineNum = 426;BA.debugLine="fotoNombreDestino = \"\"";
 parent.mostCurrent._fotonombredestino = "";
- //BA.debugLineNum = 454;BA.debugLine="ProgressDialogHide";
+ //BA.debugLineNum = 427;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
- //BA.debugLineNum = 455;BA.debugLine="Return";
+ //BA.debugLineNum = 428;BA.debugLine="Return";
 if (true) return ;
  if (true) break;
 
 case 5:
 //C
 this.state = 6;
- //BA.debugLineNum = 457;BA.debugLine="Log(\"hay fotomap\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("64456469","hay fotomap",0);
- //BA.debugLineNum = 461;BA.debugLine="Dim foto1str As String = fotoMap.Get(\"foto1\")";
+ //BA.debugLineNum = 430;BA.debugLine="Log(\"hay fotomap\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("555967765","hay fotomap",0);
+ //BA.debugLineNum = 434;BA.debugLine="Dim foto1str As String = fotoMap.Get(\"foto1\")";
 _foto1str = BA.ObjectToString(_fotomap.Get((Object)("foto1")));
- //BA.debugLineNum = 462;BA.debugLine="Dim foto2str As String = fotoMap.Get(\"foto2\")";
+ //BA.debugLineNum = 435;BA.debugLine="Dim foto2str As String = fotoMap.Get(\"foto2\")";
 _foto2str = BA.ObjectToString(_fotomap.Get((Object)("foto2")));
- //BA.debugLineNum = 463;BA.debugLine="Dim foto3str As String = fotoMap.Get(\"foto3\")";
+ //BA.debugLineNum = 436;BA.debugLine="Dim foto3str As String = fotoMap.Get(\"foto3\")";
 _foto3str = BA.ObjectToString(_fotomap.Get((Object)("foto3")));
- //BA.debugLineNum = 464;BA.debugLine="Dim foto4str As String = fotoMap.Get(\"foto4\")";
+ //BA.debugLineNum = 437;BA.debugLine="Dim foto4str As String = fotoMap.Get(\"foto4\")";
 _foto4str = BA.ObjectToString(_fotomap.Get((Object)("foto4")));
- //BA.debugLineNum = 465;BA.debugLine="Dim foto5str As String = fotoMap.Get(\"foto5\")";
+ //BA.debugLineNum = 438;BA.debugLine="Dim foto5str As String = fotoMap.Get(\"foto5\")";
 _foto5str = BA.ObjectToString(_fotomap.Get((Object)("foto5")));
- //BA.debugLineNum = 466;BA.debugLine="Log(\"Foto1:\" & foto1str)";
-anywheresoftware.b4a.keywords.Common.LogImpl("64456478","Foto1:"+_foto1str,0);
- //BA.debugLineNum = 467;BA.debugLine="Log(\"Foto2:\" & foto2str)";
-anywheresoftware.b4a.keywords.Common.LogImpl("64456479","Foto2:"+_foto2str,0);
- //BA.debugLineNum = 468;BA.debugLine="Log(\"Foto3:\" & foto3str)";
-anywheresoftware.b4a.keywords.Common.LogImpl("64456480","Foto3:"+_foto3str,0);
- //BA.debugLineNum = 469;BA.debugLine="Log(\"Foto4:\" & foto4str)";
-anywheresoftware.b4a.keywords.Common.LogImpl("64456481","Foto4:"+_foto4str,0);
- //BA.debugLineNum = 470;BA.debugLine="Log(\"Foto5:\" & foto5str)";
-anywheresoftware.b4a.keywords.Common.LogImpl("64456482","Foto5:"+_foto5str,0);
- //BA.debugLineNum = 472;BA.debugLine="If foto1str = \"\" Or foto1str = \"null\" Then";
+ //BA.debugLineNum = 439;BA.debugLine="Log(\"Foto1:\" & foto1str)";
+anywheresoftware.b4a.keywords.Common.LogImpl("555967774","Foto1:"+_foto1str,0);
+ //BA.debugLineNum = 440;BA.debugLine="Log(\"Foto2:\" & foto2str)";
+anywheresoftware.b4a.keywords.Common.LogImpl("555967775","Foto2:"+_foto2str,0);
+ //BA.debugLineNum = 441;BA.debugLine="Log(\"Foto3:\" & foto3str)";
+anywheresoftware.b4a.keywords.Common.LogImpl("555967776","Foto3:"+_foto3str,0);
+ //BA.debugLineNum = 442;BA.debugLine="Log(\"Foto4:\" & foto4str)";
+anywheresoftware.b4a.keywords.Common.LogImpl("555967777","Foto4:"+_foto4str,0);
+ //BA.debugLineNum = 443;BA.debugLine="Log(\"Foto5:\" & foto5str)";
+anywheresoftware.b4a.keywords.Common.LogImpl("555967778","Foto5:"+_foto5str,0);
+ //BA.debugLineNum = 445;BA.debugLine="If foto1str = \"\" Or foto1str = \"null\" Then";
 if (true) break;
 
 case 6:
@@ -798,70 +805,70 @@ this.state = 18;
 case 8:
 //C
 this.state = 19;
- //BA.debugLineNum = 473;BA.debugLine="fotoNombreDestino = Form_Reporte.fullidcurrentp";
+ //BA.debugLineNum = 446;BA.debugLine="fotoNombreDestino = Form_Reporte.fullidcurrentp";
 parent.mostCurrent._fotonombredestino = parent.mostCurrent._form_reporte._fullidcurrentproject /*String*/ +"_1";
- //BA.debugLineNum = 474;BA.debugLine="Log(\"Va la foto 1\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("64456486","Va la foto 1",0);
- //BA.debugLineNum = 475;BA.debugLine="lblInstruccion.Text = \"Foto #1\"";
+ //BA.debugLineNum = 447;BA.debugLine="Log(\"Va la foto 1\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("555967782","Va la foto 1",0);
+ //BA.debugLineNum = 448;BA.debugLine="lblInstruccion.Text = \"Foto #1\"";
 parent.mostCurrent._lblinstruccion.setText(BA.ObjectToCharSequence("Foto #1"));
  if (true) break;
 
 case 10:
 //C
 this.state = 19;
- //BA.debugLineNum = 477;BA.debugLine="fotoNombreDestino = Form_Reporte.fullidcurrentp";
+ //BA.debugLineNum = 450;BA.debugLine="fotoNombreDestino = Form_Reporte.fullidcurrentp";
 parent.mostCurrent._fotonombredestino = parent.mostCurrent._form_reporte._fullidcurrentproject /*String*/ +"_2";
- //BA.debugLineNum = 478;BA.debugLine="Log(\"Va la foto 2\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("64456490","Va la foto 2",0);
- //BA.debugLineNum = 479;BA.debugLine="lblInstruccion.Text = \"Foto #2\"";
+ //BA.debugLineNum = 451;BA.debugLine="Log(\"Va la foto 2\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("555967786","Va la foto 2",0);
+ //BA.debugLineNum = 452;BA.debugLine="lblInstruccion.Text = \"Foto #2\"";
 parent.mostCurrent._lblinstruccion.setText(BA.ObjectToCharSequence("Foto #2"));
  if (true) break;
 
 case 12:
 //C
 this.state = 19;
- //BA.debugLineNum = 481;BA.debugLine="fotoNombreDestino = Form_Reporte.fullidcurrentp";
+ //BA.debugLineNum = 454;BA.debugLine="fotoNombreDestino = Form_Reporte.fullidcurrentp";
 parent.mostCurrent._fotonombredestino = parent.mostCurrent._form_reporte._fullidcurrentproject /*String*/ +"_3";
- //BA.debugLineNum = 482;BA.debugLine="Log(\"Va la foto 3\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("64456494","Va la foto 3",0);
- //BA.debugLineNum = 483;BA.debugLine="lblInstruccion.Text = \"Foto #3\"";
+ //BA.debugLineNum = 455;BA.debugLine="Log(\"Va la foto 3\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("555967790","Va la foto 3",0);
+ //BA.debugLineNum = 456;BA.debugLine="lblInstruccion.Text = \"Foto #3\"";
 parent.mostCurrent._lblinstruccion.setText(BA.ObjectToCharSequence("Foto #3"));
  if (true) break;
 
 case 14:
 //C
 this.state = 19;
- //BA.debugLineNum = 485;BA.debugLine="fotoNombreDestino = Form_Reporte.fullidcurrentp";
+ //BA.debugLineNum = 458;BA.debugLine="fotoNombreDestino = Form_Reporte.fullidcurrentp";
 parent.mostCurrent._fotonombredestino = parent.mostCurrent._form_reporte._fullidcurrentproject /*String*/ +"_4";
- //BA.debugLineNum = 486;BA.debugLine="Log(\"Va la foto 4\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("64456498","Va la foto 4",0);
- //BA.debugLineNum = 487;BA.debugLine="lblInstruccion.Text = \"Foto #4\"";
+ //BA.debugLineNum = 459;BA.debugLine="Log(\"Va la foto 4\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("555967794","Va la foto 4",0);
+ //BA.debugLineNum = 460;BA.debugLine="lblInstruccion.Text = \"Foto #4\"";
 parent.mostCurrent._lblinstruccion.setText(BA.ObjectToCharSequence("Foto #4"));
  if (true) break;
 
 case 16:
 //C
 this.state = 19;
- //BA.debugLineNum = 489;BA.debugLine="fotoNombreDestino = Form_Reporte.fullidcurrentp";
+ //BA.debugLineNum = 462;BA.debugLine="fotoNombreDestino = Form_Reporte.fullidcurrentp";
 parent.mostCurrent._fotonombredestino = parent.mostCurrent._form_reporte._fullidcurrentproject /*String*/ +"_5";
- //BA.debugLineNum = 490;BA.debugLine="Log(\"Va la foto 5\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("64456502","Va la foto 5",0);
- //BA.debugLineNum = 491;BA.debugLine="lblInstruccion.Text = \"Foto #5\"";
+ //BA.debugLineNum = 463;BA.debugLine="Log(\"Va la foto 5\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("555967798","Va la foto 5",0);
+ //BA.debugLineNum = 464;BA.debugLine="lblInstruccion.Text = \"Foto #5\"";
 parent.mostCurrent._lblinstruccion.setText(BA.ObjectToCharSequence("Foto #5"));
  if (true) break;
 
 case 18:
 //C
 this.state = 19;
- //BA.debugLineNum = 493;BA.debugLine="btnAdjuntarFoto.Visible = False";
+ //BA.debugLineNum = 466;BA.debugLine="btnAdjuntarFoto.Visible = False";
 parent.mostCurrent._btnadjuntarfoto.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 494;BA.debugLine="btnContinuar.Visible = True";
+ //BA.debugLineNum = 467;BA.debugLine="btnContinuar.Visible = True";
 parent.mostCurrent._btncontinuar.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 495;BA.debugLine="btnTakePicture.Visible = False";
+ //BA.debugLineNum = 468;BA.debugLine="btnTakePicture.Visible = False";
 parent.mostCurrent._btntakepicture.setVisible(anywheresoftware.b4a.keywords.Common.False);
  if (true) break;
 ;
- //BA.debugLineNum = 500;BA.debugLine="If foto1str <> \"\" And foto1str <> \"null\" Then";
+ //BA.debugLineNum = 473;BA.debugLine="If foto1str <> \"\" And foto1str <> \"null\" Then";
 
 case 19:
 //if
@@ -873,17 +880,17 @@ this.state = 21;
 case 21:
 //C
 this.state = 22;
- //BA.debugLineNum = 502;BA.debugLine="Log(\"sigue foto 1\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("64456514","sigue foto 1",0);
- //BA.debugLineNum = 503;BA.debugLine="imgSitio1.Visible = True";
+ //BA.debugLineNum = 475;BA.debugLine="Log(\"sigue foto 1\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("555967810","sigue foto 1",0);
+ //BA.debugLineNum = 476;BA.debugLine="imgSitio1.Visible = True";
 parent.mostCurrent._imgsitio1.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 504;BA.debugLine="If File.Exists(File.DirRootExternal & \"/PreserV";
+ //BA.debugLineNum = 478;BA.debugLine="If File.Exists(Starter.savedir, fotoMap.Get(\"fo";
 if (true) break;
 
 case 22:
 //if
 this.state = 27;
-if (anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/",BA.ObjectToString(_fotomap.Get((Object)("foto1")))+".jpg")) { 
+if (anywheresoftware.b4a.keywords.Common.File.Exists(parent.mostCurrent._starter._savedir /*String*/ ,BA.ObjectToString(_fotomap.Get((Object)("foto1")))+".jpg")) { 
 this.state = 24;
 }else {
 this.state = 26;
@@ -892,20 +899,20 @@ this.state = 26;
 case 24:
 //C
 this.state = 27;
- //BA.debugLineNum = 505;BA.debugLine="imgSitio1.Bitmap = Null";
+ //BA.debugLineNum = 480;BA.debugLine="imgSitio1.Bitmap = Null";
 parent.mostCurrent._imgsitio1.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null));
- //BA.debugLineNum = 506;BA.debugLine="imgSitio1.Bitmap = LoadBitmapSample(File.DirRo";
-parent.mostCurrent._imgsitio1.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmapSample(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/",BA.ObjectToString(_fotomap.Get((Object)("foto1")))+".jpg",anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (100),mostCurrent.activityBA)).getObject()));
- //BA.debugLineNum = 507;BA.debugLine="btnContinuar.Visible = True";
+ //BA.debugLineNum = 481;BA.debugLine="imgSitio1.Bitmap = LoadBitmapSample(Starter.sa";
+parent.mostCurrent._imgsitio1.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmapSample(parent.mostCurrent._starter._savedir /*String*/ ,BA.ObjectToString(_fotomap.Get((Object)("foto1")))+".jpg",anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (100),mostCurrent.activityBA)).getObject()));
+ //BA.debugLineNum = 482;BA.debugLine="btnContinuar.Visible = True";
 parent.mostCurrent._btncontinuar.setVisible(anywheresoftware.b4a.keywords.Common.True);
  if (true) break;
 
 case 26:
 //C
 this.state = 27;
- //BA.debugLineNum = 509;BA.debugLine="imgSitio1.Visible = False";
+ //BA.debugLineNum = 484;BA.debugLine="imgSitio1.Visible = False";
 parent.mostCurrent._imgsitio1.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 510;BA.debugLine="btnContinuar.Visible = False";
+ //BA.debugLineNum = 485;BA.debugLine="btnContinuar.Visible = False";
 parent.mostCurrent._btncontinuar.setVisible(anywheresoftware.b4a.keywords.Common.False);
  if (true) break;
 
@@ -915,7 +922,7 @@ this.state = 28;
 ;
  if (true) break;
 ;
- //BA.debugLineNum = 513;BA.debugLine="If foto2str <> \"\" And foto2str <> \"null\" Then";
+ //BA.debugLineNum = 488;BA.debugLine="If foto2str <> \"\" And foto2str <> \"null\" Then";
 
 case 28:
 //if
@@ -927,17 +934,17 @@ this.state = 30;
 case 30:
 //C
 this.state = 31;
- //BA.debugLineNum = 514;BA.debugLine="Log(\"sigue foto 2\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("64456526","sigue foto 2",0);
- //BA.debugLineNum = 515;BA.debugLine="imgSitio2.Visible = True";
+ //BA.debugLineNum = 489;BA.debugLine="Log(\"sigue foto 2\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("555967824","sigue foto 2",0);
+ //BA.debugLineNum = 490;BA.debugLine="imgSitio2.Visible = True";
 parent.mostCurrent._imgsitio2.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 516;BA.debugLine="If File.Exists(File.DirRootExternal & \"/PreserV";
+ //BA.debugLineNum = 491;BA.debugLine="If File.Exists(Starter.savedir, fotoMap.Get(\"fo";
 if (true) break;
 
 case 31:
 //if
 this.state = 36;
-if (anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/",BA.ObjectToString(_fotomap.Get((Object)("foto2")))+".jpg")) { 
+if (anywheresoftware.b4a.keywords.Common.File.Exists(parent.mostCurrent._starter._savedir /*String*/ ,BA.ObjectToString(_fotomap.Get((Object)("foto2")))+".jpg")) { 
 this.state = 33;
 }else {
 this.state = 35;
@@ -946,20 +953,20 @@ this.state = 35;
 case 33:
 //C
 this.state = 36;
- //BA.debugLineNum = 517;BA.debugLine="imgSitio2.Bitmap = Null";
+ //BA.debugLineNum = 492;BA.debugLine="imgSitio2.Bitmap = Null";
 parent.mostCurrent._imgsitio2.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null));
- //BA.debugLineNum = 518;BA.debugLine="imgSitio2.Bitmap = LoadBitmapSample(File.DirRo";
-parent.mostCurrent._imgsitio2.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmapSample(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/",BA.ObjectToString(_fotomap.Get((Object)("foto2")))+".jpg",anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (100),mostCurrent.activityBA)).getObject()));
- //BA.debugLineNum = 519;BA.debugLine="btnContinuar.Visible = True";
+ //BA.debugLineNum = 493;BA.debugLine="imgSitio2.Bitmap = LoadBitmapSample(Starter.sa";
+parent.mostCurrent._imgsitio2.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmapSample(parent.mostCurrent._starter._savedir /*String*/ ,BA.ObjectToString(_fotomap.Get((Object)("foto2")))+".jpg",anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (100),mostCurrent.activityBA)).getObject()));
+ //BA.debugLineNum = 494;BA.debugLine="btnContinuar.Visible = True";
 parent.mostCurrent._btncontinuar.setVisible(anywheresoftware.b4a.keywords.Common.True);
  if (true) break;
 
 case 35:
 //C
 this.state = 36;
- //BA.debugLineNum = 521;BA.debugLine="imgSitio2.Visible = False";
+ //BA.debugLineNum = 496;BA.debugLine="imgSitio2.Visible = False";
 parent.mostCurrent._imgsitio2.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 522;BA.debugLine="btnContinuar.Visible = False";
+ //BA.debugLineNum = 497;BA.debugLine="btnContinuar.Visible = False";
 parent.mostCurrent._btncontinuar.setVisible(anywheresoftware.b4a.keywords.Common.False);
  if (true) break;
 
@@ -969,7 +976,7 @@ this.state = 37;
 ;
  if (true) break;
 ;
- //BA.debugLineNum = 525;BA.debugLine="If foto3str <> \"\" And foto3str <> \"null\" Then";
+ //BA.debugLineNum = 500;BA.debugLine="If foto3str <> \"\" And foto3str <> \"null\" Then";
 
 case 37:
 //if
@@ -981,17 +988,17 @@ this.state = 39;
 case 39:
 //C
 this.state = 40;
- //BA.debugLineNum = 526;BA.debugLine="Log(\"sigue foto 3\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("64456538","sigue foto 3",0);
- //BA.debugLineNum = 527;BA.debugLine="imgSitio3.Visible = True";
+ //BA.debugLineNum = 501;BA.debugLine="Log(\"sigue foto 3\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("555967836","sigue foto 3",0);
+ //BA.debugLineNum = 502;BA.debugLine="imgSitio3.Visible = True";
 parent.mostCurrent._imgsitio3.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 528;BA.debugLine="If File.Exists(File.DirRootExternal & \"/PreserV";
+ //BA.debugLineNum = 503;BA.debugLine="If File.Exists(Starter.savedir, fotoMap.Get(\"fo";
 if (true) break;
 
 case 40:
 //if
 this.state = 45;
-if (anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/",BA.ObjectToString(_fotomap.Get((Object)("foto3")))+".jpg")) { 
+if (anywheresoftware.b4a.keywords.Common.File.Exists(parent.mostCurrent._starter._savedir /*String*/ ,BA.ObjectToString(_fotomap.Get((Object)("foto3")))+".jpg")) { 
 this.state = 42;
 }else {
 this.state = 44;
@@ -1000,20 +1007,20 @@ this.state = 44;
 case 42:
 //C
 this.state = 45;
- //BA.debugLineNum = 529;BA.debugLine="imgSitio3.Bitmap = Null";
+ //BA.debugLineNum = 504;BA.debugLine="imgSitio3.Bitmap = Null";
 parent.mostCurrent._imgsitio3.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null));
- //BA.debugLineNum = 530;BA.debugLine="imgSitio3.Bitmap = LoadBitmapSample(File.DirRo";
-parent.mostCurrent._imgsitio3.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmapSample(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/",BA.ObjectToString(_fotomap.Get((Object)("foto3")))+".jpg",anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (100),mostCurrent.activityBA)).getObject()));
- //BA.debugLineNum = 531;BA.debugLine="btnContinuar.Visible = True";
+ //BA.debugLineNum = 505;BA.debugLine="imgSitio3.Bitmap = LoadBitmapSample(Starter.sa";
+parent.mostCurrent._imgsitio3.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmapSample(parent.mostCurrent._starter._savedir /*String*/ ,BA.ObjectToString(_fotomap.Get((Object)("foto3")))+".jpg",anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (100),mostCurrent.activityBA)).getObject()));
+ //BA.debugLineNum = 506;BA.debugLine="btnContinuar.Visible = True";
 parent.mostCurrent._btncontinuar.setVisible(anywheresoftware.b4a.keywords.Common.True);
  if (true) break;
 
 case 44:
 //C
 this.state = 45;
- //BA.debugLineNum = 533;BA.debugLine="imgSitio3.Visible = False";
+ //BA.debugLineNum = 508;BA.debugLine="imgSitio3.Visible = False";
 parent.mostCurrent._imgsitio3.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 534;BA.debugLine="btnContinuar.Visible = False";
+ //BA.debugLineNum = 509;BA.debugLine="btnContinuar.Visible = False";
 parent.mostCurrent._btncontinuar.setVisible(anywheresoftware.b4a.keywords.Common.False);
  if (true) break;
 
@@ -1023,7 +1030,7 @@ this.state = 46;
 ;
  if (true) break;
 ;
- //BA.debugLineNum = 537;BA.debugLine="If foto4str <> \"\" And foto4str <> \"null\" Then";
+ //BA.debugLineNum = 512;BA.debugLine="If foto4str <> \"\" And foto4str <> \"null\" Then";
 
 case 46:
 //if
@@ -1035,17 +1042,17 @@ this.state = 48;
 case 48:
 //C
 this.state = 49;
- //BA.debugLineNum = 538;BA.debugLine="Log(\"sigue foto 4\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("64456550","sigue foto 4",0);
- //BA.debugLineNum = 539;BA.debugLine="imgSitio4.Visible = True";
+ //BA.debugLineNum = 513;BA.debugLine="Log(\"sigue foto 4\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("555967848","sigue foto 4",0);
+ //BA.debugLineNum = 514;BA.debugLine="imgSitio4.Visible = True";
 parent.mostCurrent._imgsitio4.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 540;BA.debugLine="If File.Exists(File.DirRootExternal & \"/PreserV";
+ //BA.debugLineNum = 515;BA.debugLine="If File.Exists(Starter.savedir, fotoMap.Get(\"fo";
 if (true) break;
 
 case 49:
 //if
 this.state = 54;
-if (anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/",BA.ObjectToString(_fotomap.Get((Object)("foto4")))+".jpg")) { 
+if (anywheresoftware.b4a.keywords.Common.File.Exists(parent.mostCurrent._starter._savedir /*String*/ ,BA.ObjectToString(_fotomap.Get((Object)("foto4")))+".jpg")) { 
 this.state = 51;
 }else {
 this.state = 53;
@@ -1054,20 +1061,20 @@ this.state = 53;
 case 51:
 //C
 this.state = 54;
- //BA.debugLineNum = 541;BA.debugLine="imgSitio4.Bitmap = Null";
+ //BA.debugLineNum = 516;BA.debugLine="imgSitio4.Bitmap = Null";
 parent.mostCurrent._imgsitio4.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null));
- //BA.debugLineNum = 542;BA.debugLine="imgSitio4.Bitmap = LoadBitmapSample(File.DirRo";
-parent.mostCurrent._imgsitio4.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmapSample(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/",BA.ObjectToString(_fotomap.Get((Object)("foto4")))+".jpg",anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (100),mostCurrent.activityBA)).getObject()));
- //BA.debugLineNum = 543;BA.debugLine="btnContinuar.Visible = True";
+ //BA.debugLineNum = 517;BA.debugLine="imgSitio4.Bitmap = LoadBitmapSample(Starter.sa";
+parent.mostCurrent._imgsitio4.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmapSample(parent.mostCurrent._starter._savedir /*String*/ ,BA.ObjectToString(_fotomap.Get((Object)("foto4")))+".jpg",anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (100),mostCurrent.activityBA)).getObject()));
+ //BA.debugLineNum = 518;BA.debugLine="btnContinuar.Visible = True";
 parent.mostCurrent._btncontinuar.setVisible(anywheresoftware.b4a.keywords.Common.True);
  if (true) break;
 
 case 53:
 //C
 this.state = 54;
- //BA.debugLineNum = 545;BA.debugLine="imgSitio4.Visible = False";
+ //BA.debugLineNum = 520;BA.debugLine="imgSitio4.Visible = False";
 parent.mostCurrent._imgsitio4.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 546;BA.debugLine="btnContinuar.Visible = False";
+ //BA.debugLineNum = 521;BA.debugLine="btnContinuar.Visible = False";
 parent.mostCurrent._btncontinuar.setVisible(anywheresoftware.b4a.keywords.Common.False);
  if (true) break;
 
@@ -1077,7 +1084,7 @@ this.state = 55;
 ;
  if (true) break;
 ;
- //BA.debugLineNum = 549;BA.debugLine="If foto5str <> \"\" And foto5str <> \"null\" Then";
+ //BA.debugLineNum = 524;BA.debugLine="If foto5str <> \"\" And foto5str <> \"null\" Then";
 
 case 55:
 //if
@@ -1089,17 +1096,17 @@ this.state = 57;
 case 57:
 //C
 this.state = 58;
- //BA.debugLineNum = 550;BA.debugLine="Log(\"sigue foto 5\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("64456562","sigue foto 5",0);
- //BA.debugLineNum = 551;BA.debugLine="imgSitio5.Visible = True";
+ //BA.debugLineNum = 525;BA.debugLine="Log(\"sigue foto 5\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("555967860","sigue foto 5",0);
+ //BA.debugLineNum = 526;BA.debugLine="imgSitio5.Visible = True";
 parent.mostCurrent._imgsitio5.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 552;BA.debugLine="If File.Exists(File.DirRootExternal & \"/PreserV";
+ //BA.debugLineNum = 527;BA.debugLine="If File.Exists(Starter.savedir, fotoMap.Get(\"fo";
 if (true) break;
 
 case 58:
 //if
 this.state = 63;
-if (anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/",BA.ObjectToString(_fotomap.Get((Object)("foto5")))+".jpg")) { 
+if (anywheresoftware.b4a.keywords.Common.File.Exists(parent.mostCurrent._starter._savedir /*String*/ ,BA.ObjectToString(_fotomap.Get((Object)("foto5")))+".jpg")) { 
 this.state = 60;
 }else {
 this.state = 62;
@@ -1108,20 +1115,20 @@ this.state = 62;
 case 60:
 //C
 this.state = 63;
- //BA.debugLineNum = 553;BA.debugLine="imgSitio5.Bitmap = Null";
+ //BA.debugLineNum = 528;BA.debugLine="imgSitio5.Bitmap = Null";
 parent.mostCurrent._imgsitio5.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null));
- //BA.debugLineNum = 554;BA.debugLine="imgSitio5.Bitmap = LoadBitmapSample(File.DirRo";
-parent.mostCurrent._imgsitio5.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmapSample(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/",BA.ObjectToString(_fotomap.Get((Object)("foto5")))+".jpg",anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (100),mostCurrent.activityBA)).getObject()));
- //BA.debugLineNum = 555;BA.debugLine="btnContinuar.Visible = True";
+ //BA.debugLineNum = 529;BA.debugLine="imgSitio5.Bitmap = LoadBitmapSample(Starter.sa";
+parent.mostCurrent._imgsitio5.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmapSample(parent.mostCurrent._starter._savedir /*String*/ ,BA.ObjectToString(_fotomap.Get((Object)("foto5")))+".jpg",anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (100),mostCurrent.activityBA)).getObject()));
+ //BA.debugLineNum = 530;BA.debugLine="btnContinuar.Visible = True";
 parent.mostCurrent._btncontinuar.setVisible(anywheresoftware.b4a.keywords.Common.True);
  if (true) break;
 
 case 62:
 //C
 this.state = 63;
- //BA.debugLineNum = 557;BA.debugLine="imgSitio5.Visible = False";
+ //BA.debugLineNum = 532;BA.debugLine="imgSitio5.Visible = False";
 parent.mostCurrent._imgsitio5.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 558;BA.debugLine="btnContinuar.Visible = False";
+ //BA.debugLineNum = 533;BA.debugLine="btnContinuar.Visible = False";
 parent.mostCurrent._btncontinuar.setVisible(anywheresoftware.b4a.keywords.Common.False);
  if (true) break;
 
@@ -1141,9 +1148,9 @@ case 65:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 563;BA.debugLine="ProgressDialogHide";
+ //BA.debugLineNum = 538;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
- //BA.debugLineNum = 565;BA.debugLine="End Sub";
+ //BA.debugLineNum = 540;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -1151,106 +1158,106 @@ if (true) break;
     }
 }
 public static String  _globals() throws Exception{
- //BA.debugLineNum = 16;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 21;BA.debugLine="Private Panel1 As Panel";
+ //BA.debugLineNum = 13;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 18;BA.debugLine="Private Panel1 As Panel";
 mostCurrent._panel1 = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 23;BA.debugLine="Private btnTakePicture As Button";
+ //BA.debugLineNum = 20;BA.debugLine="Private btnTakePicture As Button";
 mostCurrent._btntakepicture = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 24;BA.debugLine="Private imgFlash As ImageView";
+ //BA.debugLineNum = 21;BA.debugLine="Private imgFlash As ImageView";
 mostCurrent._imgflash = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 25;BA.debugLine="Private lblInstruccion As Label";
+ //BA.debugLineNum = 22;BA.debugLine="Private lblInstruccion As Label";
 mostCurrent._lblinstruccion = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 26;BA.debugLine="Private btnAdjuntarFoto As Button";
+ //BA.debugLineNum = 23;BA.debugLine="Private btnAdjuntarFoto As Button";
 mostCurrent._btnadjuntarfoto = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 27;BA.debugLine="Private btnContinuar As Button";
+ //BA.debugLineNum = 24;BA.debugLine="Private btnContinuar As Button";
 mostCurrent._btncontinuar = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 28;BA.debugLine="Private imgSitio4 As ImageView";
+ //BA.debugLineNum = 25;BA.debugLine="Private imgSitio4 As ImageView";
 mostCurrent._imgsitio4 = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 29;BA.debugLine="Private imgSitio3 As ImageView";
+ //BA.debugLineNum = 26;BA.debugLine="Private imgSitio3 As ImageView";
 mostCurrent._imgsitio3 = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 30;BA.debugLine="Private imgSitio2 As ImageView";
+ //BA.debugLineNum = 27;BA.debugLine="Private imgSitio2 As ImageView";
 mostCurrent._imgsitio2 = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 31;BA.debugLine="Private imgSitio1 As ImageView";
+ //BA.debugLineNum = 28;BA.debugLine="Private imgSitio1 As ImageView";
 mostCurrent._imgsitio1 = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 32;BA.debugLine="Private imgSitio5 As ImageView";
+ //BA.debugLineNum = 29;BA.debugLine="Private imgSitio5 As ImageView";
 mostCurrent._imgsitio5 = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 33;BA.debugLine="Private imgMenu As ImageView";
+ //BA.debugLineNum = 30;BA.debugLine="Private imgMenu As ImageView";
 mostCurrent._imgmenu = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 34;BA.debugLine="Private seekFocus As SeekBar";
+ //BA.debugLineNum = 31;BA.debugLine="Private seekFocus As SeekBar";
 mostCurrent._seekfocus = new anywheresoftware.b4a.objects.SeekBarWrapper();
- //BA.debugLineNum = 37;BA.debugLine="Dim fotoNombreDestino As String";
+ //BA.debugLineNum = 34;BA.debugLine="Dim fotoNombreDestino As String";
 mostCurrent._fotonombredestino = "";
- //BA.debugLineNum = 41;BA.debugLine="Private xui As XUI";
+ //BA.debugLineNum = 38;BA.debugLine="Private xui As XUI";
 mostCurrent._xui = new anywheresoftware.b4a.objects.B4XViewWrapper.XUI();
- //BA.debugLineNum = 42;BA.debugLine="Private frontCamera As Boolean = False";
+ //BA.debugLineNum = 39;BA.debugLine="Private frontCamera As Boolean = False";
 _frontcamera = anywheresoftware.b4a.keywords.Common.False;
- //BA.debugLineNum = 43;BA.debugLine="Private VideoMode As Boolean = False";
+ //BA.debugLineNum = 40;BA.debugLine="Private VideoMode As Boolean = False";
 _videomode = anywheresoftware.b4a.keywords.Common.False;
- //BA.debugLineNum = 45;BA.debugLine="Private MyTaskIndex As Int";
+ //BA.debugLineNum = 42;BA.debugLine="Private MyTaskIndex As Int";
 _mytaskindex = 0;
- //BA.debugLineNum = 46;BA.debugLine="Private rp As RuntimePermissions";
+ //BA.debugLineNum = 43;BA.debugLine="Private rp As RuntimePermissions";
 mostCurrent._rp = new anywheresoftware.b4a.objects.RuntimePermissions();
- //BA.debugLineNum = 47;BA.debugLine="Private cam As CamEx2";
+ //BA.debugLineNum = 44;BA.debugLine="Private cam As CamEx2";
 mostCurrent._cam = new appear.pnud.preservamos.camex2();
- //BA.debugLineNum = 48;BA.debugLine="Private pnlCamera As B4XView";
+ //BA.debugLineNum = 45;BA.debugLine="Private pnlCamera As B4XView";
 mostCurrent._pnlcamera = new anywheresoftware.b4a.objects.B4XViewWrapper();
- //BA.debugLineNum = 49;BA.debugLine="Private pnlBackground As B4XView";
+ //BA.debugLineNum = 46;BA.debugLine="Private pnlBackground As B4XView";
 mostCurrent._pnlbackground = new anywheresoftware.b4a.objects.B4XViewWrapper();
- //BA.debugLineNum = 50;BA.debugLine="Private btnEffects As Button";
+ //BA.debugLineNum = 47;BA.debugLine="Private btnEffects As Button";
 mostCurrent._btneffects = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 51;BA.debugLine="Private btnScene As Button";
+ //BA.debugLineNum = 48;BA.debugLine="Private btnScene As Button";
 mostCurrent._btnscene = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 53;BA.debugLine="Private btnAutoExposure As Button";
+ //BA.debugLineNum = 50;BA.debugLine="Private btnAutoExposure As Button";
 mostCurrent._btnautoexposure = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 54;BA.debugLine="Private btnFocus As Button";
+ //BA.debugLineNum = 51;BA.debugLine="Private btnFocus As Button";
 mostCurrent._btnfocus = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 55;BA.debugLine="Private ProgressBar1 As ProgressBar";
+ //BA.debugLineNum = 52;BA.debugLine="Private ProgressBar1 As ProgressBar";
 mostCurrent._progressbar1 = new anywheresoftware.b4a.objects.ProgressBarWrapper();
- //BA.debugLineNum = 56;BA.debugLine="Private openstate, busystate As Boolean";
+ //BA.debugLineNum = 53;BA.debugLine="Private openstate, busystate As Boolean";
 _openstate = false;
 _busystate = false;
- //BA.debugLineNum = 57;BA.debugLine="Private btnRecord As Button";
+ //BA.debugLineNum = 54;BA.debugLine="Private btnRecord As Button";
 mostCurrent._btnrecord = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 58;BA.debugLine="Private btnMode As Button";
+ //BA.debugLineNum = 55;BA.debugLine="Private btnMode As Button";
 mostCurrent._btnmode = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 59;BA.debugLine="Private btnCamera As Button";
+ //BA.debugLineNum = 56;BA.debugLine="Private btnCamera As Button";
 mostCurrent._btncamera = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 60;BA.debugLine="Private barZoom As SeekBar";
+ //BA.debugLineNum = 57;BA.debugLine="Private barZoom As SeekBar";
 mostCurrent._barzoom = new anywheresoftware.b4a.objects.SeekBarWrapper();
- //BA.debugLineNum = 61;BA.debugLine="Private B4XImageView1 As B4XImageView";
+ //BA.debugLineNum = 58;BA.debugLine="Private B4XImageView1 As B4XImageView";
 mostCurrent._b4ximageview1 = new appear.pnud.preservamos.b4ximageview();
- //BA.debugLineNum = 63;BA.debugLine="End Sub";
+ //BA.debugLineNum = 60;BA.debugLine="End Sub";
 return "";
 }
 public static String  _handleerror(anywheresoftware.b4a.objects.B4AException _error) throws Exception{
- //BA.debugLineNum = 198;BA.debugLine="Sub HandleError (Error As Exception)";
- //BA.debugLineNum = 199;BA.debugLine="Log(\"Error: \" & Error)";
-anywheresoftware.b4a.keywords.Common.LogImpl("63735553","Error: "+BA.ObjectToString(_error),0);
- //BA.debugLineNum = 200;BA.debugLine="ToastMessageShow(Error, True)";
+ //BA.debugLineNum = 196;BA.debugLine="Sub HandleError (Error As Exception)";
+ //BA.debugLineNum = 197;BA.debugLine="Log(\"Error: \" & Error)";
+anywheresoftware.b4a.keywords.Common.LogImpl("555246849","Error: "+BA.ObjectToString(_error),0);
+ //BA.debugLineNum = 198;BA.debugLine="ToastMessageShow(Error, True)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(_error.getObject()),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 201;BA.debugLine="OpenCamera(frontCamera)";
+ //BA.debugLineNum = 199;BA.debugLine="OpenCamera(frontCamera)";
 _opencamera(_frontcamera);
- //BA.debugLineNum = 202;BA.debugLine="End Sub";
+ //BA.debugLineNum = 200;BA.debugLine="End Sub";
 return "";
 }
 public static String  _imgmenu_click() throws Exception{
- //BA.debugLineNum = 368;BA.debugLine="Sub imgMenu_Click";
- //BA.debugLineNum = 369;BA.debugLine="Activity.OpenMenu";
+ //BA.debugLineNum = 340;BA.debugLine="Sub imgMenu_Click";
+ //BA.debugLineNum = 341;BA.debugLine="Activity.OpenMenu";
 mostCurrent._activity.OpenMenu();
- //BA.debugLineNum = 370;BA.debugLine="End Sub";
+ //BA.debugLineNum = 342;BA.debugLine="End Sub";
 return "";
 }
 public static String  _mnuadjuntar_click() throws Exception{
- //BA.debugLineNum = 371;BA.debugLine="Sub mnuAdjuntar_Click";
- //BA.debugLineNum = 373;BA.debugLine="cam.Stop";
+ //BA.debugLineNum = 343;BA.debugLine="Sub mnuAdjuntar_Click";
+ //BA.debugLineNum = 345;BA.debugLine="cam.Stop";
 mostCurrent._cam._stop /*String*/ ();
- //BA.debugLineNum = 374;BA.debugLine="DesignaFoto";
+ //BA.debugLineNum = 346;BA.debugLine="DesignaFoto";
 _designafoto();
- //BA.debugLineNum = 375;BA.debugLine="CC.Initialize(\"CC\")";
+ //BA.debugLineNum = 347;BA.debugLine="CC.Initialize(\"CC\")";
 _cc.Initialize("CC");
- //BA.debugLineNum = 376;BA.debugLine="CC.Show(\"image/\", \"Elija la foto\")";
+ //BA.debugLineNum = 348;BA.debugLine="CC.Show(\"image/\", \"Elija la foto\")";
 _cc.Show(processBA,"image/","Elija la foto");
- //BA.debugLineNum = 377;BA.debugLine="End Sub";
+ //BA.debugLineNum = 349;BA.debugLine="End Sub";
 return "";
 }
 public static void  _opencamera(boolean _front) throws Exception{
@@ -1280,9 +1287,9 @@ return;
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 142;BA.debugLine="rp.CheckAndRequest(rp.PERMISSION_CAMERA)";
+ //BA.debugLineNum = 140;BA.debugLine="rp.CheckAndRequest(rp.PERMISSION_CAMERA)";
 parent.mostCurrent._rp.CheckAndRequest(processBA,parent.mostCurrent._rp.PERMISSION_CAMERA);
- //BA.debugLineNum = 143;BA.debugLine="Wait For Activity_PermissionResult (Permission As";
+ //BA.debugLineNum = 141;BA.debugLine="Wait For Activity_PermissionResult (Permission As";
 anywheresoftware.b4a.keywords.Common.WaitFor("activity_permissionresult", processBA, this, null);
 this.state = 13;
 return;
@@ -1292,7 +1299,7 @@ this.state = 1;
 _permission = (String) result[0];
 _result = (Boolean) result[1];
 ;
- //BA.debugLineNum = 144;BA.debugLine="If Result = False Then";
+ //BA.debugLineNum = 142;BA.debugLine="If Result = False Then";
 if (true) break;
 
 case 1:
@@ -1305,9 +1312,9 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
- //BA.debugLineNum = 145;BA.debugLine="ToastMessageShow(\"No permission!\", True)";
+ //BA.debugLineNum = 143;BA.debugLine="ToastMessageShow(\"No permission!\", True)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("No permission!"),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 146;BA.debugLine="Return";
+ //BA.debugLineNum = 144;BA.debugLine="Return";
 if (true) return ;
  if (true) break;
 
@@ -1315,9 +1322,9 @@ case 4:
 //C
 this.state = 5;
 ;
- //BA.debugLineNum = 149;BA.debugLine="SetState(False, False, VideoMode)";
+ //BA.debugLineNum = 147;BA.debugLine="SetState(False, False, VideoMode)";
 _setstate(anywheresoftware.b4a.keywords.Common.False,anywheresoftware.b4a.keywords.Common.False,parent._videomode);
- //BA.debugLineNum = 150;BA.debugLine="Wait For (cam.OpenCamera(front)) Complete (TaskIn";
+ //BA.debugLineNum = 148;BA.debugLine="Wait For (cam.OpenCamera(front)) Complete (TaskIn";
 anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, this, parent.mostCurrent._cam._opencamera /*anywheresoftware.b4a.keywords.Common.ResumableSubWrapper*/ (_front));
 this.state = 14;
 return;
@@ -1326,7 +1333,7 @@ case 14:
 this.state = 5;
 _taskindex = (Integer) result[0];
 ;
- //BA.debugLineNum = 151;BA.debugLine="If TaskIndex > 0 Then";
+ //BA.debugLineNum = 149;BA.debugLine="If TaskIndex > 0 Then";
 if (true) break;
 
 case 5:
@@ -1339,9 +1346,9 @@ this.state = 7;
 case 7:
 //C
 this.state = 8;
- //BA.debugLineNum = 152;BA.debugLine="MyTaskIndex = TaskIndex 'hold this index. It wil";
+ //BA.debugLineNum = 150;BA.debugLine="MyTaskIndex = TaskIndex 'hold this index. It wil";
 parent._mytaskindex = _taskindex;
- //BA.debugLineNum = 153;BA.debugLine="Wait For(PrepareSurface) Complete (Success As Bo";
+ //BA.debugLineNum = 151;BA.debugLine="Wait For(PrepareSurface) Complete (Success As Bo";
 anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, this, _preparesurface());
 this.state = 15;
 return;
@@ -1356,11 +1363,11 @@ case 8:
 //C
 this.state = 9;
 ;
- //BA.debugLineNum = 155;BA.debugLine="Log(\"Start success: \" & Success)";
-anywheresoftware.b4a.keywords.Common.LogImpl("63473422","Start success: "+BA.ObjectToString(_success),0);
- //BA.debugLineNum = 156;BA.debugLine="SetState(Success, False, VideoMode)";
+ //BA.debugLineNum = 153;BA.debugLine="Log(\"Start success: \" & Success)";
+anywheresoftware.b4a.keywords.Common.LogImpl("554984718","Start success: "+BA.ObjectToString(_success),0);
+ //BA.debugLineNum = 154;BA.debugLine="SetState(Success, False, VideoMode)";
 _setstate(_success,anywheresoftware.b4a.keywords.Common.False,parent._videomode);
- //BA.debugLineNum = 157;BA.debugLine="If Success = False Then";
+ //BA.debugLineNum = 155;BA.debugLine="If Success = False Then";
 if (true) break;
 
 case 9:
@@ -1373,7 +1380,7 @@ this.state = 11;
 case 11:
 //C
 this.state = 12;
- //BA.debugLineNum = 158;BA.debugLine="ToastMessageShow(\"Failed to open camera\", True)";
+ //BA.debugLineNum = 156;BA.debugLine="ToastMessageShow(\"Failed to open camera\", True)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Failed to open camera"),anywheresoftware.b4a.keywords.Common.True);
  if (true) break;
 
@@ -1381,7 +1388,7 @@ case 12:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 160;BA.debugLine="End Sub";
+ //BA.debugLineNum = 158;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -1393,10 +1400,10 @@ public static void  _activity_permissionresult(String _permission,boolean _resul
 public static void  _complete(int _taskindex) throws Exception{
 }
 public static String  _pnlbackground_click() throws Exception{
- //BA.debugLineNum = 250;BA.debugLine="Sub pnlBackground_Click";
- //BA.debugLineNum = 251;BA.debugLine="pnlBackground.Visible = False";
+ //BA.debugLineNum = 249;BA.debugLine="Sub pnlBackground_Click";
+ //BA.debugLineNum = 250;BA.debugLine="pnlBackground.Visible = False";
 mostCurrent._pnlbackground.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 252;BA.debugLine="End Sub";
+ //BA.debugLineNum = 251;BA.debugLine="End Sub";
 return "";
 }
 public static anywheresoftware.b4a.keywords.Common.ResumableSubWrapper  _preparesurface() throws Exception{
@@ -1424,9 +1431,9 @@ anywheresoftware.b4a.keywords.Common.ReturnFromResumableSub(this,null);return;}
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 163;BA.debugLine="SetState(False, busystate, VideoMode)";
+ //BA.debugLineNum = 161;BA.debugLine="SetState(False, busystate, VideoMode)";
 _setstate(anywheresoftware.b4a.keywords.Common.False,parent._busystate,parent._videomode);
- //BA.debugLineNum = 165;BA.debugLine="If VideoMode Then";
+ //BA.debugLineNum = 163;BA.debugLine="If VideoMode Then";
 if (true) break;
 
 case 1:
@@ -1441,11 +1448,11 @@ this.state = 5;
 case 3:
 //C
 this.state = 6;
- //BA.debugLineNum = 166;BA.debugLine="cam.PreviewSize.Initialize(640, 480)";
+ //BA.debugLineNum = 164;BA.debugLine="cam.PreviewSize.Initialize(640, 480)";
 parent.mostCurrent._cam._previewsize /*anywheresoftware.b4a.objects.Camera2.CameraSizeWrapper*/ .Initialize((int) (640),(int) (480));
- //BA.debugLineNum = 167;BA.debugLine="ResizePreviewPanelBasedPreviewSize";
+ //BA.debugLineNum = 165;BA.debugLine="ResizePreviewPanelBasedPreviewSize";
 _resizepreviewpanelbasedpreviewsize();
- //BA.debugLineNum = 169;BA.debugLine="Wait For (cam.PrepareSurfaceForVideo(MyTaskIndex";
+ //BA.debugLineNum = 167;BA.debugLine="Wait For (cam.PrepareSurfaceForVideo(MyTaskIndex";
 anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, this, parent.mostCurrent._cam._preparesurfaceforvideo /*anywheresoftware.b4a.keywords.Common.ResumableSubWrapper*/ (parent._mytaskindex,_videofiledir,"temp-"+_videofilename));
 this.state = 12;
 return;
@@ -1459,11 +1466,11 @@ _success = (Boolean) result[0];
 case 5:
 //C
 this.state = 6;
- //BA.debugLineNum = 171;BA.debugLine="cam.PreviewSize.Initialize(1920, 1080)";
+ //BA.debugLineNum = 169;BA.debugLine="cam.PreviewSize.Initialize(1920, 1080)";
 parent.mostCurrent._cam._previewsize /*anywheresoftware.b4a.objects.Camera2.CameraSizeWrapper*/ .Initialize((int) (1920),(int) (1080));
- //BA.debugLineNum = 172;BA.debugLine="ResizePreviewPanelBasedPreviewSize";
+ //BA.debugLineNum = 170;BA.debugLine="ResizePreviewPanelBasedPreviewSize";
 _resizepreviewpanelbasedpreviewsize();
- //BA.debugLineNum = 176;BA.debugLine="Wait For (cam.PrepareSurface(MyTaskIndex)) Compl";
+ //BA.debugLineNum = 174;BA.debugLine="Wait For (cam.PrepareSurface(MyTaskIndex)) Compl";
 anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, this, parent.mostCurrent._cam._preparesurface /*anywheresoftware.b4a.keywords.Common.ResumableSubWrapper*/ (parent._mytaskindex));
 this.state = 13;
 return;
@@ -1474,7 +1481,7 @@ _success = (Boolean) result[0];
 ;
  if (true) break;
 ;
- //BA.debugLineNum = 179;BA.debugLine="If Success Then cam.StartPreview(MyTaskIndex, Vid";
+ //BA.debugLineNum = 177;BA.debugLine="If Success Then cam.StartPreview(MyTaskIndex, Vid";
 
 case 6:
 //if
@@ -1493,12 +1500,12 @@ case 11:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 180;BA.debugLine="SetState(Success, busystate, VideoMode)";
+ //BA.debugLineNum = 178;BA.debugLine="SetState(Success, busystate, VideoMode)";
 _setstate(_success,parent._busystate,parent._videomode);
- //BA.debugLineNum = 181;BA.debugLine="Return Success";
+ //BA.debugLineNum = 179;BA.debugLine="Return Success";
 if (true) {
 anywheresoftware.b4a.keywords.Common.ReturnFromResumableSub(this,(Object)(_success));return;};
- //BA.debugLineNum = 182;BA.debugLine="End Sub";
+ //BA.debugLineNum = 180;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -1511,7 +1518,7 @@ public static String  _process_globals() throws Exception{
 _frontcamera = anywheresoftware.b4a.keywords.Common.False;
  //BA.debugLineNum = 10;BA.debugLine="Dim CC As ContentChooser";
 _cc = new anywheresoftware.b4a.phone.Phone.ContentChooser();
- //BA.debugLineNum = 14;BA.debugLine="End Sub";
+ //BA.debugLineNum = 11;BA.debugLine="End Sub";
 return "";
 }
 public static String  _resizepreviewpanelbasedpreviewsize() throws Exception{
@@ -1520,19 +1527,19 @@ int _ph = 0;
 float _r = 0f;
 int _w = 0;
 int _h = 0;
- //BA.debugLineNum = 184;BA.debugLine="Private Sub ResizePreviewPanelBasedPreviewSize";
- //BA.debugLineNum = 185;BA.debugLine="Dim pw = cam.PreviewSize.Height, ph = cam.Preview";
+ //BA.debugLineNum = 182;BA.debugLine="Private Sub ResizePreviewPanelBasedPreviewSize";
+ //BA.debugLineNum = 183;BA.debugLine="Dim pw = cam.PreviewSize.Height, ph = cam.Preview";
 _pw = mostCurrent._cam._previewsize /*anywheresoftware.b4a.objects.Camera2.CameraSizeWrapper*/ .getHeight();
 _ph = mostCurrent._cam._previewsize /*anywheresoftware.b4a.objects.Camera2.CameraSizeWrapper*/ .getWidth();
- //BA.debugLineNum = 186;BA.debugLine="Dim r As Float = Max(Activity.Width / pw, Activit";
+ //BA.debugLineNum = 184;BA.debugLine="Dim r As Float = Max(Activity.Width / pw, Activit";
 _r = (float) (anywheresoftware.b4a.keywords.Common.Max(mostCurrent._activity.getWidth()/(double)_pw,mostCurrent._activity.getHeight()/(double)_ph));
- //BA.debugLineNum = 187;BA.debugLine="Dim w As Int = pw * r";
+ //BA.debugLineNum = 185;BA.debugLine="Dim w As Int = pw * r";
 _w = (int) (_pw*_r);
- //BA.debugLineNum = 188;BA.debugLine="Dim h As Int = ph * r";
+ //BA.debugLineNum = 186;BA.debugLine="Dim h As Int = ph * r";
 _h = (int) (_ph*_r);
- //BA.debugLineNum = 189;BA.debugLine="pnlCamera.SetLayoutAnimated(0, Round(Activity.Wid";
+ //BA.debugLineNum = 187;BA.debugLine="pnlCamera.SetLayoutAnimated(0, Round(Activity.Wid";
 mostCurrent._pnlcamera.SetLayoutAnimated((int) (0),(int) (anywheresoftware.b4a.keywords.Common.Round(mostCurrent._activity.getWidth()/(double)2-_w/(double)2)),(int) (anywheresoftware.b4a.keywords.Common.Round(mostCurrent._activity.getHeight()/(double)2-_h/(double)2)),(int) (anywheresoftware.b4a.keywords.Common.Round(_w)),(int) (anywheresoftware.b4a.keywords.Common.Round(_h)));
- //BA.debugLineNum = 190;BA.debugLine="End Sub";
+ //BA.debugLineNum = 188;BA.debugLine="End Sub";
 return "";
 }
 public static anywheresoftware.b4a.objects.B4XViewWrapper.B4XBitmapWrapper  _rotatejpegifneeded(anywheresoftware.b4a.objects.B4XViewWrapper.B4XBitmapWrapper _bmp,byte[] _data) throws Exception{
@@ -1540,81 +1547,81 @@ anywheresoftware.b4a.phone.Phone _p = null;
 anywheresoftware.b4j.object.JavaObject _exifinterface = null;
 anywheresoftware.b4a.objects.streams.File.InputStreamWrapper _in = null;
 int _orientation = 0;
- //BA.debugLineNum = 319;BA.debugLine="Private Sub RotateJpegIfNeeded (bmp As B4XBitmap,";
- //BA.debugLineNum = 320;BA.debugLine="Dim p As Phone";
+ //BA.debugLineNum = 291;BA.debugLine="Private Sub RotateJpegIfNeeded (bmp As B4XBitmap,";
+ //BA.debugLineNum = 292;BA.debugLine="Dim p As Phone";
 _p = new anywheresoftware.b4a.phone.Phone();
- //BA.debugLineNum = 321;BA.debugLine="If p.SdkVersion >= 24 Then";
+ //BA.debugLineNum = 293;BA.debugLine="If p.SdkVersion >= 24 Then";
 if (_p.getSdkVersion()>=24) { 
- //BA.debugLineNum = 322;BA.debugLine="Dim ExifInterface As JavaObject";
+ //BA.debugLineNum = 294;BA.debugLine="Dim ExifInterface As JavaObject";
 _exifinterface = new anywheresoftware.b4j.object.JavaObject();
- //BA.debugLineNum = 323;BA.debugLine="Dim in As InputStream";
+ //BA.debugLineNum = 295;BA.debugLine="Dim in As InputStream";
 _in = new anywheresoftware.b4a.objects.streams.File.InputStreamWrapper();
- //BA.debugLineNum = 324;BA.debugLine="in.InitializeFromBytesArray(Data, 0, Data.Length";
+ //BA.debugLineNum = 296;BA.debugLine="in.InitializeFromBytesArray(Data, 0, Data.Length";
 _in.InitializeFromBytesArray(_data,(int) (0),_data.length);
- //BA.debugLineNum = 325;BA.debugLine="ExifInterface.InitializeNewInstance(\"android.med";
+ //BA.debugLineNum = 297;BA.debugLine="ExifInterface.InitializeNewInstance(\"android.med";
 _exifinterface.InitializeNewInstance("android.media.ExifInterface",new Object[]{(Object)(_in.getObject())});
- //BA.debugLineNum = 326;BA.debugLine="Dim orientation As Int = ExifInterface.RunMethod";
+ //BA.debugLineNum = 298;BA.debugLine="Dim orientation As Int = ExifInterface.RunMethod";
 _orientation = (int)(BA.ObjectToNumber(_exifinterface.RunMethod("getAttribute",new Object[]{(Object)("Orientation")})));
- //BA.debugLineNum = 327;BA.debugLine="Select orientation";
+ //BA.debugLineNum = 299;BA.debugLine="Select orientation";
 switch (_orientation) {
 case 3: {
- //BA.debugLineNum = 329;BA.debugLine="bmp = bmp.Rotate(180)";
+ //BA.debugLineNum = 301;BA.debugLine="bmp = bmp.Rotate(180)";
 _bmp = _bmp.Rotate((int) (180));
  break; }
 case 6: {
- //BA.debugLineNum = 331;BA.debugLine="bmp = bmp.Rotate(90)";
+ //BA.debugLineNum = 303;BA.debugLine="bmp = bmp.Rotate(90)";
 _bmp = _bmp.Rotate((int) (90));
  break; }
 case 8: {
- //BA.debugLineNum = 333;BA.debugLine="bmp = bmp.Rotate(270)";
+ //BA.debugLineNum = 305;BA.debugLine="bmp = bmp.Rotate(270)";
 _bmp = _bmp.Rotate((int) (270));
  break; }
 }
 ;
- //BA.debugLineNum = 335;BA.debugLine="in.Close";
+ //BA.debugLineNum = 307;BA.debugLine="in.Close";
 _in.Close();
  };
- //BA.debugLineNum = 337;BA.debugLine="Return bmp";
+ //BA.debugLineNum = 309;BA.debugLine="Return bmp";
 if (true) return _bmp;
- //BA.debugLineNum = 338;BA.debugLine="End Sub";
+ //BA.debugLineNum = 310;BA.debugLine="End Sub";
 return null;
 }
 public static String  _setstate(boolean _open,boolean _busy,boolean _video) throws Exception{
 String _btnrecordtext = "";
- //BA.debugLineNum = 283;BA.debugLine="Sub SetState(Open As Boolean, Busy As Boolean, Vid";
- //BA.debugLineNum = 287;BA.debugLine="btnCamera.Visible = Not(Busy)";
+ //BA.debugLineNum = 255;BA.debugLine="Sub SetState(Open As Boolean, Busy As Boolean, Vid";
+ //BA.debugLineNum = 259;BA.debugLine="btnCamera.Visible = Not(Busy)";
 mostCurrent._btncamera.setVisible(anywheresoftware.b4a.keywords.Common.Not(_busy));
- //BA.debugLineNum = 288;BA.debugLine="btnRecord.Visible = Open And (Video Or Not(Busy))";
+ //BA.debugLineNum = 260;BA.debugLine="btnRecord.Visible = Open And (Video Or Not(Busy))";
 mostCurrent._btnrecord.setVisible(_open && (_video || anywheresoftware.b4a.keywords.Common.Not(_busy)));
- //BA.debugLineNum = 289;BA.debugLine="openstate = Open";
+ //BA.debugLineNum = 261;BA.debugLine="openstate = Open";
 _openstate = _open;
- //BA.debugLineNum = 290;BA.debugLine="ProgressBar1.Visible = Busy";
+ //BA.debugLineNum = 262;BA.debugLine="ProgressBar1.Visible = Busy";
 mostCurrent._progressbar1.setVisible(_busy);
- //BA.debugLineNum = 291;BA.debugLine="busystate = Busy";
+ //BA.debugLineNum = 263;BA.debugLine="busystate = Busy";
 _busystate = _busy;
- //BA.debugLineNum = 292;BA.debugLine="VideoMode = Video";
+ //BA.debugLineNum = 264;BA.debugLine="VideoMode = Video";
 _videomode = _video;
- //BA.debugLineNum = 293;BA.debugLine="barZoom.Visible = Open";
+ //BA.debugLineNum = 265;BA.debugLine="barZoom.Visible = Open";
 mostCurrent._barzoom.setVisible(_open);
- //BA.debugLineNum = 294;BA.debugLine="Dim btnRecordText As String";
+ //BA.debugLineNum = 266;BA.debugLine="Dim btnRecordText As String";
 _btnrecordtext = "";
- //BA.debugLineNum = 295;BA.debugLine="If VideoMode Then";
+ //BA.debugLineNum = 267;BA.debugLine="If VideoMode Then";
 if (_videomode) { 
- //BA.debugLineNum = 296;BA.debugLine="If Busy Then";
+ //BA.debugLineNum = 268;BA.debugLine="If Busy Then";
 if (_busy) { 
- //BA.debugLineNum = 297;BA.debugLine="btnRecordText = Chr(0xF04D)";
+ //BA.debugLineNum = 269;BA.debugLine="btnRecordText = Chr(0xF04D)";
 _btnrecordtext = BA.ObjectToString(anywheresoftware.b4a.keywords.Common.Chr(((int)0xf04d)));
  }else {
- //BA.debugLineNum = 299;BA.debugLine="btnRecordText = Chr(0xF03D)";
+ //BA.debugLineNum = 271;BA.debugLine="btnRecordText = Chr(0xF03D)";
 _btnrecordtext = BA.ObjectToString(anywheresoftware.b4a.keywords.Common.Chr(((int)0xf03d)));
  };
  }else {
- //BA.debugLineNum = 302;BA.debugLine="btnRecordText = Chr(0xF030)";
+ //BA.debugLineNum = 274;BA.debugLine="btnRecordText = Chr(0xF030)";
 _btnrecordtext = BA.ObjectToString(anywheresoftware.b4a.keywords.Common.Chr(((int)0xf030)));
  };
- //BA.debugLineNum = 304;BA.debugLine="btnRecord.Text = btnRecordText";
+ //BA.debugLineNum = 276;BA.debugLine="btnRecord.Text = btnRecordText";
 mostCurrent._btnrecord.setText(BA.ObjectToCharSequence(_btnrecordtext));
- //BA.debugLineNum = 305;BA.debugLine="End Sub";
+ //BA.debugLineNum = 277;BA.debugLine="End Sub";
 return "";
 }
 public static void  _takepicture() throws Exception{
@@ -1643,7 +1650,7 @@ return;
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 209;BA.debugLine="Try";
+ //BA.debugLineNum = 207;BA.debugLine="Try";
 if (true) break;
 
 case 1:
@@ -1657,9 +1664,9 @@ case 3:
 //C
 this.state = 4;
 this.catchState = 17;
- //BA.debugLineNum = 210;BA.debugLine="SetState(openstate, True, VideoMode)";
+ //BA.debugLineNum = 208;BA.debugLine="SetState(openstate, True, VideoMode)";
 _setstate(parent._openstate,anywheresoftware.b4a.keywords.Common.True,parent._videomode);
- //BA.debugLineNum = 211;BA.debugLine="Wait For(cam.FocusAndTakePicture(MyTaskIndex)) C";
+ //BA.debugLineNum = 209;BA.debugLine="Wait For(cam.FocusAndTakePicture(MyTaskIndex)) C";
 anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, this, parent.mostCurrent._cam._focusandtakepicture /*anywheresoftware.b4a.keywords.Common.ResumableSubWrapper*/ (parent._mytaskindex));
 this.state = 19;
 return;
@@ -1668,36 +1675,36 @@ case 19:
 this.state = 4;
 _data = (byte[]) result[0];
 ;
- //BA.debugLineNum = 212;BA.debugLine="SetState(openstate, False, VideoMode)";
+ //BA.debugLineNum = 210;BA.debugLine="SetState(openstate, False, VideoMode)";
 _setstate(parent._openstate,anywheresoftware.b4a.keywords.Common.False,parent._videomode);
- //BA.debugLineNum = 215;BA.debugLine="cam.DataToFile(Data, File.DirRootExternal & \"/Pr";
-parent.mostCurrent._cam._datatofile /*String*/ (_data,anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/PreserVamos/",parent.mostCurrent._fotonombredestino+".jpg");
- //BA.debugLineNum = 216;BA.debugLine="Dim bmp As Bitmap = cam.DataToBitmap(Data)";
+ //BA.debugLineNum = 213;BA.debugLine="cam.DataToFile(Data, Starter.savedir, fotoNombre";
+parent.mostCurrent._cam._datatofile /*String*/ (_data,parent.mostCurrent._starter._savedir /*String*/ ,parent.mostCurrent._fotonombredestino+".jpg");
+ //BA.debugLineNum = 215;BA.debugLine="Dim bmp As Bitmap = cam.DataToBitmap(Data)";
 _bmp = new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper();
 _bmp = parent.mostCurrent._cam._datatobitmap /*anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper*/ (_data);
- //BA.debugLineNum = 217;BA.debugLine="Log(\"Picture taken: \" & bmp) 'ignore";
-anywheresoftware.b4a.keywords.Common.LogImpl("63866633","Picture taken: "+BA.ObjectToString(_bmp),0);
- //BA.debugLineNum = 218;BA.debugLine="pnlBackground.SetVisibleAnimated(100, True)";
+ //BA.debugLineNum = 216;BA.debugLine="Log(\"Picture taken: \" & bmp) 'ignore";
+anywheresoftware.b4a.keywords.Common.LogImpl("555377930","Picture taken: "+BA.ObjectToString(_bmp),0);
+ //BA.debugLineNum = 217;BA.debugLine="pnlBackground.SetVisibleAnimated(100, True)";
 parent.mostCurrent._pnlbackground.SetVisibleAnimated((int) (100),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 219;BA.debugLine="B4XImageView1.Bitmap = RotateJpegIfNeeded(bmp, D";
+ //BA.debugLineNum = 218;BA.debugLine="B4XImageView1.Bitmap = RotateJpegIfNeeded(bmp, D";
 parent.mostCurrent._b4ximageview1._setbitmap /*anywheresoftware.b4a.objects.B4XViewWrapper.B4XBitmapWrapper*/ (_rotatejpegifneeded((anywheresoftware.b4a.objects.B4XViewWrapper.B4XBitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.B4XViewWrapper.B4XBitmapWrapper(), (android.graphics.Bitmap)(_bmp.getObject())),_data));
- //BA.debugLineNum = 220;BA.debugLine="Sleep(4000)";
-anywheresoftware.b4a.keywords.Common.Sleep(mostCurrent.activityBA,this,(int) (4000));
+ //BA.debugLineNum = 219;BA.debugLine="Sleep(3000)";
+anywheresoftware.b4a.keywords.Common.Sleep(mostCurrent.activityBA,this,(int) (3000));
 this.state = 20;
 return;
 case 20:
 //C
 this.state = 4;
 ;
- //BA.debugLineNum = 221;BA.debugLine="pnlBackground.SetVisibleAnimated(500, False)";
+ //BA.debugLineNum = 220;BA.debugLine="pnlBackground.SetVisibleAnimated(500, False)";
 parent.mostCurrent._pnlbackground.SetVisibleAnimated((int) (500),anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 224;BA.debugLine="Dim Map1 As Map";
+ //BA.debugLineNum = 223;BA.debugLine="Dim Map1 As Map";
 _map1 = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 225;BA.debugLine="Map1.Initialize";
+ //BA.debugLineNum = 224;BA.debugLine="Map1.Initialize";
 _map1.Initialize();
- //BA.debugLineNum = 226;BA.debugLine="Map1.Put(\"Id\", Form_Reporte.currentproject)";
+ //BA.debugLineNum = 225;BA.debugLine="Map1.Put(\"Id\", Form_Reporte.currentproject)";
 _map1.Put((Object)("Id"),(Object)(parent.mostCurrent._form_reporte._currentproject /*String*/ ));
- //BA.debugLineNum = 227;BA.debugLine="If fotoNombreDestino.EndsWith(\"_1\") Then";
+ //BA.debugLineNum = 226;BA.debugLine="If fotoNombreDestino.EndsWith(\"_1\") Then";
 if (true) break;
 
 case 4:
@@ -1718,35 +1725,35 @@ this.state = 14;
 case 6:
 //C
 this.state = 15;
- //BA.debugLineNum = 228;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
+ //BA.debugLineNum = 227;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
 parent.mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,parent.mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","foto1",(Object)(parent.mostCurrent._fotonombredestino),_map1);
  if (true) break;
 
 case 8:
 //C
 this.state = 15;
- //BA.debugLineNum = 230;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
+ //BA.debugLineNum = 229;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
 parent.mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,parent.mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","foto2",(Object)(parent.mostCurrent._fotonombredestino),_map1);
  if (true) break;
 
 case 10:
 //C
 this.state = 15;
- //BA.debugLineNum = 232;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
+ //BA.debugLineNum = 231;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
 parent.mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,parent.mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","foto3",(Object)(parent.mostCurrent._fotonombredestino),_map1);
  if (true) break;
 
 case 12:
 //C
 this.state = 15;
- //BA.debugLineNum = 234;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
+ //BA.debugLineNum = 233;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
 parent.mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,parent.mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","foto4",(Object)(parent.mostCurrent._fotonombredestino),_map1);
  if (true) break;
 
 case 14:
 //C
 this.state = 15;
- //BA.debugLineNum = 236;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
+ //BA.debugLineNum = 235;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
 parent.mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,parent.mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","foto5",(Object)(parent.mostCurrent._fotonombredestino),_map1);
  if (true) break;
 
@@ -1754,7 +1761,7 @@ case 15:
 //C
 this.state = 18;
 ;
- //BA.debugLineNum = 241;BA.debugLine="DesignaFoto";
+ //BA.debugLineNum = 240;BA.debugLine="DesignaFoto";
 _designafoto();
  if (true) break;
 
@@ -1762,7 +1769,7 @@ case 17:
 //C
 this.state = 18;
 this.catchState = 0;
- //BA.debugLineNum = 243;BA.debugLine="HandleError(LastException)";
+ //BA.debugLineNum = 242;BA.debugLine="HandleError(LastException)";
 _handleerror(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA));
  if (true) break;
 if (true) break;
@@ -1772,7 +1779,7 @@ case 18:
 this.state = -1;
 this.catchState = 0;
 ;
- //BA.debugLineNum = 246;BA.debugLine="End Sub";
+ //BA.debugLineNum = 245;BA.debugLine="End Sub";
 if (true) break;
 }} 
        catch (Exception e0) {

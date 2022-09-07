@@ -21,21 +21,13 @@ _gap = BA.NumberToString((5d * scale));
 _w = BA.NumberToString(((100d / 100 * width)-6d*Double.parseDouble(_gap))/5d);
 views.get("imgsitio1").vw.setWidth((int)(Double.parseDouble(_w)));
 views.get("imgsitio2").vw.setWidth((int)(Double.parseDouble(_w)));
-//BA.debugLineNum = 8;BA.debugLine="imgSitio3.Width = w"[camera/General script]
 views.get("imgsitio3").vw.setWidth((int)(Double.parseDouble(_w)));
-//BA.debugLineNum = 9;BA.debugLine="imgSitio4.Width = w"[camera/General script]
 views.get("imgsitio4").vw.setWidth((int)(Double.parseDouble(_w)));
-//BA.debugLineNum = 10;BA.debugLine="imgSitio5.Width = w"[camera/General script]
 views.get("imgsitio5").vw.setWidth((int)(Double.parseDouble(_w)));
-//BA.debugLineNum = 11;BA.debugLine="imgSitio1.Left = gap"[camera/General script]
 views.get("imgsitio1").vw.setLeft((int)(Double.parseDouble(_gap)));
-//BA.debugLineNum = 12;BA.debugLine="imgSitio2.Left = imgSitio1.Right + gap"[camera/General script]
 views.get("imgsitio2").vw.setLeft((int)((views.get("imgsitio1").vw.getLeft() + views.get("imgsitio1").vw.getWidth())+Double.parseDouble(_gap)));
-//BA.debugLineNum = 13;BA.debugLine="imgSitio3.Left = imgSitio2.Right + gap"[camera/General script]
 views.get("imgsitio3").vw.setLeft((int)((views.get("imgsitio2").vw.getLeft() + views.get("imgsitio2").vw.getWidth())+Double.parseDouble(_gap)));
-//BA.debugLineNum = 14;BA.debugLine="imgSitio4.Left = imgSitio3.Right + gap"[camera/General script]
 views.get("imgsitio4").vw.setLeft((int)((views.get("imgsitio3").vw.getLeft() + views.get("imgsitio3").vw.getWidth())+Double.parseDouble(_gap)));
-//BA.debugLineNum = 15;BA.debugLine="imgSitio5.Left = imgSitio4.Right + gap"[camera/General script]
 views.get("imgsitio5").vw.setLeft((int)((views.get("imgsitio4").vw.getLeft() + views.get("imgsitio4").vw.getWidth())+Double.parseDouble(_gap)));
 
 }

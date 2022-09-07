@@ -131,35 +131,41 @@ public static String _dbdir = "";
 public static anywheresoftware.b4a.objects.FirebaseAuthWrapper _auth = null;
 public static boolean _isloggedin = false;
 public static anywheresoftware.b4a.objects.FirebaseNotificationsService.FirebaseMessageWrapper _fm = null;
+public static anywheresoftware.b4a.objects.RuntimePermissions _rp = null;
 public b4a.example.dateutils _dateutils = null;
 public appear.pnud.preservamos.main _main = null;
 public appear.pnud.preservamos.form_main _form_main = null;
-public appear.pnud.preservamos.reporte_fotos _reporte_fotos = null;
-public appear.pnud.preservamos.dbutils _dbutils = null;
+public appear.pnud.preservamos.inatcheck _inatcheck = null;
 public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
-public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
-public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
+public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
+public appear.pnud.preservamos.alertas _alertas = null;
+public appear.pnud.preservamos.register _register = null;
+public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
+public appear.pnud.preservamos.alerta_fotos _alerta_fotos = null;
+public appear.pnud.preservamos.form_reporte _form_reporte = null;
 public appear.pnud.preservamos.aprender_muestreo _aprender_muestreo = null;
+public appear.pnud.preservamos.dbutils _dbutils = null;
 public appear.pnud.preservamos.downloadservice _downloadservice = null;
 public appear.pnud.preservamos.firebasemessaging _firebasemessaging = null;
-public appear.pnud.preservamos.form_reporte _form_reporte = null;
 public appear.pnud.preservamos.frmabout _frmabout = null;
 public appear.pnud.preservamos.frmdatosanteriores _frmdatosanteriores = null;
-public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
 public appear.pnud.preservamos.frmfelicitaciones _frmfelicitaciones = null;
+public appear.pnud.preservamos.frmmapa _frmmapa = null;
 public appear.pnud.preservamos.frmperfil _frmperfil = null;
 public appear.pnud.preservamos.frmpoliticadatos _frmpoliticadatos = null;
 public appear.pnud.preservamos.httputils2service _httputils2service = null;
-public appear.pnud.preservamos.register _register = null;
-public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
+public appear.pnud.preservamos.imagedownloader _imagedownloader = null;
+public appear.pnud.preservamos.reporte_fotos _reporte_fotos = null;
+public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
+public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
 public appear.pnud.preservamos.uploadfiles _uploadfiles = null;
 public appear.pnud.preservamos.utilidades _utilidades = null;
 public appear.pnud.preservamos.xuiviewsutils _xuiviewsutils = null;
 public static boolean  _application_error(anywheresoftware.b4a.objects.B4AException _error,String _stacktrace) throws Exception{
- //BA.debugLineNum = 53;BA.debugLine="Sub Application_Error (Error As Exception, StackTr";
- //BA.debugLineNum = 54;BA.debugLine="Return True";
+ //BA.debugLineNum = 59;BA.debugLine="Sub Application_Error (Error As Exception, StackTr";
+ //BA.debugLineNum = 60;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
- //BA.debugLineNum = 55;BA.debugLine="End Sub";
+ //BA.debugLineNum = 61;BA.debugLine="End Sub";
 return false;
 }
 public static String  _process_globals() throws Exception{
@@ -176,50 +182,52 @@ _auth = new anywheresoftware.b4a.objects.FirebaseAuthWrapper();
 _isloggedin = false;
  //BA.debugLineNum = 16;BA.debugLine="Dim fm As FirebaseMessaging";
 _fm = new anywheresoftware.b4a.objects.FirebaseNotificationsService.FirebaseMessageWrapper();
- //BA.debugLineNum = 17;BA.debugLine="End Sub";
+ //BA.debugLineNum = 18;BA.debugLine="Dim rp As RuntimePermissions";
+_rp = new anywheresoftware.b4a.objects.RuntimePermissions();
+ //BA.debugLineNum = 19;BA.debugLine="End Sub";
 return "";
 }
 public static String  _service_create() throws Exception{
- //BA.debugLineNum = 19;BA.debugLine="Sub Service_Create";
- //BA.debugLineNum = 33;BA.debugLine="dbdir = DBUtils.CopyDBFromAssets(\"preservamosdb.d";
+ //BA.debugLineNum = 21;BA.debugLine="Sub Service_Create";
+ //BA.debugLineNum = 39;BA.debugLine="dbdir = DBUtils.CopyDBFromAssets(\"preservamosdb.d";
 _dbdir = mostCurrent._dbutils._copydbfromassets /*String*/ (processBA,"preservamosdb.db");
- //BA.debugLineNum = 34;BA.debugLine="sqlDB.Initialize(dbdir, \"preservamosdb.db\", False";
+ //BA.debugLineNum = 40;BA.debugLine="sqlDB.Initialize(dbdir, \"preservamosdb.db\", False";
 _sqldb.Initialize(_dbdir,"preservamosdb.db",anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 36;BA.debugLine="CallSubDelayed(FirebaseMessaging, \"SubscribeToTop";
+ //BA.debugLineNum = 42;BA.debugLine="CallSubDelayed(FirebaseMessaging, \"SubscribeToTop";
 anywheresoftware.b4a.keywords.Common.CallSubDelayed(processBA,(Object)(mostCurrent._firebasemessaging.getObject()),"SubscribeToTopics");
- //BA.debugLineNum = 37;BA.debugLine="auth.Initialize(\"auth\")";
+ //BA.debugLineNum = 43;BA.debugLine="auth.Initialize(\"auth\")";
 _auth.Initialize(processBA,"auth");
- //BA.debugLineNum = 38;BA.debugLine="auth.SignOutFromGoogle";
+ //BA.debugLineNum = 44;BA.debugLine="auth.SignOutFromGoogle";
 _auth.SignOutFromGoogle();
- //BA.debugLineNum = 40;BA.debugLine="fm.Initialize(\"fm\")";
+ //BA.debugLineNum = 46;BA.debugLine="fm.Initialize(\"fm\")";
 _fm.Initialize(processBA,"fm");
- //BA.debugLineNum = 41;BA.debugLine="End Sub";
+ //BA.debugLineNum = 47;BA.debugLine="End Sub";
 return "";
 }
 public static String  _service_destroy() throws Exception{
- //BA.debugLineNum = 57;BA.debugLine="Sub Service_Destroy";
- //BA.debugLineNum = 58;BA.debugLine="End Sub";
+ //BA.debugLineNum = 63;BA.debugLine="Sub Service_Destroy";
+ //BA.debugLineNum = 64;BA.debugLine="End Sub";
 return "";
 }
 public static String  _service_start(anywheresoftware.b4a.objects.IntentWrapper _startingintent) throws Exception{
- //BA.debugLineNum = 43;BA.debugLine="Sub Service_Start (StartingIntent As Intent)";
- //BA.debugLineNum = 44;BA.debugLine="Service.StopAutomaticForeground 'Starter service";
+ //BA.debugLineNum = 49;BA.debugLine="Sub Service_Start (StartingIntent As Intent)";
+ //BA.debugLineNum = 50;BA.debugLine="Service.StopAutomaticForeground 'Starter service";
 mostCurrent._service.StopAutomaticForeground();
- //BA.debugLineNum = 45;BA.debugLine="End Sub";
+ //BA.debugLineNum = 51;BA.debugLine="End Sub";
 return "";
 }
 public static String  _service_taskremoved() throws Exception{
- //BA.debugLineNum = 48;BA.debugLine="Sub Service_TaskRemoved";
- //BA.debugLineNum = 50;BA.debugLine="End Sub";
+ //BA.debugLineNum = 54;BA.debugLine="Sub Service_TaskRemoved";
+ //BA.debugLineNum = 56;BA.debugLine="End Sub";
 return "";
 }
 public static String  _updatefcmtoken() throws Exception{
- //BA.debugLineNum = 62;BA.debugLine="Public Sub UpdateFCMToken";
- //BA.debugLineNum = 64;BA.debugLine="fm.SubscribeToTopic(\"general\") 'you can subscribe";
+ //BA.debugLineNum = 68;BA.debugLine="Public Sub UpdateFCMToken";
+ //BA.debugLineNum = 70;BA.debugLine="fm.SubscribeToTopic(\"general\") 'you can subscribe";
 _fm.SubscribeToTopic("general");
- //BA.debugLineNum = 65;BA.debugLine="Log (\"NewToken: \" & fm.Token)";
-anywheresoftware.b4a.keywords.Common.LogImpl("639976963","NewToken: "+_fm.getToken(),0);
- //BA.debugLineNum = 66;BA.debugLine="End Sub";
+ //BA.debugLineNum = 71;BA.debugLine="Log (\"NewToken: \" & fm.Token)";
+anywheresoftware.b4a.keywords.Common.LogImpl("525100291","NewToken: "+_fm.getToken(),0);
+ //BA.debugLineNum = 72;BA.debugLine="End Sub";
 return "";
 }
 }

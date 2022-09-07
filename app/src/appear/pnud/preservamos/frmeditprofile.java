@@ -369,27 +369,34 @@ public anywheresoftware.b4a.objects.LabelWrapper _lblfechadenacimiento = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _btneditfullname = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _btneditsexo = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _btneditfechadenacimiento = null;
+public anywheresoftware.b4a.objects.CompoundButtonWrapper.CheckBoxWrapper _chkempleadomunicipio = null;
+public anywheresoftware.b4a.objects.ButtonWrapper _btneditempleadomunicipal = null;
 public b4a.example.dateutils _dateutils = null;
 public appear.pnud.preservamos.main _main = null;
 public appear.pnud.preservamos.form_main _form_main = null;
-public appear.pnud.preservamos.reporte_fotos _reporte_fotos = null;
-public appear.pnud.preservamos.dbutils _dbutils = null;
+public appear.pnud.preservamos.starter _starter = null;
+public appear.pnud.preservamos.inatcheck _inatcheck = null;
 public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
-public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
-public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
+public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
+public appear.pnud.preservamos.alertas _alertas = null;
+public appear.pnud.preservamos.register _register = null;
+public appear.pnud.preservamos.alerta_fotos _alerta_fotos = null;
+public appear.pnud.preservamos.form_reporte _form_reporte = null;
 public appear.pnud.preservamos.aprender_muestreo _aprender_muestreo = null;
+public appear.pnud.preservamos.dbutils _dbutils = null;
 public appear.pnud.preservamos.downloadservice _downloadservice = null;
 public appear.pnud.preservamos.firebasemessaging _firebasemessaging = null;
-public appear.pnud.preservamos.form_reporte _form_reporte = null;
 public appear.pnud.preservamos.frmabout _frmabout = null;
 public appear.pnud.preservamos.frmdatosanteriores _frmdatosanteriores = null;
 public appear.pnud.preservamos.frmfelicitaciones _frmfelicitaciones = null;
+public appear.pnud.preservamos.frmmapa _frmmapa = null;
 public appear.pnud.preservamos.frmperfil _frmperfil = null;
 public appear.pnud.preservamos.frmpoliticadatos _frmpoliticadatos = null;
 public appear.pnud.preservamos.httputils2service _httputils2service = null;
-public appear.pnud.preservamos.register _register = null;
-public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
-public appear.pnud.preservamos.starter _starter = null;
+public appear.pnud.preservamos.imagedownloader _imagedownloader = null;
+public appear.pnud.preservamos.reporte_fotos _reporte_fotos = null;
+public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
+public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
 public appear.pnud.preservamos.uploadfiles _uploadfiles = null;
 public appear.pnud.preservamos.utilidades _utilidades = null;
 public appear.pnud.preservamos.xuiviewsutils _xuiviewsutils = null;
@@ -402,229 +409,270 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 59;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 60;BA.debugLine="Activity.LoadLayout(\"layEditProfile\")";
+anywheresoftware.b4a.objects.collections.List _list1 = null;
+ //BA.debugLineNum = 61;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 62;BA.debugLine="Activity.LoadLayout(\"layEditProfile\")";
 mostCurrent._activity.LoadLayout("layEditProfile",mostCurrent.activityBA);
- //BA.debugLineNum = 61;BA.debugLine="hubocambios = False";
+ //BA.debugLineNum = 63;BA.debugLine="hubocambios = False";
 _hubocambios = anywheresoftware.b4a.keywords.Common.False;
- //BA.debugLineNum = 63;BA.debugLine="spnPerfil.Add(\"Individual\")";
-mostCurrent._spnperfil.Add("Individual");
- //BA.debugLineNum = 64;BA.debugLine="spnPerfil.Add(\"Grupo\")";
-mostCurrent._spnperfil.Add("Grupo");
- //BA.debugLineNum = 66;BA.debugLine="spnSexo.Add(\"Femenino\")";
+ //BA.debugLineNum = 65;BA.debugLine="spnSexo.Add(\"Femenino\")";
 mostCurrent._spnsexo.Add("Femenino");
- //BA.debugLineNum = 67;BA.debugLine="spnSexo.Add(\"Masculino\")";
+ //BA.debugLineNum = 66;BA.debugLine="spnSexo.Add(\"Masculino\")";
 mostCurrent._spnsexo.Add("Masculino");
- //BA.debugLineNum = 68;BA.debugLine="spnSexo.Add(\"X\")";
+ //BA.debugLineNum = 67;BA.debugLine="spnSexo.Add(\"X\")";
 mostCurrent._spnsexo.Add("X");
- //BA.debugLineNum = 69;BA.debugLine="spnSexo.Visible = True";
+ //BA.debugLineNum = 68;BA.debugLine="spnSexo.Visible = True";
 mostCurrent._spnsexo.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 72;BA.debugLine="txtFullName.Text = Main.strUserFullName";
+ //BA.debugLineNum = 70;BA.debugLine="Dim List1 As List";
+_list1 = new anywheresoftware.b4a.objects.collections.List();
+ //BA.debugLineNum = 71;BA.debugLine="List1 = File.ReadList(File.DirAssets, \"partidos.t";
+_list1 = anywheresoftware.b4a.keywords.Common.File.ReadList(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"partidos.txt");
+ //BA.debugLineNum = 72;BA.debugLine="spnOrganizaciones.AddAll(List1)";
+mostCurrent._spnorganizaciones.AddAll(_list1);
+ //BA.debugLineNum = 74;BA.debugLine="txtFullName.Text = Main.strUserFullName";
 mostCurrent._txtfullname.setText(BA.ObjectToCharSequence(mostCurrent._main._struserfullname /*String*/ ));
- //BA.debugLineNum = 73;BA.debugLine="lblTitle.Text = Main.username";
+ //BA.debugLineNum = 75;BA.debugLine="lblTitle.Text = Main.username";
 mostCurrent._lbltitle.setText(BA.ObjectToCharSequence(mostCurrent._main._username /*String*/ ));
- //BA.debugLineNum = 74;BA.debugLine="txtLocation.Text = Main.strUserLocation";
+ //BA.debugLineNum = 76;BA.debugLine="txtLocation.Text = Main.strUserLocation";
 mostCurrent._txtlocation.setText(BA.ObjectToCharSequence(mostCurrent._main._struserlocation /*String*/ ));
- //BA.debugLineNum = 75;BA.debugLine="lblFechadeNacimiento.Text = Main.userFechadeNacim";
+ //BA.debugLineNum = 77;BA.debugLine="lblFechadeNacimiento.Text = Main.userFechadeNacim";
 mostCurrent._lblfechadenacimiento.setText(BA.ObjectToCharSequence(mostCurrent._main._userfechadenacimiento /*String*/ ));
- //BA.debugLineNum = 76;BA.debugLine="txtEmail.Text = Main.strUserEmail";
+ //BA.debugLineNum = 78;BA.debugLine="txtEmail.Text = Main.strUserEmail";
 mostCurrent._txtemail.setText(BA.ObjectToCharSequence(mostCurrent._main._struseremail /*String*/ ));
- //BA.debugLineNum = 77;BA.debugLine="spnSexo.SelectedIndex = spnSexo.IndexOf(Main.user";
+ //BA.debugLineNum = 79;BA.debugLine="spnSexo.SelectedIndex = spnSexo.IndexOf(Main.user";
 mostCurrent._spnsexo.setSelectedIndex(mostCurrent._spnsexo.IndexOf(mostCurrent._main._usersexo /*String*/ ));
- //BA.debugLineNum = 78;BA.debugLine="If Main.strUserOrg = Null Or Main.strUserOrg = \"n";
-if (mostCurrent._main._struserorg /*String*/ == null || (mostCurrent._main._struserorg /*String*/ ).equals("null") || (mostCurrent._main._struserorg /*String*/ ).equals("")) { 
- //BA.debugLineNum = 79;BA.debugLine="spnPerfil.SelectedIndex = 0";
-mostCurrent._spnperfil.setSelectedIndex((int) (0));
- //BA.debugLineNum = 80;BA.debugLine="lblOrg.Visible = False";
-mostCurrent._lblorg.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 81;BA.debugLine="spnOrganizaciones.Visible = False";
-mostCurrent._spnorganizaciones.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 82;BA.debugLine="lblAgregarOrg.Visible = False";
-mostCurrent._lblagregarorg.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 80;BA.debugLine="spnOrganizaciones.SelectedIndex = spnOrganizacion";
+mostCurrent._spnorganizaciones.setSelectedIndex(mostCurrent._spnorganizaciones.IndexOf(mostCurrent._main._struserorg /*String*/ ));
+ //BA.debugLineNum = 82;BA.debugLine="If Main.strUserTipoUsuario = \"municipal\" Then";
+if ((mostCurrent._main._strusertipousuario /*String*/ ).equals("municipal")) { 
+ //BA.debugLineNum = 83;BA.debugLine="chkEmpleadoMunicipio.Checked = True";
+mostCurrent._chkempleadomunicipio.setChecked(anywheresoftware.b4a.keywords.Common.True);
  }else {
- //BA.debugLineNum = 84;BA.debugLine="spnPerfil.SelectedIndex = 1";
-mostCurrent._spnperfil.setSelectedIndex((int) (1));
- //BA.debugLineNum = 85;BA.debugLine="spnOrganizaciones.Add(Main.strUserOrg)";
-mostCurrent._spnorganizaciones.Add(mostCurrent._main._struserorg /*String*/ );
- //BA.debugLineNum = 86;BA.debugLine="spnOrganizaciones.Enabled = False";
-mostCurrent._spnorganizaciones.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 87;BA.debugLine="spnOrganizaciones.Visible = True";
-mostCurrent._spnorganizaciones.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 85;BA.debugLine="chkEmpleadoMunicipio.Checked = False";
+mostCurrent._chkempleadomunicipio.setChecked(anywheresoftware.b4a.keywords.Common.False);
  };
- //BA.debugLineNum = 93;BA.debugLine="End Sub";
+ //BA.debugLineNum = 89;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
- //BA.debugLineNum = 94;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
- //BA.debugLineNum = 95;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+ //BA.debugLineNum = 90;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+ //BA.debugLineNum = 91;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
- //BA.debugLineNum = 96;BA.debugLine="Activity.finish";
+ //BA.debugLineNum = 92;BA.debugLine="Activity.finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 97;BA.debugLine="Activity.RemoveAllViews";
+ //BA.debugLineNum = 93;BA.debugLine="Activity.RemoveAllViews";
 mostCurrent._activity.RemoveAllViews();
  };
- //BA.debugLineNum = 100;BA.debugLine="End Sub";
+ //BA.debugLineNum = 96;BA.debugLine="End Sub";
 return false;
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 104;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 106;BA.debugLine="End Sub";
+ //BA.debugLineNum = 100;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 102;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 101;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 103;BA.debugLine="End Sub";
+ //BA.debugLineNum = 97;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 99;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btncancelaredit_click() throws Exception{
- //BA.debugLineNum = 173;BA.debugLine="Sub btnCancelarEdit_Click";
- //BA.debugLineNum = 174;BA.debugLine="Activity.RemoveAllViews";
+ //BA.debugLineNum = 193;BA.debugLine="Sub btnCancelarEdit_Click";
+ //BA.debugLineNum = 194;BA.debugLine="Activity.RemoveAllViews";
 mostCurrent._activity.RemoveAllViews();
- //BA.debugLineNum = 175;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 195;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 176;BA.debugLine="End Sub";
+ //BA.debugLineNum = 196;BA.debugLine="End Sub";
+return "";
+}
+public static String  _btneditempleadomunicipal_click() throws Exception{
+ //BA.debugLineNum = 189;BA.debugLine="Private Sub btnEditEmpleadoMunicipal_Click";
+ //BA.debugLineNum = 190;BA.debugLine="chkEmpleadoMunicipio.Enabled = True";
+mostCurrent._chkempleadomunicipio.setEnabled(anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 191;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btneditfechadenacimiento_click() throws Exception{
 String _fechanueva = "";
- //BA.debugLineNum = 136;BA.debugLine="Sub btnEditFechaDeNacimiento_Click";
- //BA.debugLineNum = 137;BA.debugLine="Dim fechanueva As String";
+ //BA.debugLineNum = 142;BA.debugLine="Sub btnEditFechaDeNacimiento_Click";
+ //BA.debugLineNum = 143;BA.debugLine="Dim fechanueva As String";
 _fechanueva = "";
- //BA.debugLineNum = 138;BA.debugLine="dated.ShowCalendar = True";
+ //BA.debugLineNum = 144;BA.debugLine="dated.ShowCalendar = True";
 mostCurrent._dated.ShowCalendar = anywheresoftware.b4a.keywords.Common.True;
- //BA.debugLineNum = 139;BA.debugLine="dated.Year = DateTime.GetYear(DateTime.now)     '";
+ //BA.debugLineNum = 145;BA.debugLine="dated.Year = DateTime.GetYear(DateTime.now)     '";
 mostCurrent._dated.setYear(anywheresoftware.b4a.keywords.Common.DateTime.GetYear(anywheresoftware.b4a.keywords.Common.DateTime.getNow()));
- //BA.debugLineNum = 140;BA.debugLine="dated.Month = DateTime.GetMonth(DateTime.now)";
+ //BA.debugLineNum = 146;BA.debugLine="dated.Month = DateTime.GetMonth(DateTime.now)";
 mostCurrent._dated.setMonth(anywheresoftware.b4a.keywords.Common.DateTime.GetMonth(anywheresoftware.b4a.keywords.Common.DateTime.getNow()));
- //BA.debugLineNum = 141;BA.debugLine="dated.DayOfMonth = DateTime.GetDayOfMonth(DateTim";
+ //BA.debugLineNum = 147;BA.debugLine="dated.DayOfMonth = DateTime.GetDayOfMonth(DateTim";
 mostCurrent._dated.setDayOfMonth(anywheresoftware.b4a.keywords.Common.DateTime.GetDayOfMonth(anywheresoftware.b4a.keywords.Common.DateTime.getNow()));
- //BA.debugLineNum = 142;BA.debugLine="dated.Show(\"Elija su fecha de nacimiento\", \"Fecha";
+ //BA.debugLineNum = 148;BA.debugLine="dated.Show(\"Elija su fecha de nacimiento\", \"Fecha";
 mostCurrent._dated.Show("Elija su fecha de nacimiento","Fecha de nacimiento","Ok","Cancelar","",mostCurrent.activityBA,(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null));
- //BA.debugLineNum = 143;BA.debugLine="fechanueva = dated.DayOfMonth & \"-\" & dated.Month";
+ //BA.debugLineNum = 149;BA.debugLine="fechanueva = dated.DayOfMonth & \"-\" & dated.Month";
 _fechanueva = BA.NumberToString(mostCurrent._dated.getDayOfMonth())+"-"+BA.NumberToString(mostCurrent._dated.getMonth())+"-"+BA.NumberToString(mostCurrent._dated.getYear());
- //BA.debugLineNum = 144;BA.debugLine="lblFechadeNacimiento.Text = fechanueva";
+ //BA.debugLineNum = 150;BA.debugLine="lblFechadeNacimiento.Text = fechanueva";
 mostCurrent._lblfechadenacimiento.setText(BA.ObjectToCharSequence(_fechanueva));
- //BA.debugLineNum = 145;BA.debugLine="btnEditFechaDeNacimiento.visible = False";
+ //BA.debugLineNum = 151;BA.debugLine="btnEditFechaDeNacimiento.visible = False";
 mostCurrent._btneditfechadenacimiento.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 146;BA.debugLine="hubocambios = True";
+ //BA.debugLineNum = 152;BA.debugLine="hubocambios = True";
 _hubocambios = anywheresoftware.b4a.keywords.Common.True;
- //BA.debugLineNum = 147;BA.debugLine="End Sub";
+ //BA.debugLineNum = 153;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btneditfullname_click() throws Exception{
- //BA.debugLineNum = 115;BA.debugLine="Sub btnEditFullName_Click";
- //BA.debugLineNum = 116;BA.debugLine="txtFullName.Enabled = True";
+ //BA.debugLineNum = 121;BA.debugLine="Sub btnEditFullName_Click";
+ //BA.debugLineNum = 122;BA.debugLine="txtFullName.Enabled = True";
 mostCurrent._txtfullname.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 117;BA.debugLine="hubocambios = True";
+ //BA.debugLineNum = 123;BA.debugLine="hubocambios = True";
 _hubocambios = anywheresoftware.b4a.keywords.Common.True;
- //BA.debugLineNum = 118;BA.debugLine="txtFullName.RequestFocus";
+ //BA.debugLineNum = 124;BA.debugLine="txtFullName.RequestFocus";
 mostCurrent._txtfullname.RequestFocus();
- //BA.debugLineNum = 119;BA.debugLine="txtFullName.TextColor = Colors.Black";
+ //BA.debugLineNum = 125;BA.debugLine="txtFullName.TextColor = Colors.Black";
 mostCurrent._txtfullname.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.Black);
- //BA.debugLineNum = 120;BA.debugLine="btnEditFullName.visible = False";
+ //BA.debugLineNum = 126;BA.debugLine="btnEditFullName.visible = False";
 mostCurrent._btneditfullname.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 121;BA.debugLine="End Sub";
+ //BA.debugLineNum = 127;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btneditlocation_click() throws Exception{
- //BA.debugLineNum = 123;BA.debugLine="Sub btnEditLocation_Click";
- //BA.debugLineNum = 124;BA.debugLine="txtLocation.Enabled = True";
+ //BA.debugLineNum = 129;BA.debugLine="Sub btnEditLocation_Click";
+ //BA.debugLineNum = 130;BA.debugLine="txtLocation.Enabled = True";
 mostCurrent._txtlocation.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 125;BA.debugLine="hubocambios = True";
+ //BA.debugLineNum = 131;BA.debugLine="hubocambios = True";
 _hubocambios = anywheresoftware.b4a.keywords.Common.True;
- //BA.debugLineNum = 126;BA.debugLine="End Sub";
+ //BA.debugLineNum = 132;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btneditpassword_click() throws Exception{
- //BA.debugLineNum = 149;BA.debugLine="Sub btnEditPassword_Click";
- //BA.debugLineNum = 150;BA.debugLine="txtPassword.Enabled = True";
+ //BA.debugLineNum = 155;BA.debugLine="Sub btnEditPassword_Click";
+ //BA.debugLineNum = 156;BA.debugLine="txtPassword.Enabled = True";
 mostCurrent._txtpassword.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 151;BA.debugLine="txtPassword2.Enabled = True";
+ //BA.debugLineNum = 157;BA.debugLine="txtPassword2.Enabled = True";
 mostCurrent._txtpassword2.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 152;BA.debugLine="txtPassword.Visible = True";
+ //BA.debugLineNum = 158;BA.debugLine="txtPassword.Visible = True";
 mostCurrent._txtpassword.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 153;BA.debugLine="txtPassword2.Visible = True";
+ //BA.debugLineNum = 159;BA.debugLine="txtPassword2.Visible = True";
 mostCurrent._txtpassword2.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 154;BA.debugLine="btnEditPassword.Visible = False";
+ //BA.debugLineNum = 160;BA.debugLine="btnEditPassword.Visible = False";
 mostCurrent._btneditpassword.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 155;BA.debugLine="lblUnmaskPass.Visible = True";
+ //BA.debugLineNum = 161;BA.debugLine="lblUnmaskPass.Visible = True";
 mostCurrent._lblunmaskpass.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 156;BA.debugLine="hubocambios = True";
+ //BA.debugLineNum = 162;BA.debugLine="hubocambios = True";
 _hubocambios = anywheresoftware.b4a.keywords.Common.True;
- //BA.debugLineNum = 157;BA.debugLine="End Sub";
+ //BA.debugLineNum = 163;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btneditprofile_click() throws Exception{
- //BA.debugLineNum = 183;BA.debugLine="Sub btnEditProfile_Click";
- //BA.debugLineNum = 211;BA.debugLine="If hubocambios = True Then";
+ //BA.debugLineNum = 203;BA.debugLine="Sub btnEditProfile_Click";
+ //BA.debugLineNum = 231;BA.debugLine="If hubocambios = True Then";
 if (_hubocambios==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 212;BA.debugLine="If Main.lang = \"es\" Then";
+ //BA.debugLineNum = 232;BA.debugLine="If Main.lang = \"es\" Then";
 if ((mostCurrent._main._lang /*String*/ ).equals("es")) { 
- //BA.debugLineNum = 213;BA.debugLine="ProgressDialogShow(\"Guardando cambios...\")";
+ //BA.debugLineNum = 233;BA.debugLine="ProgressDialogShow(\"Guardando cambios...\")";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("Guardando cambios..."));
  }else if((mostCurrent._main._lang /*String*/ ).equals("en")) { 
- //BA.debugLineNum = 215;BA.debugLine="ProgressDialogShow(\"Saving changes...\")";
+ //BA.debugLineNum = 235;BA.debugLine="ProgressDialogShow(\"Saving changes...\")";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("Saving changes..."));
  };
- //BA.debugLineNum = 218;BA.debugLine="EditUser";
-_edituser();
+ //BA.debugLineNum = 237;BA.debugLine="Log(\"Chequeando internet\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("533030178","Chequeando internet",0);
+ //BA.debugLineNum = 238;BA.debugLine="CheckInternet";
+_checkinternet();
  };
- //BA.debugLineNum = 222;BA.debugLine="End Sub";
+ //BA.debugLineNum = 243;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btneditsexo_click() throws Exception{
- //BA.debugLineNum = 128;BA.debugLine="Sub btnEditSexo_Click";
- //BA.debugLineNum = 129;BA.debugLine="hubocambios = True";
+ //BA.debugLineNum = 134;BA.debugLine="Sub btnEditSexo_Click";
+ //BA.debugLineNum = 135;BA.debugLine="hubocambios = True";
 _hubocambios = anywheresoftware.b4a.keywords.Common.True;
- //BA.debugLineNum = 130;BA.debugLine="spnSexo.Enabled = True";
+ //BA.debugLineNum = 136;BA.debugLine="spnSexo.Enabled = True";
 mostCurrent._spnsexo.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 131;BA.debugLine="spnSexo.Visible = True";
+ //BA.debugLineNum = 137;BA.debugLine="spnSexo.Visible = True";
 mostCurrent._spnsexo.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 132;BA.debugLine="spnSexo.TextColor = Colors.Black";
+ //BA.debugLineNum = 138;BA.debugLine="spnSexo.TextColor = Colors.Black";
 mostCurrent._spnsexo.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.Black);
- //BA.debugLineNum = 133;BA.debugLine="btnEditSexo.visible = False";
+ //BA.debugLineNum = 139;BA.debugLine="btnEditSexo.visible = False";
 mostCurrent._btneditsexo.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 134;BA.debugLine="End Sub";
+ //BA.debugLineNum = 140;BA.debugLine="End Sub";
 return "";
 }
 public static String  _cargargrupos() throws Exception{
 appear.pnud.preservamos.downloadservice._downloaddata _dd = null;
- //BA.debugLineNum = 349;BA.debugLine="Sub CargarGrupos";
- //BA.debugLineNum = 350;BA.debugLine="listaOrgs.Initialize";
+ //BA.debugLineNum = 410;BA.debugLine="Sub CargarGrupos";
+ //BA.debugLineNum = 411;BA.debugLine="listaOrgs.Initialize";
 mostCurrent._listaorgs.Initialize();
- //BA.debugLineNum = 351;BA.debugLine="Dim dd As DownloadData";
+ //BA.debugLineNum = 412;BA.debugLine="Dim dd As DownloadData";
 _dd = new appear.pnud.preservamos.downloadservice._downloaddata();
- //BA.debugLineNum = 352;BA.debugLine="dd.url = Main.serverPath & \"/\" & Main.serverConne";
+ //BA.debugLineNum = 413;BA.debugLine="dd.url = Main.serverPath & \"/\" & Main.serverConne";
 _dd.url /*String*/  = mostCurrent._main._serverpath /*String*/ +"/"+mostCurrent._main._serverconnectionfolder /*String*/ +"/retrieve_orgs.php";
- //BA.debugLineNum = 353;BA.debugLine="dd.EventName = \"RetrieveOrgs\"";
+ //BA.debugLineNum = 414;BA.debugLine="dd.EventName = \"RetrieveOrgs\"";
 _dd.EventName /*String*/  = "RetrieveOrgs";
- //BA.debugLineNum = 354;BA.debugLine="dd.Target = Me";
+ //BA.debugLineNum = 415;BA.debugLine="dd.Target = Me";
 _dd.Target /*Object*/  = frmeditprofile.getObject();
- //BA.debugLineNum = 355;BA.debugLine="CallSubDelayed2(DownloadService, \"StartDownload\",";
+ //BA.debugLineNum = 416;BA.debugLine="CallSubDelayed2(DownloadService, \"StartDownload\",";
 anywheresoftware.b4a.keywords.Common.CallSubDelayed2(processBA,(Object)(mostCurrent._downloadservice.getObject()),"StartDownload",(Object)(_dd));
- //BA.debugLineNum = 357;BA.debugLine="End Sub";
+ //BA.debugLineNum = 418;BA.debugLine="End Sub";
+return "";
+}
+public static String  _checkinternet() throws Exception{
+appear.pnud.preservamos.downloadservice._downloaddata _dd = null;
+ //BA.debugLineNum = 246;BA.debugLine="Sub CheckInternet";
+ //BA.debugLineNum = 247;BA.debugLine="Dim dd As DownloadData";
+_dd = new appear.pnud.preservamos.downloadservice._downloaddata();
+ //BA.debugLineNum = 248;BA.debugLine="dd.url = Main.serverPath &  \"/\" & Main.serverConn";
+_dd.url /*String*/  = mostCurrent._main._serverpath /*String*/ +"/"+mostCurrent._main._serverconnectionfolder /*String*/ +"/connecttest.php";
+ //BA.debugLineNum = 249;BA.debugLine="dd.EventName = \"TestInternet\"";
+_dd.EventName /*String*/  = "TestInternet";
+ //BA.debugLineNum = 250;BA.debugLine="dd.Target = Me";
+_dd.Target /*Object*/  = frmeditprofile.getObject();
+ //BA.debugLineNum = 251;BA.debugLine="CallSubDelayed2(DownloadService, \"StartDownload\",";
+anywheresoftware.b4a.keywords.Common.CallSubDelayed2(processBA,(Object)(mostCurrent._downloadservice.getObject()),"StartDownload",(Object)(_dd));
+ //BA.debugLineNum = 252;BA.debugLine="End Sub";
+return "";
+}
+public static String  _chkempleadomunicipio_checkedchange(boolean _checked) throws Exception{
+ //BA.debugLineNum = 179;BA.debugLine="Private Sub chkEmpleadoMunicipio_CheckedChange(Che";
+ //BA.debugLineNum = 180;BA.debugLine="hubocambios = True";
+_hubocambios = anywheresoftware.b4a.keywords.Common.True;
+ //BA.debugLineNum = 182;BA.debugLine="If chkEmpleadoMunicipio.Checked = True Then";
+if (mostCurrent._chkempleadomunicipio.getChecked()==anywheresoftware.b4a.keywords.Common.True) { 
+ //BA.debugLineNum = 183;BA.debugLine="Main.strUserTipoUsuario = \"municipal\"";
+mostCurrent._main._strusertipousuario /*String*/  = "municipal";
+ }else {
+ //BA.debugLineNum = 185;BA.debugLine="Main.strUserTipoUsuario = \"no municipal\"";
+mostCurrent._main._strusertipousuario /*String*/  = "no municipal";
+ };
+ //BA.debugLineNum = 187;BA.debugLine="End Sub";
 return "";
 }
 public static String  _edituser() throws Exception{
 appear.pnud.preservamos.downloadservice._downloaddata _dd = null;
- //BA.debugLineNum = 223;BA.debugLine="Sub EditUser";
- //BA.debugLineNum = 234;BA.debugLine="Main.userSexo = spnSexo.SelectedItem";
+ //BA.debugLineNum = 277;BA.debugLine="Sub EditUser";
+ //BA.debugLineNum = 288;BA.debugLine="Main.userSexo = spnSexo.SelectedItem";
 mostCurrent._main._usersexo /*String*/  = mostCurrent._spnsexo.getSelectedItem();
- //BA.debugLineNum = 235;BA.debugLine="Main.userFechadeNacimiento = lblFechadeNacimiento";
+ //BA.debugLineNum = 289;BA.debugLine="Main.userFechadeNacimiento = lblFechadeNacimiento";
 mostCurrent._main._userfechadenacimiento /*String*/  = mostCurrent._lblfechadenacimiento.getText();
- //BA.debugLineNum = 236;BA.debugLine="Main.strUserFullName = txtFullName.Text";
+ //BA.debugLineNum = 290;BA.debugLine="Main.strUserFullName = txtFullName.Text";
 mostCurrent._main._struserfullname /*String*/  = mostCurrent._txtfullname.getText();
- //BA.debugLineNum = 238;BA.debugLine="Dim dd As DownloadData";
+ //BA.debugLineNum = 293;BA.debugLine="If chkEmpleadoMunicipio.Checked = True Then";
+if (mostCurrent._chkempleadomunicipio.getChecked()==anywheresoftware.b4a.keywords.Common.True) { 
+ //BA.debugLineNum = 294;BA.debugLine="Main.strUserTipoUsuario = \"municipal\"";
+mostCurrent._main._strusertipousuario /*String*/  = "municipal";
+ }else {
+ //BA.debugLineNum = 296;BA.debugLine="Main.strUserTipoUsuario = \"no municipal\"";
+mostCurrent._main._strusertipousuario /*String*/  = "no municipal";
+ };
+ //BA.debugLineNum = 299;BA.debugLine="Dim dd As DownloadData";
 _dd = new appear.pnud.preservamos.downloadservice._downloaddata();
- //BA.debugLineNum = 241;BA.debugLine="dd.url = Main.serverPath & \"/\" & Main.serverConn";
-_dd.url /*String*/  = mostCurrent._main._serverpath /*String*/ +"/"+mostCurrent._main._serverconnectionfolder /*String*/ +"/editUser.php?Action=EditPass&"+"UserID="+mostCurrent._main._username /*String*/ +"&"+"FullName="+mostCurrent._txtfullname.getText()+"&"+"Location="+mostCurrent._txtlocation.getText()+"&"+"usergroup="+mostCurrent._main._struserorg /*String*/ +"&"+"usertipo="+mostCurrent._spnperfil.getSelectedItem()+"&"+"fechadenacimiento="+mostCurrent._lblfechadenacimiento.getText()+"&"+"sexo="+mostCurrent._spnsexo.getSelectedItem()+"&"+"deviceID="+mostCurrent._main._deviceid /*String*/ ;
- //BA.debugLineNum = 263;BA.debugLine="dd.EventName = \"EditUser\"";
+ //BA.debugLineNum = 302;BA.debugLine="dd.url = Main.serverPath & \"/\" & Main.serverConn";
+_dd.url /*String*/  = mostCurrent._main._serverpath /*String*/ +"/"+mostCurrent._main._serverconnectionfolder /*String*/ +"/editUser.php?Action=EditPass&"+"UserID="+mostCurrent._main._username /*String*/ +"&"+"FullName="+mostCurrent._txtfullname.getText()+"&"+"Location="+mostCurrent._txtlocation.getText()+"&"+"userOrg="+mostCurrent._main._struserorg /*String*/ +"&"+"userTipoUsuario="+mostCurrent._main._strusertipousuario /*String*/ +"&"+"fechadenacimiento="+mostCurrent._lblfechadenacimiento.getText()+"&"+"sexo="+mostCurrent._spnsexo.getSelectedItem()+"&"+"deviceID="+mostCurrent._main._deviceid /*String*/ ;
+ //BA.debugLineNum = 324;BA.debugLine="dd.EventName = \"EditUser\"";
 _dd.EventName /*String*/  = "EditUser";
- //BA.debugLineNum = 264;BA.debugLine="dd.Target = Me";
+ //BA.debugLineNum = 325;BA.debugLine="dd.Target = Me";
 _dd.Target /*Object*/  = frmeditprofile.getObject();
- //BA.debugLineNum = 265;BA.debugLine="CallSubDelayed2(DownloadService, \"StartDownload\",";
+ //BA.debugLineNum = 326;BA.debugLine="CallSubDelayed2(DownloadService, \"StartDownload\",";
 anywheresoftware.b4a.keywords.Common.CallSubDelayed2(processBA,(Object)(mostCurrent._downloadservice.getObject()),"StartDownload",(Object)(_dd));
- //BA.debugLineNum = 267;BA.debugLine="End Sub";
+ //BA.debugLineNum = 328;BA.debugLine="End Sub";
 return "";
 }
 public static String  _edituser_complete(appear.pnud.preservamos.httpjob _job) throws Exception{
@@ -632,78 +680,78 @@ String _res = "";
 String _action = "";
 anywheresoftware.b4a.objects.collections.JSONParser _parser = null;
 anywheresoftware.b4a.objects.collections.Map _map1 = null;
- //BA.debugLineNum = 268;BA.debugLine="Sub EditUser_Complete(Job As HttpJob)";
- //BA.debugLineNum = 269;BA.debugLine="Log(\"EditUser user: \" & Job.Success)";
-anywheresoftware.b4a.keywords.Common.LogImpl("632374785","EditUser user: "+BA.ObjectToString(_job._success /*boolean*/ ),0);
- //BA.debugLineNum = 270;BA.debugLine="If Job.Success = True Then";
+ //BA.debugLineNum = 329;BA.debugLine="Sub EditUser_Complete(Job As HttpJob)";
+ //BA.debugLineNum = 330;BA.debugLine="Log(\"EditUser user: \" & Job.Success)";
+anywheresoftware.b4a.keywords.Common.LogImpl("533161217","EditUser user: "+BA.ObjectToString(_job._success /*boolean*/ ),0);
+ //BA.debugLineNum = 331;BA.debugLine="If Job.Success = True Then";
 if (_job._success /*boolean*/ ==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 272;BA.debugLine="Dim res As String, action As String";
+ //BA.debugLineNum = 333;BA.debugLine="Dim res As String, action As String";
 _res = "";
 _action = "";
- //BA.debugLineNum = 273;BA.debugLine="res = Job.GetString";
+ //BA.debugLineNum = 334;BA.debugLine="res = Job.GetString";
 _res = _job._getstring /*String*/ ();
- //BA.debugLineNum = 274;BA.debugLine="Dim parser As JSONParser";
+ //BA.debugLineNum = 335;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
- //BA.debugLineNum = 275;BA.debugLine="parser.Initialize(res)";
+ //BA.debugLineNum = 336;BA.debugLine="parser.Initialize(res)";
 _parser.Initialize(_res);
- //BA.debugLineNum = 276;BA.debugLine="action = parser.NextValue";
+ //BA.debugLineNum = 337;BA.debugLine="action = parser.NextValue";
 _action = BA.ObjectToString(_parser.NextValue());
- //BA.debugLineNum = 277;BA.debugLine="If action = \"EditOK\" Then";
+ //BA.debugLineNum = 338;BA.debugLine="If action = \"EditOK\" Then";
 if ((_action).equals("EditOK")) { 
- //BA.debugLineNum = 279;BA.debugLine="If Main.lang = \"es\" Then";
+ //BA.debugLineNum = 340;BA.debugLine="If Main.lang = \"es\" Then";
 if ((mostCurrent._main._lang /*String*/ ).equals("es")) { 
- //BA.debugLineNum = 280;BA.debugLine="ToastMessageShow(\"Perfil editado\", False)";
+ //BA.debugLineNum = 341;BA.debugLine="ToastMessageShow(\"Perfil editado\", False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Perfil editado"),anywheresoftware.b4a.keywords.Common.False);
  }else if((mostCurrent._main._lang /*String*/ ).equals("en")) { 
- //BA.debugLineNum = 282;BA.debugLine="ToastMessageShow(\"Profile edited\", False)";
+ //BA.debugLineNum = 343;BA.debugLine="ToastMessageShow(\"Profile edited\", False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Profile edited"),anywheresoftware.b4a.keywords.Common.False);
  };
- //BA.debugLineNum = 285;BA.debugLine="Main.strUserFullName = txtFullName.Text";
+ //BA.debugLineNum = 346;BA.debugLine="Main.strUserFullName = txtFullName.Text";
 mostCurrent._main._struserfullname /*String*/  = mostCurrent._txtfullname.getText();
- //BA.debugLineNum = 286;BA.debugLine="Main.strUserLocation = txtLocation.Text";
+ //BA.debugLineNum = 347;BA.debugLine="Main.strUserLocation = txtLocation.Text";
 mostCurrent._main._struserlocation /*String*/  = mostCurrent._txtlocation.getText();
- //BA.debugLineNum = 287;BA.debugLine="Main.strUserTipoUsuario = spnPerfil.SelectedIte";
+ //BA.debugLineNum = 348;BA.debugLine="Main.strUserTipoUsuario = spnPerfil.SelectedIte";
 mostCurrent._main._strusertipousuario /*String*/  = mostCurrent._spnperfil.getSelectedItem();
- //BA.debugLineNum = 290;BA.debugLine="Dim Map1 As Map";
+ //BA.debugLineNum = 351;BA.debugLine="Dim Map1 As Map";
 _map1 = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 291;BA.debugLine="Map1.Initialize";
+ //BA.debugLineNum = 352;BA.debugLine="Map1.Initialize";
 _map1.Initialize();
- //BA.debugLineNum = 292;BA.debugLine="Map1.Put(\"username\", Main.username)";
+ //BA.debugLineNum = 353;BA.debugLine="Map1.Put(\"username\", Main.username)";
 _map1.Put((Object)("username"),(Object)(mostCurrent._main._username /*String*/ ));
- //BA.debugLineNum = 293;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"userconfig";
+ //BA.debugLineNum = 354;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"userconfig";
 mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"userconfig","lastuser",(Object)("si"),_map1);
- //BA.debugLineNum = 294;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"userconfig";
+ //BA.debugLineNum = 355;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"userconfig";
 mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"userconfig","userLocation",(Object)(mostCurrent._main._struserlocation /*String*/ ),_map1);
- //BA.debugLineNum = 295;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"userconfig";
+ //BA.debugLineNum = 356;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"userconfig";
 mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"userconfig","username",(Object)(mostCurrent._main._struserfullname /*String*/ ),_map1);
- //BA.debugLineNum = 296;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"userconfig";
+ //BA.debugLineNum = 357;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"userconfig";
 mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"userconfig","userOrg",(Object)(mostCurrent._main._struserorg /*String*/ ),_map1);
- //BA.debugLineNum = 297;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"userconfig";
-mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"userconfig","UserTipoUsuario",(Object)(mostCurrent._main._strusertipousuario /*String*/ ),_map1);
- //BA.debugLineNum = 298;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"userconfig";
+ //BA.debugLineNum = 358;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"userconfig";
+mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"userconfig","userTipoUsuario",(Object)(mostCurrent._main._strusertipousuario /*String*/ ),_map1);
+ //BA.debugLineNum = 359;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"userconfig";
 mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"userconfig","fechadenacimiento",(Object)(mostCurrent._main._userfechadenacimiento /*String*/ ),_map1);
- //BA.debugLineNum = 299;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"userconfig";
+ //BA.debugLineNum = 360;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"userconfig";
 mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"userconfig","sexo",(Object)(mostCurrent._main._usersexo /*String*/ ),_map1);
- //BA.debugLineNum = 304;BA.debugLine="Activity.RemoveAllViews";
+ //BA.debugLineNum = 365;BA.debugLine="Activity.RemoveAllViews";
 mostCurrent._activity.RemoveAllViews();
- //BA.debugLineNum = 305;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 366;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
  }else {
- //BA.debugLineNum = 307;BA.debugLine="If Main.lang = \"es\" Then";
+ //BA.debugLineNum = 368;BA.debugLine="If Main.lang = \"es\" Then";
 if ((mostCurrent._main._lang /*String*/ ).equals("es")) { 
- //BA.debugLineNum = 308;BA.debugLine="MsgboxAsync(\"El servidor no devolvió los valor";
+ //BA.debugLineNum = 369;BA.debugLine="MsgboxAsync(\"El servidor no devolvió los valor";
 anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("El servidor no devolvió los valores esperados."+_job._errormessage /*String*/ ),BA.ObjectToCharSequence("Error"),processBA);
  }else if((mostCurrent._main._lang /*String*/ ).equals("en")) { 
- //BA.debugLineNum = 310;BA.debugLine="MsgboxAsync(\"Server error.\" & Job.ErrorMessage";
+ //BA.debugLineNum = 371;BA.debugLine="MsgboxAsync(\"Server error.\" & Job.ErrorMessage";
 anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("Server error."+_job._errormessage /*String*/ ),BA.ObjectToCharSequence("Error"),processBA);
  };
  };
  };
- //BA.debugLineNum = 314;BA.debugLine="Job.Release";
+ //BA.debugLineNum = 375;BA.debugLine="Job.Release";
 _job._release /*String*/ ();
- //BA.debugLineNum = 315;BA.debugLine="ProgressDialogHide";
+ //BA.debugLineNum = 376;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
- //BA.debugLineNum = 316;BA.debugLine="End Sub";
+ //BA.debugLineNum = 377;BA.debugLine="End Sub";
 return "";
 }
 public static String  _globals() throws Exception{
@@ -776,7 +824,11 @@ mostCurrent._btneditfullname = new anywheresoftware.b4a.objects.ButtonWrapper();
 mostCurrent._btneditsexo = new anywheresoftware.b4a.objects.ButtonWrapper();
  //BA.debugLineNum = 56;BA.debugLine="Private btnEditFechaDeNacimiento As Button";
 mostCurrent._btneditfechadenacimiento = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 57;BA.debugLine="End Sub";
+ //BA.debugLineNum = 57;BA.debugLine="Private chkEmpleadoMunicipio As CheckBox";
+mostCurrent._chkempleadomunicipio = new anywheresoftware.b4a.objects.CompoundButtonWrapper.CheckBoxWrapper();
+ //BA.debugLineNum = 58;BA.debugLine="Private btnEditEmpleadoMunicipal As Button";
+mostCurrent._btneditempleadomunicipal = new anywheresoftware.b4a.objects.ButtonWrapper();
+ //BA.debugLineNum = 59;BA.debugLine="End Sub";
 return "";
 }
 public static void  _lblagregarorg_click() throws Exception{
@@ -802,7 +854,7 @@ return;
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 404;BA.debugLine="If Main.lang = \"es\" Then";
+ //BA.debugLineNum = 459;BA.debugLine="If Main.lang = \"es\" Then";
 if (true) break;
 
 case 1:
@@ -817,14 +869,14 @@ this.state = 5;
 case 3:
 //C
 this.state = 6;
- //BA.debugLineNum = 405;BA.debugLine="Msgbox2Async(\"Las organizaciones (grupos, escuel";
+ //BA.debugLineNum = 460;BA.debugLine="Msgbox2Async(\"Las organizaciones (grupos, escuel";
 anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("Las organizaciones (grupos, escuelas, empresas, ONGs) utilizan PreserVamos en grupo. Para registrar una nueva, debes contactarte con el equipo PreserVamos mediante el formulario en la web"),BA.ObjectToCharSequence("Grupos"),"Ir al formulario","","Volver",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
  if (true) break;
 
 case 5:
 //C
 this.state = 6;
- //BA.debugLineNum = 407;BA.debugLine="Msgbox2Async(\"To use PreserVamos as a group of p";
+ //BA.debugLineNum = 462;BA.debugLine="Msgbox2Async(\"To use PreserVamos as a group of p";
 anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("To use PreserVamos as a group of people (schools, organizations, NGOs) you have to contact PreserVamos through the web form"),BA.ObjectToCharSequence("Groups"),"Go to the form","","Volver",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
  if (true) break;
 
@@ -832,7 +884,7 @@ case 6:
 //C
 this.state = 7;
 ;
- //BA.debugLineNum = 409;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
+ //BA.debugLineNum = 464;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
 anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
 this.state = 11;
 return;
@@ -841,7 +893,7 @@ case 11:
 this.state = 7;
 _result = (Integer) result[0];
 ;
- //BA.debugLineNum = 410;BA.debugLine="If Result = DialogResponse.POSITIVE Then";
+ //BA.debugLineNum = 465;BA.debugLine="If Result = DialogResponse.POSITIVE Then";
 if (true) break;
 
 case 7:
@@ -854,9 +906,9 @@ this.state = 9;
 case 9:
 //C
 this.state = 10;
- //BA.debugLineNum = 411;BA.debugLine="Dim p As PhoneIntents";
+ //BA.debugLineNum = 466;BA.debugLine="Dim p As PhoneIntents";
 _p = new anywheresoftware.b4a.phone.Phone.PhoneIntents();
- //BA.debugLineNum = 412;BA.debugLine="StartActivity(p.OpenBrowser(\"https://preservamo";
+ //BA.debugLineNum = 467;BA.debugLine="StartActivity(p.OpenBrowser(\"https://preservamo";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_p.OpenBrowser("https://preservamos.ar/")));
  if (true) break;
 
@@ -864,7 +916,7 @@ case 10:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 416;BA.debugLine="End Sub";
+ //BA.debugLineNum = 471;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -874,24 +926,24 @@ if (true) break;
 public static void  _msgbox_result(int _result) throws Exception{
 }
 public static String  _lblunmaskpass_click() throws Exception{
- //BA.debugLineNum = 159;BA.debugLine="Sub lblUnmaskPass_Click";
- //BA.debugLineNum = 160;BA.debugLine="If lblUnmaskPass.Text = \"\" Then";
+ //BA.debugLineNum = 165;BA.debugLine="Sub lblUnmaskPass_Click";
+ //BA.debugLineNum = 166;BA.debugLine="If lblUnmaskPass.Text = \"\" Then";
 if ((mostCurrent._lblunmaskpass.getText()).equals("")) { 
- //BA.debugLineNum = 161;BA.debugLine="txtPassword.PasswordMode = True";
+ //BA.debugLineNum = 167;BA.debugLine="txtPassword.PasswordMode = True";
 mostCurrent._txtpassword.setPasswordMode(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 162;BA.debugLine="txtPassword2.PasswordMode = True";
+ //BA.debugLineNum = 168;BA.debugLine="txtPassword2.PasswordMode = True";
 mostCurrent._txtpassword2.setPasswordMode(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 163;BA.debugLine="lblUnmaskPass.Text = \"\"";
+ //BA.debugLineNum = 169;BA.debugLine="lblUnmaskPass.Text = \"\"";
 mostCurrent._lblunmaskpass.setText(BA.ObjectToCharSequence(""));
  }else if((mostCurrent._lblunmaskpass.getText()).equals("")) { 
- //BA.debugLineNum = 165;BA.debugLine="txtPassword.PasswordMode = False";
+ //BA.debugLineNum = 171;BA.debugLine="txtPassword.PasswordMode = False";
 mostCurrent._txtpassword.setPasswordMode(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 166;BA.debugLine="txtPassword2.PasswordMode = False";
+ //BA.debugLineNum = 172;BA.debugLine="txtPassword2.PasswordMode = False";
 mostCurrent._txtpassword2.setPasswordMode(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 167;BA.debugLine="lblUnmaskPass.Text = \"\"";
+ //BA.debugLineNum = 173;BA.debugLine="lblUnmaskPass.Text = \"\"";
 mostCurrent._lblunmaskpass.setText(BA.ObjectToCharSequence(""));
  };
- //BA.debugLineNum = 171;BA.debugLine="End Sub";
+ //BA.debugLineNum = 177;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{
@@ -906,131 +958,153 @@ anywheresoftware.b4a.objects.collections.JSONParser _parser = null;
 String _numresults = "";
 int _i = 0;
 anywheresoftware.b4a.objects.collections.Map _newpunto = null;
- //BA.debugLineNum = 358;BA.debugLine="Sub RetrieveOrgs_Complete(Job As HttpJob)";
- //BA.debugLineNum = 359;BA.debugLine="Log(\"Cargagrupos: \" & Job.Success)";
-anywheresoftware.b4a.keywords.Common.LogImpl("632571393","Cargagrupos: "+BA.ObjectToString(_job._success /*boolean*/ ),0);
- //BA.debugLineNum = 360;BA.debugLine="If Job.Success = True Then";
+ //BA.debugLineNum = 419;BA.debugLine="Sub RetrieveOrgs_Complete(Job As HttpJob)";
+ //BA.debugLineNum = 420;BA.debugLine="Log(\"Cargagrupos: \" & Job.Success)";
+anywheresoftware.b4a.keywords.Common.LogImpl("533357825","Cargagrupos: "+BA.ObjectToString(_job._success /*boolean*/ ),0);
+ //BA.debugLineNum = 421;BA.debugLine="If Job.Success = True Then";
 if (_job._success /*boolean*/ ==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 361;BA.debugLine="Dim res As String, action As String";
+ //BA.debugLineNum = 422;BA.debugLine="Dim res As String, action As String";
 _res = "";
 _action = "";
- //BA.debugLineNum = 362;BA.debugLine="res = Job.GetString";
+ //BA.debugLineNum = 423;BA.debugLine="res = Job.GetString";
 _res = _job._getstring /*String*/ ();
- //BA.debugLineNum = 363;BA.debugLine="Dim parser As JSONParser";
+ //BA.debugLineNum = 424;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
- //BA.debugLineNum = 364;BA.debugLine="parser.Initialize(res)";
+ //BA.debugLineNum = 425;BA.debugLine="parser.Initialize(res)";
 _parser.Initialize(_res);
- //BA.debugLineNum = 365;BA.debugLine="action = parser.NextValue";
+ //BA.debugLineNum = 426;BA.debugLine="action = parser.NextValue";
 _action = BA.ObjectToString(_parser.NextValue());
- //BA.debugLineNum = 366;BA.debugLine="If action = \"OrgsOK\" Then";
+ //BA.debugLineNum = 427;BA.debugLine="If action = \"OrgsOK\" Then";
 if ((_action).equals("OrgsOK")) { 
- //BA.debugLineNum = 367;BA.debugLine="Dim numresults As String";
+ //BA.debugLineNum = 428;BA.debugLine="Dim numresults As String";
 _numresults = "";
- //BA.debugLineNum = 368;BA.debugLine="numresults = parser.NextValue";
+ //BA.debugLineNum = 429;BA.debugLine="numresults = parser.NextValue";
 _numresults = BA.ObjectToString(_parser.NextValue());
- //BA.debugLineNum = 370;BA.debugLine="For i = 0 To numresults - 1";
+ //BA.debugLineNum = 431;BA.debugLine="For i = 0 To numresults - 1";
 {
 final int step11 = 1;
 final int limit11 = (int) ((double)(Double.parseDouble(_numresults))-1);
 _i = (int) (0) ;
 for (;_i <= limit11 ;_i = _i + step11 ) {
- //BA.debugLineNum = 371;BA.debugLine="Dim newpunto As Map";
+ //BA.debugLineNum = 432;BA.debugLine="Dim newpunto As Map";
 _newpunto = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 372;BA.debugLine="newpunto = parser.NextObject";
+ //BA.debugLineNum = 433;BA.debugLine="newpunto = parser.NextObject";
 _newpunto = _parser.NextObject();
- //BA.debugLineNum = 373;BA.debugLine="idOrg = newpunto.Get(\"id\")";
+ //BA.debugLineNum = 434;BA.debugLine="idOrg = newpunto.Get(\"id\")";
 mostCurrent._idorg = BA.ObjectToString(_newpunto.Get((Object)("id")));
- //BA.debugLineNum = 374;BA.debugLine="nombreOrg = newpunto.Get(\"nombre\")";
+ //BA.debugLineNum = 435;BA.debugLine="nombreOrg = newpunto.Get(\"nombre\")";
 mostCurrent._nombreorg = BA.ObjectToString(_newpunto.Get((Object)("nombre")));
- //BA.debugLineNum = 375;BA.debugLine="localidadOrg = newpunto.Get(\"localidad\")";
+ //BA.debugLineNum = 436;BA.debugLine="localidadOrg = newpunto.Get(\"localidad\")";
 mostCurrent._localidadorg = BA.ObjectToString(_newpunto.Get((Object)("localidad")));
- //BA.debugLineNum = 376;BA.debugLine="provinciaOrg = newpunto.Get(\"provincia\")";
+ //BA.debugLineNum = 437;BA.debugLine="provinciaOrg = newpunto.Get(\"provincia\")";
 mostCurrent._provinciaorg = BA.ObjectToString(_newpunto.Get((Object)("provincia")));
- //BA.debugLineNum = 377;BA.debugLine="tipoOrg = newpunto.Get(\"tipo\")";
+ //BA.debugLineNum = 438;BA.debugLine="tipoOrg = newpunto.Get(\"tipo\")";
 mostCurrent._tipoorg = BA.ObjectToString(_newpunto.Get((Object)("tipo")));
- //BA.debugLineNum = 378;BA.debugLine="adminOrg = newpunto.Get(\"admin\")";
+ //BA.debugLineNum = 439;BA.debugLine="adminOrg = newpunto.Get(\"admin\")";
 mostCurrent._adminorg = BA.ObjectToString(_newpunto.Get((Object)("admin")));
- //BA.debugLineNum = 379;BA.debugLine="spnOrganizaciones.Add(nombreOrg)";
+ //BA.debugLineNum = 440;BA.debugLine="spnOrganizaciones.Add(nombreOrg)";
 mostCurrent._spnorganizaciones.Add(mostCurrent._nombreorg);
- //BA.debugLineNum = 380;BA.debugLine="listaOrgs.Put(nombreOrg, idOrg)";
+ //BA.debugLineNum = 441;BA.debugLine="listaOrgs.Put(nombreOrg, idOrg)";
 mostCurrent._listaorgs.Put((Object)(mostCurrent._nombreorg),(Object)(mostCurrent._idorg));
- //BA.debugLineNum = 381;BA.debugLine="spnOrganizaciones.Enabled = True";
+ //BA.debugLineNum = 442;BA.debugLine="spnOrganizaciones.Enabled = True";
 mostCurrent._spnorganizaciones.setEnabled(anywheresoftware.b4a.keywords.Common.True);
  }
 };
- //BA.debugLineNum = 383;BA.debugLine="ProgressDialogHide";
+ //BA.debugLineNum = 444;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
  }else {
- //BA.debugLineNum = 386;BA.debugLine="If Main.lang = \"es\" Then";
+ //BA.debugLineNum = 447;BA.debugLine="If Main.lang = \"es\" Then";
 if ((mostCurrent._main._lang /*String*/ ).equals("es")) { 
- //BA.debugLineNum = 387;BA.debugLine="MsgboxAsync(\"El servidor no devolvió los valor";
+ //BA.debugLineNum = 448;BA.debugLine="MsgboxAsync(\"El servidor no devolvió los valor";
 anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("El servidor no devolvió los valores esperados."+_job._errormessage /*String*/ ),BA.ObjectToCharSequence("Registro"),processBA);
  }else if((mostCurrent._main._lang /*String*/ ).equals("en")) { 
- //BA.debugLineNum = 389;BA.debugLine="MsgboxAsync(\"Server error.\" & Job.ErrorMessage";
+ //BA.debugLineNum = 450;BA.debugLine="MsgboxAsync(\"Server error.\" & Job.ErrorMessage";
 anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("Server error."+_job._errormessage /*String*/ ),BA.ObjectToCharSequence("Error"),processBA);
  };
  };
  };
- //BA.debugLineNum = 396;BA.debugLine="Job.Release";
+ //BA.debugLineNum = 454;BA.debugLine="Job.Release";
 _job._release /*String*/ ();
- //BA.debugLineNum = 397;BA.debugLine="ProgressDialogHide";
+ //BA.debugLineNum = 455;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
- //BA.debugLineNum = 398;BA.debugLine="End Sub";
-return "";
-}
-public static String  _spnorganizaciones_itemclick(int _position,Object _value) throws Exception{
- //BA.debugLineNum = 399;BA.debugLine="Sub spnOrganizaciones_ItemClick (Position As Int,";
- //BA.debugLineNum = 400;BA.debugLine="hubocambios = True";
-_hubocambios = anywheresoftware.b4a.keywords.Common.True;
- //BA.debugLineNum = 401;BA.debugLine="idOrgElegida = listaOrgs.Get(Value)";
-mostCurrent._idorgelegida = BA.ObjectToString(mostCurrent._listaorgs.Get(_value));
- //BA.debugLineNum = 402;BA.debugLine="End Sub";
+ //BA.debugLineNum = 456;BA.debugLine="End Sub";
 return "";
 }
 public static String  _spnperfil_itemclick(int _position,Object _value) throws Exception{
- //BA.debugLineNum = 327;BA.debugLine="Sub spnPerfil_ItemClick (Position As Int, Value As";
- //BA.debugLineNum = 328;BA.debugLine="hubocambios = True";
+ //BA.debugLineNum = 388;BA.debugLine="Sub spnPerfil_ItemClick (Position As Int, Value As";
+ //BA.debugLineNum = 389;BA.debugLine="hubocambios = True";
 _hubocambios = anywheresoftware.b4a.keywords.Common.True;
- //BA.debugLineNum = 329;BA.debugLine="If spnPerfil.SelectedItem = \"Grupo\" Or spnPerfil.";
+ //BA.debugLineNum = 390;BA.debugLine="If spnPerfil.SelectedItem = \"Grupo\" Or spnPerfil.";
 if ((mostCurrent._spnperfil.getSelectedItem()).equals("Grupo") || (mostCurrent._spnperfil.getSelectedItem()).equals("Group")) { 
- //BA.debugLineNum = 330;BA.debugLine="lblOrg.Visible = True";
+ //BA.debugLineNum = 391;BA.debugLine="lblOrg.Visible = True";
 mostCurrent._lblorg.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 331;BA.debugLine="lblAgregarOrg.Visible = True";
+ //BA.debugLineNum = 392;BA.debugLine="lblAgregarOrg.Visible = True";
 mostCurrent._lblagregarorg.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 332;BA.debugLine="spnOrganizaciones.Visible = True";
+ //BA.debugLineNum = 393;BA.debugLine="spnOrganizaciones.Visible = True";
 mostCurrent._spnorganizaciones.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 333;BA.debugLine="spnOrganizaciones.Clear";
+ //BA.debugLineNum = 394;BA.debugLine="spnOrganizaciones.Clear";
 mostCurrent._spnorganizaciones.Clear();
- //BA.debugLineNum = 334;BA.debugLine="If Main.lang = \"es\" Then";
+ //BA.debugLineNum = 395;BA.debugLine="If Main.lang = \"es\" Then";
 if ((mostCurrent._main._lang /*String*/ ).equals("es")) { 
- //BA.debugLineNum = 335;BA.debugLine="ProgressDialogShow(\"Buscando grupos...\")";
+ //BA.debugLineNum = 396;BA.debugLine="ProgressDialogShow(\"Buscando grupos...\")";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("Buscando grupos..."));
  }else if((mostCurrent._main._lang /*String*/ ).equals("en")) { 
- //BA.debugLineNum = 337;BA.debugLine="ProgressDialogShow(\"Retrieving groups...\")";
+ //BA.debugLineNum = 398;BA.debugLine="ProgressDialogShow(\"Retrieving groups...\")";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("Retrieving groups..."));
  };
- //BA.debugLineNum = 339;BA.debugLine="CargarGrupos";
+ //BA.debugLineNum = 400;BA.debugLine="CargarGrupos";
 _cargargrupos();
- //BA.debugLineNum = 341;BA.debugLine="Return";
+ //BA.debugLineNum = 402;BA.debugLine="Return";
 if (true) return "";
  }else {
- //BA.debugLineNum = 343;BA.debugLine="lblOrg.Visible = False";
+ //BA.debugLineNum = 404;BA.debugLine="lblOrg.Visible = False";
 mostCurrent._lblorg.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 344;BA.debugLine="lblAgregarOrg.Visible = False";
+ //BA.debugLineNum = 405;BA.debugLine="lblAgregarOrg.Visible = False";
 mostCurrent._lblagregarorg.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 345;BA.debugLine="spnOrganizaciones.Visible = False";
+ //BA.debugLineNum = 406;BA.debugLine="spnOrganizaciones.Visible = False";
 mostCurrent._spnorganizaciones.setVisible(anywheresoftware.b4a.keywords.Common.False);
  };
- //BA.debugLineNum = 348;BA.debugLine="End Sub";
+ //BA.debugLineNum = 409;BA.debugLine="End Sub";
 return "";
 }
 public static String  _spnsexo_itemclick(int _position,Object _value) throws Exception{
- //BA.debugLineNum = 419;BA.debugLine="Sub spnSexo_ItemClick(Position As Int, Value As Ob";
- //BA.debugLineNum = 420;BA.debugLine="hubocambios = True";
+ //BA.debugLineNum = 474;BA.debugLine="Sub spnSexo_ItemClick(Position As Int, Value As Ob";
+ //BA.debugLineNum = 475;BA.debugLine="hubocambios = True";
 _hubocambios = anywheresoftware.b4a.keywords.Common.True;
- //BA.debugLineNum = 422;BA.debugLine="Log(\"sexo=\" & Main.userSexo)";
-anywheresoftware.b4a.keywords.Common.LogImpl("632768003","sexo="+mostCurrent._main._usersexo /*String*/ ,0);
- //BA.debugLineNum = 423;BA.debugLine="End Sub";
+ //BA.debugLineNum = 477;BA.debugLine="Log(\"sexo=\" & Main.userSexo)";
+anywheresoftware.b4a.keywords.Common.LogImpl("533488899","sexo="+mostCurrent._main._usersexo /*String*/ ,0);
+ //BA.debugLineNum = 478;BA.debugLine="End Sub";
+return "";
+}
+public static String  _testinternet_complete(appear.pnud.preservamos.httpjob _job) throws Exception{
+ //BA.debugLineNum = 255;BA.debugLine="Sub TestInternet_Complete(Job As HttpJob)";
+ //BA.debugLineNum = 256;BA.debugLine="Log(\"Chequeo de internet: \" & Job.Success)";
+anywheresoftware.b4a.keywords.Common.LogImpl("572482817","Chequeo de internet: "+BA.ObjectToString(_job._success /*boolean*/ ),0);
+ //BA.debugLineNum = 257;BA.debugLine="If Job.Success = True Then";
+if (_job._success /*boolean*/ ==anywheresoftware.b4a.keywords.Common.True) { 
+ //BA.debugLineNum = 259;BA.debugLine="Job.Release";
+_job._release /*String*/ ();
+ //BA.debugLineNum = 261;BA.debugLine="EditUser";
+_edituser();
+ }else {
+ //BA.debugLineNum = 265;BA.debugLine="If Main.lang = \"es\" Then";
+if ((mostCurrent._main._lang /*String*/ ).equals("es")) { 
+ //BA.debugLineNum = 266;BA.debugLine="MsgboxAsync(\"No hay conexión a internet, prueba";
+anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("No hay conexión a internet, prueba cuando estés conectado!"),BA.ObjectToCharSequence("No hay internet"),processBA);
+ }else if((mostCurrent._main._lang /*String*/ ).equals("en")) { 
+ //BA.debugLineNum = 268;BA.debugLine="MsgboxAsync(\"There is no internet, try again wh";
+anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("There is no internet, try again when you're connected!"),BA.ObjectToCharSequence("No internet"),processBA);
+ };
+ //BA.debugLineNum = 270;BA.debugLine="ProgressDialogHide";
+anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
+ //BA.debugLineNum = 271;BA.debugLine="Job.Release";
+_job._release /*String*/ ();
+ //BA.debugLineNum = 272;BA.debugLine="Activity.Finish";
+mostCurrent._activity.Finish();
+ //BA.debugLineNum = 273;BA.debugLine="Activity.RemoveAllViews";
+mostCurrent._activity.RemoveAllViews();
+ };
+ //BA.debugLineNum = 275;BA.debugLine="End Sub";
 return "";
 }
 }

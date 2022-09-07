@@ -25,7 +25,6 @@ views.get("lblq5_1_i").vw.setLeft((int)((views.get("imgq5_1_a").vw.getLeft() + v
 views.get("lblq5_1_b").vw.setLeft((int)((views.get("imgq5_1_b").vw.getLeft() + views.get("imgq5_1_b").vw.getWidth()/2) - (views.get("lblq5_1_b").vw.getWidth() / 2)));
 views.get("lblq5_1_d").vw.setLeft((int)((views.get("imgq5_1_d").vw.getLeft() + views.get("imgq5_1_d").vw.getWidth()/2) - (views.get("lblq5_1_d").vw.getWidth() / 2)));
 views.get("lblq5_1_f").vw.setLeft((int)((views.get("imgq5_1_d").vw.getLeft() + views.get("imgq5_1_d").vw.getWidth()/2) - (views.get("lblq5_1_f").vw.getWidth() / 2)));
-//BA.debugLineNum = 19;BA.debugLine="lblQ5_1_h.HorizontalCenter = imgQ5_1_d.HorizontalCenter"[pnlQ5/General script]
 views.get("lblq5_1_h").vw.setLeft((int)((views.get("imgq5_1_d").vw.getLeft() + views.get("imgq5_1_d").vw.getWidth()/2) - (views.get("lblq5_1_h").vw.getWidth() / 2)));
 
 }

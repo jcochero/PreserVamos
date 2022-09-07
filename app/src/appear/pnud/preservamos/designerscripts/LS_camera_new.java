@@ -10,6 +10,8 @@ public static void LS_general(java.util.LinkedHashMap<String, anywheresoftware.b
 anywheresoftware.b4a.keywords.LayoutBuilder.setScaleRate(0.3);
 anywheresoftware.b4a.keywords.LayoutBuilder.scaleAll(views);
 views.get("btnrecord").vw.setLeft((int)((50d / 100 * width) - (views.get("btnrecord").vw.getWidth() / 2)));
+views.get("logopreservamos").vw.setLeft((int)((50d / 100 * width) - (views.get("logopreservamos").vw.getWidth() / 2)));
+views.get("lblcomofuncionaback").vw.setLeft((int)((50d / 100 * width) - (views.get("lblcomofuncionaback").vw.getWidth() / 2)));
 
 }
 }

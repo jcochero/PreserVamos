@@ -29,6 +29,12 @@ public final class R {
      */
     public static final int ambientEnabled=0x7f020001;
     /**
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     */
+    public static final int backgroundColor=0x7f020002;
+    /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
@@ -44,40 +50,40 @@ public final class R {
      * <tr><td>wide</td><td>1</td><td></td></tr>
      * </table>
      */
-    public static final int buttonSize=0x7f020002;
+    public static final int buttonSize=0x7f020003;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int cameraBearing=0x7f020003;
+    public static final int cameraBearing=0x7f020004;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int cameraMaxZoomPreference=0x7f020004;
+    public static final int cameraMaxZoomPreference=0x7f020005;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int cameraMinZoomPreference=0x7f020005;
+    public static final int cameraMinZoomPreference=0x7f020006;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int cameraTargetLat=0x7f020006;
+    public static final int cameraTargetLat=0x7f020007;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int cameraTargetLng=0x7f020007;
+    public static final int cameraTargetLng=0x7f020008;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int cameraTilt=0x7f020008;
+    public static final int cameraTilt=0x7f020009;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int cameraZoom=0x7f020009;
+    public static final int cameraZoom=0x7f02000a;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int circleCrop=0x7f02000a;
+    public static final int circleCrop=0x7f02000b;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -94,21 +100,21 @@ public final class R {
      * <tr><td>light</td><td>1</td><td></td></tr>
      * </table>
      */
-    public static final int colorScheme=0x7f02000b;
+    public static final int colorScheme=0x7f02000c;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int coordinatorLayoutStyle=0x7f02000c;
+    public static final int coordinatorLayoutStyle=0x7f02000d;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int drawerLayoutStyle=0x7f02000d;
+    public static final int drawerLayoutStyle=0x7f02000e;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -116,7 +122,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int elevation=0x7f02000e;
+    public static final int elevation=0x7f02000f;
     /**
      * The reference to the font file to be used. This should be a file in the res/font folder
      * and should therefore have an R reference value. E.g. @font/myfont
@@ -125,13 +131,13 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int font=0x7f02000f;
+    public static final int font=0x7f020010;
     /**
      * The authority of the Font Provider to be used for the request.
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int fontProviderAuthority=0x7f020010;
+    public static final int fontProviderAuthority=0x7f020011;
     /**
      * The sets of hashes for the certificates the provider should be signed with. This is
      * used to verify the identity of the provider, and is only required if the provider is not
@@ -143,7 +149,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int fontProviderCerts=0x7f020011;
+    public static final int fontProviderCerts=0x7f020012;
     /**
      * The strategy to be used when fetching font data from a font provider in XML layouts.
      * This attribute is ignored when the resource is loaded from code, as it is equivalent to the
@@ -170,7 +176,7 @@ public final class R {
      * default typeface will be used instead.</td></tr>
      * </table>
      */
-    public static final int fontProviderFetchStrategy=0x7f020012;
+    public static final int fontProviderFetchStrategy=0x7f020013;
     /**
      * The length of the timeout during fetching.
      * <p>May be an integer value, such as "<code>100</code>".
@@ -184,21 +190,21 @@ public final class R {
      * timeout and wait until a reply is received from the font provider.</td></tr>
      * </table>
      */
-    public static final int fontProviderFetchTimeout=0x7f020013;
+    public static final int fontProviderFetchTimeout=0x7f020014;
     /**
      * The package for the Font Provider to be used for the request. This is used to verify
      * the identity of the provider.
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int fontProviderPackage=0x7f020014;
+    public static final int fontProviderPackage=0x7f020015;
     /**
      * The query to be sent over to the provider. Refer to your font provider's documentation
      * on the format of this string.
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int fontProviderQuery=0x7f020015;
+    public static final int fontProviderQuery=0x7f020016;
     /**
      * The style of the given font file. This will be used when the font is being loaded into
      * the font stack and will override any style information in the font's header tables. If
@@ -213,7 +219,7 @@ public final class R {
      * <tr><td>normal</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int fontStyle=0x7f020016;
+    public static final int fontStyle=0x7f020017;
     /**
      * The variation settings to be applied to the font. The string should be in the following
      * format: "'tag1' value1, 'tag2' value2, ...". If the default variation settings should be
@@ -222,7 +228,7 @@ public final class R {
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int fontVariationSettings=0x7f020017;
+    public static final int fontVariationSettings=0x7f020018;
     /**
      * The weight of the given font file. This will be used when the font is being loaded into
      * the font stack and will override any weight information in the font's header tables. Must
@@ -231,12 +237,12 @@ public final class R {
      * in the font's header tables will be used.
      * <p>May be an integer value, such as "<code>100</code>".
      */
-    public static final int fontWeight=0x7f020018;
+    public static final int fontWeight=0x7f020019;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int freezesAnimation=0x7f020019;
+    public static final int freezesAnimation=0x7f02001a;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -245,11 +251,11 @@ public final class R {
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int gifSource=0x7f02001a;
+    public static final int gifSource=0x7f02001b;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int imageAspectRatio=0x7f02001b;
+    public static final int imageAspectRatio=0x7f02001c;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -262,12 +268,12 @@ public final class R {
      * <tr><td>none</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int imageAspectRatioAdjust=0x7f02001c;
+    public static final int imageAspectRatioAdjust=0x7f02001d;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int isOpaque=0x7f02001d;
+    public static final int isOpaque=0x7f02001e;
     /**
      * A reference to an array of integers representing the
      * locations of horizontal keylines in dp from the starting edge.
@@ -279,23 +285,23 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int keylines=0x7f02001e;
+    public static final int keylines=0x7f02001f;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int latLngBoundsNorthEastLatitude=0x7f02001f;
+    public static final int latLngBoundsNorthEastLatitude=0x7f020020;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int latLngBoundsNorthEastLongitude=0x7f020020;
+    public static final int latLngBoundsNorthEastLongitude=0x7f020021;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int latLngBoundsSouthWestLatitude=0x7f020021;
+    public static final int latLngBoundsSouthWestLatitude=0x7f020022;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int latLngBoundsSouthWestLongitude=0x7f020022;
+    public static final int latLngBoundsSouthWestLongitude=0x7f020023;
     /**
      * The id of an anchor view that this view should position relative to.
      * <p>May be a reference to another resource, in the form
@@ -303,7 +309,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int layout_anchor=0x7f020023;
+    public static final int layout_anchor=0x7f020024;
     /**
      * Specifies how an object should position relative to an anchor, on both the X and Y axes,
      * within its parent's bounds.
@@ -335,14 +341,14 @@ public final class R {
      * <tr><td>top</td><td>30</td><td>Push object to the top of its container, not changing its size.</td></tr>
      * </table>
      */
-    public static final int layout_anchorGravity=0x7f020024;
+    public static final int layout_anchorGravity=0x7f020025;
     /**
      * The class name of a Behavior class defining special runtime behavior
      * for this child view.
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int layout_behavior=0x7f020025;
+    public static final int layout_behavior=0x7f020026;
     /**
      * Specifies how this view dodges the inset edges of the CoordinatorLayout.
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -361,7 +367,7 @@ public final class R {
      * <tr><td>top</td><td>30</td><td>Dodge the top inset edge.</td></tr>
      * </table>
      */
-    public static final int layout_dodgeInsetEdges=0x7f020026;
+    public static final int layout_dodgeInsetEdges=0x7f020027;
     /**
      * Specifies how this view insets the CoordinatorLayout and make some other views
      * dodge it.
@@ -380,23 +386,28 @@ public final class R {
      * <tr><td>top</td><td>30</td><td>Inset the top edge.</td></tr>
      * </table>
      */
-    public static final int layout_insetEdge=0x7f020027;
+    public static final int layout_insetEdge=0x7f020028;
     /**
      * The index of a keyline this view should position relative to.
      * android:layout_gravity will affect how the view aligns to the
      * specified keyline.
      * <p>May be an integer value, such as "<code>100</code>".
      */
-    public static final int layout_keyline=0x7f020028;
+    public static final int layout_keyline=0x7f020029;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int liteMode=0x7f020029;
+    public static final int liteMode=0x7f02002a;
     /**
      * <p>May be an integer value, such as "<code>100</code>".
      */
-    public static final int loopCount=0x7f02002a;
+    public static final int loopCount=0x7f02002b;
+    /**
+     * <p>May be a string value, using '\\;' to escape characters such as
+     * '\\n' or '\\uxxxx' for a unicode character;
+     */
+    public static final int mapId=0x7f02002c;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -411,7 +422,7 @@ public final class R {
      * <tr><td>terrain</td><td>3</td><td></td></tr>
      * </table>
      */
-    public static final int mapType=0x7f02002b;
+    public static final int mapType=0x7f02002d;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -420,7 +431,7 @@ public final class R {
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int scopeUris=0x7f02002c;
+    public static final int scopeUris=0x7f02002e;
     /**
      * Drawable to display behind the status bar when the view is set to draw behind it.
      * <p>May be a reference to another resource, in the form
@@ -431,70 +442,70 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int statusBarBackground=0x7f02002d;
+    public static final int statusBarBackground=0x7f02002f;
     /**
      * Background color for SwipeRefreshLayout progress spinner.
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int swipeRefreshLayoutProgressSpinnerBackgroundColor=0x7f02002e;
+    public static final int swipeRefreshLayoutProgressSpinnerBackgroundColor=0x7f020030;
     /**
      * The index of the font in the tcc font file. If the font file referenced is not in the
      * tcc format, this attribute needs not be specified.
      * <p>May be an integer value, such as "<code>100</code>".
      */
-    public static final int ttcIndex=0x7f02002f;
+    public static final int ttcIndex=0x7f020031;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int uiCompass=0x7f020030;
+    public static final int uiCompass=0x7f020032;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int uiMapToolbar=0x7f020031;
+    public static final int uiMapToolbar=0x7f020033;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int uiRotateGestures=0x7f020032;
+    public static final int uiRotateGestures=0x7f020034;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int uiScrollGestures=0x7f020033;
+    public static final int uiScrollGestures=0x7f020035;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int uiScrollGesturesDuringRotateOrZoom=0x7f020034;
+    public static final int uiScrollGesturesDuringRotateOrZoom=0x7f020036;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int uiTiltGestures=0x7f020035;
+    public static final int uiTiltGestures=0x7f020037;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int uiZoomControls=0x7f020036;
+    public static final int uiZoomControls=0x7f020038;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int uiZoomGestures=0x7f020037;
+    public static final int uiZoomGestures=0x7f020039;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int useViewLifecycle=0x7f020038;
+    public static final int useViewLifecycle=0x7f02003a;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int zOrderOnTop=0x7f020039;
+    public static final int zOrderOnTop=0x7f02003b;
   }
   public static final class color {
     public static final int androidx_core_ripple_material_light=0x7f030000;
@@ -819,7 +830,7 @@ public final class R {
      * @see #CoordinatorLayout_statusBarBackground
      */
     public static final int[] CoordinatorLayout={
-      0x7f02001e, 0x7f02002d
+      0x7f02001f, 0x7f02002f
     };
     /**
      * <p>
@@ -881,8 +892,8 @@ public final class R {
      * @see #CoordinatorLayout_Layout_layout_keyline
      */
     public static final int[] CoordinatorLayout_Layout={
-      0x010100b3, 0x7f020023, 0x7f020024, 0x7f020025, 
-      0x7f020026, 0x7f020027, 0x7f020028
+      0x010100b3, 0x7f020024, 0x7f020025, 0x7f020026, 
+      0x7f020027, 0x7f020028, 0x7f020029
     };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#layout_gravity}
@@ -1047,7 +1058,7 @@ public final class R {
      * @see #DrawerLayout_elevation
      */
     public static final int[] DrawerLayout={
-      0x7f02000e
+      0x7f02000f
     };
     /**
      * <p>
@@ -1085,8 +1096,8 @@ public final class R {
      * @see #FontFamily_fontProviderQuery
      */
     public static final int[] FontFamily={
-      0x7f020010, 0x7f020011, 0x7f020012, 0x7f020013, 
-      0x7f020014, 0x7f020015
+      0x7f020011, 0x7f020012, 0x7f020013, 0x7f020014, 
+      0x7f020015, 0x7f020016
     };
     /**
      * <p>
@@ -1222,8 +1233,8 @@ public final class R {
      */
     public static final int[] FontFamilyFont={
       0x01010532, 0x01010533, 0x0101053f, 0x0101056f, 
-      0x01010570, 0x7f02000f, 0x7f020016, 0x7f020017, 
-      0x7f020018, 0x7f02002f
+      0x01010570, 0x7f020010, 0x7f020017, 0x7f020018, 
+      0x7f020019, 0x7f020031
     };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#font}
@@ -1456,7 +1467,7 @@ public final class R {
      * @see #GifTextureView_isOpaque
      */
     public static final int[] GifTextureView={
-      0x7f02001a, 0x7f02001d
+      0x7f02001b, 0x7f02001e
     };
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#gifSource}
@@ -1496,7 +1507,7 @@ public final class R {
      * @see #GifView_loopCount
      */
     public static final int[] GifView={
-      0x7f020019, 0x7f02002a
+      0x7f02001a, 0x7f02002b
     };
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#freezesAnimation}
@@ -1776,7 +1787,7 @@ public final class R {
      * @see #LoadingImageView_imageAspectRatioAdjust
      */
     public static final int[] LoadingImageView={
-      0x7f02000a, 0x7f02001b, 0x7f02001c
+      0x7f02000b, 0x7f02001c, 0x7f02001d
     };
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#circleCrop}
@@ -1823,6 +1834,7 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #MapAttrs_ambientEnabled appear.pnud.preservamos:ambientEnabled}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_backgroundColor appear.pnud.preservamos:backgroundColor}</code></td><td></td></tr>
      * <tr><td><code>{@link #MapAttrs_cameraBearing appear.pnud.preservamos:cameraBearing}</code></td><td></td></tr>
      * <tr><td><code>{@link #MapAttrs_cameraMaxZoomPreference appear.pnud.preservamos:cameraMaxZoomPreference}</code></td><td></td></tr>
      * <tr><td><code>{@link #MapAttrs_cameraMinZoomPreference appear.pnud.preservamos:cameraMinZoomPreference}</code></td><td></td></tr>
@@ -1835,6 +1847,7 @@ public final class R {
      * <tr><td><code>{@link #MapAttrs_latLngBoundsSouthWestLatitude appear.pnud.preservamos:latLngBoundsSouthWestLatitude}</code></td><td></td></tr>
      * <tr><td><code>{@link #MapAttrs_latLngBoundsSouthWestLongitude appear.pnud.preservamos:latLngBoundsSouthWestLongitude}</code></td><td></td></tr>
      * <tr><td><code>{@link #MapAttrs_liteMode appear.pnud.preservamos:liteMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_mapId appear.pnud.preservamos:mapId}</code></td><td></td></tr>
      * <tr><td><code>{@link #MapAttrs_mapType appear.pnud.preservamos:mapType}</code></td><td></td></tr>
      * <tr><td><code>{@link #MapAttrs_uiCompass appear.pnud.preservamos:uiCompass}</code></td><td></td></tr>
      * <tr><td><code>{@link #MapAttrs_uiMapToolbar appear.pnud.preservamos:uiMapToolbar}</code></td><td></td></tr>
@@ -1848,6 +1861,7 @@ public final class R {
      * <tr><td><code>{@link #MapAttrs_zOrderOnTop appear.pnud.preservamos:zOrderOnTop}</code></td><td></td></tr>
      * </table>
      * @see #MapAttrs_ambientEnabled
+     * @see #MapAttrs_backgroundColor
      * @see #MapAttrs_cameraBearing
      * @see #MapAttrs_cameraMaxZoomPreference
      * @see #MapAttrs_cameraMinZoomPreference
@@ -1860,6 +1874,7 @@ public final class R {
      * @see #MapAttrs_latLngBoundsSouthWestLatitude
      * @see #MapAttrs_latLngBoundsSouthWestLongitude
      * @see #MapAttrs_liteMode
+     * @see #MapAttrs_mapId
      * @see #MapAttrs_mapType
      * @see #MapAttrs_uiCompass
      * @see #MapAttrs_uiMapToolbar
@@ -1873,12 +1888,13 @@ public final class R {
      * @see #MapAttrs_zOrderOnTop
      */
     public static final int[] MapAttrs={
-      0x7f020001, 0x7f020003, 0x7f020004, 0x7f020005, 
+      0x7f020001, 0x7f020002, 0x7f020004, 0x7f020005, 
       0x7f020006, 0x7f020007, 0x7f020008, 0x7f020009, 
-      0x7f02001f, 0x7f020020, 0x7f020021, 0x7f020022, 
-      0x7f020029, 0x7f02002b, 0x7f020030, 0x7f020031, 
+      0x7f02000a, 0x7f020020, 0x7f020021, 0x7f020022, 
+      0x7f020023, 0x7f02002a, 0x7f02002c, 0x7f02002d, 
       0x7f020032, 0x7f020033, 0x7f020034, 0x7f020035, 
-      0x7f020036, 0x7f020037, 0x7f020038, 0x7f020039
+      0x7f020036, 0x7f020037, 0x7f020038, 0x7f020039, 
+      0x7f02003a, 0x7f02003b
     };
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#ambientEnabled}
@@ -1891,6 +1907,17 @@ public final class R {
      */
     public static final int MapAttrs_ambientEnabled=0;
     /**
+     * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#backgroundColor}
+     * attribute's value can be found in the {@link #MapAttrs} array.
+     *
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     *
+     * @attr name appear.pnud.preservamos:backgroundColor
+     */
+    public static final int MapAttrs_backgroundColor=1;
+    /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#cameraBearing}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
@@ -1898,7 +1925,7 @@ public final class R {
      *
      * @attr name appear.pnud.preservamos:cameraBearing
      */
-    public static final int MapAttrs_cameraBearing=1;
+    public static final int MapAttrs_cameraBearing=2;
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#cameraMaxZoomPreference}
      * attribute's value can be found in the {@link #MapAttrs} array.
@@ -1907,7 +1934,7 @@ public final class R {
      *
      * @attr name appear.pnud.preservamos:cameraMaxZoomPreference
      */
-    public static final int MapAttrs_cameraMaxZoomPreference=2;
+    public static final int MapAttrs_cameraMaxZoomPreference=3;
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#cameraMinZoomPreference}
      * attribute's value can be found in the {@link #MapAttrs} array.
@@ -1916,7 +1943,7 @@ public final class R {
      *
      * @attr name appear.pnud.preservamos:cameraMinZoomPreference
      */
-    public static final int MapAttrs_cameraMinZoomPreference=3;
+    public static final int MapAttrs_cameraMinZoomPreference=4;
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#cameraTargetLat}
      * attribute's value can be found in the {@link #MapAttrs} array.
@@ -1925,7 +1952,7 @@ public final class R {
      *
      * @attr name appear.pnud.preservamos:cameraTargetLat
      */
-    public static final int MapAttrs_cameraTargetLat=4;
+    public static final int MapAttrs_cameraTargetLat=5;
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#cameraTargetLng}
      * attribute's value can be found in the {@link #MapAttrs} array.
@@ -1934,7 +1961,7 @@ public final class R {
      *
      * @attr name appear.pnud.preservamos:cameraTargetLng
      */
-    public static final int MapAttrs_cameraTargetLng=5;
+    public static final int MapAttrs_cameraTargetLng=6;
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#cameraTilt}
      * attribute's value can be found in the {@link #MapAttrs} array.
@@ -1943,7 +1970,7 @@ public final class R {
      *
      * @attr name appear.pnud.preservamos:cameraTilt
      */
-    public static final int MapAttrs_cameraTilt=6;
+    public static final int MapAttrs_cameraTilt=7;
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#cameraZoom}
      * attribute's value can be found in the {@link #MapAttrs} array.
@@ -1952,7 +1979,7 @@ public final class R {
      *
      * @attr name appear.pnud.preservamos:cameraZoom
      */
-    public static final int MapAttrs_cameraZoom=7;
+    public static final int MapAttrs_cameraZoom=8;
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#latLngBoundsNorthEastLatitude}
      * attribute's value can be found in the {@link #MapAttrs} array.
@@ -1961,7 +1988,7 @@ public final class R {
      *
      * @attr name appear.pnud.preservamos:latLngBoundsNorthEastLatitude
      */
-    public static final int MapAttrs_latLngBoundsNorthEastLatitude=8;
+    public static final int MapAttrs_latLngBoundsNorthEastLatitude=9;
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#latLngBoundsNorthEastLongitude}
      * attribute's value can be found in the {@link #MapAttrs} array.
@@ -1970,7 +1997,7 @@ public final class R {
      *
      * @attr name appear.pnud.preservamos:latLngBoundsNorthEastLongitude
      */
-    public static final int MapAttrs_latLngBoundsNorthEastLongitude=9;
+    public static final int MapAttrs_latLngBoundsNorthEastLongitude=10;
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#latLngBoundsSouthWestLatitude}
      * attribute's value can be found in the {@link #MapAttrs} array.
@@ -1979,7 +2006,7 @@ public final class R {
      *
      * @attr name appear.pnud.preservamos:latLngBoundsSouthWestLatitude
      */
-    public static final int MapAttrs_latLngBoundsSouthWestLatitude=10;
+    public static final int MapAttrs_latLngBoundsSouthWestLatitude=11;
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#latLngBoundsSouthWestLongitude}
      * attribute's value can be found in the {@link #MapAttrs} array.
@@ -1988,7 +2015,7 @@ public final class R {
      *
      * @attr name appear.pnud.preservamos:latLngBoundsSouthWestLongitude
      */
-    public static final int MapAttrs_latLngBoundsSouthWestLongitude=11;
+    public static final int MapAttrs_latLngBoundsSouthWestLongitude=12;
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#liteMode}
      * attribute's value can be found in the {@link #MapAttrs} array.
@@ -1998,7 +2025,17 @@ public final class R {
      *
      * @attr name appear.pnud.preservamos:liteMode
      */
-    public static final int MapAttrs_liteMode=12;
+    public static final int MapAttrs_liteMode=13;
+    /**
+     * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#mapId}
+     * attribute's value can be found in the {@link #MapAttrs} array.
+     *
+     * <p>May be a string value, using '\\;' to escape characters such as
+     * '\\n' or '\\uxxxx' for a unicode character;
+     *
+     * @attr name appear.pnud.preservamos:mapId
+     */
+    public static final int MapAttrs_mapId=14;
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#mapType}
      * attribute's value can be found in the {@link #MapAttrs} array.
@@ -2018,7 +2055,7 @@ public final class R {
      *
      * @attr name appear.pnud.preservamos:mapType
      */
-    public static final int MapAttrs_mapType=13;
+    public static final int MapAttrs_mapType=15;
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#uiCompass}
      * attribute's value can be found in the {@link #MapAttrs} array.
@@ -2028,7 +2065,7 @@ public final class R {
      *
      * @attr name appear.pnud.preservamos:uiCompass
      */
-    public static final int MapAttrs_uiCompass=14;
+    public static final int MapAttrs_uiCompass=16;
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#uiMapToolbar}
      * attribute's value can be found in the {@link #MapAttrs} array.
@@ -2038,7 +2075,7 @@ public final class R {
      *
      * @attr name appear.pnud.preservamos:uiMapToolbar
      */
-    public static final int MapAttrs_uiMapToolbar=15;
+    public static final int MapAttrs_uiMapToolbar=17;
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#uiRotateGestures}
      * attribute's value can be found in the {@link #MapAttrs} array.
@@ -2048,7 +2085,7 @@ public final class R {
      *
      * @attr name appear.pnud.preservamos:uiRotateGestures
      */
-    public static final int MapAttrs_uiRotateGestures=16;
+    public static final int MapAttrs_uiRotateGestures=18;
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#uiScrollGestures}
      * attribute's value can be found in the {@link #MapAttrs} array.
@@ -2058,7 +2095,7 @@ public final class R {
      *
      * @attr name appear.pnud.preservamos:uiScrollGestures
      */
-    public static final int MapAttrs_uiScrollGestures=17;
+    public static final int MapAttrs_uiScrollGestures=19;
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#uiScrollGesturesDuringRotateOrZoom}
      * attribute's value can be found in the {@link #MapAttrs} array.
@@ -2068,7 +2105,7 @@ public final class R {
      *
      * @attr name appear.pnud.preservamos:uiScrollGesturesDuringRotateOrZoom
      */
-    public static final int MapAttrs_uiScrollGesturesDuringRotateOrZoom=18;
+    public static final int MapAttrs_uiScrollGesturesDuringRotateOrZoom=20;
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#uiTiltGestures}
      * attribute's value can be found in the {@link #MapAttrs} array.
@@ -2078,7 +2115,7 @@ public final class R {
      *
      * @attr name appear.pnud.preservamos:uiTiltGestures
      */
-    public static final int MapAttrs_uiTiltGestures=19;
+    public static final int MapAttrs_uiTiltGestures=21;
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#uiZoomControls}
      * attribute's value can be found in the {@link #MapAttrs} array.
@@ -2088,7 +2125,7 @@ public final class R {
      *
      * @attr name appear.pnud.preservamos:uiZoomControls
      */
-    public static final int MapAttrs_uiZoomControls=20;
+    public static final int MapAttrs_uiZoomControls=22;
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#uiZoomGestures}
      * attribute's value can be found in the {@link #MapAttrs} array.
@@ -2098,7 +2135,7 @@ public final class R {
      *
      * @attr name appear.pnud.preservamos:uiZoomGestures
      */
-    public static final int MapAttrs_uiZoomGestures=21;
+    public static final int MapAttrs_uiZoomGestures=23;
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#useViewLifecycle}
      * attribute's value can be found in the {@link #MapAttrs} array.
@@ -2108,7 +2145,7 @@ public final class R {
      *
      * @attr name appear.pnud.preservamos:useViewLifecycle
      */
-    public static final int MapAttrs_useViewLifecycle=22;
+    public static final int MapAttrs_useViewLifecycle=24;
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#zOrderOnTop}
      * attribute's value can be found in the {@link #MapAttrs} array.
@@ -2118,7 +2155,7 @@ public final class R {
      *
      * @attr name appear.pnud.preservamos:zOrderOnTop
      */
-    public static final int MapAttrs_zOrderOnTop=23;
+    public static final int MapAttrs_zOrderOnTop=25;
     /**
      * Attributes that can be used with a SignInButton.
      * <p>Includes the following attributes:</p>
@@ -2135,7 +2172,7 @@ public final class R {
      * @see #SignInButton_scopeUris
      */
     public static final int[] SignInButton={
-      0x7f020002, 0x7f02000b, 0x7f02002c
+      0x7f020003, 0x7f02000c, 0x7f02002e
     };
     /**
      * <p>This symbol is the offset where the {@link appear.pnud.preservamos.R.attr#buttonSize}
@@ -2207,7 +2244,7 @@ public final class R {
      * @see #SwipeRefreshLayout_swipeRefreshLayoutProgressSpinnerBackgroundColor
      */
     public static final int[] SwipeRefreshLayout={
-      0x7f02002e
+      0x7f020030
     };
     /**
      * <p>
