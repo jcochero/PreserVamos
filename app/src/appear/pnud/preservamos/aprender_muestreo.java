@@ -101,7 +101,7 @@ public class aprender_muestreo extends Activity implements B4AActivity{
         initializeProcessGlobals();		
         initializeGlobals();
         
-        BA.LogInfo("** Activity (aprender_muestreo) Create, isFirst = " + isFirst + " **");
+        BA.LogInfo("** Activity (aprender_muestreo) Create " + (isFirst ? "(first time)" : "") + " **");
         processBA.raiseEvent2(null, true, "activity_create", false, isFirst);
 		isFirst = false;
 		if (this != mostCurrent)
@@ -336,32 +336,42 @@ public class aprender_muestreo extends Activity implements B4AActivity{
     }
 
 public anywheresoftware.b4a.keywords.Common __c = null;
+public static String _origen = "";
+public anywheresoftware.b4a.objects.CompoundButtonWrapper.CheckBoxWrapper _chkmuestreooff = null;
 public b4a.example.dateutils _dateutils = null;
 public appear.pnud.preservamos.main _main = null;
 public appear.pnud.preservamos.form_main _form_main = null;
-public appear.pnud.preservamos.starter _starter = null;
-public appear.pnud.preservamos.inatcheck _inatcheck = null;
-public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
-public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
-public appear.pnud.preservamos.alertas _alertas = null;
-public appear.pnud.preservamos.register _register = null;
-public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
+public appear.pnud.preservamos.frmabout _frmabout = null;
 public appear.pnud.preservamos.alerta_fotos _alerta_fotos = null;
-public appear.pnud.preservamos.form_reporte _form_reporte = null;
+public appear.pnud.preservamos.alertas _alertas = null;
 public appear.pnud.preservamos.dbutils _dbutils = null;
 public appear.pnud.preservamos.downloadservice _downloadservice = null;
 public appear.pnud.preservamos.firebasemessaging _firebasemessaging = null;
-public appear.pnud.preservamos.frmabout _frmabout = null;
+public appear.pnud.preservamos.form_reporte _form_reporte = null;
 public appear.pnud.preservamos.frmdatosanteriores _frmdatosanteriores = null;
+public appear.pnud.preservamos.frmdatossinenviar _frmdatossinenviar = null;
+public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
 public appear.pnud.preservamos.frmfelicitaciones _frmfelicitaciones = null;
+public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
 public appear.pnud.preservamos.frmmapa _frmmapa = null;
-public appear.pnud.preservamos.frmperfil _frmperfil = null;
+public appear.pnud.preservamos.frmmunicipioestadisticas _frmmunicipioestadisticas = null;
 public appear.pnud.preservamos.frmpoliticadatos _frmpoliticadatos = null;
+public appear.pnud.preservamos.frmtiporeporte _frmtiporeporte = null;
 public appear.pnud.preservamos.httputils2service _httputils2service = null;
 public appear.pnud.preservamos.imagedownloader _imagedownloader = null;
+public appear.pnud.preservamos.inatcheck _inatcheck = null;
+public appear.pnud.preservamos.mod_hidro _mod_hidro = null;
+public appear.pnud.preservamos.mod_hidro_fotos _mod_hidro_fotos = null;
+public appear.pnud.preservamos.mod_residuos _mod_residuos = null;
+public appear.pnud.preservamos.mod_residuos_fotos _mod_residuos_fotos = null;
+public appear.pnud.preservamos.register _register = null;
+public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
 public appear.pnud.preservamos.reporte_fotos _reporte_fotos = null;
 public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
 public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
+public appear.pnud.preservamos.reporte_habitat_rio_bu _reporte_habitat_rio_bu = null;
+public appear.pnud.preservamos.reporte_habitat_rio_sierras _reporte_habitat_rio_sierras = null;
+public appear.pnud.preservamos.starter _starter = null;
 public appear.pnud.preservamos.uploadfiles _uploadfiles = null;
 public appear.pnud.preservamos.utilidades _utilidades = null;
 public appear.pnud.preservamos.xuiviewsutils _xuiviewsutils = null;
@@ -374,38 +384,82 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 18;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 19;BA.debugLine="Activity.LoadLayout(\"Aprender_Muestreo\")";
-mostCurrent._activity.LoadLayout("Aprender_Muestreo",mostCurrent.activityBA);
- //BA.debugLineNum = 24;BA.debugLine="End Sub";
-return "";
-}
-public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 30;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 16;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 17;BA.debugLine="Activity.LoadLayout(\"aprender_muestreo_mensaje\")";
+mostCurrent._activity.LoadLayout("aprender_muestreo_mensaje",mostCurrent.activityBA);
+ //BA.debugLineNum = 20;BA.debugLine="If File.Exists(Starter.savedir & \"/no_aprender.tx";
+if (anywheresoftware.b4a.keywords.Common.File.Exists(mostCurrent._starter._savedir /*String*/ +"/no_aprender.txt","")==anywheresoftware.b4a.keywords.Common.False) { 
+ //BA.debugLineNum = 21;BA.debugLine="chkMuestreoOff.Checked = False";
+mostCurrent._chkmuestreooff.setChecked(anywheresoftware.b4a.keywords.Common.False);
+ }else {
+ //BA.debugLineNum = 23;BA.debugLine="chkMuestreoOff.Checked = True";
+mostCurrent._chkmuestreooff.setChecked(anywheresoftware.b4a.keywords.Common.True);
+ };
+ //BA.debugLineNum = 26;BA.debugLine="If origen = \"main\" Then";
+if ((_origen).equals("main")) { 
+ //BA.debugLineNum = 27;BA.debugLine="chkMuestreoOff.Text = \"No mostrar de nuevo\"";
+mostCurrent._chkmuestreooff.setText(BA.ObjectToCharSequence("No mostrar de nuevo"));
+ }else if((_origen).equals("menu")) { 
+ //BA.debugLineNum = 29;BA.debugLine="chkMuestreoOff.Text = \"No mostrar cuando comienz";
+mostCurrent._chkmuestreooff.setText(BA.ObjectToCharSequence("No mostrar cuando comienza un análisis"));
+ };
  //BA.debugLineNum = 32;BA.debugLine="End Sub";
 return "";
 }
-public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 26;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 28;BA.debugLine="End Sub";
+public static String  _activity_pause(boolean _userclosed) throws Exception{
+ //BA.debugLineNum = 38;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 40;BA.debugLine="End Sub";
 return "";
 }
-public static String  _btncerraraprender_muestreo_click() throws Exception{
- //BA.debugLineNum = 35;BA.debugLine="Sub btnCerrarAprender_Muestreo_Click";
- //BA.debugLineNum = 36;BA.debugLine="Activity.RemoveAllViews";
+public static String  _activity_resume() throws Exception{
+ //BA.debugLineNum = 34;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 36;BA.debugLine="End Sub";
+return "";
+}
+public static String  _btnokaprender_click() throws Exception{
+ //BA.debugLineNum = 42;BA.debugLine="Private Sub btnOkAprender_Click";
+ //BA.debugLineNum = 43;BA.debugLine="If chkMuestreoOff.Checked = True Then";
+if (mostCurrent._chkmuestreooff.getChecked()==anywheresoftware.b4a.keywords.Common.True) { 
+ //BA.debugLineNum = 44;BA.debugLine="If File.Exists(Starter.savedir & \"/no_aprender.t";
+if (anywheresoftware.b4a.keywords.Common.File.Exists(mostCurrent._starter._savedir /*String*/ +"/no_aprender.txt","")==anywheresoftware.b4a.keywords.Common.False) { 
+ //BA.debugLineNum = 45;BA.debugLine="File.WriteString(Starter.savedir, \"no_aprender.";
+anywheresoftware.b4a.keywords.Common.File.WriteString(mostCurrent._starter._savedir /*String*/ ,"no_aprender.txt","");
+ };
+ }else {
+ //BA.debugLineNum = 48;BA.debugLine="If File.Exists(Starter.savedir & \"/no_aprender.t";
+if (anywheresoftware.b4a.keywords.Common.File.Exists(mostCurrent._starter._savedir /*String*/ +"/no_aprender.txt","")==anywheresoftware.b4a.keywords.Common.True) { 
+ //BA.debugLineNum = 49;BA.debugLine="File.Delete(Starter.savedir, \"no_aprender.txt\")";
+anywheresoftware.b4a.keywords.Common.File.Delete(mostCurrent._starter._savedir /*String*/ ,"no_aprender.txt");
+ };
+ };
+ //BA.debugLineNum = 52;BA.debugLine="If origen = \"main\" Then";
+if ((_origen).equals("main")) { 
+ //BA.debugLineNum = 53;BA.debugLine="Activity.RemoveAllViews";
 mostCurrent._activity.RemoveAllViews();
- //BA.debugLineNum = 37;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 54;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 38;BA.debugLine="End Sub";
+ //BA.debugLineNum = 55;BA.debugLine="StartActivity(Form_Reporte)";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._form_reporte.getObject()));
+ }else if((_origen).equals("menu")) { 
+ //BA.debugLineNum = 57;BA.debugLine="Activity.RemoveAllViews";
+mostCurrent._activity.RemoveAllViews();
+ //BA.debugLineNum = 58;BA.debugLine="Activity.Finish";
+mostCurrent._activity.Finish();
+ };
+ //BA.debugLineNum = 62;BA.debugLine="End Sub";
 return "";
 }
 public static String  _globals() throws Exception{
  //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 16;BA.debugLine="End Sub";
+ //BA.debugLineNum = 13;BA.debugLine="Private chkMuestreoOff As CheckBox";
+mostCurrent._chkmuestreooff = new anywheresoftware.b4a.objects.CompoundButtonWrapper.CheckBoxWrapper();
+ //BA.debugLineNum = 14;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{
  //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
+ //BA.debugLineNum = 9;BA.debugLine="Dim origen As String";
+_origen = "";
  //BA.debugLineNum = 10;BA.debugLine="End Sub";
 return "";
 }

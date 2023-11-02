@@ -10,6 +10,7 @@ if ($mysqli->connect_error){
 
 $action = $_GET["Action"];
 $username = $mysqli->real_escape_string($_GET["username"]);
+$useremail = $mysqli->real_escape_string($_GET["useremail"]);
 $dateandtime = $mysqli->real_escape_string($_GET["dateandtime"]);
 $nombresitio = $mysqli->real_escape_string($_GET["nombresitio"]);
 $tiporio = $mysqli->real_escape_string($_GET["tiporio"]);

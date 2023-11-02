@@ -101,7 +101,7 @@ public class frmabout extends Activity implements B4AActivity{
         initializeProcessGlobals();		
         initializeGlobals();
         
-        BA.LogInfo("** Activity (frmabout) Create, isFirst = " + isFirst + " **");
+        BA.LogInfo("** Activity (frmabout) Create " + (isFirst ? "(first time)" : "") + " **");
         processBA.raiseEvent2(null, true, "activity_create", false, isFirst);
 		isFirst = false;
 		if (this != mostCurrent)
@@ -346,32 +346,42 @@ public anywheresoftware.b4a.objects.LabelWrapper _lbllicencia = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lblmaintext = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lblline3 = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lblline1 = null;
+public anywheresoftware.b4a.objects.LabelWrapper _btnsponsors = null;
+public anywheresoftware.b4a.objects.LabelWrapper _lblline2 = null;
 public b4a.example.dateutils _dateutils = null;
 public appear.pnud.preservamos.main _main = null;
 public appear.pnud.preservamos.form_main _form_main = null;
-public appear.pnud.preservamos.starter _starter = null;
-public appear.pnud.preservamos.inatcheck _inatcheck = null;
-public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
-public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
-public appear.pnud.preservamos.alertas _alertas = null;
-public appear.pnud.preservamos.register _register = null;
-public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
 public appear.pnud.preservamos.alerta_fotos _alerta_fotos = null;
-public appear.pnud.preservamos.form_reporte _form_reporte = null;
+public appear.pnud.preservamos.alertas _alertas = null;
 public appear.pnud.preservamos.aprender_muestreo _aprender_muestreo = null;
 public appear.pnud.preservamos.dbutils _dbutils = null;
 public appear.pnud.preservamos.downloadservice _downloadservice = null;
 public appear.pnud.preservamos.firebasemessaging _firebasemessaging = null;
+public appear.pnud.preservamos.form_reporte _form_reporte = null;
 public appear.pnud.preservamos.frmdatosanteriores _frmdatosanteriores = null;
+public appear.pnud.preservamos.frmdatossinenviar _frmdatossinenviar = null;
+public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
 public appear.pnud.preservamos.frmfelicitaciones _frmfelicitaciones = null;
+public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
 public appear.pnud.preservamos.frmmapa _frmmapa = null;
-public appear.pnud.preservamos.frmperfil _frmperfil = null;
+public appear.pnud.preservamos.frmmunicipioestadisticas _frmmunicipioestadisticas = null;
 public appear.pnud.preservamos.frmpoliticadatos _frmpoliticadatos = null;
+public appear.pnud.preservamos.frmtiporeporte _frmtiporeporte = null;
 public appear.pnud.preservamos.httputils2service _httputils2service = null;
 public appear.pnud.preservamos.imagedownloader _imagedownloader = null;
+public appear.pnud.preservamos.inatcheck _inatcheck = null;
+public appear.pnud.preservamos.mod_hidro _mod_hidro = null;
+public appear.pnud.preservamos.mod_hidro_fotos _mod_hidro_fotos = null;
+public appear.pnud.preservamos.mod_residuos _mod_residuos = null;
+public appear.pnud.preservamos.mod_residuos_fotos _mod_residuos_fotos = null;
+public appear.pnud.preservamos.register _register = null;
+public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
 public appear.pnud.preservamos.reporte_fotos _reporte_fotos = null;
 public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
 public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
+public appear.pnud.preservamos.reporte_habitat_rio_bu _reporte_habitat_rio_bu = null;
+public appear.pnud.preservamos.reporte_habitat_rio_sierras _reporte_habitat_rio_sierras = null;
+public appear.pnud.preservamos.starter _starter = null;
 public appear.pnud.preservamos.uploadfiles _uploadfiles = null;
 public appear.pnud.preservamos.utilidades _utilidades = null;
 public appear.pnud.preservamos.xuiviewsutils _xuiviewsutils = null;
@@ -384,70 +394,91 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 36;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 37;BA.debugLine="Activity.LoadLayout(\"layAbout_Panels\")";
+ //BA.debugLineNum = 38;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 39;BA.debugLine="Activity.LoadLayout(\"layAbout_Panels\")";
 mostCurrent._activity.LoadLayout("layAbout_Panels",mostCurrent.activityBA);
- //BA.debugLineNum = 39;BA.debugLine="tabStripAbout.LoadLayout(\"layAbout_Project\", \"El";
+ //BA.debugLineNum = 40;BA.debugLine="tabStripAbout.LoadLayout(\"layAbout_Project\", \"El";
 mostCurrent._tabstripabout.LoadLayout("layAbout_Project",BA.ObjectToCharSequence("El proyecto"));
- //BA.debugLineNum = 40;BA.debugLine="tabStripAbout.LoadLayout(\"layAbout_People\", \"El e";
+ //BA.debugLineNum = 41;BA.debugLine="tabStripAbout.LoadLayout(\"layAbout_People\", \"El e";
 mostCurrent._tabstripabout.LoadLayout("layAbout_People",BA.ObjectToCharSequence("El equipo"));
- //BA.debugLineNum = 41;BA.debugLine="tabStripAbout.ScrollTo(0,True)";
+ //BA.debugLineNum = 42;BA.debugLine="tabStripAbout.LoadLayout(\"layAbout_Sponsors\", \"Ap";
+mostCurrent._tabstripabout.LoadLayout("layAbout_Sponsors",BA.ObjectToCharSequence("Apoyan"));
+ //BA.debugLineNum = 43;BA.debugLine="tabStripAbout.ScrollTo(0,True)";
 mostCurrent._tabstripabout.ScrollTo((int) (0),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 42;BA.debugLine="lblVersion.Text = Application.VersionCode";
-mostCurrent._lblversion.setText(BA.ObjectToCharSequence(anywheresoftware.b4a.keywords.Common.Application.getVersionCode()));
- //BA.debugLineNum = 43;BA.debugLine="lblLine1.Visible = True";
+ //BA.debugLineNum = 44;BA.debugLine="lblLine1.Visible = True";
 mostCurrent._lblline1.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 44;BA.debugLine="lblLine3.Visible = False";
+ //BA.debugLineNum = 45;BA.debugLine="lblLine3.Visible = False";
 mostCurrent._lblline3.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 45;BA.debugLine="End Sub";
-return "";
-}
-public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 50;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 52;BA.debugLine="End Sub";
-return "";
-}
-public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 47;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 46;BA.debugLine="lblLine2.Visible = False";
+mostCurrent._lblline2.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 47;BA.debugLine="lblVersion.Text = Application.VersionCode";
+mostCurrent._lblversion.setText(BA.ObjectToCharSequence(anywheresoftware.b4a.keywords.Common.Application.getVersionCode()));
  //BA.debugLineNum = 48;BA.debugLine="End Sub";
 return "";
 }
+public static String  _activity_pause(boolean _userclosed) throws Exception{
+ //BA.debugLineNum = 53;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 55;BA.debugLine="End Sub";
+return "";
+}
+public static String  _activity_resume() throws Exception{
+ //BA.debugLineNum = 50;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 51;BA.debugLine="End Sub";
+return "";
+}
 public static String  _btncerrarabout_click() throws Exception{
- //BA.debugLineNum = 56;BA.debugLine="Sub btnCerrarAbout_Click";
- //BA.debugLineNum = 57;BA.debugLine="Activity.RemoveAllViews";
+ //BA.debugLineNum = 59;BA.debugLine="Sub btnCerrarAbout_Click";
+ //BA.debugLineNum = 60;BA.debugLine="Activity.RemoveAllViews";
 mostCurrent._activity.RemoveAllViews();
- //BA.debugLineNum = 58;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 61;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 59;BA.debugLine="End Sub";
+ //BA.debugLineNum = 62;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnequipo_click() throws Exception{
- //BA.debugLineNum = 96;BA.debugLine="Private Sub btnEquipo_Click";
- //BA.debugLineNum = 97;BA.debugLine="tabStripAbout.ScrollTo(1,True)";
+ //BA.debugLineNum = 110;BA.debugLine="Private Sub btnEquipo_Click";
+ //BA.debugLineNum = 111;BA.debugLine="tabStripAbout.ScrollTo(1,True)";
 mostCurrent._tabstripabout.ScrollTo((int) (1),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 98;BA.debugLine="lblLine1.Visible = False";
+ //BA.debugLineNum = 112;BA.debugLine="lblLine1.Visible = False";
 mostCurrent._lblline1.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 99;BA.debugLine="lblLine3.Visible = True";
+ //BA.debugLineNum = 113;BA.debugLine="lblLine3.Visible = True";
 mostCurrent._lblline3.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 100;BA.debugLine="End Sub";
+ //BA.debugLineNum = 114;BA.debugLine="lblLine2.Visible = False";
+mostCurrent._lblline2.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 115;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnproyecto_click() throws Exception{
- //BA.debugLineNum = 102;BA.debugLine="Private Sub btnProyecto_Click";
- //BA.debugLineNum = 103;BA.debugLine="tabStripAbout.ScrollTo(0,True)";
+ //BA.debugLineNum = 103;BA.debugLine="Private Sub btnProyecto_Click";
+ //BA.debugLineNum = 104;BA.debugLine="tabStripAbout.ScrollTo(0,True)";
 mostCurrent._tabstripabout.ScrollTo((int) (0),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 104;BA.debugLine="lblLine1.Visible = True";
+ //BA.debugLineNum = 105;BA.debugLine="lblLine1.Visible = True";
 mostCurrent._lblline1.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 105;BA.debugLine="lblLine3.Visible = False";
+ //BA.debugLineNum = 106;BA.debugLine="lblLine3.Visible = False";
 mostCurrent._lblline3.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 106;BA.debugLine="End Sub";
+ //BA.debugLineNum = 107;BA.debugLine="lblLine2.Visible = False";
+mostCurrent._lblline2.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 108;BA.debugLine="End Sub";
+return "";
+}
+public static String  _btnsponsors_click() throws Exception{
+ //BA.debugLineNum = 118;BA.debugLine="Private Sub btnSponsors_Click";
+ //BA.debugLineNum = 119;BA.debugLine="tabStripAbout.ScrollTo(2,True)";
+mostCurrent._tabstripabout.ScrollTo((int) (2),anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 120;BA.debugLine="lblLine1.Visible = False";
+mostCurrent._lblline1.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 121;BA.debugLine="lblLine3.Visible = False";
+mostCurrent._lblline3.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 122;BA.debugLine="lblLine2.Visible = True";
+mostCurrent._lblline2.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 123;BA.debugLine="End Sub";
 return "";
 }
 public static String  _fcbicon_click() throws Exception{
- //BA.debugLineNum = 61;BA.debugLine="Sub fcbIcon_Click";
- //BA.debugLineNum = 62;BA.debugLine="StartActivity(p.OpenBrowser(\"https://www.facebook";
-anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._p.OpenBrowser("https://www.facebook.com/preservamos/")));
- //BA.debugLineNum = 63;BA.debugLine="End Sub";
+ //BA.debugLineNum = 64;BA.debugLine="Sub fcbIcon_Click";
+ //BA.debugLineNum = 65;BA.debugLine="StartActivity(p.OpenBrowser(\"https://www.facebook";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._p.OpenBrowser("https://www.facebook.com/preservamos.ar/")));
+ //BA.debugLineNum = 66;BA.debugLine="End Sub";
 return "";
 }
 public static String  _globals() throws Exception{
@@ -474,50 +505,56 @@ mostCurrent._lblmaintext = new anywheresoftware.b4a.objects.LabelWrapper();
 mostCurrent._lblline3 = new anywheresoftware.b4a.objects.LabelWrapper();
  //BA.debugLineNum = 33;BA.debugLine="Private lblLine1 As Label";
 mostCurrent._lblline1 = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 34;BA.debugLine="End Sub";
+ //BA.debugLineNum = 34;BA.debugLine="Private btnSponsors As Label";
+mostCurrent._btnsponsors = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 35;BA.debugLine="Private lblLine2 As Label";
+mostCurrent._lblline2 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 36;BA.debugLine="End Sub";
 return "";
 }
 public static String  _imgcc_click() throws Exception{
- //BA.debugLineNum = 92;BA.debugLine="Sub imgCC_Click";
- //BA.debugLineNum = 93;BA.debugLine="StartActivity(p.OpenBrowser(\"https://creativecomm";
+ //BA.debugLineNum = 96;BA.debugLine="Sub imgCC_Click";
+ //BA.debugLineNum = 97;BA.debugLine="StartActivity(p.OpenBrowser(\"https://creativecomm";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._p.OpenBrowser("https://creativecommons.org/licenses/by-nc/2.5/ar/")));
- //BA.debugLineNum = 94;BA.debugLine="End Sub";
+ //BA.debugLineNum = 98;BA.debugLine="End Sub";
 return "";
 }
-public static String  _imgtwitter_click() throws Exception{
- //BA.debugLineNum = 86;BA.debugLine="Sub imgTwitter_Click";
- //BA.debugLineNum = 88;BA.debugLine="StartActivity(p.OpenBrowser(\"https://twitter.com/";
-anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._p.OpenBrowser("https://twitter.com/appeararg")));
- //BA.debugLineNum = 89;BA.debugLine="End Sub";
+public static String  _imgig_click() throws Exception{
+ //BA.debugLineNum = 72;BA.debugLine="Private Sub imgIG_Click";
+ //BA.debugLineNum = 73;BA.debugLine="StartActivity(p.OpenBrowser(\"https://www.instagra";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._p.OpenBrowser("https://www.instagram.com/preservamos.ar/")));
+ //BA.debugLineNum = 74;BA.debugLine="End Sub";
 return "";
 }
 public static String  _imgwebsite_click() throws Exception{
- //BA.debugLineNum = 65;BA.debugLine="Sub imgWebsite_Click";
- //BA.debugLineNum = 66;BA.debugLine="StartActivity(p.OpenBrowser(\"http://www.preservam";
+ //BA.debugLineNum = 68;BA.debugLine="Sub imgWebsite_Click";
+ //BA.debugLineNum = 69;BA.debugLine="StartActivity(p.OpenBrowser(\"http://www.preservam";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._p.OpenBrowser("http://www.preservamos.ar")));
- //BA.debugLineNum = 67;BA.debugLine="End Sub";
+ //BA.debugLineNum = 70;BA.debugLine="End Sub";
 return "";
 }
 public static String  _label1_click() throws Exception{
- //BA.debugLineNum = 69;BA.debugLine="Sub Label1_Click";
- //BA.debugLineNum = 75;BA.debugLine="tabStripAbout.ScrollTo(0,True)";
+ //BA.debugLineNum = 76;BA.debugLine="Sub Label1_Click";
+ //BA.debugLineNum = 82;BA.debugLine="tabStripAbout.ScrollTo(0,True)";
 mostCurrent._tabstripabout.ScrollTo((int) (0),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 76;BA.debugLine="lblLine1.Visible = True";
+ //BA.debugLineNum = 83;BA.debugLine="lblLine1.Visible = True";
 mostCurrent._lblline1.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 77;BA.debugLine="lblLine3.Visible = False";
+ //BA.debugLineNum = 84;BA.debugLine="lblLine3.Visible = False";
 mostCurrent._lblline3.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 78;BA.debugLine="End Sub";
+ //BA.debugLineNum = 85;BA.debugLine="End Sub";
 return "";
 }
 public static String  _label3_click() throws Exception{
- //BA.debugLineNum = 80;BA.debugLine="Sub Label3_Click";
- //BA.debugLineNum = 81;BA.debugLine="tabStripAbout.ScrollTo(1,True)";
+ //BA.debugLineNum = 87;BA.debugLine="Sub Label3_Click";
+ //BA.debugLineNum = 88;BA.debugLine="tabStripAbout.ScrollTo(1,True)";
 mostCurrent._tabstripabout.ScrollTo((int) (1),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 82;BA.debugLine="lblLine1.Visible = False";
+ //BA.debugLineNum = 89;BA.debugLine="lblLine1.Visible = False";
 mostCurrent._lblline1.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 83;BA.debugLine="lblLine3.Visible = True";
+ //BA.debugLineNum = 90;BA.debugLine="lblLine2.Visible = False";
+mostCurrent._lblline2.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 91;BA.debugLine="lblLine3.Visible = True";
 mostCurrent._lblline3.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 84;BA.debugLine="End Sub";
+ //BA.debugLineNum = 92;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{
@@ -526,20 +563,31 @@ public static String  _process_globals() throws Exception{
 return "";
 }
 public static String  _tabstripabout_pageselected(int _position) throws Exception{
- //BA.debugLineNum = 109;BA.debugLine="Sub tabStripAbout_PageSelected (Position As Int)";
- //BA.debugLineNum = 110;BA.debugLine="If Position = 0 Then";
+ //BA.debugLineNum = 126;BA.debugLine="Sub tabStripAbout_PageSelected (Position As Int)";
+ //BA.debugLineNum = 127;BA.debugLine="If Position = 0 Then";
 if (_position==0) { 
- //BA.debugLineNum = 111;BA.debugLine="lblLine1.Visible = True";
+ //BA.debugLineNum = 128;BA.debugLine="lblLine1.Visible = True";
 mostCurrent._lblline1.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 112;BA.debugLine="lblLine3.Visible = False";
+ //BA.debugLineNum = 129;BA.debugLine="lblLine3.Visible = False";
 mostCurrent._lblline3.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 130;BA.debugLine="lblLine2.Visible = False";
+mostCurrent._lblline2.setVisible(anywheresoftware.b4a.keywords.Common.False);
  }else if(_position==1) { 
- //BA.debugLineNum = 114;BA.debugLine="lblLine1.Visible = False";
+ //BA.debugLineNum = 132;BA.debugLine="lblLine1.Visible = False";
 mostCurrent._lblline1.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 115;BA.debugLine="lblLine3.Visible = True";
+ //BA.debugLineNum = 133;BA.debugLine="lblLine3.Visible = True";
 mostCurrent._lblline3.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 134;BA.debugLine="lblLine2.Visible = False";
+mostCurrent._lblline2.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ }else if(_position==2) { 
+ //BA.debugLineNum = 136;BA.debugLine="lblLine1.Visible = False";
+mostCurrent._lblline1.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 137;BA.debugLine="lblLine3.Visible = False";
+mostCurrent._lblline3.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 138;BA.debugLine="lblLine2.Visible = True";
+mostCurrent._lblline2.setVisible(anywheresoftware.b4a.keywords.Common.True);
  };
- //BA.debugLineNum = 117;BA.debugLine="End Sub";
+ //BA.debugLineNum = 140;BA.debugLine="End Sub";
 return "";
 }
 }

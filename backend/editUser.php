@@ -17,9 +17,10 @@ switch ($action) {
         $org = $mysqli->real_escape_string($_GET["usergroup"]);
         $usertipo = $mysqli->real_escape_string($_GET["usertipo"]);
 		$deviceID = $mysqli->real_escape_string($_GET["deviceID"]);
+		$useremail = $mysqli->real_escape_string($_GET["useremail"]);
       
 
-		$res = $mysqli->query("UPDATE usuarios SET user_pw ='$password', user_fullname='$fullname', location='$location', org='$org', tipousuario='$usertipo', deviceID='$deviceID' WHERE user_name='$userid'");
+		$res = $mysqli->query("UPDATE usuarios SET user_pw ='$password', user_fullname='$fullname', location='$location', org='$org', tipousuario='$usertipo', deviceID='$deviceID' WHERE email='$useremail'");
 
 		if (!$res) {
 			print json_encode("Error");
@@ -37,9 +38,10 @@ switch ($action) {
         $org = $mysqli->real_escape_string($_GET["usergroup"]);
         $usertipo = $mysqli->real_escape_string($_GET["usertipo"]);
 		$deviceID = $mysqli->real_escape_string($_GET["deviceID"]);
+		$useremail = $mysqli->real_escape_string($_GET["useremail"]);
       
 
-		$res = $mysqli->query("UPDATE usuarios SET  user_fullname='$fullname', location='$location', org='$org', tipousuario='$usertipo', deviceID='$deviceID' WHERE user_name='$userid'");
+		$res = $mysqli->query("UPDATE usuarios SET user_fullname='$fullname', location='$location', org='$org', tipousuario='$usertipo', deviceID='$deviceID' WHERE email='$useremail'");
 
 		if (!$res) {
 			print json_encode("Error");

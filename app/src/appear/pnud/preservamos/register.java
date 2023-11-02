@@ -101,7 +101,7 @@ public class register extends Activity implements B4AActivity{
         initializeProcessGlobals();		
         initializeGlobals();
         
-        BA.LogInfo("** Activity (register) Create, isFirst = " + isFirst + " **");
+        BA.LogInfo("** Activity (register) Create " + (isFirst ? "(first time)" : "") + " **");
         processBA.raiseEvent2(null, true, "activity_create", false, isFirst);
 		isFirst = false;
 		if (this != mostCurrent)
@@ -350,32 +350,41 @@ public anywheresoftware.b4a.objects.ButtonWrapper _btnnext = null;
 public anywheresoftware.b4a.objects.CompoundButtonWrapper.CheckBoxWrapper _chkempleadomunicipio = null;
 public appear.pnud.preservamos.b4xdialog _dialog = null;
 public static String _codigo_enviado = "";
+public anywheresoftware.b4a.objects.CompoundButtonWrapper.CheckBoxWrapper _chkpoliticas = null;
 public b4a.example.dateutils _dateutils = null;
 public appear.pnud.preservamos.main _main = null;
 public appear.pnud.preservamos.form_main _form_main = null;
-public appear.pnud.preservamos.starter _starter = null;
-public appear.pnud.preservamos.inatcheck _inatcheck = null;
-public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
-public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
-public appear.pnud.preservamos.alertas _alertas = null;
-public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
+public appear.pnud.preservamos.frmabout _frmabout = null;
 public appear.pnud.preservamos.alerta_fotos _alerta_fotos = null;
-public appear.pnud.preservamos.form_reporte _form_reporte = null;
+public appear.pnud.preservamos.alertas _alertas = null;
 public appear.pnud.preservamos.aprender_muestreo _aprender_muestreo = null;
 public appear.pnud.preservamos.dbutils _dbutils = null;
 public appear.pnud.preservamos.downloadservice _downloadservice = null;
 public appear.pnud.preservamos.firebasemessaging _firebasemessaging = null;
-public appear.pnud.preservamos.frmabout _frmabout = null;
+public appear.pnud.preservamos.form_reporte _form_reporte = null;
 public appear.pnud.preservamos.frmdatosanteriores _frmdatosanteriores = null;
+public appear.pnud.preservamos.frmdatossinenviar _frmdatossinenviar = null;
+public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
 public appear.pnud.preservamos.frmfelicitaciones _frmfelicitaciones = null;
+public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
 public appear.pnud.preservamos.frmmapa _frmmapa = null;
-public appear.pnud.preservamos.frmperfil _frmperfil = null;
+public appear.pnud.preservamos.frmmunicipioestadisticas _frmmunicipioestadisticas = null;
 public appear.pnud.preservamos.frmpoliticadatos _frmpoliticadatos = null;
+public appear.pnud.preservamos.frmtiporeporte _frmtiporeporte = null;
 public appear.pnud.preservamos.httputils2service _httputils2service = null;
 public appear.pnud.preservamos.imagedownloader _imagedownloader = null;
+public appear.pnud.preservamos.inatcheck _inatcheck = null;
+public appear.pnud.preservamos.mod_hidro _mod_hidro = null;
+public appear.pnud.preservamos.mod_hidro_fotos _mod_hidro_fotos = null;
+public appear.pnud.preservamos.mod_residuos _mod_residuos = null;
+public appear.pnud.preservamos.mod_residuos_fotos _mod_residuos_fotos = null;
+public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
 public appear.pnud.preservamos.reporte_fotos _reporte_fotos = null;
 public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
 public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
+public appear.pnud.preservamos.reporte_habitat_rio_bu _reporte_habitat_rio_bu = null;
+public appear.pnud.preservamos.reporte_habitat_rio_sierras _reporte_habitat_rio_sierras = null;
+public appear.pnud.preservamos.starter _starter = null;
 public appear.pnud.preservamos.uploadfiles _uploadfiles = null;
 public appear.pnud.preservamos.utilidades _utilidades = null;
 public appear.pnud.preservamos.xuiviewsutils _xuiviewsutils = null;
@@ -388,136 +397,202 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 30;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 31;BA.debugLine="Activity.LoadLayout(\"layRegister\")";
+ //BA.debugLineNum = 31;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 32;BA.debugLine="Activity.LoadLayout(\"layRegister\")";
 mostCurrent._activity.LoadLayout("layRegister",mostCurrent.activityBA);
- //BA.debugLineNum = 33;BA.debugLine="tabRegister.LoadLayout(\"layRegister_Tab1\", \"1\")";
+ //BA.debugLineNum = 34;BA.debugLine="tabRegister.LoadLayout(\"layRegister_Tab1\", \"1\")";
 mostCurrent._tabregister.LoadLayout("layRegister_Tab1",BA.ObjectToCharSequence("1"));
- //BA.debugLineNum = 34;BA.debugLine="tabRegister.LoadLayout(\"layRegister_Tab2\", \"2\")";
+ //BA.debugLineNum = 35;BA.debugLine="tabRegister.LoadLayout(\"layRegister_Tab2\", \"2\")";
 mostCurrent._tabregister.LoadLayout("layRegister_Tab2",BA.ObjectToCharSequence("2"));
- //BA.debugLineNum = 35;BA.debugLine="tabRegister.LoadLayout(\"layRegister_Tab3\", \"3\")";
+ //BA.debugLineNum = 36;BA.debugLine="tabRegister.LoadLayout(\"layRegister_Tab3\", \"3\")";
 mostCurrent._tabregister.LoadLayout("layRegister_Tab3",BA.ObjectToCharSequence("3"));
- //BA.debugLineNum = 36;BA.debugLine="End Sub";
+ //BA.debugLineNum = 37;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
- //BA.debugLineNum = 37;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
- //BA.debugLineNum = 38;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+ //BA.debugLineNum = 38;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+ //BA.debugLineNum = 39;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
- //BA.debugLineNum = 39;BA.debugLine="closeAppMsgBox";
+ //BA.debugLineNum = 40;BA.debugLine="closeAppMsgBox";
 _closeappmsgbox();
- //BA.debugLineNum = 40;BA.debugLine="Return True";
+ //BA.debugLineNum = 41;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  }else {
- //BA.debugLineNum = 42;BA.debugLine="Return False";
+ //BA.debugLineNum = 43;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
- //BA.debugLineNum = 44;BA.debugLine="End Sub";
+ //BA.debugLineNum = 45;BA.debugLine="End Sub";
 return false;
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 48;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 50;BA.debugLine="End Sub";
+ //BA.debugLineNum = 49;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 51;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 45;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 47;BA.debugLine="End Sub";
+ //BA.debugLineNum = 46;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 48;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btncancelarregistro_click() throws Exception{
- //BA.debugLineNum = 403;BA.debugLine="Sub btnCancelarRegistro_Click";
- //BA.debugLineNum = 404;BA.debugLine="Activity.RemoveAllViews";
+ //BA.debugLineNum = 456;BA.debugLine="Sub btnCancelarRegistro_Click";
+ //BA.debugLineNum = 457;BA.debugLine="Activity.RemoveAllViews";
 mostCurrent._activity.RemoveAllViews();
- //BA.debugLineNum = 405;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 458;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 406;BA.debugLine="End Sub";
+ //BA.debugLineNum = 459;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnnext_click() throws Exception{
- //BA.debugLineNum = 94;BA.debugLine="Private Sub btnNext_Click";
- //BA.debugLineNum = 95;BA.debugLine="If tabRegister.CurrentPage = 0 Then";
+ //BA.debugLineNum = 95;BA.debugLine="Private Sub btnNext_Click";
+ //BA.debugLineNum = 96;BA.debugLine="If tabRegister.CurrentPage = 0 Then";
 if (mostCurrent._tabregister.getCurrentPage()==0) { 
- //BA.debugLineNum = 96;BA.debugLine="tabRegister.ScrollTo(1, True)";
+ //BA.debugLineNum = 97;BA.debugLine="tabRegister.ScrollTo(1, True)";
 mostCurrent._tabregister.ScrollTo((int) (1),anywheresoftware.b4a.keywords.Common.True);
  }else if(mostCurrent._tabregister.getCurrentPage()==1) { 
- //BA.debugLineNum = 98;BA.debugLine="tabRegister.ScrollTo(2, True)";
+ //BA.debugLineNum = 99;BA.debugLine="tabRegister.ScrollTo(2, True)";
 mostCurrent._tabregister.ScrollTo((int) (2),anywheresoftware.b4a.keywords.Common.True);
  };
- //BA.debugLineNum = 100;BA.debugLine="End Sub";
+ //BA.debugLineNum = 101;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnprev_click() throws Exception{
- //BA.debugLineNum = 101;BA.debugLine="Private Sub btnPrev_Click";
- //BA.debugLineNum = 102;BA.debugLine="If tabRegister.CurrentPage = 1 Then";
+ //BA.debugLineNum = 102;BA.debugLine="Private Sub btnPrev_Click";
+ //BA.debugLineNum = 103;BA.debugLine="If tabRegister.CurrentPage = 1 Then";
 if (mostCurrent._tabregister.getCurrentPage()==1) { 
- //BA.debugLineNum = 103;BA.debugLine="tabRegister.ScrollTo(0, True)";
+ //BA.debugLineNum = 104;BA.debugLine="tabRegister.ScrollTo(0, True)";
 mostCurrent._tabregister.ScrollTo((int) (0),anywheresoftware.b4a.keywords.Common.True);
  }else if(mostCurrent._tabregister.getCurrentPage()==2) { 
- //BA.debugLineNum = 105;BA.debugLine="tabRegister.ScrollTo(1, True)";
+ //BA.debugLineNum = 106;BA.debugLine="tabRegister.ScrollTo(1, True)";
 mostCurrent._tabregister.ScrollTo((int) (1),anywheresoftware.b4a.keywords.Common.True);
  };
- //BA.debugLineNum = 107;BA.debugLine="End Sub";
+ //BA.debugLineNum = 108;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnregister_click() throws Exception{
 String _struserid = "";
 String _stremail = "";
- //BA.debugLineNum = 114;BA.debugLine="Sub btnRegister_Click";
- //BA.debugLineNum = 115;BA.debugLine="Dim strUserID As String = txtUserID.Text.Trim";
+anywheresoftware.b4a.objects.collections.Map _mapreset = null;
+anywheresoftware.b4a.objects.collections.List _newuser = null;
+anywheresoftware.b4a.objects.collections.Map _m = null;
+ //BA.debugLineNum = 115;BA.debugLine="Sub btnRegister_Click";
+ //BA.debugLineNum = 117;BA.debugLine="Dim strUserID As String = txtUserID.Text.Trim";
 _struserid = mostCurrent._txtuserid.getText().trim();
- //BA.debugLineNum = 116;BA.debugLine="If strUserID = \"\" Then";
+ //BA.debugLineNum = 118;BA.debugLine="If strUserID = \"\" Then";
 if ((_struserid).equals("")) { 
- //BA.debugLineNum = 117;BA.debugLine="If Main.lang = \"es\" Then";
+ //BA.debugLineNum = 119;BA.debugLine="If Main.lang = \"es\" Then";
 if ((mostCurrent._main._lang /*String*/ ).equals("es")) { 
- //BA.debugLineNum = 118;BA.debugLine="MsgboxAsync(\"Ingrese nombre de usuario\", \"Error";
+ //BA.debugLineNum = 120;BA.debugLine="MsgboxAsync(\"Ingrese nombre de usuario\", \"Error";
 anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("Ingrese nombre de usuario"),BA.ObjectToCharSequence("Error"),processBA);
  }else if((mostCurrent._main._lang /*String*/ ).equals("en")) { 
- //BA.debugLineNum = 120;BA.debugLine="MsgboxAsync(\"Enter a username\", \"Error\")";
+ //BA.debugLineNum = 122;BA.debugLine="MsgboxAsync(\"Enter a username\", \"Error\")";
 anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("Enter a username"),BA.ObjectToCharSequence("Error"),processBA);
  };
- //BA.debugLineNum = 122;BA.debugLine="Return";
+ //BA.debugLineNum = 124;BA.debugLine="Return";
 if (true) return "";
  };
- //BA.debugLineNum = 125;BA.debugLine="Dim strEmail As String = txtEmail.Text.Trim";
+ //BA.debugLineNum = 127;BA.debugLine="Dim strEmail As String = txtEmail.Text.Trim";
 _stremail = mostCurrent._txtemail.getText().trim();
- //BA.debugLineNum = 126;BA.debugLine="If strEmail = \"\" Then";
+ //BA.debugLineNum = 128;BA.debugLine="If strEmail = \"\" Then";
 if ((_stremail).equals("")) { 
- //BA.debugLineNum = 127;BA.debugLine="If Main.lang = \"es\" Then";
+ //BA.debugLineNum = 129;BA.debugLine="If Main.lang = \"es\" Then";
 if ((mostCurrent._main._lang /*String*/ ).equals("es")) { 
- //BA.debugLineNum = 128;BA.debugLine="MsgboxAsync(\"Ingrese email\", \"Error\")";
+ //BA.debugLineNum = 130;BA.debugLine="MsgboxAsync(\"Ingrese email\", \"Error\")";
 anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("Ingrese email"),BA.ObjectToCharSequence("Error"),processBA);
  }else if((mostCurrent._main._lang /*String*/ ).equals("en")) { 
- //BA.debugLineNum = 130;BA.debugLine="MsgboxAsync(\"Enter your email\", \"Error\")";
+ //BA.debugLineNum = 132;BA.debugLine="MsgboxAsync(\"Enter your email\", \"Error\")";
 anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("Enter your email"),BA.ObjectToCharSequence("Error"),processBA);
  };
- //BA.debugLineNum = 132;BA.debugLine="Return";
+ //BA.debugLineNum = 134;BA.debugLine="Return";
 if (true) return "";
  };
- //BA.debugLineNum = 134;BA.debugLine="If Validate_Email(strEmail) = False Then";
+ //BA.debugLineNum = 136;BA.debugLine="If Validate_Email(strEmail) = False Then";
 if (_validate_email(_stremail)==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 135;BA.debugLine="If Main.lang = \"es\" Then";
+ //BA.debugLineNum = 137;BA.debugLine="If Main.lang = \"es\" Then";
 if ((mostCurrent._main._lang /*String*/ ).equals("es")) { 
- //BA.debugLineNum = 136;BA.debugLine="MsgboxAsync(\"Formato de email incorrecto\", \"Err";
+ //BA.debugLineNum = 138;BA.debugLine="MsgboxAsync(\"Formato de email incorrecto\", \"Err";
 anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("Formato de email incorrecto"),BA.ObjectToCharSequence("Error"),processBA);
  }else if((mostCurrent._main._lang /*String*/ ).equals("en")) { 
- //BA.debugLineNum = 138;BA.debugLine="MsgboxAsync(\"Incorrect format for the email add";
+ //BA.debugLineNum = 140;BA.debugLine="MsgboxAsync(\"Incorrect format for the email add";
 anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("Incorrect format for the email address"),BA.ObjectToCharSequence("Error"),processBA);
  };
- //BA.debugLineNum = 140;BA.debugLine="Return";
+ //BA.debugLineNum = 142;BA.debugLine="Return";
 if (true) return "";
  };
- //BA.debugLineNum = 148;BA.debugLine="If Main.lang = \"es\" Then";
+ //BA.debugLineNum = 145;BA.debugLine="If chkPoliticas.Checked = False Then";
+if (mostCurrent._chkpoliticas.getChecked()==anywheresoftware.b4a.keywords.Common.False) { 
+ //BA.debugLineNum = 146;BA.debugLine="MsgboxAsync(\"Para seguir con el registro, debe a";
+anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("Para seguir con el registro, debe aceptar la política de datos de PreserVamos"),BA.ObjectToCharSequence("Aceptar los términos"),processBA);
+ };
+ //BA.debugLineNum = 154;BA.debugLine="If Main.lang = \"es\" Then";
 if ((mostCurrent._main._lang /*String*/ ).equals("es")) { 
- //BA.debugLineNum = 149;BA.debugLine="ProgressDialogShow(\"Registrando el usuario...\")";
+ //BA.debugLineNum = 155;BA.debugLine="ProgressDialogShow(\"Registrando el usuario...\")";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("Registrando el usuario..."));
  }else if((mostCurrent._main._lang /*String*/ ).equals("en")) { 
- //BA.debugLineNum = 151;BA.debugLine="ProgressDialogShow(\"Signing up user...\")";
+ //BA.debugLineNum = 157;BA.debugLine="ProgressDialogShow(\"Signing up user...\")";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("Signing up user..."));
  };
- //BA.debugLineNum = 155;BA.debugLine="RegisterUser";
+ //BA.debugLineNum = 159;BA.debugLine="If txtUserID.Text = \"test_user\"	And txtEmail.Text";
+if ((mostCurrent._txtuserid.getText()).equals("test_user") && (mostCurrent._txtemail.getText()).equals("test_user@testemail.com")) { 
+ //BA.debugLineNum = 160;BA.debugLine="ToastMessageShow(\"Welcome Google!\", False)";
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Welcome Google!"),anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 163;BA.debugLine="Main.username = txtUserID.Text";
+mostCurrent._main._username /*String*/  = mostCurrent._txtuserid.getText();
+ //BA.debugLineNum = 164;BA.debugLine="Main.strUserEmail = txtEmail.Text";
+mostCurrent._main._struseremail /*String*/  = mostCurrent._txtemail.getText();
+ //BA.debugLineNum = 165;BA.debugLine="Main.strUserFullName = txtUserID.Text";
+mostCurrent._main._struserfullname /*String*/  = mostCurrent._txtuserid.getText();
+ //BA.debugLineNum = 166;BA.debugLine="If chkEmpleadoMunicipio.Checked = True Then";
+if (mostCurrent._chkempleadomunicipio.getChecked()==anywheresoftware.b4a.keywords.Common.True) { 
+ //BA.debugLineNum = 167;BA.debugLine="Main.strUserTipoUsuario = \"municipal\"";
+mostCurrent._main._strusertipousuario /*String*/  = "municipal";
+ }else {
+ //BA.debugLineNum = 169;BA.debugLine="Main.strUserTipoUsuario = \"no municipal\"";
+mostCurrent._main._strusertipousuario /*String*/  = "no municipal";
+ };
+ //BA.debugLineNum = 174;BA.debugLine="Dim MapReset As Map";
+_mapreset = new anywheresoftware.b4a.objects.collections.Map();
+ //BA.debugLineNum = 175;BA.debugLine="MapReset.Initialize";
+_mapreset.Initialize();
+ //BA.debugLineNum = 176;BA.debugLine="MapReset.Put(\"lastuser\", \"si\")";
+_mapreset.Put((Object)("lastuser"),(Object)("si"));
+ //BA.debugLineNum = 177;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"userconfig\"";
+mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"userconfig","lastUser",(Object)("no"),_mapreset);
+ //BA.debugLineNum = 181;BA.debugLine="Dim newUser As List";
+_newuser = new anywheresoftware.b4a.objects.collections.List();
+ //BA.debugLineNum = 182;BA.debugLine="newUser.Initialize";
+_newuser.Initialize();
+ //BA.debugLineNum = 183;BA.debugLine="Dim m As Map";
+_m = new anywheresoftware.b4a.objects.collections.Map();
+ //BA.debugLineNum = 184;BA.debugLine="m.Initialize";
+_m.Initialize();
+ //BA.debugLineNum = 185;BA.debugLine="m.Put(\"username\", Main.username)";
+_m.Put((Object)("username"),(Object)(mostCurrent._main._username /*String*/ ));
+ //BA.debugLineNum = 186;BA.debugLine="m.Put(\"userEmail\", Main.strUserEmail)";
+_m.Put((Object)("userEmail"),(Object)(mostCurrent._main._struseremail /*String*/ ));
+ //BA.debugLineNum = 187;BA.debugLine="m.Put(\"userOrg\", Main.strUserOrg)";
+_m.Put((Object)("userOrg"),(Object)(mostCurrent._main._struserorg /*String*/ ));
+ //BA.debugLineNum = 188;BA.debugLine="m.Put(\"userTipoUsuario\", Main.strUserTipoUsuario";
+_m.Put((Object)("userTipoUsuario"),(Object)(mostCurrent._main._strusertipousuario /*String*/ ));
+ //BA.debugLineNum = 190;BA.debugLine="m.Put(\"lastUser\", \"si\")";
+_m.Put((Object)("lastUser"),(Object)("si"));
+ //BA.debugLineNum = 191;BA.debugLine="m.Put(\"lang\", \"es\")";
+_m.Put((Object)("lang"),(Object)("es"));
+ //BA.debugLineNum = 192;BA.debugLine="newUser.Add(m)";
+_newuser.Add((Object)(_m.getObject()));
+ //BA.debugLineNum = 193;BA.debugLine="DBUtils.InsertMaps(Starter.sqlDB,\"userconfig\", n";
+mostCurrent._dbutils._insertmaps /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"userconfig",_newuser);
+ //BA.debugLineNum = 196;BA.debugLine="Log(\"Usuario registrado en DB interna - mail ya";
+anywheresoftware.b4a.keywords.Common.LogImpl("466060369","Usuario registrado en DB interna - mail ya existente",0);
+ //BA.debugLineNum = 198;BA.debugLine="Activity.RemoveAllViews";
+mostCurrent._activity.RemoveAllViews();
+ //BA.debugLineNum = 199;BA.debugLine="Activity.Finish";
+mostCurrent._activity.Finish();
+ }else {
+ //BA.debugLineNum = 202;BA.debugLine="RegisterUser";
 _registeruser();
- //BA.debugLineNum = 156;BA.debugLine="End Sub";
+ };
+ //BA.debugLineNum = 206;BA.debugLine="End Sub";
 return "";
 }
 public static void  _closeappmsgbox() throws Exception{
@@ -542,9 +617,9 @@ return;
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 54;BA.debugLine="Msgbox2Async(\"Cerrar PreserVamos?\", \"SALIR\", \"Si\"";
+ //BA.debugLineNum = 55;BA.debugLine="Msgbox2Async(\"Cerrar PreserVamos?\", \"SALIR\", \"Si\"";
 anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("Cerrar PreserVamos?"),BA.ObjectToCharSequence("SALIR"),"Si","","No",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 55;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
+ //BA.debugLineNum = 56;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
 anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
 this.state = 5;
 return;
@@ -553,7 +628,7 @@ case 5:
 this.state = 1;
 _result = (Integer) result[0];
 ;
- //BA.debugLineNum = 56;BA.debugLine="If Result = DialogResponse.POSITIVE Then";
+ //BA.debugLineNum = 57;BA.debugLine="If Result = DialogResponse.POSITIVE Then";
 if (true) break;
 
 case 1:
@@ -566,11 +641,11 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
- //BA.debugLineNum = 57;BA.debugLine="Activity.RemoveAllViews";
+ //BA.debugLineNum = 58;BA.debugLine="Activity.RemoveAllViews";
 parent.mostCurrent._activity.RemoveAllViews();
- //BA.debugLineNum = 58;BA.debugLine="Activity.finish";
+ //BA.debugLineNum = 59;BA.debugLine="Activity.finish";
 parent.mostCurrent._activity.Finish();
- //BA.debugLineNum = 59;BA.debugLine="ExitApplication";
+ //BA.debugLineNum = 60;BA.debugLine="ExitApplication";
 anywheresoftware.b4a.keywords.Common.ExitApplication();
  if (true) break;
 
@@ -578,7 +653,7 @@ case 4:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 61;BA.debugLine="End Sub";
+ //BA.debugLineNum = 62;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -613,19 +688,31 @@ return;
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 323;BA.debugLine="dialog.Initialize(Activity)";
+ //BA.debugLineNum = 369;BA.debugLine="dialog.Initialize(Activity)";
 parent.mostCurrent._dialog._initialize /*String*/ (mostCurrent.activityBA,(anywheresoftware.b4a.objects.B4XViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.B4XViewWrapper(), (java.lang.Object)(parent.mostCurrent._activity.getObject())));
- //BA.debugLineNum = 324;BA.debugLine="dialog.Title = \"Ingrese su código\"";
-parent.mostCurrent._dialog._title /*Object*/  = (Object)("Ingrese su código");
- //BA.debugLineNum = 325;BA.debugLine="Dim input As B4XInputTemplate";
+ //BA.debugLineNum = 370;BA.debugLine="dialog.Title = \"Código\"";
+parent.mostCurrent._dialog._title /*Object*/  = (Object)("Código");
+ //BA.debugLineNum = 371;BA.debugLine="Dim input As B4XInputTemplate";
 _input = new appear.pnud.preservamos.b4xinputtemplate();
- //BA.debugLineNum = 326;BA.debugLine="input.Initialize";
+ //BA.debugLineNum = 372;BA.debugLine="input.Initialize";
 _input._initialize /*String*/ (mostCurrent.activityBA);
- //BA.debugLineNum = 327;BA.debugLine="input.lblTitle.Text = \"Ingrese su código:\"";
-_input._lbltitle /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .setText(BA.ObjectToCharSequence("Ingrese su código:"));
- //BA.debugLineNum = 328;BA.debugLine="input.RegexPattern = \".+\" 'require at least one c";
+ //BA.debugLineNum = 373;BA.debugLine="input.lblTitle.Text = \"Ingrese el código que envi";
+_input._lbltitle /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .setText(BA.ObjectToCharSequence("Ingrese el código que enviamos a su email"));
+ //BA.debugLineNum = 374;BA.debugLine="input.RegexPattern = \".+\" 'require at least one c";
 _input._regexpattern /*String*/  = ".+";
- //BA.debugLineNum = 329;BA.debugLine="Wait For (dialog.ShowTemplate(input, \"OK\", \"\", \"C";
+ //BA.debugLineNum = 375;BA.debugLine="input.TextField1.TextColor = Colors.Black";
+_input._textfield1 /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .setTextColor(anywheresoftware.b4a.keywords.Common.Colors.Black);
+ //BA.debugLineNum = 376;BA.debugLine="input.lblTitle.TextColor = Colors.DarkGray";
+_input._lbltitle /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .setTextColor(anywheresoftware.b4a.keywords.Common.Colors.DarkGray);
+ //BA.debugLineNum = 377;BA.debugLine="input.TextField1.TextSize = 24";
+_input._textfield1 /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .setTextSize((float) (24));
+ //BA.debugLineNum = 378;BA.debugLine="input.TextField1.Height = 50dip";
+_input._textfield1 /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .setHeight(anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (50)));
+ //BA.debugLineNum = 379;BA.debugLine="dialog.TitleBarColor = Colors.ARGB(255,76,159,56)";
+parent.mostCurrent._dialog._titlebarcolor /*int*/  = anywheresoftware.b4a.keywords.Common.Colors.ARGB((int) (255),(int) (76),(int) (159),(int) (56));
+ //BA.debugLineNum = 380;BA.debugLine="dialog.BackgroundColor = Colors.White";
+parent.mostCurrent._dialog._backgroundcolor /*int*/  = anywheresoftware.b4a.keywords.Common.Colors.White;
+ //BA.debugLineNum = 382;BA.debugLine="Wait For (dialog.ShowTemplate(input, \"OK\", \"\", \"C";
 anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, this, parent.mostCurrent._dialog._showtemplate /*anywheresoftware.b4a.keywords.Common.ResumableSubWrapper*/ ((Object)(_input),(Object)("OK"),(Object)(""),(Object)("Cancelar")));
 this.state = 17;
 return;
@@ -634,7 +721,7 @@ case 17:
 this.state = 1;
 _result = (Integer) result[0];
 ;
- //BA.debugLineNum = 330;BA.debugLine="If Result = xui.DialogResponse_Positive Then";
+ //BA.debugLineNum = 383;BA.debugLine="If Result = xui.DialogResponse_Positive Then";
 if (true) break;
 
 case 1:
@@ -647,7 +734,7 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
- //BA.debugLineNum = 331;BA.debugLine="If input.Text = codigo_enviado Then";
+ //BA.debugLineNum = 384;BA.debugLine="If input.Text = codigo_enviado Then";
 if (true) break;
 
 case 4:
@@ -662,17 +749,17 @@ this.state = 14;
 case 6:
 //C
 this.state = 7;
- //BA.debugLineNum = 332;BA.debugLine="Log(\"Codigo correcto\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("531653899","Codigo correcto",0);
- //BA.debugLineNum = 333;BA.debugLine="ToastMessageShow(\"Código correcto, bienvenido/a";
+ //BA.debugLineNum = 385;BA.debugLine="Log(\"Codigo correcto\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("466387986","Codigo correcto",0);
+ //BA.debugLineNum = 386;BA.debugLine="ToastMessageShow(\"Código correcto, bienvenido/a";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Código correcto, bienvenido/a de vuelta!"),anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 336;BA.debugLine="Main.username = txtUserID.Text";
+ //BA.debugLineNum = 389;BA.debugLine="Main.username = txtUserID.Text";
 parent.mostCurrent._main._username /*String*/  = parent.mostCurrent._txtuserid.getText();
- //BA.debugLineNum = 337;BA.debugLine="Main.strUserEmail = txtEmail.Text";
+ //BA.debugLineNum = 390;BA.debugLine="Main.strUserEmail = txtEmail.Text";
 parent.mostCurrent._main._struseremail /*String*/  = parent.mostCurrent._txtemail.getText();
- //BA.debugLineNum = 339;BA.debugLine="Main.strUserFullName = txtUserID.Text";
+ //BA.debugLineNum = 392;BA.debugLine="Main.strUserFullName = txtUserID.Text";
 parent.mostCurrent._main._struserfullname /*String*/  = parent.mostCurrent._txtuserid.getText();
- //BA.debugLineNum = 340;BA.debugLine="If chkEmpleadoMunicipio.Checked = True Then";
+ //BA.debugLineNum = 393;BA.debugLine="If chkEmpleadoMunicipio.Checked = True Then";
 if (true) break;
 
 case 7:
@@ -687,14 +774,14 @@ this.state = 11;
 case 9:
 //C
 this.state = 12;
- //BA.debugLineNum = 341;BA.debugLine="Main.strUserTipoUsuario = \"municipal\"";
+ //BA.debugLineNum = 394;BA.debugLine="Main.strUserTipoUsuario = \"municipal\"";
 parent.mostCurrent._main._strusertipousuario /*String*/  = "municipal";
  if (true) break;
 
 case 11:
 //C
 this.state = 12;
- //BA.debugLineNum = 343;BA.debugLine="Main.strUserTipoUsuario = \"no municipal\"";
+ //BA.debugLineNum = 396;BA.debugLine="Main.strUserTipoUsuario = \"no municipal\"";
 parent.mostCurrent._main._strusertipousuario /*String*/  = "no municipal";
  if (true) break;
 
@@ -702,54 +789,54 @@ case 12:
 //C
 this.state = 15;
 ;
- //BA.debugLineNum = 348;BA.debugLine="Dim MapReset As Map";
+ //BA.debugLineNum = 401;BA.debugLine="Dim MapReset As Map";
 _mapreset = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 349;BA.debugLine="MapReset.Initialize";
+ //BA.debugLineNum = 402;BA.debugLine="MapReset.Initialize";
 _mapreset.Initialize();
- //BA.debugLineNum = 350;BA.debugLine="MapReset.Put(\"lastuser\", \"si\")";
+ //BA.debugLineNum = 403;BA.debugLine="MapReset.Put(\"lastuser\", \"si\")";
 _mapreset.Put((Object)("lastuser"),(Object)("si"));
- //BA.debugLineNum = 351;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"userconfig";
+ //BA.debugLineNum = 404;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"userconfig";
 parent.mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,parent.mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"userconfig","lastUser",(Object)("no"),_mapreset);
- //BA.debugLineNum = 355;BA.debugLine="Dim newUser As List";
+ //BA.debugLineNum = 408;BA.debugLine="Dim newUser As List";
 _newuser = new anywheresoftware.b4a.objects.collections.List();
- //BA.debugLineNum = 356;BA.debugLine="newUser.Initialize";
+ //BA.debugLineNum = 409;BA.debugLine="newUser.Initialize";
 _newuser.Initialize();
- //BA.debugLineNum = 357;BA.debugLine="Dim m As Map";
+ //BA.debugLineNum = 410;BA.debugLine="Dim m As Map";
 _m = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 358;BA.debugLine="m.Initialize";
+ //BA.debugLineNum = 411;BA.debugLine="m.Initialize";
 _m.Initialize();
- //BA.debugLineNum = 359;BA.debugLine="m.Put(\"username\", Main.username)";
+ //BA.debugLineNum = 412;BA.debugLine="m.Put(\"username\", Main.username)";
 _m.Put((Object)("username"),(Object)(parent.mostCurrent._main._username /*String*/ ));
- //BA.debugLineNum = 360;BA.debugLine="m.Put(\"userEmail\", Main.strUserEmail)";
+ //BA.debugLineNum = 413;BA.debugLine="m.Put(\"userEmail\", Main.strUserEmail)";
 _m.Put((Object)("userEmail"),(Object)(parent.mostCurrent._main._struseremail /*String*/ ));
- //BA.debugLineNum = 361;BA.debugLine="m.Put(\"userOrg\", Main.strUserOrg)";
+ //BA.debugLineNum = 414;BA.debugLine="m.Put(\"userOrg\", Main.strUserOrg)";
 _m.Put((Object)("userOrg"),(Object)(parent.mostCurrent._main._struserorg /*String*/ ));
- //BA.debugLineNum = 362;BA.debugLine="m.Put(\"userTipoUsuario\", Main.strUserTipoUsuari";
+ //BA.debugLineNum = 415;BA.debugLine="m.Put(\"userTipoUsuario\", Main.strUserTipoUsuari";
 _m.Put((Object)("userTipoUsuario"),(Object)(parent.mostCurrent._main._strusertipousuario /*String*/ ));
- //BA.debugLineNum = 364;BA.debugLine="m.Put(\"lastUser\", \"si\")";
+ //BA.debugLineNum = 417;BA.debugLine="m.Put(\"lastUser\", \"si\")";
 _m.Put((Object)("lastUser"),(Object)("si"));
- //BA.debugLineNum = 365;BA.debugLine="m.Put(\"lang\", \"es\")";
+ //BA.debugLineNum = 418;BA.debugLine="m.Put(\"lang\", \"es\")";
 _m.Put((Object)("lang"),(Object)("es"));
- //BA.debugLineNum = 366;BA.debugLine="newUser.Add(m)";
+ //BA.debugLineNum = 419;BA.debugLine="newUser.Add(m)";
 _newuser.Add((Object)(_m.getObject()));
- //BA.debugLineNum = 367;BA.debugLine="DBUtils.InsertMaps(Starter.sqlDB,\"userconfig\",";
+ //BA.debugLineNum = 420;BA.debugLine="DBUtils.InsertMaps(Starter.sqlDB,\"userconfig\",";
 parent.mostCurrent._dbutils._insertmaps /*String*/ (mostCurrent.activityBA,parent.mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"userconfig",_newuser);
- //BA.debugLineNum = 370;BA.debugLine="Log(\"Usuario registrado en DB interna - mail ya";
-anywheresoftware.b4a.keywords.Common.LogImpl("531653937","Usuario registrado en DB interna - mail ya existente",0);
- //BA.debugLineNum = 372;BA.debugLine="Activity.RemoveAllViews";
+ //BA.debugLineNum = 423;BA.debugLine="Log(\"Usuario registrado en DB interna - mail ya";
+anywheresoftware.b4a.keywords.Common.LogImpl("466388024","Usuario registrado en DB interna - mail ya existente",0);
+ //BA.debugLineNum = 425;BA.debugLine="Activity.RemoveAllViews";
 parent.mostCurrent._activity.RemoveAllViews();
- //BA.debugLineNum = 373;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 426;BA.debugLine="Activity.Finish";
 parent.mostCurrent._activity.Finish();
  if (true) break;
 
 case 14:
 //C
 this.state = 15;
- //BA.debugLineNum = 376;BA.debugLine="Log(\"Codigo incorrecto\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("531653943","Codigo incorrecto",0);
- //BA.debugLineNum = 377;BA.debugLine="ToastMessageShow(\"Código incorrecto\", False)";
+ //BA.debugLineNum = 429;BA.debugLine="Log(\"Codigo incorrecto\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("466388030","Codigo incorrecto",0);
+ //BA.debugLineNum = 430;BA.debugLine="ToastMessageShow(\"Código incorrecto\", False)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Código incorrecto"),anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 378;BA.debugLine="Codigo_Check";
+ //BA.debugLineNum = 431;BA.debugLine="Codigo_Check";
 _codigo_check();
  if (true) break;
 
@@ -763,7 +850,7 @@ case 16:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 382;BA.debugLine="End Sub";
+ //BA.debugLineNum = 435;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -774,57 +861,57 @@ public static void  _complete(int _result) throws Exception{
 }
 public static String  _enviar_codigo() throws Exception{
 appear.pnud.preservamos.downloadservice._downloaddata _dd = null;
- //BA.debugLineNum = 291;BA.debugLine="Sub Enviar_Codigo";
- //BA.debugLineNum = 292;BA.debugLine="Dim dd As DownloadData";
+ //BA.debugLineNum = 337;BA.debugLine="Sub Enviar_Codigo";
+ //BA.debugLineNum = 338;BA.debugLine="Dim dd As DownloadData";
 _dd = new appear.pnud.preservamos.downloadservice._downloaddata();
- //BA.debugLineNum = 293;BA.debugLine="dd.url = Main.serverPath & \"/\" & Main.serverConne";
+ //BA.debugLineNum = 339;BA.debugLine="dd.url = Main.serverPath & \"/\" & Main.serverConne";
 _dd.url /*String*/  = mostCurrent._main._serverpath /*String*/ +"/"+mostCurrent._main._serverconnectionfolder /*String*/ +"/enviar_codigo.php?"+"email="+mostCurrent._txtemail.getText()+"&"+"codigo="+mostCurrent._codigo_enviado;
- //BA.debugLineNum = 296;BA.debugLine="dd.EventName = \"EnviarCodigo\"";
+ //BA.debugLineNum = 342;BA.debugLine="dd.EventName = \"EnviarCodigo\"";
 _dd.EventName /*String*/  = "EnviarCodigo";
- //BA.debugLineNum = 297;BA.debugLine="dd.Target = Me";
+ //BA.debugLineNum = 343;BA.debugLine="dd.Target = Me";
 _dd.Target /*Object*/  = register.getObject();
- //BA.debugLineNum = 298;BA.debugLine="CallSubDelayed2(DownloadService, \"StartDownload\",";
+ //BA.debugLineNum = 344;BA.debugLine="CallSubDelayed2(DownloadService, \"StartDownload\",";
 anywheresoftware.b4a.keywords.Common.CallSubDelayed2(processBA,(Object)(mostCurrent._downloadservice.getObject()),"StartDownload",(Object)(_dd));
- //BA.debugLineNum = 299;BA.debugLine="End Sub";
+ //BA.debugLineNum = 345;BA.debugLine="End Sub";
 return "";
 }
 public static String  _enviarcodigo_complete(appear.pnud.preservamos.httpjob _job) throws Exception{
 String _res = "";
 String _action = "";
 anywheresoftware.b4a.objects.collections.JSONParser _parser = null;
- //BA.debugLineNum = 301;BA.debugLine="Sub EnviarCodigo_Complete(Job As HttpJob)";
- //BA.debugLineNum = 302;BA.debugLine="Log(\"Codigo recibido: \" & Job.Success)";
-anywheresoftware.b4a.keywords.Common.LogImpl("531588353","Codigo recibido: "+BA.ObjectToString(_job._success /*boolean*/ ),0);
- //BA.debugLineNum = 303;BA.debugLine="If Job.Success = True Then";
+ //BA.debugLineNum = 347;BA.debugLine="Sub EnviarCodigo_Complete(Job As HttpJob)";
+ //BA.debugLineNum = 348;BA.debugLine="Log(\"Codigo recibido: \" & Job.Success)";
+anywheresoftware.b4a.keywords.Common.LogImpl("466322433","Codigo recibido: "+BA.ObjectToString(_job._success /*boolean*/ ),0);
+ //BA.debugLineNum = 349;BA.debugLine="If Job.Success = True Then";
 if (_job._success /*boolean*/ ==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 304;BA.debugLine="Dim res As String, action As String";
+ //BA.debugLineNum = 350;BA.debugLine="Dim res As String, action As String";
 _res = "";
 _action = "";
- //BA.debugLineNum = 305;BA.debugLine="res = Job.GetString";
+ //BA.debugLineNum = 351;BA.debugLine="res = Job.GetString";
 _res = _job._getstring /*String*/ ();
- //BA.debugLineNum = 306;BA.debugLine="Dim parser As JSONParser";
+ //BA.debugLineNum = 352;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
- //BA.debugLineNum = 307;BA.debugLine="parser.Initialize(res)";
+ //BA.debugLineNum = 353;BA.debugLine="parser.Initialize(res)";
 _parser.Initialize(_res);
- //BA.debugLineNum = 308;BA.debugLine="action = parser.NextValue";
+ //BA.debugLineNum = 354;BA.debugLine="action = parser.NextValue";
 _action = BA.ObjectToString(_parser.NextValue());
- //BA.debugLineNum = 309;BA.debugLine="If action = \"CodigoOk\" Then";
+ //BA.debugLineNum = 355;BA.debugLine="If action = \"CodigoOk\" Then";
 if ((_action).equals("CodigoOk")) { 
- //BA.debugLineNum = 310;BA.debugLine="Log(\"Código enviado\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("531588361","Código enviado",0);
- //BA.debugLineNum = 311;BA.debugLine="Codigo_Check";
+ //BA.debugLineNum = 356;BA.debugLine="Log(\"Código enviado\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("466322441","Código enviado",0);
+ //BA.debugLineNum = 357;BA.debugLine="Codigo_Check";
 _codigo_check();
  }else {
- //BA.debugLineNum = 313;BA.debugLine="Log(\"Código no enviado\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("531588364","Código no enviado",0);
- //BA.debugLineNum = 314;BA.debugLine="ToastMessageShow(\"No se pudo enviar el código,";
+ //BA.debugLineNum = 359;BA.debugLine="Log(\"Código no enviado\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("466322444","Código no enviado",0);
+ //BA.debugLineNum = 360;BA.debugLine="ToastMessageShow(\"No se pudo enviar el código,";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("No se pudo enviar el código, revisa que tengas internet y vuelve a intentarlo"),anywheresoftware.b4a.keywords.Common.False);
  };
  }else {
- //BA.debugLineNum = 317;BA.debugLine="ToastMessageShow(\"No se pudo enviar el código, r";
+ //BA.debugLineNum = 363;BA.debugLine="ToastMessageShow(\"No se pudo enviar el código, r";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("No se pudo enviar el código, revisa que tengas internet y vuelve a intentarlo"),anywheresoftware.b4a.keywords.Common.False);
  };
- //BA.debugLineNum = 319;BA.debugLine="End Sub";
+ //BA.debugLineNum = 365;BA.debugLine="End Sub";
 return "";
 }
 public static String  _globals() throws Exception{
@@ -855,14 +942,16 @@ mostCurrent._chkempleadomunicipio = new anywheresoftware.b4a.objects.CompoundBut
 mostCurrent._dialog = new appear.pnud.preservamos.b4xdialog();
  //BA.debugLineNum = 26;BA.debugLine="Dim codigo_enviado As String";
 mostCurrent._codigo_enviado = "";
- //BA.debugLineNum = 28;BA.debugLine="End Sub";
+ //BA.debugLineNum = 28;BA.debugLine="Private chkPoliticas As CheckBox";
+mostCurrent._chkpoliticas = new anywheresoftware.b4a.objects.CompoundButtonWrapper.CheckBoxWrapper();
+ //BA.debugLineNum = 29;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lblleerlegales_click() throws Exception{
- //BA.debugLineNum = 414;BA.debugLine="Sub lblLeerLegales_Click";
- //BA.debugLineNum = 415;BA.debugLine="StartActivity(frmPoliticaDatos)";
+ //BA.debugLineNum = 467;BA.debugLine="Sub lblLeerLegales_Click";
+ //BA.debugLineNum = 468;BA.debugLine="StartActivity(frmPoliticaDatos)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._frmpoliticadatos.getObject()));
- //BA.debugLineNum = 416;BA.debugLine="End Sub";
+ //BA.debugLineNum = 469;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{
@@ -874,32 +963,32 @@ return "";
 }
 public static String  _registeruser() throws Exception{
 appear.pnud.preservamos.downloadservice._downloaddata _dd = null;
- //BA.debugLineNum = 157;BA.debugLine="Sub RegisterUser";
- //BA.debugLineNum = 159;BA.debugLine="If chkEmpleadoMunicipio.Checked = True Then";
+ //BA.debugLineNum = 207;BA.debugLine="Sub RegisterUser";
+ //BA.debugLineNum = 209;BA.debugLine="If chkEmpleadoMunicipio.Checked = True Then";
 if (mostCurrent._chkempleadomunicipio.getChecked()==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 160;BA.debugLine="Main.strUserTipoUsuario = \"municipal\"";
+ //BA.debugLineNum = 210;BA.debugLine="Main.strUserTipoUsuario = \"municipal\"";
 mostCurrent._main._strusertipousuario /*String*/  = "municipal";
  }else {
- //BA.debugLineNum = 162;BA.debugLine="Main.strUserTipoUsuario = \"no municipal\"";
+ //BA.debugLineNum = 212;BA.debugLine="Main.strUserTipoUsuario = \"no municipal\"";
 mostCurrent._main._strusertipousuario /*String*/  = "no municipal";
  };
- //BA.debugLineNum = 166;BA.debugLine="Log(\"UserID=\" & txtUserID.Text & \"&\" & _ 	  \"Emai";
-anywheresoftware.b4a.keywords.Common.LogImpl("531391753","UserID="+mostCurrent._txtuserid.getText()+"&"+"Email="+mostCurrent._txtemail.getText()+"&"+"userTipoUsuario="+mostCurrent._main._strusertipousuario /*String*/ +"&"+"userOrg="+mostCurrent._main._struserorg /*String*/ +"&"+"deviceID="+mostCurrent._main._deviceid /*String*/ ,0);
- //BA.debugLineNum = 172;BA.debugLine="Main.username = txtUserID.Text";
+ //BA.debugLineNum = 216;BA.debugLine="Log(\"UserID=\" & txtUserID.Text & \"&\" & _ 	  \"Emai";
+anywheresoftware.b4a.keywords.Common.LogImpl("466125833","UserID="+mostCurrent._txtuserid.getText()+"&"+"Email="+mostCurrent._txtemail.getText()+"&"+"userTipoUsuario="+mostCurrent._main._strusertipousuario /*String*/ +"&"+"userOrg="+mostCurrent._main._struserorg /*String*/ +"&"+"deviceID="+mostCurrent._main._deviceid /*String*/ ,0);
+ //BA.debugLineNum = 222;BA.debugLine="Main.username = txtUserID.Text";
 mostCurrent._main._username /*String*/  = mostCurrent._txtuserid.getText();
- //BA.debugLineNum = 173;BA.debugLine="Main.strUserEmail = txtEmail.Text";
+ //BA.debugLineNum = 223;BA.debugLine="Main.strUserEmail = txtEmail.Text";
 mostCurrent._main._struseremail /*String*/  = mostCurrent._txtemail.getText();
- //BA.debugLineNum = 178;BA.debugLine="Dim dd As DownloadData";
+ //BA.debugLineNum = 225;BA.debugLine="Dim dd As DownloadData";
 _dd = new appear.pnud.preservamos.downloadservice._downloaddata();
- //BA.debugLineNum = 181;BA.debugLine="dd.url = Main.serverPath & \"/\" & Main.serverConne";
+ //BA.debugLineNum = 226;BA.debugLine="dd.url = Main.serverPath & \"/\" & Main.serverConne";
 _dd.url /*String*/  = mostCurrent._main._serverpath /*String*/ +"/"+mostCurrent._main._serverconnectionfolder /*String*/ +"/signup.php?Action=Register&"+"UserID="+mostCurrent._txtuserid.getText()+"&"+"Email="+mostCurrent._txtemail.getText()+"&"+"userOrg="+mostCurrent._main._struserorg /*String*/ +"&"+"userTipoUsuario="+mostCurrent._main._strusertipousuario /*String*/ +"&"+"deviceID="+mostCurrent._main._deviceid /*String*/ ;
- //BA.debugLineNum = 188;BA.debugLine="dd.EventName = \"RegisterUser\"";
+ //BA.debugLineNum = 233;BA.debugLine="dd.EventName = \"RegisterUser\"";
 _dd.EventName /*String*/  = "RegisterUser";
- //BA.debugLineNum = 189;BA.debugLine="dd.Target = Me";
+ //BA.debugLineNum = 234;BA.debugLine="dd.Target = Me";
 _dd.Target /*Object*/  = register.getObject();
- //BA.debugLineNum = 190;BA.debugLine="CallSubDelayed2(DownloadService, \"StartDownload\",";
+ //BA.debugLineNum = 235;BA.debugLine="CallSubDelayed2(DownloadService, \"StartDownload\",";
 anywheresoftware.b4a.keywords.Common.CallSubDelayed2(processBA,(Object)(mostCurrent._downloadservice.getObject()),"StartDownload",(Object)(_dd));
- //BA.debugLineNum = 193;BA.debugLine="End Sub";
+ //BA.debugLineNum = 238;BA.debugLine="End Sub";
 return "";
 }
 public static void  _registeruser_complete(appear.pnud.preservamos.httpjob _job) throws Exception{
@@ -932,9 +1021,9 @@ return;
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 195;BA.debugLine="Log(\"Register user: \" & Job.Success)";
-anywheresoftware.b4a.keywords.Common.LogImpl("531457281","Register user: "+BA.ObjectToString(_job._success /*boolean*/ ),0);
- //BA.debugLineNum = 196;BA.debugLine="If Job.Success = True Then";
+ //BA.debugLineNum = 240;BA.debugLine="Log(\"Register user: \" & Job.Success)";
+anywheresoftware.b4a.keywords.Common.LogImpl("466191361","Register user: "+BA.ObjectToString(_job._success /*boolean*/ ),0);
+ //BA.debugLineNum = 241;BA.debugLine="If Job.Success = True Then";
 if (true) break;
 
 case 1:
@@ -949,18 +1038,18 @@ this.state = 35;
 case 3:
 //C
 this.state = 4;
- //BA.debugLineNum = 197;BA.debugLine="Dim res As String, action As String";
+ //BA.debugLineNum = 242;BA.debugLine="Dim res As String, action As String";
 _res = "";
 _action = "";
- //BA.debugLineNum = 198;BA.debugLine="res = Job.GetString";
+ //BA.debugLineNum = 243;BA.debugLine="res = Job.GetString";
 _res = _job._getstring /*String*/ ();
- //BA.debugLineNum = 199;BA.debugLine="Dim parser As JSONParser";
+ //BA.debugLineNum = 244;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
- //BA.debugLineNum = 200;BA.debugLine="parser.Initialize(res)";
+ //BA.debugLineNum = 245;BA.debugLine="parser.Initialize(res)";
 _parser.Initialize(_res);
- //BA.debugLineNum = 201;BA.debugLine="action = parser.NextValue";
+ //BA.debugLineNum = 246;BA.debugLine="action = parser.NextValue";
 _action = BA.ObjectToString(_parser.NextValue());
- //BA.debugLineNum = 202;BA.debugLine="If action = \"Mail\" Then";
+ //BA.debugLineNum = 247;BA.debugLine="If action = \"Mail\" Then";
 if (true) break;
 
 case 4:
@@ -977,7 +1066,7 @@ this.state = 26;
 case 6:
 //C
 this.state = 7;
- //BA.debugLineNum = 203;BA.debugLine="If Main.lang = \"es\" Then";
+ //BA.debugLineNum = 248;BA.debugLine="If Main.lang = \"es\" Then";
 if (true) break;
 
 case 7:
@@ -992,14 +1081,14 @@ this.state = 11;
 case 9:
 //C
 this.state = 12;
- //BA.debugLineNum = 207;BA.debugLine="ToastMessageShow(\"Has completado el registro,";
+ //BA.debugLineNum = 252;BA.debugLine="ToastMessageShow(\"Has completado el registro,";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Has completado el registro, ya puedes participar de PreserVamos"),anywheresoftware.b4a.keywords.Common.True);
  if (true) break;
 
 case 11:
 //C
 this.state = 12;
- //BA.debugLineNum = 210;BA.debugLine="MsgboxAsync(\"User correctly registered!\", \"Con";
+ //BA.debugLineNum = 255;BA.debugLine="MsgboxAsync(\"User correctly registered!\", \"Con";
 anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("User correctly registered!"),BA.ObjectToCharSequence("Congrats"),processBA);
  if (true) break;
 
@@ -1007,13 +1096,13 @@ case 12:
 //C
 this.state = 13;
 ;
- //BA.debugLineNum = 214;BA.debugLine="Main.username = txtUserID.Text";
+ //BA.debugLineNum = 259;BA.debugLine="Main.username = txtUserID.Text";
 parent.mostCurrent._main._username /*String*/  = parent.mostCurrent._txtuserid.getText();
- //BA.debugLineNum = 216;BA.debugLine="Main.strUserEmail = txtEmail.Text";
+ //BA.debugLineNum = 261;BA.debugLine="Main.strUserEmail = txtEmail.Text";
 parent.mostCurrent._main._struseremail /*String*/  = parent.mostCurrent._txtemail.getText();
- //BA.debugLineNum = 218;BA.debugLine="Main.strUserFullName = txtUserID.Text";
+ //BA.debugLineNum = 263;BA.debugLine="Main.strUserFullName = txtUserID.Text";
 parent.mostCurrent._main._struserfullname /*String*/  = parent.mostCurrent._txtuserid.getText();
- //BA.debugLineNum = 220;BA.debugLine="If chkEmpleadoMunicipio.Checked = True Then";
+ //BA.debugLineNum = 265;BA.debugLine="If chkEmpleadoMunicipio.Checked = True Then";
 if (true) break;
 
 case 13:
@@ -1028,14 +1117,14 @@ this.state = 17;
 case 15:
 //C
 this.state = 18;
- //BA.debugLineNum = 221;BA.debugLine="Main.strUserTipoUsuario = \"municipal\"";
+ //BA.debugLineNum = 266;BA.debugLine="Main.strUserTipoUsuario = \"municipal\"";
 parent.mostCurrent._main._strusertipousuario /*String*/  = "municipal";
  if (true) break;
 
 case 17:
 //C
 this.state = 18;
- //BA.debugLineNum = 223;BA.debugLine="Main.strUserTipoUsuario = \"no municipal\"";
+ //BA.debugLineNum = 268;BA.debugLine="Main.strUserTipoUsuario = \"no municipal\"";
 parent.mostCurrent._main._strusertipousuario /*String*/  = "no municipal";
  if (true) break;
 
@@ -1043,52 +1132,52 @@ case 18:
 //C
 this.state = 33;
 ;
- //BA.debugLineNum = 228;BA.debugLine="Dim MapReset As Map";
+ //BA.debugLineNum = 273;BA.debugLine="Dim MapReset As Map";
 _mapreset = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 229;BA.debugLine="MapReset.Initialize";
+ //BA.debugLineNum = 274;BA.debugLine="MapReset.Initialize";
 _mapreset.Initialize();
- //BA.debugLineNum = 230;BA.debugLine="MapReset.Put(\"lastuser\", \"si\")";
+ //BA.debugLineNum = 275;BA.debugLine="MapReset.Put(\"lastuser\", \"si\")";
 _mapreset.Put((Object)("lastuser"),(Object)("si"));
- //BA.debugLineNum = 231;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"userconfig";
+ //BA.debugLineNum = 276;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"userconfig";
 parent.mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,parent.mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"userconfig","lastUser",(Object)("no"),_mapreset);
- //BA.debugLineNum = 235;BA.debugLine="Dim newUser As List";
+ //BA.debugLineNum = 280;BA.debugLine="Dim newUser As List";
 _newuser = new anywheresoftware.b4a.objects.collections.List();
- //BA.debugLineNum = 236;BA.debugLine="newUser.Initialize";
+ //BA.debugLineNum = 281;BA.debugLine="newUser.Initialize";
 _newuser.Initialize();
- //BA.debugLineNum = 237;BA.debugLine="Dim m As Map";
+ //BA.debugLineNum = 282;BA.debugLine="Dim m As Map";
 _m = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 238;BA.debugLine="m.Initialize";
+ //BA.debugLineNum = 283;BA.debugLine="m.Initialize";
 _m.Initialize();
- //BA.debugLineNum = 239;BA.debugLine="m.Put(\"username\", Main.username)";
+ //BA.debugLineNum = 284;BA.debugLine="m.Put(\"username\", Main.username)";
 _m.Put((Object)("username"),(Object)(parent.mostCurrent._main._username /*String*/ ));
- //BA.debugLineNum = 240;BA.debugLine="m.Put(\"userEmail\", Main.strUserEmail)";
+ //BA.debugLineNum = 285;BA.debugLine="m.Put(\"userEmail\", Main.strUserEmail)";
 _m.Put((Object)("userEmail"),(Object)(parent.mostCurrent._main._struseremail /*String*/ ));
- //BA.debugLineNum = 241;BA.debugLine="m.Put(\"userOrg\", Main.strUserOrg)";
+ //BA.debugLineNum = 286;BA.debugLine="m.Put(\"userOrg\", Main.strUserOrg)";
 _m.Put((Object)("userOrg"),(Object)(parent.mostCurrent._main._struserorg /*String*/ ));
- //BA.debugLineNum = 242;BA.debugLine="m.Put(\"userTipoUsuario\", Main.strUserTipoUsuari";
+ //BA.debugLineNum = 287;BA.debugLine="m.Put(\"userTipoUsuario\", Main.strUserTipoUsuari";
 _m.Put((Object)("userTipoUsuario"),(Object)(parent.mostCurrent._main._strusertipousuario /*String*/ ));
- //BA.debugLineNum = 244;BA.debugLine="m.Put(\"lastUser\", \"si\")";
+ //BA.debugLineNum = 289;BA.debugLine="m.Put(\"lastUser\", \"si\")";
 _m.Put((Object)("lastUser"),(Object)("si"));
- //BA.debugLineNum = 245;BA.debugLine="m.Put(\"lang\", \"es\")";
+ //BA.debugLineNum = 290;BA.debugLine="m.Put(\"lang\", \"es\")";
 _m.Put((Object)("lang"),(Object)("es"));
- //BA.debugLineNum = 247;BA.debugLine="newUser.Add(m)";
+ //BA.debugLineNum = 292;BA.debugLine="newUser.Add(m)";
 _newuser.Add((Object)(_m.getObject()));
- //BA.debugLineNum = 248;BA.debugLine="DBUtils.InsertMaps(Starter.sqlDB,\"userconfig\",";
+ //BA.debugLineNum = 293;BA.debugLine="DBUtils.InsertMaps(Starter.sqlDB,\"userconfig\",";
 parent.mostCurrent._dbutils._insertmaps /*String*/ (mostCurrent.activityBA,parent.mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"userconfig",_newuser);
- //BA.debugLineNum = 251;BA.debugLine="Log(\"Usuario registrado en DB interna\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("531457337","Usuario registrado en DB interna",0);
- //BA.debugLineNum = 253;BA.debugLine="Activity.RemoveAllViews";
+ //BA.debugLineNum = 296;BA.debugLine="Log(\"Usuario registrado en DB interna\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("466191417","Usuario registrado en DB interna",0);
+ //BA.debugLineNum = 298;BA.debugLine="Activity.RemoveAllViews";
 parent.mostCurrent._activity.RemoveAllViews();
- //BA.debugLineNum = 254;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 299;BA.debugLine="Activity.Finish";
 parent.mostCurrent._activity.Finish();
  if (true) break;
 
 case 20:
 //C
 this.state = 21;
- //BA.debugLineNum = 256;BA.debugLine="Msgbox2Async(\"El email (\" & txtEmail.Text & \")";
+ //BA.debugLineNum = 301;BA.debugLine="Msgbox2Async(\"El email (\" & txtEmail.Text & \")";
 anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("El email ("+parent.mostCurrent._txtemail.getText()+") ya está en uso. Podemos enviarte un código a tu email para que puedas acceder."),BA.ObjectToCharSequence("Registro"),"Envíen un código a mi email!","Cancelar","",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 257;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
+ //BA.debugLineNum = 302;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
 anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
 this.state = 43;
 return;
@@ -1097,7 +1186,7 @@ case 43:
 this.state = 21;
 _result = (Integer) result[0];
 ;
- //BA.debugLineNum = 258;BA.debugLine="If Result = DialogResponse.POSITIVE Then";
+ //BA.debugLineNum = 303;BA.debugLine="If Result = DialogResponse.POSITIVE Then";
 if (true) break;
 
 case 21:
@@ -1110,11 +1199,11 @@ this.state = 23;
 case 23:
 //C
 this.state = 24;
- //BA.debugLineNum = 261;BA.debugLine="codigo_enviado = utilidades.RandomNumber(4)";
+ //BA.debugLineNum = 306;BA.debugLine="codigo_enviado = utilidades.RandomNumber(4)";
 parent.mostCurrent._codigo_enviado = parent.mostCurrent._utilidades._randomnumber /*String*/ (mostCurrent.activityBA,(int) (4));
- //BA.debugLineNum = 262;BA.debugLine="ToastMessageShow(\"Enviando código a \" & txtEm";
+ //BA.debugLineNum = 307;BA.debugLine="ToastMessageShow(\"Enviando código a \" & txtEm";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Enviando código a "+parent.mostCurrent._txtemail.getText()),anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 263;BA.debugLine="Enviar_Codigo";
+ //BA.debugLineNum = 308;BA.debugLine="Enviar_Codigo";
 _enviar_codigo();
  if (true) break;
 
@@ -1127,7 +1216,7 @@ this.state = 33;
 case 26:
 //C
 this.state = 27;
- //BA.debugLineNum = 266;BA.debugLine="If Main.lang = \"es\" Then";
+ //BA.debugLineNum = 312;BA.debugLine="If Main.lang = \"es\" Then";
 if (true) break;
 
 case 27:
@@ -1142,14 +1231,14 @@ this.state = 31;
 case 29:
 //C
 this.state = 32;
- //BA.debugLineNum = 267;BA.debugLine="MsgboxAsync(\"El servidor no devolvió los valor";
+ //BA.debugLineNum = 313;BA.debugLine="MsgboxAsync(\"El servidor no devolvió los valor";
 anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("El servidor no devolvió los valores esperados."+_job._errormessage /*String*/ ),BA.ObjectToCharSequence("Registro"),processBA);
  if (true) break;
 
 case 31:
 //C
 this.state = 32;
- //BA.debugLineNum = 269;BA.debugLine="MsgboxAsync(\"The server did not return the exp";
+ //BA.debugLineNum = 315;BA.debugLine="MsgboxAsync(\"The server did not return the exp";
 anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("The server did not return the expected values."+_job._errormessage /*String*/ ),BA.ObjectToCharSequence("Sign up"),processBA);
  if (true) break;
 
@@ -1168,7 +1257,7 @@ this.state = 42;
 case 35:
 //C
 this.state = 36;
- //BA.debugLineNum = 274;BA.debugLine="If Main.lang = \"es\" Then";
+ //BA.debugLineNum = 320;BA.debugLine="If Main.lang = \"es\" Then";
 if (true) break;
 
 case 36:
@@ -1183,14 +1272,14 @@ this.state = 40;
 case 38:
 //C
 this.state = 41;
- //BA.debugLineNum = 275;BA.debugLine="ToastMessageShow(\"No se pudo registrar el usuar";
+ //BA.debugLineNum = 321;BA.debugLine="ToastMessageShow(\"No se pudo registrar el usuar";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("No se pudo registrar el usuario, hay un error de servidor"),anywheresoftware.b4a.keywords.Common.False);
  if (true) break;
 
 case 40:
 //C
 this.state = 41;
- //BA.debugLineNum = 277;BA.debugLine="ToastMessageShow(\"Couldn't register user, serve";
+ //BA.debugLineNum = 323;BA.debugLine="ToastMessageShow(\"Couldn't register user, serve";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Couldn't register user, server error"),anywheresoftware.b4a.keywords.Common.False);
  if (true) break;
 
@@ -1204,11 +1293,11 @@ case 42:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 280;BA.debugLine="Job.Release";
+ //BA.debugLineNum = 326;BA.debugLine="Job.Release";
 _job._release /*String*/ ();
- //BA.debugLineNum = 281;BA.debugLine="ProgressDialogHide";
+ //BA.debugLineNum = 327;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
- //BA.debugLineNum = 282;BA.debugLine="End Sub";
+ //BA.debugLineNum = 328;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -1216,60 +1305,60 @@ if (true) break;
     }
 }
 public static String  _tabregister_pageselected(int _position) throws Exception{
- //BA.debugLineNum = 69;BA.debugLine="Private Sub tabRegister_PageSelected (Position As";
- //BA.debugLineNum = 70;BA.debugLine="If Position = 2 Then";
+ //BA.debugLineNum = 70;BA.debugLine="Private Sub tabRegister_PageSelected (Position As";
+ //BA.debugLineNum = 71;BA.debugLine="If Position = 2 Then";
 if (_position==2) { 
- //BA.debugLineNum = 71;BA.debugLine="btnNext.Visible = False";
+ //BA.debugLineNum = 72;BA.debugLine="btnNext.Visible = False";
 mostCurrent._btnnext.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 72;BA.debugLine="btnPrev.Visible = True";
+ //BA.debugLineNum = 73;BA.debugLine="btnPrev.Visible = True";
 mostCurrent._btnprev.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 73;BA.debugLine="lblCirculoPos3.Color = Colors.RGB(139,226,63)";
+ //BA.debugLineNum = 74;BA.debugLine="lblCirculoPos3.Color = Colors.RGB(139,226,63)";
 mostCurrent._lblcirculopos3.setColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (139),(int) (226),(int) (63)));
- //BA.debugLineNum = 74;BA.debugLine="lblCirculoPos2.Color = Colors.RGB(76,159,56)";
+ //BA.debugLineNum = 75;BA.debugLine="lblCirculoPos2.Color = Colors.RGB(76,159,56)";
 mostCurrent._lblcirculopos2.setColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (76),(int) (159),(int) (56)));
- //BA.debugLineNum = 75;BA.debugLine="lblCirculoPos1.Color = Colors.RGB(76,159,56)";
+ //BA.debugLineNum = 76;BA.debugLine="lblCirculoPos1.Color = Colors.RGB(76,159,56)";
 mostCurrent._lblcirculopos1.setColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (76),(int) (159),(int) (56)));
  }else if(_position==0) { 
- //BA.debugLineNum = 81;BA.debugLine="btnPrev.Visible = False";
+ //BA.debugLineNum = 82;BA.debugLine="btnPrev.Visible = False";
 mostCurrent._btnprev.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 82;BA.debugLine="btnNext.Visible = True";
+ //BA.debugLineNum = 83;BA.debugLine="btnNext.Visible = True";
 mostCurrent._btnnext.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 83;BA.debugLine="lblCirculoPos1.Color = Colors.RGB(139,226,63)";
+ //BA.debugLineNum = 84;BA.debugLine="lblCirculoPos1.Color = Colors.RGB(139,226,63)";
 mostCurrent._lblcirculopos1.setColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (139),(int) (226),(int) (63)));
- //BA.debugLineNum = 84;BA.debugLine="lblCirculoPos2.Color = Colors.RGB(76,159,56)";
+ //BA.debugLineNum = 85;BA.debugLine="lblCirculoPos2.Color = Colors.RGB(76,159,56)";
 mostCurrent._lblcirculopos2.setColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (76),(int) (159),(int) (56)));
- //BA.debugLineNum = 85;BA.debugLine="lblCirculoPos3.Color = Colors.RGB(76,159,56)";
+ //BA.debugLineNum = 86;BA.debugLine="lblCirculoPos3.Color = Colors.RGB(76,159,56)";
 mostCurrent._lblcirculopos3.setColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (76),(int) (159),(int) (56)));
  }else if(_position==1) { 
- //BA.debugLineNum = 87;BA.debugLine="btnPrev.Visible = True";
+ //BA.debugLineNum = 88;BA.debugLine="btnPrev.Visible = True";
 mostCurrent._btnprev.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 88;BA.debugLine="btnNext.Visible = True";
+ //BA.debugLineNum = 89;BA.debugLine="btnNext.Visible = True";
 mostCurrent._btnnext.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 89;BA.debugLine="lblCirculoPos2.Color = Colors.RGB(139,226,63)";
+ //BA.debugLineNum = 90;BA.debugLine="lblCirculoPos2.Color = Colors.RGB(139,226,63)";
 mostCurrent._lblcirculopos2.setColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (139),(int) (226),(int) (63)));
- //BA.debugLineNum = 90;BA.debugLine="lblCirculoPos3.Color = Colors.RGB(76,159,56)";
+ //BA.debugLineNum = 91;BA.debugLine="lblCirculoPos3.Color = Colors.RGB(76,159,56)";
 mostCurrent._lblcirculopos3.setColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (76),(int) (159),(int) (56)));
- //BA.debugLineNum = 91;BA.debugLine="lblCirculoPos1.Color = Colors.RGB(76,159,56)";
+ //BA.debugLineNum = 92;BA.debugLine="lblCirculoPos1.Color = Colors.RGB(76,159,56)";
 mostCurrent._lblcirculopos1.setColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (76),(int) (159),(int) (56)));
  };
- //BA.debugLineNum = 93;BA.debugLine="End Sub";
+ //BA.debugLineNum = 94;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _validate_email(String _emailaddress) throws Exception{
 anywheresoftware.b4a.keywords.Regex.MatcherWrapper _matchemail = null;
- //BA.debugLineNum = 384;BA.debugLine="Sub Validate_Email(EmailAddress As String) As Bool";
- //BA.debugLineNum = 385;BA.debugLine="Dim MatchEmail As Matcher = Regex.Matcher(\"^(?";
+ //BA.debugLineNum = 437;BA.debugLine="Sub Validate_Email(EmailAddress As String) As Bool";
+ //BA.debugLineNum = 438;BA.debugLine="Dim MatchEmail As Matcher = Regex.Matcher(\"^(?";
 _matchemail = new anywheresoftware.b4a.keywords.Regex.MatcherWrapper();
 _matchemail = anywheresoftware.b4a.keywords.Common.Regex.Matcher("^(?i)[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])$",_emailaddress);
- //BA.debugLineNum = 387;BA.debugLine="If MatchEmail.Find = True Then";
+ //BA.debugLineNum = 440;BA.debugLine="If MatchEmail.Find = True Then";
 if (_matchemail.Find()==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 389;BA.debugLine="Return True";
+ //BA.debugLineNum = 442;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  }else {
- //BA.debugLineNum = 392;BA.debugLine="Return False";
+ //BA.debugLineNum = 445;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
- //BA.debugLineNum = 394;BA.debugLine="End Sub";
+ //BA.debugLineNum = 447;BA.debugLine="End Sub";
 return false;
 }
 }

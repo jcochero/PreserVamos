@@ -7,7 +7,7 @@ $mysqli->query("SET NAMES 'utf8'");
 if ($mysqli->connect_error){
     die("Connection failed: " . $mysqli->connect_error);
 }
-$res = $mysqli->query("SELECT * FROM markers");
+$res = $mysqli->query("SELECT * FROM markers WHERE privado != 'si'");
 
 if (!$res) {
     print json_encode("Error");
@@ -19,12 +19,12 @@ else {
         print json_encode("Not Found");
         exit;
 	}
-	print json_encode("GetMapaOk");
-	$rowcount = mysqli_num_rows($res);
-	print json_encode($rowcount);	
-	while($row = mysqli_fetch_array($res)) {
-		$arr = array('nombresitio' => $row["nombresitio"], 'lat' => $row["lat"], 'lng' => $row["lng"], 'indice' => $row["indice"], 'tiporio' => $row["tiporio"], 'username' => $row["username"]);
-        print json_encode($arr);
-	}
+print json_encode("GetMapaOk");
+$rowcount = mysqli_num_rows($res);
+print json_encode($rowcount);	
+while($row = mysqli_fetch_array($res)) {
+	$arr = array('nombresitio' => $row["nombresitio"], 'lat' => $row["lat"], 'lng' => $row["lng"], 'indice' => $row["indice"], 'tiporio' => $row["tiporio"], 'username' => $row["username"], 'useremail' => $row["useremail"], 'id' => $row["id"]);
+    print json_encode($arr);
+}
 }
 ?>

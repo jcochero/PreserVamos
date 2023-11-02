@@ -6,7 +6,8 @@ import anywheresoftware.b4a.BA;
 
 public class LS_laychecklists_home{
 
-public static void LS_general(java.util.LinkedHashMap<String, anywheresoftware.b4a.keywords.LayoutBuilder.ViewWrapperAndAnchor> views, int width, int height, float scale) {
+public static void LS_general(anywheresoftware.b4a.BA ba, android.view.View parent, anywheresoftware.b4a.keywords.LayoutValues lv, java.util.Map props,
+java.util.Map<String, anywheresoftware.b4a.keywords.LayoutBuilder.ViewWrapperAndAnchor> views, int width, int height, float scale) throws Exception {
 anywheresoftware.b4a.keywords.LayoutBuilder.setScaleRate(0.3);
 views.get("butplantas").vw.setHeight((int)((15d / 100 * height)));
 views.get("butplantas").vw.setWidth((int)((views.get("butplantas").vw.getHeight())));
@@ -28,7 +29,9 @@ views.get("lblplantas").vw.setLeft((int)((views.get("butfungi").vw.getLeft())-(1
 views.get("butplantas").vw.setLeft((int)((views.get("lblplantas").vw.getLeft() + views.get("lblplantas").vw.getWidth()/2) - (views.get("butplantas").vw.getWidth() / 2)));
 views.get("lblbugs").vw.setLeft((int)((views.get("butfungi").vw.getLeft() + views.get("butfungi").vw.getWidth())+(10d * scale)));
 views.get("butbugs").vw.setLeft((int)((views.get("lblbugs").vw.getLeft() + views.get("lblbugs").vw.getWidth()/2) - (views.get("butbugs").vw.getWidth() / 2)));
+//BA.debugLineNum = 23;BA.debugLine="lblPeces.HorizontalCenter = lblPlantas.HorizontalCenter"[laychecklists_home/General script]
 views.get("lblpeces").vw.setLeft((int)((views.get("lblplantas").vw.getLeft() + views.get("lblplantas").vw.getWidth()/2) - (views.get("lblpeces").vw.getWidth() / 2)));
+//BA.debugLineNum = 24;BA.debugLine="butPeces.HorizontalCenter = lblPlantas.HorizontalCenter"[laychecklists_home/General script]
 views.get("butpeces").vw.setLeft((int)((views.get("lblplantas").vw.getLeft() + views.get("lblplantas").vw.getWidth()/2) - (views.get("butpeces").vw.getWidth() / 2)));
 //BA.debugLineNum = 25;BA.debugLine="lblMammals.HorizontalCenter = lblBugs.HorizontalCenter"[laychecklists_home/General script]
 views.get("lblmammals").vw.setLeft((int)((views.get("lblbugs").vw.getLeft() + views.get("lblbugs").vw.getWidth()/2) - (views.get("lblmammals").vw.getWidth() / 2)));

@@ -12,6 +12,8 @@ switch ($action) {
         $user = $mysqli->real_escape_string($_GET["UserID"]);
         $email = $mysqli->real_escape_string($_GET["Email"]);
         $password = $mysqli->real_escape_string($_GET["Password"]);
+		$userTipoUsuario = $mysqli->real_escape_string($_GET["userTipoUsuario"]);
+		$userOrg = $mysqli->real_escape_string($_GET["userOrg"]);
 //        $fullname = $mysqli->real_escape_string($_GET["FullName"]);
 //        $location = $mysqli->real_escape_string($_GET["Location"]);
 //        $org = $mysqli->real_escape_string($_GET["Org"]);
@@ -23,10 +25,11 @@ switch ($action) {
             
         if ($count == 0)
             {          
-				$res = $mysqli->query("INSERT INTO usuarios (user_name, user_pw, email, deviceID) VALUES ('$user', '$password','$email','$deviceID')");
+				$res = $mysqli->query("INSERT INTO usuarios (user_name, user_pw, email, deviceID, org, tipousuario) VALUES ('$user', '$password','$email','$deviceID', $userOrg , $userTipoUsuario)");
 				print json_encode ("Mail");
             }          
-        else
+        else{
             print json_encode ("MailInUse");      
+            }
 }
 ?>

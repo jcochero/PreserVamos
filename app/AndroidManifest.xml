@@ -2,50 +2,41 @@
 <manifest
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	package="appear.pnud.preservamos"
-	android:versionCode="8"
-	android:versionName="1.1"
+	android:versionCode="18"
+	android:versionName="1.3"
 	android:installLocation="internalOnly">
 	
-	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="30"/>
+	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="33"/>
 	<supports-screens android:largeScreens="true" 
 	    android:normalScreens="true" 
 	    android:smallScreens="true" 
-	    android:anyDensity="true"/>
+	    android:anyDensity="true" />
 	<uses-feature android:name="android.hardware.location.gps"/>
-	<permission android:name="appear.pnud.preservamos.permission.C2D_MESSAGE"
-	  android:protectionLevel="signature" />
-	<permission android:name="appear.pnud.preservamos.permission.C2D_MESSAGE"
-	  android:protectionLevel="signature" />
+	<permission
+	        android:name="appear.pnud.preservamos.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+	        android:protectionLevel="signature" />
+	
+	    <uses-permission android:name="appear.pnud.preservamos.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.CAMERA"/>
+	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+	<uses-permission android:name="android.permission.VIBRATE"/>
 	<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 	<uses-permission android:name="appear.pnud.preservamos.permission.MAPS_RECEIVE"/>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-	<uses-permission android:name="android.permission.WAKE_LOCK"/>
-	<uses-permission android:name="android.permission.CAMERA"/>
-	<uses-permission android:name="android.permission.VIBRATE"/>
-	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 	<uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
 	<uses-permission android:name="appear.pnud.preservamos.permission.C2D_MESSAGE"/>
 	<uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
 	<application
 		android:icon="@drawable/icon"
-		android:label="PreserVamos">
+		android:label="PreserVamos"
+		android:appComponentFactory="androidx.core.app.CoreComponentFactory">
 		
-		<meta-data
-		    android:name="com.google.android.gms.version"
-		    android:value="@integer/google_play_services_version" />
-		<meta-data
-			android:name="com.google.android.gms.version"
-			android:value="@integer/google_play_services_version" />
-		<activity android:name="com.google.android.gms.common.api.GoogleApiActivity"
-		  android:theme="@android:style/Theme.Translucent.NoTitleBar"
-		  android:exported="false"/>
-		    <meta-data
-		  android:name="com.google.android.gms.version"
-		  android:value="@integer/google_play_services_version" />
 		<activity android:name="com.google.android.gms.common.api.GoogleApiActivity"
 		  android:theme="@android:style/Theme.Translucent.NoTitleBar"
 		  android:exported="false"/>
@@ -63,22 +54,13 @@
 		            android:enabled="true"
 		            android:exported="false" />
 					
-		 <receiver
-		            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
-		            android:enabled="true"
-		            android:exported="true"
-		            android:permission="android.permission.INSTALL_PACKAGES" >
-		            <intent-filter>
-		                <action android:name="com.android.vending.INSTALL_REFERRER" />
-		            </intent-filter>
-		</receiver>
 		<service
 		            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
 		            android:enabled="true"
 		            android:exported="false"
 		            android:permission="android.permission.BIND_JOB_SERVICE" />
 		
-		 <service android:name="com.google.firebase.components.ComponentDiscoveryService"  android:directBootAware="true" >
+		 <service android:name="com.google.firebase.components.ComponentDiscoveryService"  android:directBootAware="true" android:exported="false"  >
 		            <meta-data
 		                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
 		                android:value="com.google.firebase.components.ComponentRegistrar" />
@@ -110,12 +92,11 @@
 		               
 		</service>
 		   <provider
-		  android:authorities="appear.pnud.preservamos.firebaseinitprovider"
-		  android:name="com.google.firebase.provider.FirebaseInitProvider"
-		  android:exported="false"
-		   android:directBootAware="true"
-		  android:initOrder="100" />
-		  
+		     android:name="com.google.firebase.provider.FirebaseInitProvider"
+		            android:authorities="appear.pnud.preservamos.firebaseinitprovider"
+		            android:directBootAware="true"
+		            android:exported="false"
+		            android:initOrder="100" />
 		   <receiver
 		  android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
 		  android:exported="true"
@@ -139,27 +120,57 @@
 		  </intent-filter>
 		  </service>
 		<service
-		  android:name="com.google.firebase.messaging.FirebaseMessagingService"
-		    android:directBootAware="true"
-		  android:exported="true">
-		  <intent-filter android:priority="-500">
-		  <action android:name="com.google.firebase.MESSAGING_EVENT" />
-		  </intent-filter>
-		  </service>
+		            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+		            android:directBootAware="true"
+		            android:exported="false" >
+		            <intent-filter android:priority="-500" >
+		                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+		            </intent-filter>
+		        </service>
+		        
 		   <service android:name="anywheresoftware.b4a.objects.FirebaseNotificationsService"  android:exported="true">
 		     <intent-filter>
-		  <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+		  		<action android:name="com.google.firebase.MESSAGING_EVENT"/>
 		     </intent-filter>
 		   </service>
 		<activity
-		            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+		            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
 		            android:excludeFromRecents="true"
 		            android:exported="true"
-		           android:launchMode="singleTask"
-		            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
-		            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+		            android:launchMode="singleTask"
+		            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+		            <intent-filter>
+		                <action android:name="android.intent.action.VIEW" />
 		
-		            <activity
+		                <category android:name="android.intent.category.DEFAULT" />
+		                <category android:name="android.intent.category.BROWSABLE" />
+		
+		                <data
+		                    android:host="firebase.auth"
+		                    android:path="/"
+		                    android:scheme="genericidp" />
+		            </intent-filter>
+		        </activity>
+		        <activity
+		            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+		            android:excludeFromRecents="true"
+		            android:exported="true"
+		            android:launchMode="singleTask"
+		            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+		            <intent-filter>
+		                <action android:name="android.intent.action.VIEW" />
+		
+		                <category android:name="android.intent.category.DEFAULT" />
+		                <category android:name="android.intent.category.BROWSABLE" />
+		
+		                <data
+		                    android:host="firebase.auth"
+		                    android:path="/"
+		                    android:scheme="recaptcha" />
+		            </intent-filter>
+		        </activity>
+		        
+		          <activity
 		            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
 		            android:excludeFromRecents="true"
 		            android:exported="false"
@@ -169,94 +180,17 @@
 		            Service handling Google Sign-In user revocation. For apps that do not integrate with
 		            Google Sign-In, this service will never be started.
 		        -->
-		        <service
+		         <service
 		            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
 		            android:exported="true"
-		            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
-		<receiver
-		  android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-		  android:enabled="true">
-		  <intent-filter>
-		  <action android:name="com.google.android.gms.measurement.UPLOAD"/>
-		  </intent-filter>
-		  </receiver>
-		
-		  <service
-		  android:name="com.google.android.gms.measurement.AppMeasurementService"
-		  android:enabled="true"
-		  android:exported="false"/>
-		   <provider
-		  android:authorities="appear.pnud.preservamos.firebaseinitprovider"
-		  android:name="com.google.firebase.provider.FirebaseInitProvider"
-		  android:exported="false"
-		  android:initOrder="100" />
-		    <receiver
-		  android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-		  android:enabled="true">
-		  <intent-filter>
-		  <action android:name="com.google.android.gms.measurement.UPLOAD"/>
-		  </intent-filter>
-		  </receiver>
-		
-		  <service
-		  android:name="com.google.android.gms.measurement.AppMeasurementService"
-		  android:enabled="true"
-		  android:exported="false"/>
-		   <receiver
-		  android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-		  android:exported="true"
-		  android:permission="com.google.android.c2dm.permission.SEND" >
-		  <intent-filter>
-		  <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-		  <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-		  <category android:name="appear.pnud.preservamos" />
-		  </intent-filter>
-		  </receiver>
-		    <receiver
-		  android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"
-		  android:exported="false" />
-		
-		
-		  <service
-		  android:name="com.google.firebase.iid.FirebaseInstanceIdService"
-		  android:exported="true">
-		  <intent-filter android:priority="-500">
-		  <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
-		  </intent-filter>
-		  </service>
-		<service
-		  android:name="com.google.firebase.messaging.FirebaseMessagingService"
-		  android:exported="true">
-		  <intent-filter android:priority="-500">
-		  <action android:name="com.google.firebase.MESSAGING_EVENT" />
-		  </intent-filter>
-		  </service>
-		   <service android:name="anywheresoftware.b4a.objects.FirebaseNotificationsService">
-		     <intent-filter>
-		  <action android:name="com.google.firebase.MESSAGING_EVENT"/>
-		     </intent-filter>
-		   </service>
-		<activity android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-		                  android:theme="@android:style/Theme.Translucent.NoTitleBar"
-		                  android:excludeFromRecents="true"
-		                  android:exported="false" />
-		
-		        <service
-		            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-		            android:exported="true"
-		            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
-		<activity android:name="com.google.android.gms.common.api.GoogleApiActivity"
-		  android:theme="@android:style/Theme.Translucent.NoTitleBar"
-		  android:exported="false"/>
-		    <meta-data
-		  android:name="com.google.android.gms.version"
-		  android:value="@integer/google_play_services_version" />
+		            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+		            android:visibleToInstantApps="true" />
 		<meta-data
 		  android:name="com.google.android.geo.API_KEY"
-		  android:value="AIzaSyBfRS9SZ_6Q797PdyOqywGtpYlWV2lNuYg"/>
+		  android:value="AIzaSyBfRS9SZ_6Q797PdyOqywGtpYlWV2lNuYg" />
 		<uses-library
 		      android:name="org.apache.http.legacy"
-		      android:required="false" />
+		      android:required="false"/>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
@@ -278,61 +212,10 @@
 			android:screenOrientation="portrait"
 			android:exported="true">
 		</activity>
-		<service
-			android:name=".starter"
-			android:exported="true">
-		</service>
-		<receiver
-			android:name=".starter$starter_BR"
-			android:exported="true">
-			<intent-filter>
-			<action android:name="android.intent.action.BOOT_COMPLETED"/>
-			</intent-filter>
-		</receiver>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".inatcheck"
-			android:label="PreserVamos"
-			android:screenOrientation="portrait"
-			android:exported="true">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".frmlocalizacion"
-			android:label="PreserVamos"
-			android:screenOrientation="portrait"
-			android:exported="true">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".reporte_envio"
-			android:label="PreserVamos"
-			android:screenOrientation="portrait"
-			android:exported="true">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".alertas"
-			android:label="PreserVamos"
-			android:screenOrientation="portrait"
-			android:exported="true">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".register"
-			android:label="PreserVamos"
-			android:screenOrientation="portrait"
-			android:exported="true">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".frmeditprofile"
+			android:name=".frmabout"
 			android:label="PreserVamos"
 			android:screenOrientation="portrait"
 			android:exported="true">
@@ -348,7 +231,7 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".form_reporte"
+			android:name=".alertas"
 			android:label="PreserVamos"
 			android:screenOrientation="portrait"
 			android:exported="true">
@@ -383,7 +266,7 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".frmabout"
+			android:name=".form_reporte"
 			android:label="PreserVamos"
 			android:screenOrientation="portrait"
 			android:exported="true">
@@ -399,7 +282,31 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
+			android:name=".frmdatossinenviar"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".frmeditprofile"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
 			android:name=".frmfelicitaciones"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".frmlocalizacion"
 			android:label="PreserVamos"
 			android:screenOrientation="portrait"
 			android:exported="true">
@@ -415,7 +322,7 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".frmperfil"
+			android:name=".frmmunicipioestadisticas"
 			android:label="PreserVamos"
 			android:screenOrientation="portrait"
 			android:exported="true">
@@ -424,6 +331,14 @@
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".frmpoliticadatos"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".frmtiporeporte"
 			android:label="PreserVamos"
 			android:screenOrientation="portrait"
 			android:exported="true">
@@ -444,6 +359,62 @@
 			android:name=".imagedownloader$imagedownloader_BR"
 			android:exported="true">
 		</receiver>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".inatcheck"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".mod_hidro"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".mod_hidro_fotos"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".mod_residuos"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".mod_residuos_fotos"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".register"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".reporte_envio"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
@@ -468,5 +439,32 @@
 			android:screenOrientation="portrait"
 			android:exported="true">
 		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".reporte_habitat_rio_bu"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".reporte_habitat_rio_sierras"
+			android:label="PreserVamos"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<service
+			android:name=".starter"
+			android:exported="true">
+		</service>
+		<receiver
+			android:name=".starter$starter_BR"
+			android:exported="true">
+			<intent-filter>
+			<action android:name="android.intent.action.BOOT_COMPLETED"/>
+			</intent-filter>
+		</receiver>
 	</application>
 </manifest>

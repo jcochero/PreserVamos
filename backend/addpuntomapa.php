@@ -8,6 +8,7 @@ if ($mysqli->connect_error){
 }
 
 $username = $mysqli->real_escape_string($_GET["username"]);
+$useremail = $mysqli->real_escape_string($_GET["useremail"]);
 $dateandtime = $mysqli->real_escape_string($_GET["dateandtime"]);
 $nombresitio = $mysqli->real_escape_string($_GET["nombresitio"]);
 $tiporio = $mysqli->real_escape_string($_GET["tiporio"]);
@@ -64,7 +65,18 @@ $gpsdetect = $mysqli->real_escape_string($_GET["gpsdetect"]);
 $deviceID = $mysqli->real_escape_string($_GET["deviceID"]);
 $partido = $mysqli->real_escape_string($_GET["partido"]);
 
-$res = $mysqli->query("INSERT INTO markers (username, dateandtime, nombresitio, tiporio, lat, lng, indice, valprecision, valorind1, valorind2, valorind3, valorind4, valorind5, valorind6, valorind7, valorind8, valorind9, valorind10, valorind11, valorind12, valorind13, valorind14, valorind15, valorind16,  valorind17, valorind18, valorind19, valorind20, ind_pvm_1,ind_pvm_2, ind_pvm_3, ind_pvm_4, ind_pvm_5, ind_pvm_6, ind_pvm_7, ind_pvm_8, ind_pvm_9, ind_pvm_10, ind_pvm_11, ind_pvm_12, ind_pvm_13, foto1path, foto2path, foto3path, foto4path, foto5path, terminado, privado, verificado, bingo, notas, mapadetect, wifidetect, gpsdetect, deviceID, partido) VALUES ('$username', '$dateandtime', '$nombresitio', '$tiporio', '$lat', '$lng', '$indice', '$precision', '$valorind1', '$valorind2', '$valorind3', '$valorind4', '$valorind5', '$valorind6', '$valorind7', '$valorind8', '$valorind9', '$valorind10', '$valorind11', '$valorind12', '$valorind13', '$valorind14', '$valorind15', '$valorind16','$valorind17','$valorind18','$valorind19','$valorind20','$ind_pvm_1','$ind_pvm_2','$ind_pvm_3','$ind_pvm_4','$ind_pvm_5','$ind_pvm_6','$ind_pvm_7','$ind_pvm_8','$ind_pvm_9','$ind_pvm_10','$ind_pvm_11','$ind_pvm_12','$ind_pvm_13','$foto1path', '$foto2path', '$foto3path', '$foto4path','$foto5path','$terminado','$privado', '$verificado', '$bingo', '$notas', '$mapadetect', '$wifidetect', '$gpsdetect', '$deviceID', '$partido')");
+//CHECKS FOR 0.0000
+if ($lat == "0.000000" || $lat == "" ||  is_null($lat)) {
+	print json_encode("Error");
+	exit;
+}
+//CHECKS FOR email
+if ($useremail==""){
+	print json_encode("Error");
+	exit;
+}
+
+$res = $mysqli->query("INSERT INTO markers (username, useremail, dateandtime, nombresitio, tiporio, lat, lng, indice, valprecision, valorind1, valorind2, valorind3, valorind4, valorind5, valorind6, valorind7, valorind8, valorind9, valorind10, valorind11, valorind12, valorind13, valorind14, valorind15, valorind16,  valorind17, valorind18, valorind19, valorind20, ind_pvm_1,ind_pvm_2, ind_pvm_3, ind_pvm_4, ind_pvm_5, ind_pvm_6, ind_pvm_7, ind_pvm_8, ind_pvm_9, ind_pvm_10, ind_pvm_11, ind_pvm_12, ind_pvm_13, foto1path, foto2path, foto3path, foto4path, foto5path, terminado, privado, verificado, bingo, notas, mapadetect, wifidetect, gpsdetect, deviceID, partido) VALUES ('$username','$useremail', '$dateandtime', '$nombresitio', '$tiporio', '$lat', '$lng', '$indice', '$precision', '$valorind1', '$valorind2', '$valorind3', '$valorind4', '$valorind5', '$valorind6', '$valorind7', '$valorind8', '$valorind9', '$valorind10', '$valorind11', '$valorind12', '$valorind13', '$valorind14', '$valorind15', '$valorind16','$valorind17','$valorind18','$valorind19','$valorind20','$ind_pvm_1','$ind_pvm_2','$ind_pvm_3','$ind_pvm_4','$ind_pvm_5','$ind_pvm_6','$ind_pvm_7','$ind_pvm_8','$ind_pvm_9','$ind_pvm_10','$ind_pvm_11','$ind_pvm_12','$ind_pvm_13','$foto1path', '$foto2path', '$foto3path', '$foto4path','$foto5path','$terminado','$privado', '$verificado', '$bingo', '$notas', '$mapadetect', '$wifidetect', '$gpsdetect', '$deviceID', '$partido')");
 
 if (!$res) {
     print json_encode("Error");

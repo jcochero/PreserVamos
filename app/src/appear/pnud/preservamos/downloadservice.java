@@ -5,7 +5,7 @@ import anywheresoftware.b4a.BA;
 import anywheresoftware.b4a.objects.ServiceHelper;
 import anywheresoftware.b4a.debug.*;
 
-public class downloadservice extends  android.app.Service{
+public class downloadservice extends android.app.Service{
 	public static class downloadservice_BR extends android.content.BroadcastReceiver {
 
 		@Override
@@ -131,29 +131,37 @@ public static anywheresoftware.b4a.phone.Phone.PhoneWakeState _pw = null;
 public b4a.example.dateutils _dateutils = null;
 public appear.pnud.preservamos.main _main = null;
 public appear.pnud.preservamos.form_main _form_main = null;
-public appear.pnud.preservamos.starter _starter = null;
-public appear.pnud.preservamos.inatcheck _inatcheck = null;
-public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
-public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
-public appear.pnud.preservamos.alertas _alertas = null;
-public appear.pnud.preservamos.register _register = null;
-public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
+public appear.pnud.preservamos.frmabout _frmabout = null;
 public appear.pnud.preservamos.alerta_fotos _alerta_fotos = null;
-public appear.pnud.preservamos.form_reporte _form_reporte = null;
+public appear.pnud.preservamos.alertas _alertas = null;
 public appear.pnud.preservamos.aprender_muestreo _aprender_muestreo = null;
 public appear.pnud.preservamos.dbutils _dbutils = null;
 public appear.pnud.preservamos.firebasemessaging _firebasemessaging = null;
-public appear.pnud.preservamos.frmabout _frmabout = null;
+public appear.pnud.preservamos.form_reporte _form_reporte = null;
 public appear.pnud.preservamos.frmdatosanteriores _frmdatosanteriores = null;
+public appear.pnud.preservamos.frmdatossinenviar _frmdatossinenviar = null;
+public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
 public appear.pnud.preservamos.frmfelicitaciones _frmfelicitaciones = null;
+public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
 public appear.pnud.preservamos.frmmapa _frmmapa = null;
-public appear.pnud.preservamos.frmperfil _frmperfil = null;
+public appear.pnud.preservamos.frmmunicipioestadisticas _frmmunicipioestadisticas = null;
 public appear.pnud.preservamos.frmpoliticadatos _frmpoliticadatos = null;
+public appear.pnud.preservamos.frmtiporeporte _frmtiporeporte = null;
 public appear.pnud.preservamos.httputils2service _httputils2service = null;
 public appear.pnud.preservamos.imagedownloader _imagedownloader = null;
+public appear.pnud.preservamos.inatcheck _inatcheck = null;
+public appear.pnud.preservamos.mod_hidro _mod_hidro = null;
+public appear.pnud.preservamos.mod_hidro_fotos _mod_hidro_fotos = null;
+public appear.pnud.preservamos.mod_residuos _mod_residuos = null;
+public appear.pnud.preservamos.mod_residuos_fotos _mod_residuos_fotos = null;
+public appear.pnud.preservamos.register _register = null;
+public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
 public appear.pnud.preservamos.reporte_fotos _reporte_fotos = null;
 public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
 public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
+public appear.pnud.preservamos.reporte_habitat_rio_bu _reporte_habitat_rio_bu = null;
+public appear.pnud.preservamos.reporte_habitat_rio_sierras _reporte_habitat_rio_sierras = null;
+public appear.pnud.preservamos.starter _starter = null;
 public appear.pnud.preservamos.uploadfiles _uploadfiles = null;
 public appear.pnud.preservamos.utilidades _utilidades = null;
 public appear.pnud.preservamos.xuiviewsutils _xuiviewsutils = null;
@@ -194,7 +202,7 @@ appear.pnud.preservamos.downloadservice._jobtag _jt = null;
  //BA.debugLineNum = 62;BA.debugLine="If jobs.ContainsKey(url) = False Then";
 if (_jobs.ContainsKey((Object)(_url))==anywheresoftware.b4a.keywords.Common.False) { 
  //BA.debugLineNum = 63;BA.debugLine="Log(\"Ignoring cancel request.\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("543646978","Ignoring cancel request.",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("439387138","Ignoring cancel request.",0);
  //BA.debugLineNum = 64;BA.debugLine="Return";
 if (true) return "";
  };
@@ -242,7 +250,7 @@ anywheresoftware.b4a.keywords.Common.CallSubDelayed3(processBA,_jt.Data /*appear
 anywheresoftware.b4a.keywords.Common.CallSubDelayed2(processBA,_jt.Data /*appear.pnud.preservamos.downloadservice._downloaddata*/ .Target /*Object*/ ,_jt.Data /*appear.pnud.preservamos.downloadservice._downloaddata*/ .EventName /*String*/ +"_Complete",(Object)(_job));
  }else {
  //BA.debugLineNum = 95;BA.debugLine="Log(job.ErrorMessage)";
-anywheresoftware.b4a.keywords.Common.LogImpl("543778058",_job._errormessage /*String*/ ,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("439518218",_job._errormessage /*String*/ ,0);
  //BA.debugLineNum = 96;BA.debugLine="CallSubDelayed2(jt.Data.Target, jt.Data.EventNam";
 anywheresoftware.b4a.keywords.Common.CallSubDelayed2(processBA,_jt.Data /*appear.pnud.preservamos.downloadservice._downloaddata*/ .Target /*Object*/ ,_jt.Data /*appear.pnud.preservamos.downloadservice._downloaddata*/ .EventName /*String*/ +"_Complete",(Object)(_job));
  };
@@ -290,7 +298,7 @@ appear.pnud.preservamos.downloadservice._jobtag _tag = null;
  //BA.debugLineNum = 46;BA.debugLine="If jobs.ContainsKey(data.url) Then";
 if (_jobs.ContainsKey((Object)(_data.url /*String*/ ))) { 
  //BA.debugLineNum = 47;BA.debugLine="Log(\"Ignoring duplicate request.\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("543581442","Ignoring duplicate request.",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("439321602","Ignoring duplicate request.",0);
  //BA.debugLineNum = 48;BA.debugLine="Return";
 if (true) return "";
  };

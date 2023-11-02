@@ -9,7 +9,7 @@ package appear.pnud.preservamos;
 
 public final class Manifest {
   public static final class permission {
-    public static final String C2D_MESSAGE="appear.pnud.preservamos.permission.C2D_MESSAGE";
+    public static final String DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION="appear.pnud.preservamos.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION";
   }
 
 }

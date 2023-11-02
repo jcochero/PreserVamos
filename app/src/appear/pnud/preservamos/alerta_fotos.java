@@ -101,7 +101,7 @@ public class alerta_fotos extends Activity implements B4AActivity{
         initializeProcessGlobals();		
         initializeGlobals();
         
-        BA.LogInfo("** Activity (alerta_fotos) Create, isFirst = " + isFirst + " **");
+        BA.LogInfo("** Activity (alerta_fotos) Create " + (isFirst ? "(first time)" : "") + " **");
         processBA.raiseEvent2(null, true, "activity_create", false, isFirst);
 		isFirst = false;
 		if (this != mostCurrent)
@@ -369,29 +369,37 @@ public anywheresoftware.b4a.objects.PanelWrapper _pnlinstrucciones = null;
 public b4a.example.dateutils _dateutils = null;
 public appear.pnud.preservamos.main _main = null;
 public appear.pnud.preservamos.form_main _form_main = null;
-public appear.pnud.preservamos.starter _starter = null;
-public appear.pnud.preservamos.inatcheck _inatcheck = null;
-public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
-public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
+public appear.pnud.preservamos.frmabout _frmabout = null;
 public appear.pnud.preservamos.alertas _alertas = null;
-public appear.pnud.preservamos.register _register = null;
-public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
-public appear.pnud.preservamos.form_reporte _form_reporte = null;
 public appear.pnud.preservamos.aprender_muestreo _aprender_muestreo = null;
 public appear.pnud.preservamos.dbutils _dbutils = null;
 public appear.pnud.preservamos.downloadservice _downloadservice = null;
 public appear.pnud.preservamos.firebasemessaging _firebasemessaging = null;
-public appear.pnud.preservamos.frmabout _frmabout = null;
+public appear.pnud.preservamos.form_reporte _form_reporte = null;
 public appear.pnud.preservamos.frmdatosanteriores _frmdatosanteriores = null;
+public appear.pnud.preservamos.frmdatossinenviar _frmdatossinenviar = null;
+public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
 public appear.pnud.preservamos.frmfelicitaciones _frmfelicitaciones = null;
+public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
 public appear.pnud.preservamos.frmmapa _frmmapa = null;
-public appear.pnud.preservamos.frmperfil _frmperfil = null;
+public appear.pnud.preservamos.frmmunicipioestadisticas _frmmunicipioestadisticas = null;
 public appear.pnud.preservamos.frmpoliticadatos _frmpoliticadatos = null;
+public appear.pnud.preservamos.frmtiporeporte _frmtiporeporte = null;
 public appear.pnud.preservamos.httputils2service _httputils2service = null;
 public appear.pnud.preservamos.imagedownloader _imagedownloader = null;
+public appear.pnud.preservamos.inatcheck _inatcheck = null;
+public appear.pnud.preservamos.mod_hidro _mod_hidro = null;
+public appear.pnud.preservamos.mod_hidro_fotos _mod_hidro_fotos = null;
+public appear.pnud.preservamos.mod_residuos _mod_residuos = null;
+public appear.pnud.preservamos.mod_residuos_fotos _mod_residuos_fotos = null;
+public appear.pnud.preservamos.register _register = null;
+public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
 public appear.pnud.preservamos.reporte_fotos _reporte_fotos = null;
 public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
 public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
+public appear.pnud.preservamos.reporte_habitat_rio_bu _reporte_habitat_rio_bu = null;
+public appear.pnud.preservamos.reporte_habitat_rio_sierras _reporte_habitat_rio_sierras = null;
+public appear.pnud.preservamos.starter _starter = null;
 public appear.pnud.preservamos.uploadfiles _uploadfiles = null;
 public appear.pnud.preservamos.utilidades _utilidades = null;
 public appear.pnud.preservamos.xuiviewsutils _xuiviewsutils = null;
@@ -404,74 +412,64 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 57;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 59;BA.debugLine="Activity.LoadLayout(\"Camera_New\")";
+ //BA.debugLineNum = 54;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 56;BA.debugLine="Activity.LoadLayout(\"Camera_New\")";
 mostCurrent._activity.LoadLayout("Camera_New",mostCurrent.activityBA);
- //BA.debugLineNum = 60;BA.debugLine="Activity.LoadLayout(\"Camera_New_StillPicture\")";
+ //BA.debugLineNum = 57;BA.debugLine="Activity.LoadLayout(\"Camera_New_StillPicture\")";
 mostCurrent._activity.LoadLayout("Camera_New_StillPicture",mostCurrent.activityBA);
- //BA.debugLineNum = 62;BA.debugLine="If Alertas.tipo_alerta = \"floracion\" Then";
-if ((mostCurrent._alertas._tipo_alerta /*String*/ ).equals("floracion")) { 
- //BA.debugLineNum = 63;BA.debugLine="pnlInstrucciones.Visible = True";
-mostCurrent._pnlinstrucciones.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 64;BA.debugLine="btnRecord.Visible = False";
-mostCurrent._btnrecord.setVisible(anywheresoftware.b4a.keywords.Common.False);
- }else {
- //BA.debugLineNum = 66;BA.debugLine="pnlInstrucciones.Visible = False";
-mostCurrent._pnlinstrucciones.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 67;BA.debugLine="cam.Initialize(pnlCamera)";
+ //BA.debugLineNum = 59;BA.debugLine="cam.Initialize(pnlCamera)";
 mostCurrent._cam._initialize /*String*/ (mostCurrent.activityBA,(anywheresoftware.b4a.objects.PanelWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.PanelWrapper(), (android.view.ViewGroup)(mostCurrent._pnlcamera.getObject())));
- //BA.debugLineNum = 68;BA.debugLine="Log(cam.SupportedHardwareLevel)";
-anywheresoftware.b4a.keywords.Common.LogImpl("533685515",mostCurrent._cam._getsupportedhardwarelevel /*String*/ (),0);
- //BA.debugLineNum = 70;BA.debugLine="SetState(False, False, VideoMode)";
+ //BA.debugLineNum = 60;BA.debugLine="Log(cam.SupportedHardwareLevel)";
+anywheresoftware.b4a.keywords.Common.LogImpl("427918342",mostCurrent._cam._getsupportedhardwarelevel /*String*/ (),0);
+ //BA.debugLineNum = 61;BA.debugLine="SetState(False, False, VideoMode)";
 _setstate(anywheresoftware.b4a.keywords.Common.False,anywheresoftware.b4a.keywords.Common.False,_videomode);
- //BA.debugLineNum = 74;BA.debugLine="Activity.AddMenuItem(\"Adjuntar foto\", \"mnuAdjunt";
+ //BA.debugLineNum = 64;BA.debugLine="Activity.AddMenuItem(\"Adjuntar foto\", \"mnuAdjunta";
 mostCurrent._activity.AddMenuItem(BA.ObjectToCharSequence("Adjuntar foto"),"mnuAdjuntar");
- //BA.debugLineNum = 75;BA.debugLine="If Alertas.tipo_alerta = \"caza\" Then";
+ //BA.debugLineNum = 66;BA.debugLine="If Alertas.tipo_alerta = \"caza\" Then";
 if ((mostCurrent._alertas._tipo_alerta /*String*/ ).equals("caza")) { 
- //BA.debugLineNum = 76;BA.debugLine="lblInstruccion.Text = \"Si tienes alguna foto de";
-mostCurrent._lblinstruccion.setText(BA.ObjectToCharSequence("Si tienes alguna foto del evento, agregala ahora"));
+ //BA.debugLineNum = 67;BA.debugLine="lblInstruccion.Text = \"Si tenés alguna foto del";
+mostCurrent._lblinstruccion.setText(BA.ObjectToCharSequence("Si tenés alguna foto del evento, agregala ahora"));
  }else {
- //BA.debugLineNum = 78;BA.debugLine="lblInstruccion.Text = \"Toma entre 1 y 4 fotos d";
+ //BA.debugLineNum = 69;BA.debugLine="lblInstruccion.Text = \"Toma entre 1 y 4 fotos de";
 mostCurrent._lblinstruccion.setText(BA.ObjectToCharSequence("Toma entre 1 y 4 fotos del evento"));
  };
- //BA.debugLineNum = 81;BA.debugLine="btnRecord.Visible = True";
+ //BA.debugLineNum = 72;BA.debugLine="btnRecord.Visible = True";
 mostCurrent._btnrecord.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 82;BA.debugLine="DesignaFoto";
+ //BA.debugLineNum = 73;BA.debugLine="DesignaFoto";
 _designafoto();
- };
- //BA.debugLineNum = 87;BA.debugLine="End Sub";
+ //BA.debugLineNum = 76;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
- //BA.debugLineNum = 101;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
- //BA.debugLineNum = 102;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+ //BA.debugLineNum = 90;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+ //BA.debugLineNum = 91;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
- //BA.debugLineNum = 103;BA.debugLine="closeAppMsgBox";
+ //BA.debugLineNum = 92;BA.debugLine="closeAppMsgBox";
 _closeappmsgbox();
- //BA.debugLineNum = 104;BA.debugLine="Return True";
+ //BA.debugLineNum = 93;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  }else {
- //BA.debugLineNum = 106;BA.debugLine="Return False";
+ //BA.debugLineNum = 95;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
- //BA.debugLineNum = 108;BA.debugLine="End Sub";
+ //BA.debugLineNum = 97;BA.debugLine="End Sub";
 return false;
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 96;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 97;BA.debugLine="cam.Stop";
+ //BA.debugLineNum = 85;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 86;BA.debugLine="cam.Stop";
 mostCurrent._cam._stop /*String*/ ();
- //BA.debugLineNum = 98;BA.debugLine="End Sub";
+ //BA.debugLineNum = 87;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 89;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 90;BA.debugLine="If pnlInstrucciones.Visible = False Then";
+ //BA.debugLineNum = 78;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 79;BA.debugLine="If pnlInstrucciones.Visible = False Then";
 if (mostCurrent._pnlinstrucciones.getVisible()==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 91;BA.debugLine="OpenCamera(frontCamera)";
+ //BA.debugLineNum = 80;BA.debugLine="OpenCamera(frontCamera)";
 _opencamera(_frontcamera);
  };
- //BA.debugLineNum = 94;BA.debugLine="End Sub";
+ //BA.debugLineNum = 83;BA.debugLine="End Sub";
 return "";
 }
 public static String  _barzoom_valuechanged(int _value,boolean _userchanged) throws Exception{
@@ -480,106 +478,106 @@ float _zoom = 0f;
 anywheresoftware.b4a.objects.drawable.CanvasWrapper.RectWrapper _crop = null;
 int _newwidth = 0;
 int _newheight = 0;
- //BA.debugLineNum = 292;BA.debugLine="Sub barZoom_ValueChanged (Value As Int, UserChange";
- //BA.debugLineNum = 293;BA.debugLine="Dim OriginalSize As Rect = cam.ActiveArraySize";
+ //BA.debugLineNum = 259;BA.debugLine="Sub barZoom_ValueChanged (Value As Int, UserChange";
+ //BA.debugLineNum = 260;BA.debugLine="Dim OriginalSize As Rect = cam.ActiveArraySize";
 _originalsize = new anywheresoftware.b4a.objects.drawable.CanvasWrapper.RectWrapper();
 _originalsize = mostCurrent._cam._getactivearraysize /*anywheresoftware.b4a.objects.drawable.CanvasWrapper.RectWrapper*/ ();
- //BA.debugLineNum = 294;BA.debugLine="Dim Zoom As Float = 1 + Value / 100 * (cam.MaxDig";
+ //BA.debugLineNum = 261;BA.debugLine="Dim Zoom As Float = 1 + Value / 100 * (cam.MaxDig";
 _zoom = (float) (1+_value/(double)100*(mostCurrent._cam._getmaxdigitalzoom /*float*/ ()-1));
- //BA.debugLineNum = 295;BA.debugLine="Dim Crop As Rect";
+ //BA.debugLineNum = 262;BA.debugLine="Dim Crop As Rect";
 _crop = new anywheresoftware.b4a.objects.drawable.CanvasWrapper.RectWrapper();
- //BA.debugLineNum = 296;BA.debugLine="Dim NewWidth As Int = OriginalSize.Width / Zoom";
+ //BA.debugLineNum = 263;BA.debugLine="Dim NewWidth As Int = OriginalSize.Width / Zoom";
 _newwidth = (int) (_originalsize.getWidth()/(double)_zoom);
- //BA.debugLineNum = 297;BA.debugLine="Dim NewHeight As Int = OriginalSize.Height / Zoom";
+ //BA.debugLineNum = 264;BA.debugLine="Dim NewHeight As Int = OriginalSize.Height / Zoom";
 _newheight = (int) (_originalsize.getHeight()/(double)_zoom);
- //BA.debugLineNum = 298;BA.debugLine="Crop.Initialize(OriginalSize.CenterX - NewWidth /";
+ //BA.debugLineNum = 265;BA.debugLine="Crop.Initialize(OriginalSize.CenterX - NewWidth /";
 _crop.Initialize((int) (_originalsize.getCenterX()-_newwidth/(double)2),(int) (_originalsize.getCenterY()-_newheight/(double)2),(int) (_originalsize.getCenterX()+_newwidth/(double)2),(int) (_originalsize.getCenterY()+_newheight/(double)2));
- //BA.debugLineNum = 300;BA.debugLine="cam.PreviewCropRegion = Crop";
+ //BA.debugLineNum = 267;BA.debugLine="cam.PreviewCropRegion = Crop";
 mostCurrent._cam._setpreviewcropregion(_crop);
- //BA.debugLineNum = 301;BA.debugLine="cam.StartPreview(MyTaskIndex, VideoMode)";
+ //BA.debugLineNum = 268;BA.debugLine="cam.StartPreview(MyTaskIndex, VideoMode)";
 mostCurrent._cam._startpreview /*String*/ (_mytaskindex,_videomode);
- //BA.debugLineNum = 302;BA.debugLine="End Sub";
+ //BA.debugLineNum = 269;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnadjuntarfoto_click() throws Exception{
- //BA.debugLineNum = 357;BA.debugLine="Sub btnAdjuntarFoto_Click";
- //BA.debugLineNum = 359;BA.debugLine="cam.Stop";
+ //BA.debugLineNum = 324;BA.debugLine="Sub btnAdjuntarFoto_Click";
+ //BA.debugLineNum = 326;BA.debugLine="cam.Stop";
 mostCurrent._cam._stop /*String*/ ();
- //BA.debugLineNum = 361;BA.debugLine="CC.Initialize(\"CC\")";
+ //BA.debugLineNum = 328;BA.debugLine="CC.Initialize(\"CC\")";
 _cc.Initialize("CC");
- //BA.debugLineNum = 362;BA.debugLine="CC.Show(\"image/\", \"Elija la foto\")";
+ //BA.debugLineNum = 329;BA.debugLine="CC.Show(\"image/\", \"Elija la foto\")";
 _cc.Show(processBA,"image/","Elija la foto");
- //BA.debugLineNum = 363;BA.debugLine="End Sub";
+ //BA.debugLineNum = 330;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btncamera_click() throws Exception{
- //BA.debugLineNum = 201;BA.debugLine="Sub btnCamera_Click";
- //BA.debugLineNum = 202;BA.debugLine="frontCamera = Not(frontCamera)";
+ //BA.debugLineNum = 174;BA.debugLine="Sub btnCamera_Click";
+ //BA.debugLineNum = 175;BA.debugLine="frontCamera = Not(frontCamera)";
 _frontcamera = anywheresoftware.b4a.keywords.Common.Not(_frontcamera);
- //BA.debugLineNum = 203;BA.debugLine="OpenCamera(frontCamera)";
+ //BA.debugLineNum = 176;BA.debugLine="OpenCamera(frontCamera)";
 _opencamera(_frontcamera);
- //BA.debugLineNum = 204;BA.debugLine="End Sub";
+ //BA.debugLineNum = 177;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btncontinuar_click() throws Exception{
- //BA.debugLineNum = 493;BA.debugLine="Sub btnContinuar_Click";
- //BA.debugLineNum = 494;BA.debugLine="cam.Stop";
+ //BA.debugLineNum = 460;BA.debugLine="Sub btnContinuar_Click";
+ //BA.debugLineNum = 461;BA.debugLine="cam.Stop";
 mostCurrent._cam._stop /*String*/ ();
- //BA.debugLineNum = 495;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 462;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 496;BA.debugLine="Activity.RemoveAllViews";
+ //BA.debugLineNum = 463;BA.debugLine="Activity.RemoveAllViews";
 mostCurrent._activity.RemoveAllViews();
- //BA.debugLineNum = 497;BA.debugLine="CallSubDelayed(Alertas,\"ActualizarFotos\")";
+ //BA.debugLineNum = 464;BA.debugLine="CallSubDelayed(Alertas,\"ActualizarFotos\")";
 anywheresoftware.b4a.keywords.Common.CallSubDelayed(processBA,(Object)(mostCurrent._alertas.getObject()),"ActualizarFotos");
- //BA.debugLineNum = 498;BA.debugLine="End Sub";
+ //BA.debugLineNum = 465;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnrecord_click() throws Exception{
- //BA.debugLineNum = 213;BA.debugLine="Sub btnRecord_Click";
- //BA.debugLineNum = 214;BA.debugLine="TakePicture";
+ //BA.debugLineNum = 186;BA.debugLine="Sub btnRecord_Click";
+ //BA.debugLineNum = 187;BA.debugLine="TakePicture";
 _takepicture();
- //BA.debugLineNum = 215;BA.debugLine="End Sub";
+ //BA.debugLineNum = 188;BA.debugLine="End Sub";
 return "";
 }
 public static String  _cc_result(boolean _success,String _dir,String _filename) throws Exception{
 anywheresoftware.b4a.objects.collections.Map _map1 = null;
- //BA.debugLineNum = 365;BA.debugLine="Sub CC_Result (Success As Boolean, Dir As String,";
- //BA.debugLineNum = 366;BA.debugLine="If Success = True Then";
+ //BA.debugLineNum = 332;BA.debugLine="Sub CC_Result (Success As Boolean, Dir As String,";
+ //BA.debugLineNum = 333;BA.debugLine="If Success = True Then";
 if (_success==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 369;BA.debugLine="Dim Map1 As Map";
+ //BA.debugLineNum = 336;BA.debugLine="Dim Map1 As Map";
 _map1 = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 370;BA.debugLine="Map1.Initialize";
+ //BA.debugLineNum = 337;BA.debugLine="Map1.Initialize";
 _map1.Initialize();
- //BA.debugLineNum = 371;BA.debugLine="Map1.Put(\"Id\", Form_Reporte.currentproject)";
+ //BA.debugLineNum = 338;BA.debugLine="Map1.Put(\"Id\", Form_Reporte.currentproject)";
 _map1.Put((Object)("Id"),(Object)(mostCurrent._form_reporte._currentproject /*String*/ ));
- //BA.debugLineNum = 372;BA.debugLine="DateTime.DateFormat = \"dd-MM-yyyy\"";
+ //BA.debugLineNum = 339;BA.debugLine="DateTime.DateFormat = \"dd-MM-yyyy\"";
 anywheresoftware.b4a.keywords.Common.DateTime.setDateFormat("dd-MM-yyyy");
- //BA.debugLineNum = 373;BA.debugLine="If fotoNombreDestino.EndsWith(\"_1\") Then";
+ //BA.debugLineNum = 340;BA.debugLine="If fotoNombreDestino.EndsWith(\"_1\") Then";
 if (mostCurrent._fotonombredestino.endsWith("_1")) { 
- //BA.debugLineNum = 374;BA.debugLine="File.Copy(Dir, FileName, Starter.savedir, fotoN";
+ //BA.debugLineNum = 341;BA.debugLine="File.Copy(Dir, FileName, Starter.savedir, fotoN";
 anywheresoftware.b4a.keywords.Common.File.Copy(_dir,_filename,mostCurrent._starter._savedir /*String*/ ,mostCurrent._fotonombredestino+".jpg");
- //BA.debugLineNum = 375;BA.debugLine="Alertas.Alerta_foto1 = fotoNombreDestino";
+ //BA.debugLineNum = 342;BA.debugLine="Alertas.Alerta_foto1 = fotoNombreDestino";
 mostCurrent._alertas._alerta_foto1 /*String*/  = mostCurrent._fotonombredestino;
  }else if(mostCurrent._fotonombredestino.endsWith("_2")) { 
- //BA.debugLineNum = 378;BA.debugLine="File.Copy(Dir, FileName, Starter.savedir, fotoN";
+ //BA.debugLineNum = 345;BA.debugLine="File.Copy(Dir, FileName, Starter.savedir, fotoN";
 anywheresoftware.b4a.keywords.Common.File.Copy(_dir,_filename,mostCurrent._starter._savedir /*String*/ ,mostCurrent._fotonombredestino+".jpg");
- //BA.debugLineNum = 379;BA.debugLine="Alertas.Alerta_foto2 = fotoNombreDestino";
+ //BA.debugLineNum = 346;BA.debugLine="Alertas.Alerta_foto2 = fotoNombreDestino";
 mostCurrent._alertas._alerta_foto2 /*String*/  = mostCurrent._fotonombredestino;
  }else if(mostCurrent._fotonombredestino.endsWith("_3")) { 
- //BA.debugLineNum = 382;BA.debugLine="File.Copy(Dir, FileName, Starter.savedir, fotoN";
+ //BA.debugLineNum = 349;BA.debugLine="File.Copy(Dir, FileName, Starter.savedir, fotoN";
 anywheresoftware.b4a.keywords.Common.File.Copy(_dir,_filename,mostCurrent._starter._savedir /*String*/ ,mostCurrent._fotonombredestino+".jpg");
- //BA.debugLineNum = 383;BA.debugLine="Alertas.Alerta_foto3 = fotoNombreDestino";
+ //BA.debugLineNum = 350;BA.debugLine="Alertas.Alerta_foto3 = fotoNombreDestino";
 mostCurrent._alertas._alerta_foto3 /*String*/  = mostCurrent._fotonombredestino;
  }else if(mostCurrent._fotonombredestino.endsWith("_4")) { 
- //BA.debugLineNum = 385;BA.debugLine="File.Copy(Dir, FileName, Starter.savedir, fotoN";
+ //BA.debugLineNum = 352;BA.debugLine="File.Copy(Dir, FileName, Starter.savedir, fotoN";
 anywheresoftware.b4a.keywords.Common.File.Copy(_dir,_filename,mostCurrent._starter._savedir /*String*/ ,mostCurrent._fotonombredestino+".jpg");
- //BA.debugLineNum = 386;BA.debugLine="Alertas.Alerta_foto4 = fotoNombreDestino";
+ //BA.debugLineNum = 353;BA.debugLine="Alertas.Alerta_foto4 = fotoNombreDestino";
 mostCurrent._alertas._alerta_foto4 /*String*/  = mostCurrent._fotonombredestino;
  };
- //BA.debugLineNum = 391;BA.debugLine="DesignaFoto";
+ //BA.debugLineNum = 358;BA.debugLine="DesignaFoto";
 _designafoto();
  };
- //BA.debugLineNum = 393;BA.debugLine="End Sub";
+ //BA.debugLineNum = 360;BA.debugLine="End Sub";
 return "";
 }
 public static void  _closeappmsgbox() throws Exception{
@@ -604,7 +602,7 @@ return;
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 111;BA.debugLine="If Main.lang = \"es\" Then";
+ //BA.debugLineNum = 100;BA.debugLine="If Main.lang = \"es\" Then";
 if (true) break;
 
 case 1:
@@ -619,14 +617,14 @@ this.state = 5;
 case 3:
 //C
 this.state = 6;
- //BA.debugLineNum = 112;BA.debugLine="Msgbox2Async(\"Cerrar?\", \"SALIR\", \"Si\", \"\", \"No\",";
+ //BA.debugLineNum = 101;BA.debugLine="Msgbox2Async(\"Cerrar?\", \"SALIR\", \"Si\", \"\", \"No\",";
 anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("Cerrar?"),BA.ObjectToCharSequence("SALIR"),"Si","","No",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
  if (true) break;
 
 case 5:
 //C
 this.state = 6;
- //BA.debugLineNum = 114;BA.debugLine="Msgbox2Async(\"Back to the beginning?\", \"Exit\", \"";
+ //BA.debugLineNum = 103;BA.debugLine="Msgbox2Async(\"Back to the beginning?\", \"Exit\", \"";
 anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("Back to the beginning?"),BA.ObjectToCharSequence("Exit"),"Yes","","No",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
  if (true) break;
 
@@ -634,7 +632,7 @@ case 6:
 //C
 this.state = 7;
 ;
- //BA.debugLineNum = 116;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
+ //BA.debugLineNum = 105;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
 anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
 this.state = 11;
 return;
@@ -643,7 +641,7 @@ case 11:
 this.state = 7;
 _result = (Integer) result[0];
 ;
- //BA.debugLineNum = 117;BA.debugLine="If Result = DialogResponse.POSITIVE Then";
+ //BA.debugLineNum = 106;BA.debugLine="If Result = DialogResponse.POSITIVE Then";
 if (true) break;
 
 case 7:
@@ -656,11 +654,11 @@ this.state = 9;
 case 9:
 //C
 this.state = 10;
- //BA.debugLineNum = 118;BA.debugLine="cam.Stop";
+ //BA.debugLineNum = 107;BA.debugLine="cam.Stop";
 parent.mostCurrent._cam._stop /*String*/ ();
- //BA.debugLineNum = 119;BA.debugLine="Activity.finish";
+ //BA.debugLineNum = 108;BA.debugLine="Activity.finish";
 parent.mostCurrent._activity.Finish();
- //BA.debugLineNum = 120;BA.debugLine="Activity.RemoveAllViews";
+ //BA.debugLineNum = 109;BA.debugLine="Activity.RemoveAllViews";
 parent.mostCurrent._activity.RemoveAllViews();
  if (true) break;
 
@@ -668,7 +666,7 @@ case 10:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 122;BA.debugLine="End Sub";
+ //BA.debugLineNum = 111;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -679,216 +677,195 @@ public static void  _msgbox_result(int _result) throws Exception{
 }
 public static String  _designafoto() throws Exception{
 String _rndstr = "";
- //BA.debugLineNum = 406;BA.debugLine="Sub DesignaFoto";
- //BA.debugLineNum = 408;BA.debugLine="DateTime.DateFormat = \"dd-MM-yyyy\"";
+ //BA.debugLineNum = 373;BA.debugLine="Sub DesignaFoto";
+ //BA.debugLineNum = 375;BA.debugLine="DateTime.DateFormat = \"dd-MM-yyyy\"";
 anywheresoftware.b4a.keywords.Common.DateTime.setDateFormat("dd-MM-yyyy");
- //BA.debugLineNum = 409;BA.debugLine="ProgressDialogShow(\"Preparando cámara...\")";
+ //BA.debugLineNum = 376;BA.debugLine="ProgressDialogShow(\"Preparando cámara...\")";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("Preparando cámara..."));
- //BA.debugLineNum = 412;BA.debugLine="Log(\"Designando foto\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("535061766","Designando foto",0);
- //BA.debugLineNum = 422;BA.debugLine="Dim RndStr As String";
+ //BA.debugLineNum = 379;BA.debugLine="Log(\"Designando foto\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("429229062","Designando foto",0);
+ //BA.debugLineNum = 389;BA.debugLine="Dim RndStr As String";
 _rndstr = "";
- //BA.debugLineNum = 423;BA.debugLine="RndStr = utilidades.RandomString(6)";
+ //BA.debugLineNum = 390;BA.debugLine="RndStr = utilidades.RandomString(6)";
 _rndstr = mostCurrent._utilidades._randomstring /*String*/ (mostCurrent.activityBA,(int) (6));
- //BA.debugLineNum = 425;BA.debugLine="If Alertas.tipo_alerta = \"floracion\" Then";
+ //BA.debugLineNum = 392;BA.debugLine="If Alertas.tipo_alerta = \"floracion\" Then";
 if ((mostCurrent._alertas._tipo_alerta /*String*/ ).equals("floracion")) { 
- //BA.debugLineNum = 426;BA.debugLine="If Alertas.Alerta_foto1 = \"\" Then";
+ //BA.debugLineNum = 393;BA.debugLine="If Alertas.Alerta_foto1 = \"\" Then";
 if ((mostCurrent._alertas._alerta_foto1 /*String*/ ).equals("")) { 
- //BA.debugLineNum = 427;BA.debugLine="fotoNombreDestino = Main.strUserEmail.Replace(\"";
+ //BA.debugLineNum = 394;BA.debugLine="fotoNombreDestino = Main.strUserEmail.Replace(\"";
 mostCurrent._fotonombredestino = mostCurrent._main._struseremail /*String*/ .replace(".","_");
- //BA.debugLineNum = 428;BA.debugLine="fotoNombreDestino = fotoNombreDestino.Replace(\"";
+ //BA.debugLineNum = 395;BA.debugLine="fotoNombreDestino = fotoNombreDestino.Replace(\"";
 mostCurrent._fotonombredestino = mostCurrent._fotonombredestino.replace("@","_")+"_"+anywheresoftware.b4a.keywords.Common.DateTime.Date(anywheresoftware.b4a.keywords.Common.DateTime.getNow())+_rndstr+"_1";
- //BA.debugLineNum = 429;BA.debugLine="lblInstruccion.Text = \"Foto en la orilla o cost";
+ //BA.debugLineNum = 396;BA.debugLine="lblInstruccion.Text = \"Foto en la orilla o cost";
 mostCurrent._lblinstruccion.setText(BA.ObjectToCharSequence("Foto en la orilla o costa"));
  }else if((mostCurrent._alertas._alerta_foto2 /*String*/ ).equals("")) { 
- //BA.debugLineNum = 431;BA.debugLine="fotoNombreDestino = Main.strUserEmail.Replace(\"";
+ //BA.debugLineNum = 398;BA.debugLine="fotoNombreDestino = Main.strUserEmail.Replace(\"";
 mostCurrent._fotonombredestino = mostCurrent._main._struseremail /*String*/ .replace(".","_");
- //BA.debugLineNum = 432;BA.debugLine="fotoNombreDestino = fotoNombreDestino.Replace(\"";
+ //BA.debugLineNum = 399;BA.debugLine="fotoNombreDestino = fotoNombreDestino.Replace(\"";
 mostCurrent._fotonombredestino = mostCurrent._fotonombredestino.replace("@","_")+"_"+anywheresoftware.b4a.keywords.Common.DateTime.Date(anywheresoftware.b4a.keywords.Common.DateTime.getNow())+_rndstr+"_2";
- //BA.debugLineNum = 433;BA.debugLine="lblInstruccion.Text = \"Foto más alejado de la o";
+ //BA.debugLineNum = 400;BA.debugLine="lblInstruccion.Text = \"Foto más alejado de la o";
 mostCurrent._lblinstruccion.setText(BA.ObjectToCharSequence("Foto más alejado de la orilla"));
  }else if((mostCurrent._alertas._alerta_foto3 /*String*/ ).equals("")) { 
- //BA.debugLineNum = 435;BA.debugLine="fotoNombreDestino = Main.strUserEmail.Replace(\"";
+ //BA.debugLineNum = 402;BA.debugLine="fotoNombreDestino = Main.strUserEmail.Replace(\"";
 mostCurrent._fotonombredestino = mostCurrent._main._struseremail /*String*/ .replace(".","_");
- //BA.debugLineNum = 436;BA.debugLine="fotoNombreDestino = fotoNombreDestino.Replace(\"";
+ //BA.debugLineNum = 403;BA.debugLine="fotoNombreDestino = fotoNombreDestino.Replace(\"";
 mostCurrent._fotonombredestino = mostCurrent._fotonombredestino.replace("@","_")+"_"+anywheresoftware.b4a.keywords.Common.DateTime.Date(anywheresoftware.b4a.keywords.Common.DateTime.getNow())+_rndstr+"_3";
- //BA.debugLineNum = 437;BA.debugLine="lblInstruccion.Text = \"Foto hacia el horizonte\"";
+ //BA.debugLineNum = 404;BA.debugLine="lblInstruccion.Text = \"Foto hacia el horizonte\"";
 mostCurrent._lblinstruccion.setText(BA.ObjectToCharSequence("Foto hacia el horizonte"));
  }else if((mostCurrent._alertas._alerta_foto4 /*String*/ ).equals("")) { 
- //BA.debugLineNum = 439;BA.debugLine="btnContinuar.Visible = True";
+ //BA.debugLineNum = 406;BA.debugLine="btnContinuar.Visible = True";
 mostCurrent._btncontinuar.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 440;BA.debugLine="fotoNombreDestino = Main.strUserEmail.Replace(\"";
+ //BA.debugLineNum = 407;BA.debugLine="fotoNombreDestino = Main.strUserEmail.Replace(\"";
 mostCurrent._fotonombredestino = mostCurrent._main._struseremail /*String*/ .replace(".","_");
- //BA.debugLineNum = 441;BA.debugLine="fotoNombreDestino = fotoNombreDestino.Replace(\"";
+ //BA.debugLineNum = 408;BA.debugLine="fotoNombreDestino = fotoNombreDestino.Replace(\"";
 mostCurrent._fotonombredestino = mostCurrent._fotonombredestino.replace("@","_")+"_"+anywheresoftware.b4a.keywords.Common.DateTime.Date(anywheresoftware.b4a.keywords.Common.DateTime.getNow())+_rndstr+"_4";
- //BA.debugLineNum = 442;BA.debugLine="lblInstruccion.Text = \"Muestra de agua en frasc";
+ //BA.debugLineNum = 409;BA.debugLine="lblInstruccion.Text = \"Muestra de agua en frasc";
 mostCurrent._lblinstruccion.setText(BA.ObjectToCharSequence("Muestra de agua en frasco transparente, dejando reposar 5 minutos"));
  }else {
- //BA.debugLineNum = 445;BA.debugLine="cam.Stop";
+ //BA.debugLineNum = 412;BA.debugLine="cam.Stop";
 mostCurrent._cam._stop /*String*/ ();
- //BA.debugLineNum = 446;BA.debugLine="Activity.RemoveAllViews";
+ //BA.debugLineNum = 413;BA.debugLine="Activity.RemoveAllViews";
 mostCurrent._activity.RemoveAllViews();
- //BA.debugLineNum = 447;BA.debugLine="CallSubDelayed(\"Alertas\", \"ActualizarFotos\")";
+ //BA.debugLineNum = 414;BA.debugLine="CallSubDelayed(\"Alertas\", \"ActualizarFotos\")";
 anywheresoftware.b4a.keywords.Common.CallSubDelayed(processBA,(Object)("Alertas"),"ActualizarFotos");
- //BA.debugLineNum = 448;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 415;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
  };
  }else {
- //BA.debugLineNum = 452;BA.debugLine="If Alertas.Alerta_foto1 = \"\" Then";
+ //BA.debugLineNum = 419;BA.debugLine="If Alertas.Alerta_foto1 = \"\" Then";
 if ((mostCurrent._alertas._alerta_foto1 /*String*/ ).equals("")) { 
- //BA.debugLineNum = 453;BA.debugLine="fotoNombreDestino = Main.strUserEmail.Replace(\"";
+ //BA.debugLineNum = 420;BA.debugLine="fotoNombreDestino = Main.strUserEmail.Replace(\"";
 mostCurrent._fotonombredestino = mostCurrent._main._struseremail /*String*/ .replace(".","_");
- //BA.debugLineNum = 454;BA.debugLine="fotoNombreDestino = fotoNombreDestino.Replace(\"";
+ //BA.debugLineNum = 421;BA.debugLine="fotoNombreDestino = fotoNombreDestino.Replace(\"";
 mostCurrent._fotonombredestino = mostCurrent._fotonombredestino.replace("@","_")+"_"+anywheresoftware.b4a.keywords.Common.DateTime.Date(anywheresoftware.b4a.keywords.Common.DateTime.getNow())+_rndstr+"_1";
  }else if((mostCurrent._alertas._alerta_foto2 /*String*/ ).equals("")) { 
- //BA.debugLineNum = 456;BA.debugLine="btnContinuar.Visible = True";
+ //BA.debugLineNum = 423;BA.debugLine="btnContinuar.Visible = True";
 mostCurrent._btncontinuar.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 457;BA.debugLine="fotoNombreDestino = Main.strUserEmail.Replace(\"";
+ //BA.debugLineNum = 424;BA.debugLine="fotoNombreDestino = Main.strUserEmail.Replace(\"";
 mostCurrent._fotonombredestino = mostCurrent._main._struseremail /*String*/ .replace(".","_");
- //BA.debugLineNum = 458;BA.debugLine="fotoNombreDestino = fotoNombreDestino.Replace(\"";
+ //BA.debugLineNum = 425;BA.debugLine="fotoNombreDestino = fotoNombreDestino.Replace(\"";
 mostCurrent._fotonombredestino = mostCurrent._fotonombredestino.replace("@","_")+"_"+anywheresoftware.b4a.keywords.Common.DateTime.Date(anywheresoftware.b4a.keywords.Common.DateTime.getNow())+_rndstr+"_2";
  }else if((mostCurrent._alertas._alerta_foto3 /*String*/ ).equals("")) { 
- //BA.debugLineNum = 460;BA.debugLine="btnContinuar.Visible = True";
+ //BA.debugLineNum = 427;BA.debugLine="btnContinuar.Visible = True";
 mostCurrent._btncontinuar.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 461;BA.debugLine="fotoNombreDestino = Main.strUserEmail.Replace(\"";
+ //BA.debugLineNum = 428;BA.debugLine="fotoNombreDestino = Main.strUserEmail.Replace(\"";
 mostCurrent._fotonombredestino = mostCurrent._main._struseremail /*String*/ .replace(".","_");
- //BA.debugLineNum = 462;BA.debugLine="fotoNombreDestino = fotoNombreDestino.Replace(\"";
+ //BA.debugLineNum = 429;BA.debugLine="fotoNombreDestino = fotoNombreDestino.Replace(\"";
 mostCurrent._fotonombredestino = mostCurrent._fotonombredestino.replace("@","_")+"_"+anywheresoftware.b4a.keywords.Common.DateTime.Date(anywheresoftware.b4a.keywords.Common.DateTime.getNow())+_rndstr+"_3";
  }else if((mostCurrent._alertas._alerta_foto4 /*String*/ ).equals("")) { 
- //BA.debugLineNum = 464;BA.debugLine="btnContinuar.Visible = True";
+ //BA.debugLineNum = 431;BA.debugLine="btnContinuar.Visible = True";
 mostCurrent._btncontinuar.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 465;BA.debugLine="fotoNombreDestino = Main.strUserEmail.Replace(\"";
+ //BA.debugLineNum = 432;BA.debugLine="fotoNombreDestino = Main.strUserEmail.Replace(\"";
 mostCurrent._fotonombredestino = mostCurrent._main._struseremail /*String*/ .replace(".","_");
- //BA.debugLineNum = 466;BA.debugLine="fotoNombreDestino = fotoNombreDestino.Replace(\"";
+ //BA.debugLineNum = 433;BA.debugLine="fotoNombreDestino = fotoNombreDestino.Replace(\"";
 mostCurrent._fotonombredestino = mostCurrent._fotonombredestino.replace("@","_")+"_"+anywheresoftware.b4a.keywords.Common.DateTime.Date(anywheresoftware.b4a.keywords.Common.DateTime.getNow())+_rndstr+"_4";
  }else {
- //BA.debugLineNum = 469;BA.debugLine="cam.Stop";
+ //BA.debugLineNum = 436;BA.debugLine="cam.Stop";
 mostCurrent._cam._stop /*String*/ ();
- //BA.debugLineNum = 470;BA.debugLine="Activity.RemoveAllViews";
+ //BA.debugLineNum = 437;BA.debugLine="Activity.RemoveAllViews";
 mostCurrent._activity.RemoveAllViews();
- //BA.debugLineNum = 471;BA.debugLine="CallSubDelayed(\"Alertas\", \"ActualizarFotos\")";
+ //BA.debugLineNum = 438;BA.debugLine="CallSubDelayed(\"Alertas\", \"ActualizarFotos\")";
 anywheresoftware.b4a.keywords.Common.CallSubDelayed(processBA,(Object)("Alertas"),"ActualizarFotos");
- //BA.debugLineNum = 472;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 439;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
  };
  };
- //BA.debugLineNum = 478;BA.debugLine="ProgressDialogHide";
+ //BA.debugLineNum = 445;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
- //BA.debugLineNum = 480;BA.debugLine="End Sub";
+ //BA.debugLineNum = 447;BA.debugLine="End Sub";
 return "";
 }
 public static String  _globals() throws Exception{
- //BA.debugLineNum = 13;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 18;BA.debugLine="Private Panel1 As Panel";
+ //BA.debugLineNum = 11;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 15;BA.debugLine="Private Panel1 As Panel";
 mostCurrent._panel1 = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 20;BA.debugLine="Private btnTakePicture As Button";
+ //BA.debugLineNum = 17;BA.debugLine="Private btnTakePicture As Button";
 mostCurrent._btntakepicture = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 21;BA.debugLine="Private imgFlash As ImageView";
+ //BA.debugLineNum = 18;BA.debugLine="Private imgFlash As ImageView";
 mostCurrent._imgflash = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 22;BA.debugLine="Private lblInstruccion As Label";
+ //BA.debugLineNum = 19;BA.debugLine="Private lblInstruccion As Label";
 mostCurrent._lblinstruccion = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 23;BA.debugLine="Private btnAdjuntarFoto As Button";
+ //BA.debugLineNum = 20;BA.debugLine="Private btnAdjuntarFoto As Button";
 mostCurrent._btnadjuntarfoto = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 24;BA.debugLine="Private btnContinuar As Button";
+ //BA.debugLineNum = 21;BA.debugLine="Private btnContinuar As Button";
 mostCurrent._btncontinuar = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 25;BA.debugLine="Private imgMenu As ImageView";
+ //BA.debugLineNum = 22;BA.debugLine="Private imgMenu As ImageView";
 mostCurrent._imgmenu = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 28;BA.debugLine="Dim fotoNombreDestino As String";
+ //BA.debugLineNum = 25;BA.debugLine="Dim fotoNombreDestino As String";
 mostCurrent._fotonombredestino = "";
- //BA.debugLineNum = 32;BA.debugLine="Private xui As XUI";
+ //BA.debugLineNum = 29;BA.debugLine="Private xui As XUI";
 mostCurrent._xui = new anywheresoftware.b4a.objects.B4XViewWrapper.XUI();
- //BA.debugLineNum = 33;BA.debugLine="Private frontCamera As Boolean = False";
+ //BA.debugLineNum = 30;BA.debugLine="Private frontCamera As Boolean = False";
 _frontcamera = anywheresoftware.b4a.keywords.Common.False;
- //BA.debugLineNum = 34;BA.debugLine="Private VideoMode As Boolean = False";
+ //BA.debugLineNum = 31;BA.debugLine="Private VideoMode As Boolean = False";
 _videomode = anywheresoftware.b4a.keywords.Common.False;
- //BA.debugLineNum = 36;BA.debugLine="Private MyTaskIndex As Int";
+ //BA.debugLineNum = 33;BA.debugLine="Private MyTaskIndex As Int";
 _mytaskindex = 0;
- //BA.debugLineNum = 37;BA.debugLine="Private rp As RuntimePermissions";
+ //BA.debugLineNum = 34;BA.debugLine="Private rp As RuntimePermissions";
 mostCurrent._rp = new anywheresoftware.b4a.objects.RuntimePermissions();
- //BA.debugLineNum = 38;BA.debugLine="Private cam As CamEx2";
+ //BA.debugLineNum = 35;BA.debugLine="Private cam As CamEx2";
 mostCurrent._cam = new appear.pnud.preservamos.camex2();
- //BA.debugLineNum = 39;BA.debugLine="Private pnlCamera As B4XView";
+ //BA.debugLineNum = 36;BA.debugLine="Private pnlCamera As B4XView";
 mostCurrent._pnlcamera = new anywheresoftware.b4a.objects.B4XViewWrapper();
- //BA.debugLineNum = 40;BA.debugLine="Private pnlBackground As B4XView";
+ //BA.debugLineNum = 37;BA.debugLine="Private pnlBackground As B4XView";
 mostCurrent._pnlbackground = new anywheresoftware.b4a.objects.B4XViewWrapper();
- //BA.debugLineNum = 41;BA.debugLine="Private btnEffects As Button";
+ //BA.debugLineNum = 38;BA.debugLine="Private btnEffects As Button";
 mostCurrent._btneffects = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 42;BA.debugLine="Private btnScene As Button";
+ //BA.debugLineNum = 39;BA.debugLine="Private btnScene As Button";
 mostCurrent._btnscene = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 44;BA.debugLine="Private btnAutoExposure As Button";
+ //BA.debugLineNum = 41;BA.debugLine="Private btnAutoExposure As Button";
 mostCurrent._btnautoexposure = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 45;BA.debugLine="Private btnFocus As Button";
+ //BA.debugLineNum = 42;BA.debugLine="Private btnFocus As Button";
 mostCurrent._btnfocus = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 46;BA.debugLine="Private ProgressBar1 As ProgressBar";
+ //BA.debugLineNum = 43;BA.debugLine="Private ProgressBar1 As ProgressBar";
 mostCurrent._progressbar1 = new anywheresoftware.b4a.objects.ProgressBarWrapper();
- //BA.debugLineNum = 47;BA.debugLine="Private openstate, busystate As Boolean";
+ //BA.debugLineNum = 44;BA.debugLine="Private openstate, busystate As Boolean";
 _openstate = false;
 _busystate = false;
- //BA.debugLineNum = 48;BA.debugLine="Private btnRecord As Button";
+ //BA.debugLineNum = 45;BA.debugLine="Private btnRecord As Button";
 mostCurrent._btnrecord = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 49;BA.debugLine="Private btnMode As Button";
+ //BA.debugLineNum = 46;BA.debugLine="Private btnMode As Button";
 mostCurrent._btnmode = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 50;BA.debugLine="Private btnCamera As Button";
+ //BA.debugLineNum = 47;BA.debugLine="Private btnCamera As Button";
 mostCurrent._btncamera = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 51;BA.debugLine="Private barZoom As SeekBar";
+ //BA.debugLineNum = 48;BA.debugLine="Private barZoom As SeekBar";
 mostCurrent._barzoom = new anywheresoftware.b4a.objects.SeekBarWrapper();
- //BA.debugLineNum = 52;BA.debugLine="Private B4XImageView1 As B4XImageView";
+ //BA.debugLineNum = 49;BA.debugLine="Private B4XImageView1 As B4XImageView";
 mostCurrent._b4ximageview1 = new appear.pnud.preservamos.b4ximageview();
- //BA.debugLineNum = 54;BA.debugLine="Private pnlInstrucciones As Panel";
+ //BA.debugLineNum = 51;BA.debugLine="Private pnlInstrucciones As Panel";
 mostCurrent._pnlinstrucciones = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 55;BA.debugLine="End Sub";
+ //BA.debugLineNum = 52;BA.debugLine="End Sub";
 return "";
 }
 public static String  _handleerror(anywheresoftware.b4a.objects.B4AException _error) throws Exception{
- //BA.debugLineNum = 207;BA.debugLine="Sub HandleError (Error As Exception)";
- //BA.debugLineNum = 208;BA.debugLine="Log(\"Error: \" & Error)";
-anywheresoftware.b4a.keywords.Common.LogImpl("534340865","Error: "+BA.ObjectToString(_error),0);
- //BA.debugLineNum = 209;BA.debugLine="ToastMessageShow(Error, True)";
+ //BA.debugLineNum = 180;BA.debugLine="Sub HandleError (Error As Exception)";
+ //BA.debugLineNum = 181;BA.debugLine="Log(\"Error: \" & Error)";
+anywheresoftware.b4a.keywords.Common.LogImpl("428508161","Error: "+BA.ObjectToString(_error),0);
+ //BA.debugLineNum = 182;BA.debugLine="ToastMessageShow(Error, True)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(_error.getObject()),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 210;BA.debugLine="OpenCamera(frontCamera)";
+ //BA.debugLineNum = 183;BA.debugLine="OpenCamera(frontCamera)";
 _opencamera(_frontcamera);
- //BA.debugLineNum = 211;BA.debugLine="End Sub";
+ //BA.debugLineNum = 184;BA.debugLine="End Sub";
 return "";
 }
 public static String  _imgmenu_click() throws Exception{
- //BA.debugLineNum = 336;BA.debugLine="Sub imgMenu_Click";
- //BA.debugLineNum = 337;BA.debugLine="Activity.OpenMenu";
+ //BA.debugLineNum = 303;BA.debugLine="Sub imgMenu_Click";
+ //BA.debugLineNum = 304;BA.debugLine="Activity.OpenMenu";
 mostCurrent._activity.OpenMenu();
- //BA.debugLineNum = 338;BA.debugLine="End Sub";
-return "";
-}
-public static String  _lblcomofuncionaentendido_click() throws Exception{
- //BA.debugLineNum = 125;BA.debugLine="Private Sub lblComoFuncionaEntendido_Click";
- //BA.debugLineNum = 126;BA.debugLine="pnlInstrucciones.Visible = False";
-mostCurrent._pnlinstrucciones.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 127;BA.debugLine="cam.Initialize(pnlCamera)";
-mostCurrent._cam._initialize /*String*/ (mostCurrent.activityBA,(anywheresoftware.b4a.objects.PanelWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.PanelWrapper(), (android.view.ViewGroup)(mostCurrent._pnlcamera.getObject())));
- //BA.debugLineNum = 128;BA.debugLine="Log(cam.SupportedHardwareLevel)";
-anywheresoftware.b4a.keywords.Common.LogImpl("534013187",mostCurrent._cam._getsupportedhardwarelevel /*String*/ (),0);
- //BA.debugLineNum = 130;BA.debugLine="SetState(False, False, VideoMode)";
-_setstate(anywheresoftware.b4a.keywords.Common.False,anywheresoftware.b4a.keywords.Common.False,_videomode);
- //BA.debugLineNum = 134;BA.debugLine="Activity.AddMenuItem(\"Adjuntar foto\", \"mnuAdjunta";
-mostCurrent._activity.AddMenuItem(BA.ObjectToCharSequence("Adjuntar foto"),"mnuAdjuntar");
- //BA.debugLineNum = 135;BA.debugLine="lblInstruccion.Text = \"Toma hasta 4 fotos del eve";
-mostCurrent._lblinstruccion.setText(BA.ObjectToCharSequence("Toma hasta 4 fotos del evento"));
- //BA.debugLineNum = 136;BA.debugLine="DesignaFoto";
-_designafoto();
- //BA.debugLineNum = 137;BA.debugLine="OpenCamera(frontCamera)";
-_opencamera(_frontcamera);
- //BA.debugLineNum = 138;BA.debugLine="End Sub";
+ //BA.debugLineNum = 305;BA.debugLine="End Sub";
 return "";
 }
 public static String  _mnuadjuntar_click() throws Exception{
- //BA.debugLineNum = 339;BA.debugLine="Sub mnuAdjuntar_Click";
- //BA.debugLineNum = 341;BA.debugLine="cam.Stop";
+ //BA.debugLineNum = 306;BA.debugLine="Sub mnuAdjuntar_Click";
+ //BA.debugLineNum = 308;BA.debugLine="cam.Stop";
 mostCurrent._cam._stop /*String*/ ();
- //BA.debugLineNum = 342;BA.debugLine="DesignaFoto";
+ //BA.debugLineNum = 309;BA.debugLine="DesignaFoto";
 _designafoto();
- //BA.debugLineNum = 343;BA.debugLine="CC.Initialize(\"CC\")";
+ //BA.debugLineNum = 310;BA.debugLine="CC.Initialize(\"CC\")";
 _cc.Initialize("CC");
- //BA.debugLineNum = 344;BA.debugLine="CC.Show(\"image/\", \"Elija la foto\")";
+ //BA.debugLineNum = 311;BA.debugLine="CC.Show(\"image/\", \"Elija la foto\")";
 _cc.Show(processBA,"image/","Elija la foto");
- //BA.debugLineNum = 345;BA.debugLine="End Sub";
+ //BA.debugLineNum = 312;BA.debugLine="End Sub";
 return "";
 }
 public static void  _opencamera(boolean _front) throws Exception{
@@ -918,9 +895,9 @@ return;
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 151;BA.debugLine="rp.CheckAndRequest(rp.PERMISSION_CAMERA)";
+ //BA.debugLineNum = 124;BA.debugLine="rp.CheckAndRequest(rp.PERMISSION_CAMERA)";
 parent.mostCurrent._rp.CheckAndRequest(processBA,parent.mostCurrent._rp.PERMISSION_CAMERA);
- //BA.debugLineNum = 152;BA.debugLine="Wait For Activity_PermissionResult (Permission As";
+ //BA.debugLineNum = 125;BA.debugLine="Wait For Activity_PermissionResult (Permission As";
 anywheresoftware.b4a.keywords.Common.WaitFor("activity_permissionresult", processBA, this, null);
 this.state = 13;
 return;
@@ -930,7 +907,7 @@ this.state = 1;
 _permission = (String) result[0];
 _result = (Boolean) result[1];
 ;
- //BA.debugLineNum = 153;BA.debugLine="If Result = False Then";
+ //BA.debugLineNum = 126;BA.debugLine="If Result = False Then";
 if (true) break;
 
 case 1:
@@ -943,9 +920,9 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
- //BA.debugLineNum = 154;BA.debugLine="ToastMessageShow(\"No permission!\", True)";
+ //BA.debugLineNum = 127;BA.debugLine="ToastMessageShow(\"No permission!\", True)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("No permission!"),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 155;BA.debugLine="Return";
+ //BA.debugLineNum = 128;BA.debugLine="Return";
 if (true) return ;
  if (true) break;
 
@@ -953,9 +930,9 @@ case 4:
 //C
 this.state = 5;
 ;
- //BA.debugLineNum = 158;BA.debugLine="SetState(False, False, VideoMode)";
+ //BA.debugLineNum = 131;BA.debugLine="SetState(False, False, VideoMode)";
 _setstate(anywheresoftware.b4a.keywords.Common.False,anywheresoftware.b4a.keywords.Common.False,parent._videomode);
- //BA.debugLineNum = 159;BA.debugLine="Wait For (cam.OpenCamera(front)) Complete (TaskIn";
+ //BA.debugLineNum = 132;BA.debugLine="Wait For (cam.OpenCamera(front)) Complete (TaskIn";
 anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, this, parent.mostCurrent._cam._opencamera /*anywheresoftware.b4a.keywords.Common.ResumableSubWrapper*/ (_front));
 this.state = 14;
 return;
@@ -964,7 +941,7 @@ case 14:
 this.state = 5;
 _taskindex = (Integer) result[0];
 ;
- //BA.debugLineNum = 160;BA.debugLine="If TaskIndex > 0 Then";
+ //BA.debugLineNum = 133;BA.debugLine="If TaskIndex > 0 Then";
 if (true) break;
 
 case 5:
@@ -977,9 +954,9 @@ this.state = 7;
 case 7:
 //C
 this.state = 8;
- //BA.debugLineNum = 161;BA.debugLine="MyTaskIndex = TaskIndex 'hold this index. It wil";
+ //BA.debugLineNum = 134;BA.debugLine="MyTaskIndex = TaskIndex 'hold this index. It wil";
 parent._mytaskindex = _taskindex;
- //BA.debugLineNum = 162;BA.debugLine="Wait For(PrepareSurface) Complete (Success As Bo";
+ //BA.debugLineNum = 135;BA.debugLine="Wait For(PrepareSurface) Complete (Success As Bo";
 anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, this, _preparesurface());
 this.state = 15;
 return;
@@ -994,11 +971,11 @@ case 8:
 //C
 this.state = 9;
 ;
- //BA.debugLineNum = 164;BA.debugLine="Log(\"Start success: \" & Success)";
-anywheresoftware.b4a.keywords.Common.LogImpl("534078734","Start success: "+BA.ObjectToString(_success),0);
- //BA.debugLineNum = 165;BA.debugLine="SetState(Success, False, VideoMode)";
+ //BA.debugLineNum = 137;BA.debugLine="Log(\"Start success: \" & Success)";
+anywheresoftware.b4a.keywords.Common.LogImpl("428246030","Start success: "+BA.ObjectToString(_success),0);
+ //BA.debugLineNum = 138;BA.debugLine="SetState(Success, False, VideoMode)";
 _setstate(_success,anywheresoftware.b4a.keywords.Common.False,parent._videomode);
- //BA.debugLineNum = 166;BA.debugLine="If Success = False Then";
+ //BA.debugLineNum = 139;BA.debugLine="If Success = False Then";
 if (true) break;
 
 case 9:
@@ -1011,7 +988,7 @@ this.state = 11;
 case 11:
 //C
 this.state = 12;
- //BA.debugLineNum = 167;BA.debugLine="ToastMessageShow(\"Failed to open camera\", True)";
+ //BA.debugLineNum = 140;BA.debugLine="ToastMessageShow(\"Failed to open camera\", True)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Failed to open camera"),anywheresoftware.b4a.keywords.Common.True);
  if (true) break;
 
@@ -1019,7 +996,7 @@ case 12:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 169;BA.debugLine="End Sub";
+ //BA.debugLineNum = 142;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -1031,10 +1008,10 @@ public static void  _activity_permissionresult(String _permission,boolean _resul
 public static void  _complete(int _taskindex) throws Exception{
 }
 public static String  _pnlbackground_click() throws Exception{
- //BA.debugLineNum = 262;BA.debugLine="Sub pnlBackground_Click";
- //BA.debugLineNum = 263;BA.debugLine="pnlBackground.Visible = False";
+ //BA.debugLineNum = 229;BA.debugLine="Sub pnlBackground_Click";
+ //BA.debugLineNum = 230;BA.debugLine="pnlBackground.Visible = False";
 mostCurrent._pnlbackground.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 264;BA.debugLine="End Sub";
+ //BA.debugLineNum = 231;BA.debugLine="End Sub";
 return "";
 }
 public static anywheresoftware.b4a.keywords.Common.ResumableSubWrapper  _preparesurface() throws Exception{
@@ -1062,9 +1039,9 @@ anywheresoftware.b4a.keywords.Common.ReturnFromResumableSub(this,null);return;}
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 172;BA.debugLine="SetState(False, busystate, VideoMode)";
+ //BA.debugLineNum = 145;BA.debugLine="SetState(False, busystate, VideoMode)";
 _setstate(anywheresoftware.b4a.keywords.Common.False,parent._busystate,parent._videomode);
- //BA.debugLineNum = 174;BA.debugLine="If VideoMode Then";
+ //BA.debugLineNum = 147;BA.debugLine="If VideoMode Then";
 if (true) break;
 
 case 1:
@@ -1079,11 +1056,11 @@ this.state = 5;
 case 3:
 //C
 this.state = 6;
- //BA.debugLineNum = 175;BA.debugLine="cam.PreviewSize.Initialize(640, 480)";
+ //BA.debugLineNum = 148;BA.debugLine="cam.PreviewSize.Initialize(640, 480)";
 parent.mostCurrent._cam._previewsize /*anywheresoftware.b4a.objects.Camera2.CameraSizeWrapper*/ .Initialize((int) (640),(int) (480));
- //BA.debugLineNum = 176;BA.debugLine="ResizePreviewPanelBasedPreviewSize";
+ //BA.debugLineNum = 149;BA.debugLine="ResizePreviewPanelBasedPreviewSize";
 _resizepreviewpanelbasedpreviewsize();
- //BA.debugLineNum = 178;BA.debugLine="Wait For (cam.PrepareSurfaceForVideo(MyTaskIndex";
+ //BA.debugLineNum = 151;BA.debugLine="Wait For (cam.PrepareSurfaceForVideo(MyTaskIndex";
 anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, this, parent.mostCurrent._cam._preparesurfaceforvideo /*anywheresoftware.b4a.keywords.Common.ResumableSubWrapper*/ (parent._mytaskindex,_videofiledir,"temp-"+_videofilename));
 this.state = 12;
 return;
@@ -1097,11 +1074,11 @@ _success = (Boolean) result[0];
 case 5:
 //C
 this.state = 6;
- //BA.debugLineNum = 180;BA.debugLine="cam.PreviewSize.Initialize(1920, 1080)";
+ //BA.debugLineNum = 153;BA.debugLine="cam.PreviewSize.Initialize(1920, 1080)";
 parent.mostCurrent._cam._previewsize /*anywheresoftware.b4a.objects.Camera2.CameraSizeWrapper*/ .Initialize((int) (1920),(int) (1080));
- //BA.debugLineNum = 181;BA.debugLine="ResizePreviewPanelBasedPreviewSize";
+ //BA.debugLineNum = 154;BA.debugLine="ResizePreviewPanelBasedPreviewSize";
 _resizepreviewpanelbasedpreviewsize();
- //BA.debugLineNum = 185;BA.debugLine="Wait For (cam.PrepareSurface(MyTaskIndex)) Compl";
+ //BA.debugLineNum = 158;BA.debugLine="Wait For (cam.PrepareSurface(MyTaskIndex)) Compl";
 anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, this, parent.mostCurrent._cam._preparesurface /*anywheresoftware.b4a.keywords.Common.ResumableSubWrapper*/ (parent._mytaskindex));
 this.state = 13;
 return;
@@ -1112,7 +1089,7 @@ _success = (Boolean) result[0];
 ;
  if (true) break;
 ;
- //BA.debugLineNum = 188;BA.debugLine="If Success Then cam.StartPreview(MyTaskIndex, Vid";
+ //BA.debugLineNum = 161;BA.debugLine="If Success Then cam.StartPreview(MyTaskIndex, Vid";
 
 case 6:
 //if
@@ -1131,12 +1108,12 @@ case 11:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 189;BA.debugLine="SetState(Success, busystate, VideoMode)";
+ //BA.debugLineNum = 162;BA.debugLine="SetState(Success, busystate, VideoMode)";
 _setstate(_success,parent._busystate,parent._videomode);
- //BA.debugLineNum = 190;BA.debugLine="Return Success";
+ //BA.debugLineNum = 163;BA.debugLine="Return Success";
 if (true) {
 anywheresoftware.b4a.keywords.Common.ReturnFromResumableSub(this,(Object)(_success));return;};
- //BA.debugLineNum = 191;BA.debugLine="End Sub";
+ //BA.debugLineNum = 164;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -1145,11 +1122,11 @@ if (true) break;
 }
 public static String  _process_globals() throws Exception{
  //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 9;BA.debugLine="Private frontCamera As Boolean = False";
+ //BA.debugLineNum = 7;BA.debugLine="Private frontCamera As Boolean = False";
 _frontcamera = anywheresoftware.b4a.keywords.Common.False;
- //BA.debugLineNum = 10;BA.debugLine="Dim CC As ContentChooser";
+ //BA.debugLineNum = 8;BA.debugLine="Dim CC As ContentChooser";
 _cc = new anywheresoftware.b4a.phone.Phone.ContentChooser();
- //BA.debugLineNum = 11;BA.debugLine="End Sub";
+ //BA.debugLineNum = 9;BA.debugLine="End Sub";
 return "";
 }
 public static String  _resizepreviewpanelbasedpreviewsize() throws Exception{
@@ -1158,19 +1135,19 @@ int _ph = 0;
 float _r = 0f;
 int _w = 0;
 int _h = 0;
- //BA.debugLineNum = 193;BA.debugLine="Private Sub ResizePreviewPanelBasedPreviewSize";
- //BA.debugLineNum = 194;BA.debugLine="Dim pw = cam.PreviewSize.Height, ph = cam.Preview";
+ //BA.debugLineNum = 166;BA.debugLine="Private Sub ResizePreviewPanelBasedPreviewSize";
+ //BA.debugLineNum = 167;BA.debugLine="Dim pw = cam.PreviewSize.Height, ph = cam.Preview";
 _pw = mostCurrent._cam._previewsize /*anywheresoftware.b4a.objects.Camera2.CameraSizeWrapper*/ .getHeight();
 _ph = mostCurrent._cam._previewsize /*anywheresoftware.b4a.objects.Camera2.CameraSizeWrapper*/ .getWidth();
- //BA.debugLineNum = 195;BA.debugLine="Dim r As Float = Max(Activity.Width / pw, Activit";
+ //BA.debugLineNum = 168;BA.debugLine="Dim r As Float = Max(Activity.Width / pw, Activit";
 _r = (float) (anywheresoftware.b4a.keywords.Common.Max(mostCurrent._activity.getWidth()/(double)_pw,mostCurrent._activity.getHeight()/(double)_ph));
- //BA.debugLineNum = 196;BA.debugLine="Dim w As Int = pw * r";
+ //BA.debugLineNum = 169;BA.debugLine="Dim w As Int = pw * r";
 _w = (int) (_pw*_r);
- //BA.debugLineNum = 197;BA.debugLine="Dim h As Int = ph * r";
+ //BA.debugLineNum = 170;BA.debugLine="Dim h As Int = ph * r";
 _h = (int) (_ph*_r);
- //BA.debugLineNum = 198;BA.debugLine="pnlCamera.SetLayoutAnimated(0, Round(Activity.Wid";
+ //BA.debugLineNum = 171;BA.debugLine="pnlCamera.SetLayoutAnimated(0, Round(Activity.Wid";
 mostCurrent._pnlcamera.SetLayoutAnimated((int) (0),(int) (anywheresoftware.b4a.keywords.Common.Round(mostCurrent._activity.getWidth()/(double)2-_w/(double)2)),(int) (anywheresoftware.b4a.keywords.Common.Round(mostCurrent._activity.getHeight()/(double)2-_h/(double)2)),(int) (anywheresoftware.b4a.keywords.Common.Round(_w)),(int) (anywheresoftware.b4a.keywords.Common.Round(_h)));
- //BA.debugLineNum = 199;BA.debugLine="End Sub";
+ //BA.debugLineNum = 172;BA.debugLine="End Sub";
 return "";
 }
 public static anywheresoftware.b4a.objects.B4XViewWrapper.B4XBitmapWrapper  _rotatejpegifneeded(anywheresoftware.b4a.objects.B4XViewWrapper.B4XBitmapWrapper _bmp,byte[] _data) throws Exception{
@@ -1178,81 +1155,62 @@ anywheresoftware.b4a.phone.Phone _p = null;
 anywheresoftware.b4j.object.JavaObject _exifinterface = null;
 anywheresoftware.b4a.objects.streams.File.InputStreamWrapper _in = null;
 int _orientation = 0;
- //BA.debugLineNum = 304;BA.debugLine="Private Sub RotateJpegIfNeeded (bmp As B4XBitmap,";
- //BA.debugLineNum = 305;BA.debugLine="Dim p As Phone";
+ //BA.debugLineNum = 271;BA.debugLine="Private Sub RotateJpegIfNeeded (bmp As B4XBitmap,";
+ //BA.debugLineNum = 272;BA.debugLine="Dim p As Phone";
 _p = new anywheresoftware.b4a.phone.Phone();
- //BA.debugLineNum = 306;BA.debugLine="If p.SdkVersion >= 24 Then";
+ //BA.debugLineNum = 273;BA.debugLine="If p.SdkVersion >= 24 Then";
 if (_p.getSdkVersion()>=24) { 
- //BA.debugLineNum = 307;BA.debugLine="Dim ExifInterface As JavaObject";
+ //BA.debugLineNum = 274;BA.debugLine="Dim ExifInterface As JavaObject";
 _exifinterface = new anywheresoftware.b4j.object.JavaObject();
- //BA.debugLineNum = 308;BA.debugLine="Dim in As InputStream";
+ //BA.debugLineNum = 275;BA.debugLine="Dim in As InputStream";
 _in = new anywheresoftware.b4a.objects.streams.File.InputStreamWrapper();
- //BA.debugLineNum = 309;BA.debugLine="in.InitializeFromBytesArray(Data, 0, Data.Length";
+ //BA.debugLineNum = 276;BA.debugLine="in.InitializeFromBytesArray(Data, 0, Data.Length";
 _in.InitializeFromBytesArray(_data,(int) (0),_data.length);
- //BA.debugLineNum = 310;BA.debugLine="ExifInterface.InitializeNewInstance(\"android.med";
+ //BA.debugLineNum = 277;BA.debugLine="ExifInterface.InitializeNewInstance(\"android.med";
 _exifinterface.InitializeNewInstance("android.media.ExifInterface",new Object[]{(Object)(_in.getObject())});
- //BA.debugLineNum = 311;BA.debugLine="Dim orientation As Int = ExifInterface.RunMethod";
+ //BA.debugLineNum = 278;BA.debugLine="Dim orientation As Int = ExifInterface.RunMethod";
 _orientation = (int)(BA.ObjectToNumber(_exifinterface.RunMethod("getAttribute",new Object[]{(Object)("Orientation")})));
- //BA.debugLineNum = 312;BA.debugLine="Select orientation";
+ //BA.debugLineNum = 279;BA.debugLine="Select orientation";
 switch (_orientation) {
 case 3: {
- //BA.debugLineNum = 314;BA.debugLine="bmp = bmp.Rotate(180)";
+ //BA.debugLineNum = 281;BA.debugLine="bmp = bmp.Rotate(180)";
 _bmp = _bmp.Rotate((int) (180));
  break; }
 case 6: {
- //BA.debugLineNum = 316;BA.debugLine="bmp = bmp.Rotate(90)";
+ //BA.debugLineNum = 283;BA.debugLine="bmp = bmp.Rotate(90)";
 _bmp = _bmp.Rotate((int) (90));
  break; }
 case 8: {
- //BA.debugLineNum = 318;BA.debugLine="bmp = bmp.Rotate(270)";
+ //BA.debugLineNum = 285;BA.debugLine="bmp = bmp.Rotate(270)";
 _bmp = _bmp.Rotate((int) (270));
  break; }
 }
 ;
- //BA.debugLineNum = 320;BA.debugLine="in.Close";
+ //BA.debugLineNum = 287;BA.debugLine="in.Close";
 _in.Close();
  };
- //BA.debugLineNum = 322;BA.debugLine="Return bmp";
+ //BA.debugLineNum = 289;BA.debugLine="Return bmp";
 if (true) return _bmp;
- //BA.debugLineNum = 323;BA.debugLine="End Sub";
+ //BA.debugLineNum = 290;BA.debugLine="End Sub";
 return null;
 }
 public static String  _setstate(boolean _open,boolean _busy,boolean _video) throws Exception{
-String _btnrecordtext = "";
- //BA.debugLineNum = 268;BA.debugLine="Sub SetState(Open As Boolean, Busy As Boolean, Vid";
- //BA.debugLineNum = 272;BA.debugLine="btnCamera.Visible = Not(Busy)";
+ //BA.debugLineNum = 235;BA.debugLine="Sub SetState(Open As Boolean, Busy As Boolean, Vid";
+ //BA.debugLineNum = 239;BA.debugLine="btnCamera.Visible = Not(Busy)";
 mostCurrent._btncamera.setVisible(anywheresoftware.b4a.keywords.Common.Not(_busy));
- //BA.debugLineNum = 273;BA.debugLine="btnRecord.Visible = Open And (Video Or Not(Busy))";
+ //BA.debugLineNum = 240;BA.debugLine="btnRecord.Visible = Open And (Video Or Not(Busy))";
 mostCurrent._btnrecord.setVisible(_open && (_video || anywheresoftware.b4a.keywords.Common.Not(_busy)));
- //BA.debugLineNum = 274;BA.debugLine="openstate = Open";
+ //BA.debugLineNum = 241;BA.debugLine="openstate = Open";
 _openstate = _open;
- //BA.debugLineNum = 275;BA.debugLine="ProgressBar1.Visible = Busy";
+ //BA.debugLineNum = 242;BA.debugLine="ProgressBar1.Visible = Busy";
 mostCurrent._progressbar1.setVisible(_busy);
- //BA.debugLineNum = 276;BA.debugLine="busystate = Busy";
+ //BA.debugLineNum = 243;BA.debugLine="busystate = Busy";
 _busystate = _busy;
- //BA.debugLineNum = 277;BA.debugLine="VideoMode = Video";
+ //BA.debugLineNum = 244;BA.debugLine="VideoMode = Video";
 _videomode = _video;
- //BA.debugLineNum = 278;BA.debugLine="barZoom.Visible = Open";
+ //BA.debugLineNum = 245;BA.debugLine="barZoom.Visible = Open";
 mostCurrent._barzoom.setVisible(_open);
- //BA.debugLineNum = 279;BA.debugLine="Dim btnRecordText As String";
-_btnrecordtext = "";
- //BA.debugLineNum = 280;BA.debugLine="If VideoMode Then";
-if (_videomode) { 
- //BA.debugLineNum = 281;BA.debugLine="If Busy Then";
-if (_busy) { 
- //BA.debugLineNum = 282;BA.debugLine="btnRecordText = Chr(0xF04D)";
-_btnrecordtext = BA.ObjectToString(anywheresoftware.b4a.keywords.Common.Chr(((int)0xf04d)));
- }else {
- //BA.debugLineNum = 284;BA.debugLine="btnRecordText = Chr(0xF03D)";
-_btnrecordtext = BA.ObjectToString(anywheresoftware.b4a.keywords.Common.Chr(((int)0xf03d)));
- };
- }else {
- //BA.debugLineNum = 287;BA.debugLine="btnRecordText = Chr(0xF030)";
-_btnrecordtext = BA.ObjectToString(anywheresoftware.b4a.keywords.Common.Chr(((int)0xf030)));
- };
- //BA.debugLineNum = 289;BA.debugLine="btnRecord.Text = btnRecordText";
-mostCurrent._btnrecord.setText(BA.ObjectToCharSequence(_btnrecordtext));
- //BA.debugLineNum = 290;BA.debugLine="End Sub";
+ //BA.debugLineNum = 257;BA.debugLine="End Sub";
 return "";
 }
 public static void  _takepicture() throws Exception{
@@ -1280,7 +1238,7 @@ return;
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 218;BA.debugLine="Try";
+ //BA.debugLineNum = 191;BA.debugLine="Try";
 if (true) break;
 
 case 1:
@@ -1294,9 +1252,9 @@ case 3:
 //C
 this.state = 4;
 this.catchState = 15;
- //BA.debugLineNum = 219;BA.debugLine="SetState(openstate, True, VideoMode)";
+ //BA.debugLineNum = 192;BA.debugLine="SetState(openstate, True, VideoMode)";
 _setstate(parent._openstate,anywheresoftware.b4a.keywords.Common.True,parent._videomode);
- //BA.debugLineNum = 220;BA.debugLine="Wait For(cam.FocusAndTakePicture(MyTaskIndex)) C";
+ //BA.debugLineNum = 193;BA.debugLine="Wait For(cam.FocusAndTakePicture(MyTaskIndex)) C";
 anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, this, parent.mostCurrent._cam._focusandtakepicture /*anywheresoftware.b4a.keywords.Common.ResumableSubWrapper*/ (parent._mytaskindex));
 this.state = 17;
 return;
@@ -1305,30 +1263,22 @@ case 17:
 this.state = 4;
 _data = (byte[]) result[0];
 ;
- //BA.debugLineNum = 221;BA.debugLine="SetState(openstate, False, VideoMode)";
+ //BA.debugLineNum = 194;BA.debugLine="SetState(openstate, False, VideoMode)";
 _setstate(parent._openstate,anywheresoftware.b4a.keywords.Common.False,parent._videomode);
- //BA.debugLineNum = 224;BA.debugLine="cam.DataToFile(Data, Starter.savedir, fotoNombre";
+ //BA.debugLineNum = 197;BA.debugLine="cam.DataToFile(Data, Starter.savedir, fotoNombre";
 parent.mostCurrent._cam._datatofile /*String*/ (_data,parent.mostCurrent._starter._savedir /*String*/ ,parent.mostCurrent._fotonombredestino+".jpg");
- //BA.debugLineNum = 226;BA.debugLine="Dim bmp As Bitmap = cam.DataToBitmap(Data)";
+ //BA.debugLineNum = 199;BA.debugLine="Dim bmp As Bitmap = cam.DataToBitmap(Data)";
 _bmp = new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper();
 _bmp = parent.mostCurrent._cam._datatobitmap /*anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper*/ (_data);
- //BA.debugLineNum = 227;BA.debugLine="Log(\"Picture taken: \" & bmp) 'ignore";
-anywheresoftware.b4a.keywords.Common.LogImpl("534471946","Picture taken: "+BA.ObjectToString(_bmp),0);
- //BA.debugLineNum = 228;BA.debugLine="pnlBackground.SetVisibleAnimated(100, True)";
+ //BA.debugLineNum = 200;BA.debugLine="Log(\"Picture taken: \" & bmp) 'ignore";
+anywheresoftware.b4a.keywords.Common.LogImpl("428639242","Picture taken: "+BA.ObjectToString(_bmp),0);
+ //BA.debugLineNum = 201;BA.debugLine="pnlBackground.SetVisibleAnimated(100, True)";
 parent.mostCurrent._pnlbackground.SetVisibleAnimated((int) (100),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 229;BA.debugLine="B4XImageView1.Bitmap = RotateJpegIfNeeded(bmp, D";
+ //BA.debugLineNum = 202;BA.debugLine="B4XImageView1.Bitmap = RotateJpegIfNeeded(bmp, D";
 parent.mostCurrent._b4ximageview1._setbitmap /*anywheresoftware.b4a.objects.B4XViewWrapper.B4XBitmapWrapper*/ (_rotatejpegifneeded((anywheresoftware.b4a.objects.B4XViewWrapper.B4XBitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.B4XViewWrapper.B4XBitmapWrapper(), (android.graphics.Bitmap)(_bmp.getObject())),_data));
- //BA.debugLineNum = 230;BA.debugLine="Sleep(1000)";
-anywheresoftware.b4a.keywords.Common.Sleep(mostCurrent.activityBA,this,(int) (1000));
-this.state = 18;
-return;
-case 18:
-//C
-this.state = 4;
-;
- //BA.debugLineNum = 231;BA.debugLine="pnlBackground.SetVisibleAnimated(500, False)";
+ //BA.debugLineNum = 204;BA.debugLine="pnlBackground.SetVisibleAnimated(500, False)";
 parent.mostCurrent._pnlbackground.SetVisibleAnimated((int) (500),anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 237;BA.debugLine="If fotoNombreDestino.EndsWith(\"_1\") Then";
+ //BA.debugLineNum = 208;BA.debugLine="If fotoNombreDestino.EndsWith(\"_1\") Then";
 if (true) break;
 
 case 4:
@@ -1347,28 +1297,28 @@ this.state = 12;
 case 6:
 //C
 this.state = 13;
- //BA.debugLineNum = 238;BA.debugLine="Alertas.Alerta_foto1 = fotoNombreDestino";
+ //BA.debugLineNum = 209;BA.debugLine="Alertas.Alerta_foto1 = fotoNombreDestino";
 parent.mostCurrent._alertas._alerta_foto1 /*String*/  = parent.mostCurrent._fotonombredestino;
  if (true) break;
 
 case 8:
 //C
 this.state = 13;
- //BA.debugLineNum = 241;BA.debugLine="Alertas.Alerta_foto2 = fotoNombreDestino";
+ //BA.debugLineNum = 211;BA.debugLine="Alertas.Alerta_foto2 = fotoNombreDestino";
 parent.mostCurrent._alertas._alerta_foto2 /*String*/  = parent.mostCurrent._fotonombredestino;
  if (true) break;
 
 case 10:
 //C
 this.state = 13;
- //BA.debugLineNum = 244;BA.debugLine="Alertas.Alerta_foto3 = fotoNombreDestino";
+ //BA.debugLineNum = 213;BA.debugLine="Alertas.Alerta_foto3 = fotoNombreDestino";
 parent.mostCurrent._alertas._alerta_foto3 /*String*/  = parent.mostCurrent._fotonombredestino;
  if (true) break;
 
 case 12:
 //C
 this.state = 13;
- //BA.debugLineNum = 247;BA.debugLine="Alertas.Alerta_foto4 = fotoNombreDestino";
+ //BA.debugLineNum = 215;BA.debugLine="Alertas.Alerta_foto4 = fotoNombreDestino";
 parent.mostCurrent._alertas._alerta_foto4 /*String*/  = parent.mostCurrent._fotonombredestino;
  if (true) break;
 
@@ -1376,7 +1326,7 @@ case 13:
 //C
 this.state = 16;
 ;
- //BA.debugLineNum = 253;BA.debugLine="DesignaFoto";
+ //BA.debugLineNum = 220;BA.debugLine="DesignaFoto";
 _designafoto();
  if (true) break;
 
@@ -1384,7 +1334,7 @@ case 15:
 //C
 this.state = 16;
 this.catchState = 0;
- //BA.debugLineNum = 255;BA.debugLine="HandleError(LastException)";
+ //BA.debugLineNum = 222;BA.debugLine="HandleError(LastException)";
 _handleerror(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA));
  if (true) break;
 if (true) break;
@@ -1394,7 +1344,7 @@ case 16:
 this.state = -1;
 this.catchState = 0;
 ;
- //BA.debugLineNum = 258;BA.debugLine="End Sub";
+ //BA.debugLineNum = 225;BA.debugLine="End Sub";
 if (true) break;
 }} 
        catch (Exception e0) {
