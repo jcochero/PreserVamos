@@ -56,41 +56,42 @@ public int _taskindex = 0;
 public b4a.example.dateutils _dateutils = null;
 public appear.pnud.preservamos.main _main = null;
 public appear.pnud.preservamos.form_main _form_main = null;
-public appear.pnud.preservamos.frmabout _frmabout = null;
+public appear.pnud.preservamos.form_reporte _form_reporte = null;
+public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
+public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
+public appear.pnud.preservamos.utilidades _utilidades = null;
+public appear.pnud.preservamos.frmdatossinenviar _frmdatossinenviar = null;
+public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
 public appear.pnud.preservamos.alerta_fotos _alerta_fotos = null;
 public appear.pnud.preservamos.alertas _alertas = null;
 public appear.pnud.preservamos.aprender_muestreo _aprender_muestreo = null;
 public appear.pnud.preservamos.dbutils _dbutils = null;
 public appear.pnud.preservamos.downloadservice _downloadservice = null;
 public appear.pnud.preservamos.firebasemessaging _firebasemessaging = null;
-public appear.pnud.preservamos.form_reporte _form_reporte = null;
+public appear.pnud.preservamos.frmabout _frmabout = null;
 public appear.pnud.preservamos.frmdatosanteriores _frmdatosanteriores = null;
-public appear.pnud.preservamos.frmdatossinenviar _frmdatossinenviar = null;
 public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
 public appear.pnud.preservamos.frmfelicitaciones _frmfelicitaciones = null;
-public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
 public appear.pnud.preservamos.frmmapa _frmmapa = null;
 public appear.pnud.preservamos.frmmunicipioestadisticas _frmmunicipioestadisticas = null;
 public appear.pnud.preservamos.frmpoliticadatos _frmpoliticadatos = null;
 public appear.pnud.preservamos.frmtiporeporte _frmtiporeporte = null;
-public appear.pnud.preservamos.httputils2service _httputils2service = null;
 public appear.pnud.preservamos.imagedownloader _imagedownloader = null;
 public appear.pnud.preservamos.inatcheck _inatcheck = null;
 public appear.pnud.preservamos.mod_hidro _mod_hidro = null;
 public appear.pnud.preservamos.mod_hidro_fotos _mod_hidro_fotos = null;
 public appear.pnud.preservamos.mod_residuos _mod_residuos = null;
 public appear.pnud.preservamos.mod_residuos_fotos _mod_residuos_fotos = null;
-public appear.pnud.preservamos.register _register = null;
-public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
 public appear.pnud.preservamos.reporte_fotos _reporte_fotos = null;
 public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
-public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
-public appear.pnud.preservamos.reporte_habitat_rio_bu _reporte_habitat_rio_bu = null;
 public appear.pnud.preservamos.reporte_habitat_rio_sierras _reporte_habitat_rio_sierras = null;
+public appear.pnud.preservamos.reporte_habitat_rio_sierras_bu _reporte_habitat_rio_sierras_bu = null;
 public appear.pnud.preservamos.starter _starter = null;
 public appear.pnud.preservamos.uploadfiles _uploadfiles = null;
-public appear.pnud.preservamos.utilidades _utilidades = null;
+public appear.pnud.preservamos.character_creation _character_creation = null;
+public appear.pnud.preservamos.register _register = null;
 public appear.pnud.preservamos.xuiviewsutils _xuiviewsutils = null;
+public appear.pnud.preservamos.httputils2service _httputils2service = null;
 public anywheresoftware.b4a.objects.collections.List  _boolstolist(Object _obj) throws Exception{
 anywheresoftware.b4a.objects.collections.List _res = null;
 boolean[] _i = null;
@@ -429,7 +430,7 @@ case 3:
 //C
 this.state = 12;
  //BA.debugLineNum = 279;BA.debugLine="Log(\"Focus not supported\")";
-parent.__c.LogImpl("435127300","Focus not supported",0);
+parent.__c.LogImpl("026607620","Focus not supported",0);
  if (true) break;
 
 case 5:
@@ -469,14 +470,14 @@ case 8:
 //C
 this.state = 11;
  //BA.debugLineNum = 287;BA.debugLine="Log(\"Focus failed\")";
-parent.__c.LogImpl("435127308","Focus failed",0);
+parent.__c.LogImpl("026607628","Focus failed",0);
  if (true) break;
 
 case 10:
 //C
 this.state = 11;
  //BA.debugLineNum = 289;BA.debugLine="Log(\"Focused!\")";
-parent.__c.LogImpl("435127310","Focused!",0);
+parent.__c.LogImpl("026607630","Focused!",0);
  if (true) break;
 
 case 11:
@@ -708,7 +709,7 @@ if (true) return _inttoconst(_jo.RunMethod("get",new Object[]{_staticcamerachara
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 87;BA.debugLine="Log(LastException)";
-__c.LogImpl("433226757",BA.ObjectToString(__c.LastException(ba)),0);
+__c.LogImpl("024707077",BA.ObjectToString(__c.LastException(ba)),0);
  };
  //BA.debugLineNum = 90;BA.debugLine="End Sub";
 return "";
@@ -790,9 +791,9 @@ if (_mode>=0 && _mode<_consts.getSize()) {
 _res.Add(_consts.Get(_mode));
  }else {
  //BA.debugLineNum = 428;BA.debugLine="Log(Consts) 'ignore";
-__c.LogImpl("435979273",BA.ObjectToString(_consts),0);
+__c.LogImpl("027459593",BA.ObjectToString(_consts),0);
  //BA.debugLineNum = 429;BA.debugLine="Log(\"Unknown consts: \" & mode)";
-__c.LogImpl("435979274","Unknown consts: "+BA.NumberToString(_mode),0);
+__c.LogImpl("027459594","Unknown consts: "+BA.NumberToString(_mode),0);
  };
  }
 };
@@ -846,9 +847,9 @@ if (_i>=0 && _i<_consts.getSize()) {
 if (true) return BA.ObjectToString(_consts.Get(_i));
  }else {
  //BA.debugLineNum = 413;BA.debugLine="Log(Consts)'ignore";
-__c.LogImpl("435913734",BA.ObjectToString(_consts),0);
+__c.LogImpl("027394054",BA.ObjectToString(_consts),0);
  //BA.debugLineNum = 414;BA.debugLine="Log(\"Unknown const: \" & i)";
-__c.LogImpl("435913735","Unknown const: "+BA.NumberToString(_i),0);
+__c.LogImpl("027394055","Unknown const: "+BA.NumberToString(_i),0);
  //BA.debugLineNum = 415;BA.debugLine="Return \"\"";
 if (true) return "";
  };
@@ -952,7 +953,7 @@ case 7:
 //C
 this.state = 8;
  //BA.debugLineNum = 59;BA.debugLine="Log(\"Camera not found.\")";
-parent.__c.LogImpl("433095688","Camera not found.",0);
+parent.__c.LogImpl("024576008","Camera not found.",0);
  //BA.debugLineNum = 60;BA.debugLine="id = Camera.CameraIDs(0)";
 parent._id = parent._camera.getCameraIDs()[(int) (0)];
  if (true) break;
@@ -986,7 +987,7 @@ case 11:
 //C
 this.state = 12;
  //BA.debugLineNum = 65;BA.debugLine="Log(\"Failed to open camera\")";
-parent.__c.LogImpl("433095694","Failed to open camera",0);
+parent.__c.LogImpl("024576014","Failed to open camera",0);
  //BA.debugLineNum = 66;BA.debugLine="Return 0";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,(Object)(0));return;};
@@ -1285,7 +1286,7 @@ Object _value = null;
 String _typ = "";
  //BA.debugLineNum = 450;BA.debugLine="Private Sub PrintAllKeys (CameraMap As Object, tit";
  //BA.debugLineNum = 451;BA.debugLine="Log($\"******  ${title} **********\"$)";
-__c.LogImpl("436175873",("******  "+__c.SmartStringFormatter("",(Object)(_title))+" **********"),0);
+__c.LogImpl("027656193",("******  "+__c.SmartStringFormatter("",(Object)(_title))+" **********"),0);
  //BA.debugLineNum = 452;BA.debugLine="Dim jo As JavaObject = CameraMap";
 _jo = new anywheresoftware.b4j.object.JavaObject();
 _jo = (anywheresoftware.b4j.object.JavaObject) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4j.object.JavaObject(), (java.lang.Object)(_cameramap));
@@ -1326,7 +1327,7 @@ _value = (Object)(_bytestolist(_value).getObject());
 _value = (Object)(_objectstolist(_value).getObject());
  };
  //BA.debugLineNum = 469;BA.debugLine="Log($\"${k.RunMethod(\"getName\", Null)}: ${value}\"";
-__c.LogImpl("436175891",(""+__c.SmartStringFormatter("",_k.RunMethod("getName",(Object[])(__c.Null)))+": "+__c.SmartStringFormatter("",_value)+""),0);
+__c.LogImpl("027656211",(""+__c.SmartStringFormatter("",_k.RunMethod("getName",(Object[])(__c.Null)))+": "+__c.SmartStringFormatter("",_value)+""),0);
  }
 };
  //BA.debugLineNum = 471;BA.debugLine="End Sub";
@@ -1506,7 +1507,7 @@ _mediarecorder.RunMethod("stop",(Object[])(__c.Null));
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 143;BA.debugLine="Log(LastException)";
-__c.LogImpl("433554437",BA.ObjectToString(__c.LastException(ba)),0);
+__c.LogImpl("025034757",BA.ObjectToString(__c.LastException(ba)),0);
  };
  //BA.debugLineNum = 145;BA.debugLine="RecordingVideo = False";
 _recordingvideo = __c.False;

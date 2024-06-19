@@ -29,15 +29,10 @@ views.get("lblplantas").vw.setLeft((int)((views.get("butfungi").vw.getLeft())-(1
 views.get("butplantas").vw.setLeft((int)((views.get("lblplantas").vw.getLeft() + views.get("lblplantas").vw.getWidth()/2) - (views.get("butplantas").vw.getWidth() / 2)));
 views.get("lblbugs").vw.setLeft((int)((views.get("butfungi").vw.getLeft() + views.get("butfungi").vw.getWidth())+(10d * scale)));
 views.get("butbugs").vw.setLeft((int)((views.get("lblbugs").vw.getLeft() + views.get("lblbugs").vw.getWidth()/2) - (views.get("butbugs").vw.getWidth() / 2)));
-//BA.debugLineNum = 23;BA.debugLine="lblPeces.HorizontalCenter = lblPlantas.HorizontalCenter"[laychecklists_home/General script]
 views.get("lblpeces").vw.setLeft((int)((views.get("lblplantas").vw.getLeft() + views.get("lblplantas").vw.getWidth()/2) - (views.get("lblpeces").vw.getWidth() / 2)));
-//BA.debugLineNum = 24;BA.debugLine="butPeces.HorizontalCenter = lblPlantas.HorizontalCenter"[laychecklists_home/General script]
 views.get("butpeces").vw.setLeft((int)((views.get("lblplantas").vw.getLeft() + views.get("lblplantas").vw.getWidth()/2) - (views.get("butpeces").vw.getWidth() / 2)));
-//BA.debugLineNum = 25;BA.debugLine="lblMammals.HorizontalCenter = lblBugs.HorizontalCenter"[laychecklists_home/General script]
 views.get("lblmammals").vw.setLeft((int)((views.get("lblbugs").vw.getLeft() + views.get("lblbugs").vw.getWidth()/2) - (views.get("lblmammals").vw.getWidth() / 2)));
-//BA.debugLineNum = 26;BA.debugLine="butMammals.HorizontalCenter = lblBugs.HorizontalCenter"[laychecklists_home/General script]
 views.get("butmammals").vw.setLeft((int)((views.get("lblbugs").vw.getLeft() + views.get("lblbugs").vw.getWidth()/2) - (views.get("butmammals").vw.getWidth() / 2)));
-//BA.debugLineNum = 27;BA.debugLine="butPlantas.Top = lblTitleChecklistHome.Bottom + 5dip"[laychecklists_home/General script]
 views.get("butplantas").vw.setTop((int)((views.get("lbltitlechecklisthome").vw.getTop() + views.get("lbltitlechecklisthome").vw.getHeight())+(5d * scale)));
 //BA.debugLineNum = 28;BA.debugLine="butFungi.Top = lblTitleChecklistHome.Bottom + 5dip"[laychecklists_home/General script]
 views.get("butfungi").vw.setTop((int)((views.get("lbltitlechecklisthome").vw.getTop() + views.get("lbltitlechecklisthome").vw.getHeight())+(5d * scale)));

@@ -14,6 +14,7 @@ views.get("lbldatosenviados").vw.setTop((int)((20d / 100 * height)));
 views.get("logopreservamos").vw.setLeft((int)((50d / 100 * width) - (views.get("logopreservamos").vw.getWidth() / 2)));
 views.get("logopreservamos").vw.setTop((int)((views.get("lbldatosenviados").vw.getTop() + views.get("lbldatosenviados").vw.getHeight())+(5d * scale)));
 views.get("imgdatosenviados").vw.setTop((int)((views.get("logopreservamos").vw.getTop() + views.get("logopreservamos").vw.getHeight())+(50d * scale)));
+anywheresoftware.b4a.keywords.LayoutBuilder.scaleAll(views);
 
 }
 }

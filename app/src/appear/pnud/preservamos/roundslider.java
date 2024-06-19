@@ -48,41 +48,42 @@ public boolean _mrollover = false;
 public b4a.example.dateutils _dateutils = null;
 public appear.pnud.preservamos.main _main = null;
 public appear.pnud.preservamos.form_main _form_main = null;
-public appear.pnud.preservamos.frmabout _frmabout = null;
+public appear.pnud.preservamos.form_reporte _form_reporte = null;
+public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
+public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
+public appear.pnud.preservamos.utilidades _utilidades = null;
+public appear.pnud.preservamos.frmdatossinenviar _frmdatossinenviar = null;
+public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
 public appear.pnud.preservamos.alerta_fotos _alerta_fotos = null;
 public appear.pnud.preservamos.alertas _alertas = null;
 public appear.pnud.preservamos.aprender_muestreo _aprender_muestreo = null;
 public appear.pnud.preservamos.dbutils _dbutils = null;
 public appear.pnud.preservamos.downloadservice _downloadservice = null;
 public appear.pnud.preservamos.firebasemessaging _firebasemessaging = null;
-public appear.pnud.preservamos.form_reporte _form_reporte = null;
+public appear.pnud.preservamos.frmabout _frmabout = null;
 public appear.pnud.preservamos.frmdatosanteriores _frmdatosanteriores = null;
-public appear.pnud.preservamos.frmdatossinenviar _frmdatossinenviar = null;
 public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
 public appear.pnud.preservamos.frmfelicitaciones _frmfelicitaciones = null;
-public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
 public appear.pnud.preservamos.frmmapa _frmmapa = null;
 public appear.pnud.preservamos.frmmunicipioestadisticas _frmmunicipioestadisticas = null;
 public appear.pnud.preservamos.frmpoliticadatos _frmpoliticadatos = null;
 public appear.pnud.preservamos.frmtiporeporte _frmtiporeporte = null;
-public appear.pnud.preservamos.httputils2service _httputils2service = null;
 public appear.pnud.preservamos.imagedownloader _imagedownloader = null;
 public appear.pnud.preservamos.inatcheck _inatcheck = null;
 public appear.pnud.preservamos.mod_hidro _mod_hidro = null;
 public appear.pnud.preservamos.mod_hidro_fotos _mod_hidro_fotos = null;
 public appear.pnud.preservamos.mod_residuos _mod_residuos = null;
 public appear.pnud.preservamos.mod_residuos_fotos _mod_residuos_fotos = null;
-public appear.pnud.preservamos.register _register = null;
-public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
 public appear.pnud.preservamos.reporte_fotos _reporte_fotos = null;
 public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
-public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
-public appear.pnud.preservamos.reporte_habitat_rio_bu _reporte_habitat_rio_bu = null;
 public appear.pnud.preservamos.reporte_habitat_rio_sierras _reporte_habitat_rio_sierras = null;
+public appear.pnud.preservamos.reporte_habitat_rio_sierras_bu _reporte_habitat_rio_sierras_bu = null;
 public appear.pnud.preservamos.starter _starter = null;
 public appear.pnud.preservamos.uploadfiles _uploadfiles = null;
-public appear.pnud.preservamos.utilidades _utilidades = null;
+public appear.pnud.preservamos.character_creation _character_creation = null;
+public appear.pnud.preservamos.register _register = null;
 public appear.pnud.preservamos.xuiviewsutils _xuiviewsutils = null;
+public appear.pnud.preservamos.httputils2service _httputils2service = null;
 public String  _base_resize(double _width,double _height) throws Exception{
  //BA.debugLineNum = 89;BA.debugLine="Private Sub Base_Resize (Width As Double, Height A";
  //BA.debugLineNum = 90;BA.debugLine="cvs.Resize(Width, Height)";
@@ -289,10 +290,10 @@ _xlbl.setText(BA.ObjectToCharSequence(_mvalue));
 return "";
 }
 public int  _getvalue() throws Exception{
- //BA.debugLineNum = 175;BA.debugLine="Public Sub getValue As Int";
- //BA.debugLineNum = 176;BA.debugLine="Return mValue";
+ //BA.debugLineNum = 182;BA.debugLine="Public Sub getValue As Int";
+ //BA.debugLineNum = 183;BA.debugLine="Return mValue";
 if (true) return _mvalue;
- //BA.debugLineNum = 177;BA.debugLine="End Sub";
+ //BA.debugLineNum = 184;BA.debugLine="End Sub";
 return 0;
 }
 public String  _initialize(anywheresoftware.b4a.BA _ba,Object _callback,String _eventname) throws Exception{
@@ -376,6 +377,17 @@ _mcirclefillcolor = _innercolor;
  //BA.debugLineNum = 67;BA.debugLine="Draw";
 _draw();
  //BA.debugLineNum = 68;BA.debugLine="End Sub";
+return "";
+}
+public String  _setrange(int _newmin,int _newmax) throws Exception{
+ //BA.debugLineNum = 176;BA.debugLine="Public Sub SetRange(NewMin As Int, NewMax As Int)";
+ //BA.debugLineNum = 177;BA.debugLine="mMin = NewMin";
+_mmin = _newmin;
+ //BA.debugLineNum = 178;BA.debugLine="mMax = NewMax";
+_mmax = _newmax;
+ //BA.debugLineNum = 179;BA.debugLine="setValue(mValue)";
+_setvalue(_mvalue);
+ //BA.debugLineNum = 180;BA.debugLine="End Sub";
 return "";
 }
 public String  _setthumbcolor(int _bordercolor,int _innercolor) throws Exception{

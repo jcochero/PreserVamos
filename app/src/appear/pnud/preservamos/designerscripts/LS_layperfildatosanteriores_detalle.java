@@ -15,6 +15,7 @@ views.get("lbllng").vw.setLeft((int)((views.get("lbllat").vw.getLeft() + views.g
 views.get("chkenviadobar").vw.setLeft((int)((views.get("label3").vw.getLeft() + views.get("label3").vw.getWidth()/2) - (views.get("chkenviadobar").vw.getWidth() / 2)));
 views.get("chkonline").vw.setLeft((int)((views.get("label2").vw.getLeft() + views.get("label2").vw.getWidth()/2) - (views.get("chkonline").vw.getWidth() / 2)));
 views.get("chkvalidadoexpertos").vw.setLeft((int)((views.get("label13").vw.getLeft() + views.get("label13").vw.getWidth()/2) - (views.get("chkvalidadoexpertos").vw.getWidth() / 2)));
+anywheresoftware.b4a.keywords.LayoutBuilder.scaleAll(views);
 
 }
 }

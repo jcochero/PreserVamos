@@ -359,40 +359,41 @@ public anywheresoftware.b4a.objects.LabelWrapper _lblrojotipocuerpo = null;
 public b4a.example.dateutils _dateutils = null;
 public appear.pnud.preservamos.main _main = null;
 public appear.pnud.preservamos.form_main _form_main = null;
-public appear.pnud.preservamos.frmabout _frmabout = null;
+public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
+public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
+public appear.pnud.preservamos.utilidades _utilidades = null;
+public appear.pnud.preservamos.frmdatossinenviar _frmdatossinenviar = null;
+public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
 public appear.pnud.preservamos.alerta_fotos _alerta_fotos = null;
 public appear.pnud.preservamos.alertas _alertas = null;
 public appear.pnud.preservamos.aprender_muestreo _aprender_muestreo = null;
 public appear.pnud.preservamos.dbutils _dbutils = null;
 public appear.pnud.preservamos.downloadservice _downloadservice = null;
 public appear.pnud.preservamos.firebasemessaging _firebasemessaging = null;
+public appear.pnud.preservamos.frmabout _frmabout = null;
 public appear.pnud.preservamos.frmdatosanteriores _frmdatosanteriores = null;
-public appear.pnud.preservamos.frmdatossinenviar _frmdatossinenviar = null;
 public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
 public appear.pnud.preservamos.frmfelicitaciones _frmfelicitaciones = null;
-public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
 public appear.pnud.preservamos.frmmapa _frmmapa = null;
 public appear.pnud.preservamos.frmmunicipioestadisticas _frmmunicipioestadisticas = null;
 public appear.pnud.preservamos.frmpoliticadatos _frmpoliticadatos = null;
 public appear.pnud.preservamos.frmtiporeporte _frmtiporeporte = null;
-public appear.pnud.preservamos.httputils2service _httputils2service = null;
 public appear.pnud.preservamos.imagedownloader _imagedownloader = null;
 public appear.pnud.preservamos.inatcheck _inatcheck = null;
 public appear.pnud.preservamos.mod_hidro _mod_hidro = null;
 public appear.pnud.preservamos.mod_hidro_fotos _mod_hidro_fotos = null;
 public appear.pnud.preservamos.mod_residuos _mod_residuos = null;
 public appear.pnud.preservamos.mod_residuos_fotos _mod_residuos_fotos = null;
-public appear.pnud.preservamos.register _register = null;
-public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
 public appear.pnud.preservamos.reporte_fotos _reporte_fotos = null;
 public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
-public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
-public appear.pnud.preservamos.reporte_habitat_rio_bu _reporte_habitat_rio_bu = null;
 public appear.pnud.preservamos.reporte_habitat_rio_sierras _reporte_habitat_rio_sierras = null;
+public appear.pnud.preservamos.reporte_habitat_rio_sierras_bu _reporte_habitat_rio_sierras_bu = null;
 public appear.pnud.preservamos.starter _starter = null;
 public appear.pnud.preservamos.uploadfiles _uploadfiles = null;
-public appear.pnud.preservamos.utilidades _utilidades = null;
+public appear.pnud.preservamos.character_creation _character_creation = null;
+public appear.pnud.preservamos.register _register = null;
 public appear.pnud.preservamos.xuiviewsutils _xuiviewsutils = null;
+public appear.pnud.preservamos.httputils2service _httputils2service = null;
 
 public static void initializeProcessGlobals() {
              try {
@@ -437,60 +438,60 @@ return "";
 }
 public static String  _btnoktipo_click() throws Exception{
 anywheresoftware.b4a.objects.collections.Map _map1 = null;
- //BA.debugLineNum = 253;BA.debugLine="Sub btnOkTipo_Click";
- //BA.debugLineNum = 254;BA.debugLine="If lblRojoAmbiente.Visible = False Then";
+ //BA.debugLineNum = 350;BA.debugLine="Sub btnOkTipo_Click";
+ //BA.debugLineNum = 351;BA.debugLine="If lblRojoAmbiente.Visible = False Then";
 if (mostCurrent._lblrojoambiente.getVisible()==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 255;BA.debugLine="ToastMessageShow(\"¡Debes elegir un tipo de ambie";
+ //BA.debugLineNum = 352;BA.debugLine="ToastMessageShow(\"¡Debes elegir un tipo de ambie";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("¡Debes elegir un tipo de ambiente a analizar!"),anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 256;BA.debugLine="Return";
+ //BA.debugLineNum = 353;BA.debugLine="Return";
 if (true) return "";
  };
- //BA.debugLineNum = 258;BA.debugLine="Log(\"tipo ambiente: \" & opcionElegida)";
-anywheresoftware.b4a.keywords.Common.LogImpl("440894469","tipo ambiente: "+mostCurrent._opcionelegida,0);
- //BA.debugLineNum = 261;BA.debugLine="Dim Map1 As Map";
+ //BA.debugLineNum = 355;BA.debugLine="Log(\"tipo ambiente: \" & opcionElegida)";
+anywheresoftware.b4a.keywords.Common.LogImpl("07536645","tipo ambiente: "+mostCurrent._opcionelegida,0);
+ //BA.debugLineNum = 358;BA.debugLine="Dim Map1 As Map";
 _map1 = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 262;BA.debugLine="Map1.Initialize";
+ //BA.debugLineNum = 359;BA.debugLine="Map1.Initialize";
 _map1.Initialize();
- //BA.debugLineNum = 263;BA.debugLine="Map1.Put(\"Id\", currentproject)";
+ //BA.debugLineNum = 360;BA.debugLine="Map1.Put(\"Id\", currentproject)";
 _map1.Put((Object)("Id"),(Object)(_currentproject));
- //BA.debugLineNum = 264;BA.debugLine="If opcionElegida = \"llanura\" Or opcionElegida = \"";
+ //BA.debugLineNum = 361;BA.debugLine="If opcionElegida = \"llanura\" Or opcionElegida = \"";
 if ((mostCurrent._opcionelegida).equals("llanura") || (mostCurrent._opcionelegida).equals("")) { 
- //BA.debugLineNum = 265;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"ti";
+ //BA.debugLineNum = 362;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"ti";
 mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","tiporio",(Object)("llanura"),_map1);
- //BA.debugLineNum = 266;BA.debugLine="tipoAmbiente = \"llanura\"";
+ //BA.debugLineNum = 363;BA.debugLine="tipoAmbiente = \"llanura\"";
 _tipoambiente = "llanura";
  }else if((mostCurrent._opcionelegida).equals("laguna")) { 
- //BA.debugLineNum = 268;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"ti";
+ //BA.debugLineNum = 365;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"ti";
 mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","tiporio",(Object)("laguna"),_map1);
- //BA.debugLineNum = 269;BA.debugLine="tipoAmbiente = \"laguna\"";
+ //BA.debugLineNum = 366;BA.debugLine="tipoAmbiente = \"laguna\"";
 _tipoambiente = "laguna";
  }else if((mostCurrent._opcionelegida).equals("sierras")) { 
- //BA.debugLineNum = 271;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"ti";
+ //BA.debugLineNum = 368;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"ti";
 mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","tiporio",(Object)("sierras"),_map1);
- //BA.debugLineNum = 272;BA.debugLine="tipoAmbiente = \"sierras\"";
+ //BA.debugLineNum = 369;BA.debugLine="tipoAmbiente = \"sierras\"";
 _tipoambiente = "sierras";
  }else if((mostCurrent._opcionelegida).equals("sierras_laguna")) { 
- //BA.debugLineNum = 274;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"ti";
+ //BA.debugLineNum = 371;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"ti";
 mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","tiporio",(Object)("sierras_laguna"),_map1);
- //BA.debugLineNum = 275;BA.debugLine="tipoAmbiente = \"sierras_laguna\"";
+ //BA.debugLineNum = 372;BA.debugLine="tipoAmbiente = \"sierras_laguna\"";
 _tipoambiente = "sierras_laguna";
  }else {
  };
- //BA.debugLineNum = 287;BA.debugLine="frmLocalizacion.currentproject = currentproject";
+ //BA.debugLineNum = 384;BA.debugLine="frmLocalizacion.currentproject = currentproject";
 mostCurrent._frmlocalizacion._currentproject /*String*/  = _currentproject;
- //BA.debugLineNum = 288;BA.debugLine="frmLocalizacion.origen = \"Reporte_Localizacion\"";
+ //BA.debugLineNum = 385;BA.debugLine="frmLocalizacion.origen = \"Reporte_Localizacion\"";
 mostCurrent._frmlocalizacion._origen /*String*/  = "Reporte_Localizacion";
- //BA.debugLineNum = 289;BA.debugLine="frmLocalizacion.tipoAmbiente = tipoAmbiente";
+ //BA.debugLineNum = 386;BA.debugLine="frmLocalizacion.tipoAmbiente = tipoAmbiente";
 mostCurrent._frmlocalizacion._tipoambiente /*String*/  = _tipoambiente;
- //BA.debugLineNum = 290;BA.debugLine="frmLocalizacion.tipoDetect = \"GPSdetect\"";
+ //BA.debugLineNum = 387;BA.debugLine="frmLocalizacion.tipoDetect = \"GPSdetect\"";
 mostCurrent._frmlocalizacion._tipodetect /*String*/  = "GPSdetect";
- //BA.debugLineNum = 293;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 390;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 294;BA.debugLine="Activity.RemoveAllViews";
+ //BA.debugLineNum = 391;BA.debugLine="Activity.RemoveAllViews";
 mostCurrent._activity.RemoveAllViews();
- //BA.debugLineNum = 295;BA.debugLine="StartActivity(frmLocalizacion)";
+ //BA.debugLineNum = 392;BA.debugLine="StartActivity(frmLocalizacion)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._frmlocalizacion.getObject()));
- //BA.debugLineNum = 297;BA.debugLine="End Sub";
+ //BA.debugLineNum = 394;BA.debugLine="End Sub";
 return "";
 }
 public static void  _closeappmsgbox() throws Exception{
@@ -515,8 +516,8 @@ return;
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 62;BA.debugLine="Msgbox2Async(\"Volver al inicio?\", \"SALIR\", \"Si";
-anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("Volver al inicio?"),BA.ObjectToCharSequence("SALIR"),"Si","","No",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 62;BA.debugLine="Msgbox2Async(\"¿Cancelar el análisis?\", \"¡Se perde";
+anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("¿Cancelar el análisis?"),BA.ObjectToCharSequence("¡Se perderá lo cargado!"),"Si","","No",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
  //BA.debugLineNum = 63;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
 anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
 this.state = 5;
@@ -594,295 +595,956 @@ mostCurrent._lblrojotipocuerpo = new anywheresoftware.b4a.objects.LabelWrapper()
 return "";
 }
 public static String  _imglaguna_click() throws Exception{
- //BA.debugLineNum = 141;BA.debugLine="Sub imgLaguna_Click";
- //BA.debugLineNum = 142;BA.debugLine="lblRojoTipoCuerpo.Visible = True";
+ //BA.debugLineNum = 242;BA.debugLine="Sub imgLaguna_Click";
+ //BA.debugLineNum = 243;BA.debugLine="lblRojoTipoCuerpo.Visible = True";
 mostCurrent._lblrojotipocuerpo.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 143;BA.debugLine="lblRojoTipoCuerpo.Left = imgLaguna.Left";
+ //BA.debugLineNum = 244;BA.debugLine="lblRojoTipoCuerpo.Left = imgLaguna.Left";
 mostCurrent._lblrojotipocuerpo.setLeft(mostCurrent._imglaguna.getLeft());
- //BA.debugLineNum = 144;BA.debugLine="tipocuerpo = \"laguna\"";
+ //BA.debugLineNum = 245;BA.debugLine="tipocuerpo = \"laguna\"";
 mostCurrent._tipocuerpo = "laguna";
- //BA.debugLineNum = 145;BA.debugLine="If lblRojoAmbiente.Visible = False Then";
+ //BA.debugLineNum = 246;BA.debugLine="If lblRojoAmbiente.Visible = False Then";
 if (mostCurrent._lblrojoambiente.getVisible()==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 146;BA.debugLine="lblLlanura.Visible = False";
+ //BA.debugLineNum = 247;BA.debugLine="lblLlanura.Visible = False";
 mostCurrent._lblllanura.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 147;BA.debugLine="lblSierra.Visible = False";
+ //BA.debugLineNum = 248;BA.debugLine="lblSierra.Visible = False";
 mostCurrent._lblsierra.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 148;BA.debugLine="lblTipoAmbiente.Visible = False";
+ //BA.debugLineNum = 249;BA.debugLine="lblTipoAmbiente.Visible = False";
 mostCurrent._lbltipoambiente.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 149;BA.debugLine="imgSierra.Visible = False";
+ //BA.debugLineNum = 250;BA.debugLine="imgSierra.Visible = False";
 mostCurrent._imgsierra.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 150;BA.debugLine="imgLlanura.Visible = False";
+ //BA.debugLineNum = 251;BA.debugLine="imgLlanura.Visible = False";
 mostCurrent._imgllanura.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 151;BA.debugLine="lblLlanura.SetVisibleAnimated(300, True)";
+ //BA.debugLineNum = 252;BA.debugLine="lblLlanura.SetVisibleAnimated(300, True)";
 mostCurrent._lblllanura.SetVisibleAnimated((int) (300),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 153;BA.debugLine="lblTipoAmbiente.SetVisibleAnimated(300, True)";
+ //BA.debugLineNum = 253;BA.debugLine="lblTipoAmbiente.SetVisibleAnimated(300, True)";
 mostCurrent._lbltipoambiente.SetVisibleAnimated((int) (300),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 155;BA.debugLine="imgLlanura.SetVisibleAnimated(300, True)";
+ //BA.debugLineNum = 254;BA.debugLine="imgLlanura.SetVisibleAnimated(300, True)";
 mostCurrent._imgllanura.SetVisibleAnimated((int) (300),anywheresoftware.b4a.keywords.Common.True);
  }else {
- //BA.debugLineNum = 157;BA.debugLine="lblRojoAmbiente.Visible = False";
+ //BA.debugLineNum = 256;BA.debugLine="lblRojoAmbiente.Visible = False";
 mostCurrent._lblrojoambiente.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 158;BA.debugLine="opcionElegida = \"\"";
+ //BA.debugLineNum = 257;BA.debugLine="opcionElegida = \"\"";
 mostCurrent._opcionelegida = "";
- //BA.debugLineNum = 160;BA.debugLine="lblLlanura.Visible = False";
+ //BA.debugLineNum = 259;BA.debugLine="lblLlanura.Visible = False";
 mostCurrent._lblllanura.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 161;BA.debugLine="lblSierra.Visible = False";
+ //BA.debugLineNum = 260;BA.debugLine="lblSierra.Visible = False";
 mostCurrent._lblsierra.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 162;BA.debugLine="lblTipoAmbiente.Visible = False";
+ //BA.debugLineNum = 261;BA.debugLine="lblTipoAmbiente.Visible = False";
 mostCurrent._lbltipoambiente.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 163;BA.debugLine="imgSierra.Visible = False";
+ //BA.debugLineNum = 262;BA.debugLine="imgSierra.Visible = False";
 mostCurrent._imgsierra.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 164;BA.debugLine="imgLlanura.Visible = False";
+ //BA.debugLineNum = 263;BA.debugLine="imgLlanura.Visible = False";
 mostCurrent._imgllanura.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 166;BA.debugLine="lblLlanura.SetVisibleAnimated(300, True)";
+ //BA.debugLineNum = 265;BA.debugLine="lblLlanura.SetVisibleAnimated(300, True)";
 mostCurrent._lblllanura.SetVisibleAnimated((int) (300),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 167;BA.debugLine="lblSierra.SetVisibleAnimated(300, True)";
+ //BA.debugLineNum = 266;BA.debugLine="lblSierra.SetVisibleAnimated(300, True)";
 mostCurrent._lblsierra.SetVisibleAnimated((int) (300),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 168;BA.debugLine="lblTipoAmbiente.SetVisibleAnimated(300, True)";
+ //BA.debugLineNum = 267;BA.debugLine="lblTipoAmbiente.SetVisibleAnimated(300, True)";
 mostCurrent._lbltipoambiente.SetVisibleAnimated((int) (300),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 169;BA.debugLine="imgSierra.SetVisibleAnimated(300, True)";
+ //BA.debugLineNum = 268;BA.debugLine="imgSierra.SetVisibleAnimated(300, True)";
 mostCurrent._imgsierra.SetVisibleAnimated((int) (300),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 170;BA.debugLine="imgLlanura.SetVisibleAnimated(300, True)";
+ //BA.debugLineNum = 269;BA.debugLine="imgLlanura.SetVisibleAnimated(300, True)";
 mostCurrent._imgllanura.SetVisibleAnimated((int) (300),anywheresoftware.b4a.keywords.Common.True);
  };
- //BA.debugLineNum = 175;BA.debugLine="End Sub";
+ //BA.debugLineNum = 272;BA.debugLine="End Sub";
 return "";
 }
 public static String  _imgllanura_click() throws Exception{
- //BA.debugLineNum = 220;BA.debugLine="Private Sub imgLlanura_Click";
- //BA.debugLineNum = 221;BA.debugLine="If tipocuerpo = \"rio\" Then";
+ //BA.debugLineNum = 317;BA.debugLine="Private Sub imgLlanura_Click";
+ //BA.debugLineNum = 318;BA.debugLine="If tipocuerpo = \"rio\" Then";
 if ((mostCurrent._tipocuerpo).equals("rio")) { 
- //BA.debugLineNum = 222;BA.debugLine="opcionElegida = \"llanura\"";
+ //BA.debugLineNum = 319;BA.debugLine="opcionElegida = \"llanura\"";
 mostCurrent._opcionelegida = "llanura";
  }else if((mostCurrent._tipocuerpo).equals("laguna")) { 
- //BA.debugLineNum = 224;BA.debugLine="opcionElegida = \"laguna\"";
+ //BA.debugLineNum = 321;BA.debugLine="opcionElegida = \"laguna\"";
 mostCurrent._opcionelegida = "laguna";
  };
- //BA.debugLineNum = 226;BA.debugLine="lblRojoAmbiente.Visible = True";
+ //BA.debugLineNum = 323;BA.debugLine="lblRojoAmbiente.Visible = True";
 mostCurrent._lblrojoambiente.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 227;BA.debugLine="lblRojoAmbiente.Left = imgLlanura.Left";
+ //BA.debugLineNum = 324;BA.debugLine="lblRojoAmbiente.Left = imgLlanura.Left";
 mostCurrent._lblrojoambiente.setLeft(mostCurrent._imgllanura.getLeft());
- //BA.debugLineNum = 228;BA.debugLine="End Sub";
+ //BA.debugLineNum = 325;BA.debugLine="End Sub";
 return "";
 }
 public static String  _imgrio_click() throws Exception{
- //BA.debugLineNum = 176;BA.debugLine="Sub imgRio_Click";
- //BA.debugLineNum = 177;BA.debugLine="lblRojoTipoCuerpo.Visible = True";
+ //BA.debugLineNum = 273;BA.debugLine="Sub imgRio_Click";
+ //BA.debugLineNum = 274;BA.debugLine="lblRojoTipoCuerpo.Visible = True";
 mostCurrent._lblrojotipocuerpo.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 178;BA.debugLine="lblRojoTipoCuerpo.Left = imgRio.Left";
+ //BA.debugLineNum = 275;BA.debugLine="lblRojoTipoCuerpo.Left = imgRio.Left";
 mostCurrent._lblrojotipocuerpo.setLeft(mostCurrent._imgrio.getLeft());
- //BA.debugLineNum = 179;BA.debugLine="tipocuerpo = \"rio\"";
+ //BA.debugLineNum = 276;BA.debugLine="tipocuerpo = \"rio\"";
 mostCurrent._tipocuerpo = "rio";
- //BA.debugLineNum = 180;BA.debugLine="If lblRojoAmbiente.Visible = False Then";
+ //BA.debugLineNum = 277;BA.debugLine="If lblRojoAmbiente.Visible = False Then";
 if (mostCurrent._lblrojoambiente.getVisible()==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 181;BA.debugLine="lblLlanura.Visible = False";
+ //BA.debugLineNum = 278;BA.debugLine="lblLlanura.Visible = False";
 mostCurrent._lblllanura.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 182;BA.debugLine="lblSierra.Visible = False";
+ //BA.debugLineNum = 279;BA.debugLine="lblSierra.Visible = False";
 mostCurrent._lblsierra.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 183;BA.debugLine="lblTipoAmbiente.Visible = False";
+ //BA.debugLineNum = 280;BA.debugLine="lblTipoAmbiente.Visible = False";
 mostCurrent._lbltipoambiente.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 184;BA.debugLine="imgSierra.Visible = False";
+ //BA.debugLineNum = 281;BA.debugLine="imgSierra.Visible = False";
 mostCurrent._imgsierra.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 185;BA.debugLine="imgLlanura.Visible = False";
+ //BA.debugLineNum = 282;BA.debugLine="imgLlanura.Visible = False";
 mostCurrent._imgllanura.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 186;BA.debugLine="lblLlanura.SetVisibleAnimated(300, True)";
+ //BA.debugLineNum = 283;BA.debugLine="lblLlanura.SetVisibleAnimated(300, True)";
 mostCurrent._lblllanura.SetVisibleAnimated((int) (300),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 187;BA.debugLine="lblSierra.SetVisibleAnimated(300, True)";
+ //BA.debugLineNum = 284;BA.debugLine="lblSierra.SetVisibleAnimated(300, True)";
 mostCurrent._lblsierra.SetVisibleAnimated((int) (300),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 188;BA.debugLine="lblTipoAmbiente.SetVisibleAnimated(300, True)";
+ //BA.debugLineNum = 285;BA.debugLine="lblTipoAmbiente.SetVisibleAnimated(300, True)";
 mostCurrent._lbltipoambiente.SetVisibleAnimated((int) (300),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 189;BA.debugLine="imgSierra.SetVisibleAnimated(300, True)";
+ //BA.debugLineNum = 286;BA.debugLine="imgSierra.SetVisibleAnimated(300, True)";
 mostCurrent._imgsierra.SetVisibleAnimated((int) (300),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 190;BA.debugLine="imgLlanura.SetVisibleAnimated(300, True)";
+ //BA.debugLineNum = 287;BA.debugLine="imgLlanura.SetVisibleAnimated(300, True)";
 mostCurrent._imgllanura.SetVisibleAnimated((int) (300),anywheresoftware.b4a.keywords.Common.True);
  }else {
- //BA.debugLineNum = 192;BA.debugLine="lblRojoAmbiente.Visible = False";
+ //BA.debugLineNum = 289;BA.debugLine="lblRojoAmbiente.Visible = False";
 mostCurrent._lblrojoambiente.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 193;BA.debugLine="opcionElegida = \"\"";
+ //BA.debugLineNum = 290;BA.debugLine="opcionElegida = \"\"";
 mostCurrent._opcionelegida = "";
- //BA.debugLineNum = 194;BA.debugLine="lblLlanura.Visible = False";
+ //BA.debugLineNum = 291;BA.debugLine="lblLlanura.Visible = False";
 mostCurrent._lblllanura.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 195;BA.debugLine="lblSierra.Visible = False";
+ //BA.debugLineNum = 292;BA.debugLine="lblSierra.Visible = False";
 mostCurrent._lblsierra.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 196;BA.debugLine="lblTipoAmbiente.Visible = False";
+ //BA.debugLineNum = 293;BA.debugLine="lblTipoAmbiente.Visible = False";
 mostCurrent._lbltipoambiente.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 197;BA.debugLine="imgSierra.Visible = False";
+ //BA.debugLineNum = 294;BA.debugLine="imgSierra.Visible = False";
 mostCurrent._imgsierra.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 198;BA.debugLine="imgLlanura.Visible = False";
+ //BA.debugLineNum = 295;BA.debugLine="imgLlanura.Visible = False";
 mostCurrent._imgllanura.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 200;BA.debugLine="lblLlanura.SetVisibleAnimated(300, True)";
+ //BA.debugLineNum = 297;BA.debugLine="lblLlanura.SetVisibleAnimated(300, True)";
 mostCurrent._lblllanura.SetVisibleAnimated((int) (300),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 201;BA.debugLine="lblSierra.SetVisibleAnimated(300, True)";
+ //BA.debugLineNum = 298;BA.debugLine="lblSierra.SetVisibleAnimated(300, True)";
 mostCurrent._lblsierra.SetVisibleAnimated((int) (300),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 202;BA.debugLine="lblTipoAmbiente.SetVisibleAnimated(300, True)";
+ //BA.debugLineNum = 299;BA.debugLine="lblTipoAmbiente.SetVisibleAnimated(300, True)";
 mostCurrent._lbltipoambiente.SetVisibleAnimated((int) (300),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 203;BA.debugLine="imgSierra.SetVisibleAnimated(300, True)";
+ //BA.debugLineNum = 300;BA.debugLine="imgSierra.SetVisibleAnimated(300, True)";
 mostCurrent._imgsierra.SetVisibleAnimated((int) (300),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 204;BA.debugLine="imgLlanura.SetVisibleAnimated(300, True)";
+ //BA.debugLineNum = 301;BA.debugLine="imgLlanura.SetVisibleAnimated(300, True)";
 mostCurrent._imgllanura.SetVisibleAnimated((int) (300),anywheresoftware.b4a.keywords.Common.True);
  };
- //BA.debugLineNum = 207;BA.debugLine="End Sub";
+ //BA.debugLineNum = 304;BA.debugLine="End Sub";
 return "";
 }
 public static String  _imgsierra_click() throws Exception{
- //BA.debugLineNum = 240;BA.debugLine="Private Sub imgSierra_Click";
- //BA.debugLineNum = 241;BA.debugLine="If tipocuerpo = \"rio\" Then";
+ //BA.debugLineNum = 337;BA.debugLine="Private Sub imgSierra_Click";
+ //BA.debugLineNum = 338;BA.debugLine="If tipocuerpo = \"rio\" Then";
 if ((mostCurrent._tipocuerpo).equals("rio")) { 
- //BA.debugLineNum = 242;BA.debugLine="opcionElegida = \"sierras\"";
+ //BA.debugLineNum = 339;BA.debugLine="opcionElegida = \"sierras\"";
 mostCurrent._opcionelegida = "sierras";
  }else if((mostCurrent._tipocuerpo).equals("laguna")) { 
- //BA.debugLineNum = 244;BA.debugLine="opcionElegida = \"sierras_laguna\"";
+ //BA.debugLineNum = 341;BA.debugLine="opcionElegida = \"sierras_laguna\"";
 mostCurrent._opcionelegida = "sierras_laguna";
  };
- //BA.debugLineNum = 246;BA.debugLine="lblRojoAmbiente.Visible = True";
+ //BA.debugLineNum = 343;BA.debugLine="lblRojoAmbiente.Visible = True";
 mostCurrent._lblrojoambiente.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 247;BA.debugLine="lblRojoAmbiente.Left = imgSierra.Left";
+ //BA.debugLineNum = 344;BA.debugLine="lblRojoAmbiente.Left = imgSierra.Left";
 mostCurrent._lblrojoambiente.setLeft(mostCurrent._imgsierra.getLeft());
- //BA.debugLineNum = 248;BA.debugLine="End Sub";
+ //BA.debugLineNum = 345;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lblllanura_click() throws Exception{
- //BA.debugLineNum = 209;BA.debugLine="Private Sub lblLlanura_Click";
- //BA.debugLineNum = 210;BA.debugLine="If tipocuerpo = \"rio\" Then";
+ //BA.debugLineNum = 306;BA.debugLine="Private Sub lblLlanura_Click";
+ //BA.debugLineNum = 307;BA.debugLine="If tipocuerpo = \"rio\" Then";
 if ((mostCurrent._tipocuerpo).equals("rio")) { 
- //BA.debugLineNum = 211;BA.debugLine="opcionElegida = \"llanura\"";
+ //BA.debugLineNum = 308;BA.debugLine="opcionElegida = \"llanura\"";
 mostCurrent._opcionelegida = "llanura";
  }else if((mostCurrent._tipocuerpo).equals("laguna")) { 
- //BA.debugLineNum = 213;BA.debugLine="opcionElegida = \"laguna\"";
+ //BA.debugLineNum = 310;BA.debugLine="opcionElegida = \"laguna\"";
 mostCurrent._opcionelegida = "laguna";
  };
- //BA.debugLineNum = 216;BA.debugLine="lblRojoAmbiente.Visible = True";
+ //BA.debugLineNum = 313;BA.debugLine="lblRojoAmbiente.Visible = True";
 mostCurrent._lblrojoambiente.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 217;BA.debugLine="lblRojoAmbiente.Left = imgLlanura.Left";
+ //BA.debugLineNum = 314;BA.debugLine="lblRojoAmbiente.Left = imgLlanura.Left";
 mostCurrent._lblrojoambiente.setLeft(mostCurrent._imgllanura.getLeft());
- //BA.debugLineNum = 218;BA.debugLine="End Sub";
+ //BA.debugLineNum = 315;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lblsierra_click() throws Exception{
- //BA.debugLineNum = 230;BA.debugLine="Private Sub lblSierra_Click";
- //BA.debugLineNum = 231;BA.debugLine="If tipocuerpo = \"rio\" Then";
+ //BA.debugLineNum = 327;BA.debugLine="Private Sub lblSierra_Click";
+ //BA.debugLineNum = 328;BA.debugLine="If tipocuerpo = \"rio\" Then";
 if ((mostCurrent._tipocuerpo).equals("rio")) { 
- //BA.debugLineNum = 232;BA.debugLine="opcionElegida = \"sierras\"";
+ //BA.debugLineNum = 329;BA.debugLine="opcionElegida = \"sierras\"";
 mostCurrent._opcionelegida = "sierras";
  }else if((mostCurrent._tipocuerpo).equals("laguna")) { 
- //BA.debugLineNum = 234;BA.debugLine="opcionElegida = \"sierras_laguna\"";
+ //BA.debugLineNum = 331;BA.debugLine="opcionElegida = \"sierras_laguna\"";
 mostCurrent._opcionelegida = "sierras_laguna";
  };
- //BA.debugLineNum = 236;BA.debugLine="lblRojoAmbiente.Visible = True";
+ //BA.debugLineNum = 333;BA.debugLine="lblRojoAmbiente.Visible = True";
 mostCurrent._lblrojoambiente.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 237;BA.debugLine="lblRojoAmbiente.Left = imgSierra.Left";
+ //BA.debugLineNum = 334;BA.debugLine="lblRojoAmbiente.Left = imgSierra.Left";
 mostCurrent._lblrojoambiente.setLeft(mostCurrent._imgsierra.getLeft());
- //BA.debugLineNum = 238;BA.debugLine="End Sub";
+ //BA.debugLineNum = 335;BA.debugLine="End Sub";
 return "";
 }
-public static String  _load_reporte_basicos() throws Exception{
+public static void  _load_reporte_basicos() throws Exception{
+ResumableSub_Load_Reporte_Basicos rsub = new ResumableSub_Load_Reporte_Basicos(null);
+rsub.resume(processBA, null);
+}
+public static class ResumableSub_Load_Reporte_Basicos extends BA.ResumableSub {
+public ResumableSub_Load_Reporte_Basicos(appear.pnud.preservamos.form_reporte parent) {
+this.parent = parent;
+}
+appear.pnud.preservamos.form_reporte parent;
+int _result = 0;
 anywheresoftware.b4a.objects.collections.List _neweval = null;
 anywheresoftware.b4a.objects.collections.Map _m = null;
 anywheresoftware.b4a.objects.collections.Map _currentprojectmap = null;
 String _usernamenoaccent = "";
 anywheresoftware.b4a.objects.collections.Map _map1 = null;
- //BA.debugLineNum = 78;BA.debugLine="Sub Load_Reporte_Basicos";
- //BA.debugLineNum = 81;BA.debugLine="Dim newEval As List";
+
+@Override
+public void resume(BA ba, Object[] result) throws Exception{
+
+    while (true) {
+try {
+
+        switch (state) {
+            case -1:
+return;
+
+case 0:
+//C
+this.state = 1;
+ //BA.debugLineNum = 80;BA.debugLine="If Main.currentEcoregion = \"Altos Andes\" Then";
+if (true) break;
+
+case 1:
+//if
+this.state = 86;
+if ((parent.mostCurrent._main._currentecoregion /*String*/ ).equals("Altos Andes")) { 
+this.state = 3;
+}else if((parent.mostCurrent._main._currentecoregion /*String*/ ).equals("Puna")) { 
+this.state = 9;
+}else if((parent.mostCurrent._main._currentecoregion /*String*/ ).equals("Monte de sierras y bolsones")) { 
+this.state = 15;
+}else if((parent.mostCurrent._main._currentecoregion /*String*/ ).equals("Selva de las yungas")) { 
+this.state = 21;
+}else if((parent.mostCurrent._main._currentecoregion /*String*/ ).equals("Chaco seco")) { 
+this.state = 27;
+}else if((parent.mostCurrent._main._currentecoregion /*String*/ ).equals("Chaco humedo")) { 
+this.state = 29;
+}else if((parent.mostCurrent._main._currentecoregion /*String*/ ).equals("Selva paranaense")) { 
+this.state = 35;
+}else if((parent.mostCurrent._main._currentecoregion /*String*/ ).equals("Esteros del Ibera")) { 
+this.state = 41;
+}else if((parent.mostCurrent._main._currentecoregion /*String*/ ).equals("Campos y malezales")) { 
+this.state = 47;
+}else if((parent.mostCurrent._main._currentecoregion /*String*/ ).equals("Delta e islas del Parana")) { 
+this.state = 53;
+}else if((parent.mostCurrent._main._currentecoregion /*String*/ ).equals("Espinal")) { 
+this.state = 59;
+}else if((parent.mostCurrent._main._currentecoregion /*String*/ ).equals("Pampa")) { 
+this.state = 65;
+}else if((parent.mostCurrent._main._currentecoregion /*String*/ ).equals("Monte de llanuras y mesetas")) { 
+this.state = 67;
+}else if((parent.mostCurrent._main._currentecoregion /*String*/ ).equals("Estepa patagonica")) { 
+this.state = 73;
+}else if((parent.mostCurrent._main._currentecoregion /*String*/ ).equals("Bosques patagonicos")) { 
+this.state = 79;
+}else if((parent.mostCurrent._main._currentecoregion /*String*/ ).equals("")) { 
+this.state = 85;
+}if (true) break;
+
+case 3:
+//C
+this.state = 4;
+ //BA.debugLineNum = 81;BA.debugLine="Msgbox2Async(\"El análisis de hábitat no fue cali";
+anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("El análisis de hábitat no fue calibrado en la ecorregión en la que te encuentras. Es probable que algunas preguntas no tengan sentido y que los resultados no sean precisos. ¿Deseas seguir igual?"),BA.ObjectToCharSequence("¡Atención!"),"Seguir","","No, volver",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 82;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
+anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
+this.state = 103;
+return;
+case 103:
+//C
+this.state = 4;
+_result = (Integer) result[0];
+;
+ //BA.debugLineNum = 83;BA.debugLine="If Result = DialogResponse.NEGATIVE Then";
+if (true) break;
+
+case 4:
+//if
+this.state = 7;
+if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.NEGATIVE) { 
+this.state = 6;
+}if (true) break;
+
+case 6:
+//C
+this.state = 7;
+ //BA.debugLineNum = 84;BA.debugLine="Activity.finish";
+parent.mostCurrent._activity.Finish();
+ //BA.debugLineNum = 85;BA.debugLine="Activity.RemoveAllViews";
+parent.mostCurrent._activity.RemoveAllViews();
+ if (true) break;
+
+case 7:
+//C
+this.state = 86;
+;
+ if (true) break;
+
+case 9:
+//C
+this.state = 10;
+ //BA.debugLineNum = 88;BA.debugLine="Msgbox2Async(\"El análisis de hábitat no fue cali";
+anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("El análisis de hábitat no fue calibrado en la ecorregión en la que te encuentras. Es probable que algunas preguntas no tengan sentido y que los resultados no sean precisos. ¿Deseas seguir igual?"),BA.ObjectToCharSequence("¡Atención!"),"Seguir","","No, volver",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 89;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
+anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
+this.state = 104;
+return;
+case 104:
+//C
+this.state = 10;
+_result = (Integer) result[0];
+;
+ //BA.debugLineNum = 90;BA.debugLine="If Result = DialogResponse.NEGATIVE Then";
+if (true) break;
+
+case 10:
+//if
+this.state = 13;
+if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.NEGATIVE) { 
+this.state = 12;
+}if (true) break;
+
+case 12:
+//C
+this.state = 13;
+ //BA.debugLineNum = 91;BA.debugLine="Activity.finish";
+parent.mostCurrent._activity.Finish();
+ //BA.debugLineNum = 92;BA.debugLine="Activity.RemoveAllViews";
+parent.mostCurrent._activity.RemoveAllViews();
+ if (true) break;
+
+case 13:
+//C
+this.state = 86;
+;
+ if (true) break;
+
+case 15:
+//C
+this.state = 16;
+ //BA.debugLineNum = 95;BA.debugLine="Msgbox2Async(\"El análisis de hábitat no fue cali";
+anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("El análisis de hábitat no fue calibrado en la ecorregión en la que te encuentras. Es probable que algunas preguntas no tengan sentido y que los resultados no sean precisos. ¿Deseas seguir igual?"),BA.ObjectToCharSequence("¡Atención!"),"Seguir","","No, volver",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 96;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
+anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
+this.state = 105;
+return;
+case 105:
+//C
+this.state = 16;
+_result = (Integer) result[0];
+;
+ //BA.debugLineNum = 97;BA.debugLine="If Result = DialogResponse.NEGATIVE Then";
+if (true) break;
+
+case 16:
+//if
+this.state = 19;
+if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.NEGATIVE) { 
+this.state = 18;
+}if (true) break;
+
+case 18:
+//C
+this.state = 19;
+ //BA.debugLineNum = 98;BA.debugLine="Activity.finish";
+parent.mostCurrent._activity.Finish();
+ //BA.debugLineNum = 99;BA.debugLine="Activity.RemoveAllViews";
+parent.mostCurrent._activity.RemoveAllViews();
+ if (true) break;
+
+case 19:
+//C
+this.state = 86;
+;
+ if (true) break;
+
+case 21:
+//C
+this.state = 22;
+ //BA.debugLineNum = 102;BA.debugLine="Msgbox2Async(\"El análisis de hábitat no fue cali";
+anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("El análisis de hábitat no fue calibrado en la ecorregión en la que te encuentras. Es probable que algunas preguntas no tengan sentido y que los resultados no sean precisos. ¿Deseas seguir igual?"),BA.ObjectToCharSequence("¡Atención!"),"Seguir","","No, volver",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 103;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
+anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
+this.state = 106;
+return;
+case 106:
+//C
+this.state = 22;
+_result = (Integer) result[0];
+;
+ //BA.debugLineNum = 104;BA.debugLine="If Result = DialogResponse.NEGATIVE Then";
+if (true) break;
+
+case 22:
+//if
+this.state = 25;
+if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.NEGATIVE) { 
+this.state = 24;
+}if (true) break;
+
+case 24:
+//C
+this.state = 25;
+ //BA.debugLineNum = 105;BA.debugLine="Activity.finish";
+parent.mostCurrent._activity.Finish();
+ //BA.debugLineNum = 106;BA.debugLine="Activity.RemoveAllViews";
+parent.mostCurrent._activity.RemoveAllViews();
+ if (true) break;
+
+case 25:
+//C
+this.state = 86;
+;
+ if (true) break;
+
+case 27:
+//C
+this.state = 86;
+ if (true) break;
+
+case 29:
+//C
+this.state = 30;
+ //BA.debugLineNum = 111;BA.debugLine="Msgbox2Async(\"El análisis de hábitat no fue cali";
+anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("El análisis de hábitat no fue calibrado en la ecorregión en la que te encuentras. Es probable que algunas preguntas no tengan sentido y que los resultados no sean precisos. ¿Deseas seguir igual?"),BA.ObjectToCharSequence("¡Atención!"),"Seguir","","No, volver",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 112;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
+anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
+this.state = 107;
+return;
+case 107:
+//C
+this.state = 30;
+_result = (Integer) result[0];
+;
+ //BA.debugLineNum = 113;BA.debugLine="If Result = DialogResponse.NEGATIVE Then";
+if (true) break;
+
+case 30:
+//if
+this.state = 33;
+if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.NEGATIVE) { 
+this.state = 32;
+}if (true) break;
+
+case 32:
+//C
+this.state = 33;
+ //BA.debugLineNum = 114;BA.debugLine="Activity.finish";
+parent.mostCurrent._activity.Finish();
+ //BA.debugLineNum = 115;BA.debugLine="Activity.RemoveAllViews";
+parent.mostCurrent._activity.RemoveAllViews();
+ if (true) break;
+
+case 33:
+//C
+this.state = 86;
+;
+ if (true) break;
+
+case 35:
+//C
+this.state = 36;
+ //BA.debugLineNum = 118;BA.debugLine="Msgbox2Async(\"El análisis de hábitat no fue cali";
+anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("El análisis de hábitat no fue calibrado en la ecorregión en la que te encuentras. Es probable que algunas preguntas no tengan sentido y que los resultados no sean precisos. ¿Deseas seguir igual?"),BA.ObjectToCharSequence("¡Atención!"),"Seguir","","No, volver",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 119;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
+anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
+this.state = 108;
+return;
+case 108:
+//C
+this.state = 36;
+_result = (Integer) result[0];
+;
+ //BA.debugLineNum = 120;BA.debugLine="If Result = DialogResponse.NEGATIVE Then";
+if (true) break;
+
+case 36:
+//if
+this.state = 39;
+if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.NEGATIVE) { 
+this.state = 38;
+}if (true) break;
+
+case 38:
+//C
+this.state = 39;
+ //BA.debugLineNum = 121;BA.debugLine="Activity.finish";
+parent.mostCurrent._activity.Finish();
+ //BA.debugLineNum = 122;BA.debugLine="Activity.RemoveAllViews";
+parent.mostCurrent._activity.RemoveAllViews();
+ if (true) break;
+
+case 39:
+//C
+this.state = 86;
+;
+ if (true) break;
+
+case 41:
+//C
+this.state = 42;
+ //BA.debugLineNum = 125;BA.debugLine="Msgbox2Async(\"El análisis de hábitat no fue cali";
+anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("El análisis de hábitat no fue calibrado en la ecorregión en la que te encuentras. Es probable que algunas preguntas no tengan sentido y que los resultados no sean precisos. ¿Deseas seguir igual?"),BA.ObjectToCharSequence("¡Atención!"),"Seguir","","No, volver",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 126;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
+anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
+this.state = 109;
+return;
+case 109:
+//C
+this.state = 42;
+_result = (Integer) result[0];
+;
+ //BA.debugLineNum = 127;BA.debugLine="If Result = DialogResponse.NEGATIVE Then";
+if (true) break;
+
+case 42:
+//if
+this.state = 45;
+if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.NEGATIVE) { 
+this.state = 44;
+}if (true) break;
+
+case 44:
+//C
+this.state = 45;
+ //BA.debugLineNum = 128;BA.debugLine="Activity.finish";
+parent.mostCurrent._activity.Finish();
+ //BA.debugLineNum = 129;BA.debugLine="Activity.RemoveAllViews";
+parent.mostCurrent._activity.RemoveAllViews();
+ if (true) break;
+
+case 45:
+//C
+this.state = 86;
+;
+ if (true) break;
+
+case 47:
+//C
+this.state = 48;
+ //BA.debugLineNum = 132;BA.debugLine="Msgbox2Async(\"El análisis de hábitat no fue cali";
+anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("El análisis de hábitat no fue calibrado en la ecorregión en la que te encuentras. Es probable que algunas preguntas no tengan sentido y que los resultados no sean precisos. ¿Deseas seguir igual?"),BA.ObjectToCharSequence("¡Atención!"),"Seguir","","No, volver",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 133;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
+anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
+this.state = 110;
+return;
+case 110:
+//C
+this.state = 48;
+_result = (Integer) result[0];
+;
+ //BA.debugLineNum = 134;BA.debugLine="If Result = DialogResponse.NEGATIVE Then";
+if (true) break;
+
+case 48:
+//if
+this.state = 51;
+if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.NEGATIVE) { 
+this.state = 50;
+}if (true) break;
+
+case 50:
+//C
+this.state = 51;
+ //BA.debugLineNum = 135;BA.debugLine="Activity.finish";
+parent.mostCurrent._activity.Finish();
+ //BA.debugLineNum = 136;BA.debugLine="Activity.RemoveAllViews";
+parent.mostCurrent._activity.RemoveAllViews();
+ if (true) break;
+
+case 51:
+//C
+this.state = 86;
+;
+ if (true) break;
+
+case 53:
+//C
+this.state = 54;
+ //BA.debugLineNum = 139;BA.debugLine="Msgbox2Async(\"El análisis de hábitat no fue cali";
+anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("El análisis de hábitat no fue calibrado en la ecorregión en la que te encuentras. Es probable que algunas preguntas no tengan sentido y que los resultados no sean precisos. ¿Deseas seguir igual?"),BA.ObjectToCharSequence("¡Atención!"),"Seguir","","No, volver",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 140;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
+anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
+this.state = 111;
+return;
+case 111:
+//C
+this.state = 54;
+_result = (Integer) result[0];
+;
+ //BA.debugLineNum = 141;BA.debugLine="If Result = DialogResponse.NEGATIVE Then";
+if (true) break;
+
+case 54:
+//if
+this.state = 57;
+if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.NEGATIVE) { 
+this.state = 56;
+}if (true) break;
+
+case 56:
+//C
+this.state = 57;
+ //BA.debugLineNum = 142;BA.debugLine="Activity.finish";
+parent.mostCurrent._activity.Finish();
+ //BA.debugLineNum = 143;BA.debugLine="Activity.RemoveAllViews";
+parent.mostCurrent._activity.RemoveAllViews();
+ if (true) break;
+
+case 57:
+//C
+this.state = 86;
+;
+ if (true) break;
+
+case 59:
+//C
+this.state = 60;
+ //BA.debugLineNum = 146;BA.debugLine="Msgbox2Async(\"El análisis de hábitat no fue cali";
+anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("El análisis de hábitat no fue calibrado en la ecorregión en la que te encuentras. Es probable que algunas preguntas no tengan sentido y que los resultados no sean precisos. ¿Deseas seguir igual?"),BA.ObjectToCharSequence("¡Atención!"),"Seguir","","No, volver",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 147;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
+anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
+this.state = 112;
+return;
+case 112:
+//C
+this.state = 60;
+_result = (Integer) result[0];
+;
+ //BA.debugLineNum = 148;BA.debugLine="If Result = DialogResponse.NEGATIVE Then";
+if (true) break;
+
+case 60:
+//if
+this.state = 63;
+if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.NEGATIVE) { 
+this.state = 62;
+}if (true) break;
+
+case 62:
+//C
+this.state = 63;
+ //BA.debugLineNum = 149;BA.debugLine="Activity.finish";
+parent.mostCurrent._activity.Finish();
+ //BA.debugLineNum = 150;BA.debugLine="Activity.RemoveAllViews";
+parent.mostCurrent._activity.RemoveAllViews();
+ if (true) break;
+
+case 63:
+//C
+this.state = 86;
+;
+ if (true) break;
+
+case 65:
+//C
+this.state = 86;
+ if (true) break;
+
+case 67:
+//C
+this.state = 68;
+ //BA.debugLineNum = 155;BA.debugLine="Msgbox2Async(\"El análisis de hábitat no fue cali";
+anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("El análisis de hábitat no fue calibrado en la ecorregión en la que te encuentras. Es probable que algunas preguntas no tengan sentido y que los resultados no sean precisos. ¿Deseas seguir igual?"),BA.ObjectToCharSequence("¡Atención!"),"Seguir","","No, volver",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 156;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
+anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
+this.state = 113;
+return;
+case 113:
+//C
+this.state = 68;
+_result = (Integer) result[0];
+;
+ //BA.debugLineNum = 157;BA.debugLine="If Result = DialogResponse.NEGATIVE Then";
+if (true) break;
+
+case 68:
+//if
+this.state = 71;
+if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.NEGATIVE) { 
+this.state = 70;
+}if (true) break;
+
+case 70:
+//C
+this.state = 71;
+ //BA.debugLineNum = 158;BA.debugLine="Activity.finish";
+parent.mostCurrent._activity.Finish();
+ //BA.debugLineNum = 159;BA.debugLine="Activity.RemoveAllViews";
+parent.mostCurrent._activity.RemoveAllViews();
+ if (true) break;
+
+case 71:
+//C
+this.state = 86;
+;
+ if (true) break;
+
+case 73:
+//C
+this.state = 74;
+ //BA.debugLineNum = 162;BA.debugLine="Msgbox2Async(\"El análisis de hábitat no fue cali";
+anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("El análisis de hábitat no fue calibrado en la ecorregión en la que te encuentras. Es probable que algunas preguntas no tengan sentido y que los resultados no sean precisos. ¿Deseas seguir igual?"),BA.ObjectToCharSequence("¡Atención!"),"Seguir","","No, volver",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 163;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
+anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
+this.state = 114;
+return;
+case 114:
+//C
+this.state = 74;
+_result = (Integer) result[0];
+;
+ //BA.debugLineNum = 164;BA.debugLine="If Result = DialogResponse.NEGATIVE Then";
+if (true) break;
+
+case 74:
+//if
+this.state = 77;
+if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.NEGATIVE) { 
+this.state = 76;
+}if (true) break;
+
+case 76:
+//C
+this.state = 77;
+ //BA.debugLineNum = 165;BA.debugLine="Activity.finish";
+parent.mostCurrent._activity.Finish();
+ //BA.debugLineNum = 166;BA.debugLine="Activity.RemoveAllViews";
+parent.mostCurrent._activity.RemoveAllViews();
+ if (true) break;
+
+case 77:
+//C
+this.state = 86;
+;
+ if (true) break;
+
+case 79:
+//C
+this.state = 80;
+ //BA.debugLineNum = 169;BA.debugLine="Msgbox2Async(\"El análisis de hábitat no fue cali";
+anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("El análisis de hábitat no fue calibrado en la ecorregión en la que te encuentras. Es probable que algunas preguntas no tengan sentido y que los resultados no sean precisos. ¿Deseas seguir igual?"),BA.ObjectToCharSequence("¡Atención!"),"Seguir","","No, volver",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 170;BA.debugLine="Wait For Msgbox_Result (Result As Int)";
+anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
+this.state = 115;
+return;
+case 115:
+//C
+this.state = 80;
+_result = (Integer) result[0];
+;
+ //BA.debugLineNum = 171;BA.debugLine="If Result = DialogResponse.NEGATIVE Then";
+if (true) break;
+
+case 80:
+//if
+this.state = 83;
+if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.NEGATIVE) { 
+this.state = 82;
+}if (true) break;
+
+case 82:
+//C
+this.state = 83;
+ //BA.debugLineNum = 172;BA.debugLine="Activity.finish";
+parent.mostCurrent._activity.Finish();
+ //BA.debugLineNum = 173;BA.debugLine="Activity.RemoveAllViews";
+parent.mostCurrent._activity.RemoveAllViews();
+ if (true) break;
+
+case 83:
+//C
+this.state = 86;
+;
+ if (true) break;
+
+case 85:
+//C
+this.state = 86;
+ if (true) break;
+
+case 86:
+//C
+this.state = 87;
+;
+ //BA.debugLineNum = 182;BA.debugLine="Dim newEval As List";
 _neweval = new anywheresoftware.b4a.objects.collections.List();
- //BA.debugLineNum = 82;BA.debugLine="newEval.Initialize";
+ //BA.debugLineNum = 183;BA.debugLine="newEval.Initialize";
 _neweval.Initialize();
- //BA.debugLineNum = 83;BA.debugLine="Dim m As Map";
+ //BA.debugLineNum = 184;BA.debugLine="Dim m As Map";
 _m = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 84;BA.debugLine="m.Initialize";
+ //BA.debugLineNum = 185;BA.debugLine="m.Initialize";
 _m.Initialize();
- //BA.debugLineNum = 85;BA.debugLine="m.Put(\"usuario\", Main.strUserEmail)";
-_m.Put((Object)("usuario"),(Object)(mostCurrent._main._struseremail /*String*/ ));
- //BA.debugLineNum = 86;BA.debugLine="newEval.Add(m)";
+ //BA.debugLineNum = 186;BA.debugLine="m.Put(\"usuario\", Main.strUserEmail)";
+_m.Put((Object)("usuario"),(Object)(parent.mostCurrent._main._struseremail /*String*/ ));
+ //BA.debugLineNum = 187;BA.debugLine="newEval.Add(m)";
 _neweval.Add((Object)(_m.getObject()));
- //BA.debugLineNum = 87;BA.debugLine="If Starter.sqlDB = Null Then";
-if (mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ == null) { 
- //BA.debugLineNum = 88;BA.debugLine="Starter.sqlDB.Initialize(Starter.dbdir, \"preserv";
-mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ .Initialize(mostCurrent._starter._dbdir /*String*/ ,"preservamosdb.db",anywheresoftware.b4a.keywords.Common.False);
- };
- //BA.debugLineNum = 90;BA.debugLine="DBUtils.InsertMaps(Starter.sqlDB,\"evals\", newEval";
-mostCurrent._dbutils._insertmaps /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals",_neweval);
- //BA.debugLineNum = 94;BA.debugLine="Dim currentprojectMap As Map";
+ //BA.debugLineNum = 188;BA.debugLine="If Starter.sqlDB = Null Then";
+if (true) break;
+
+case 87:
+//if
+this.state = 90;
+if (parent.mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ == null) { 
+this.state = 89;
+}if (true) break;
+
+case 89:
+//C
+this.state = 90;
+ //BA.debugLineNum = 189;BA.debugLine="Starter.sqlDB.Initialize(Starter.dbdir, \"preserv";
+parent.mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ .Initialize(parent.mostCurrent._starter._dbdir /*String*/ ,"preservamosdb.db",anywheresoftware.b4a.keywords.Common.False);
+ if (true) break;
+
+case 90:
+//C
+this.state = 91;
+;
+ //BA.debugLineNum = 191;BA.debugLine="DBUtils.InsertMaps(Starter.sqlDB,\"evals\", newEval";
+parent.mostCurrent._dbutils._insertmaps /*String*/ (mostCurrent.activityBA,parent.mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals",_neweval);
+ //BA.debugLineNum = 195;BA.debugLine="Dim currentprojectMap As Map";
 _currentprojectmap = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 95;BA.debugLine="currentprojectMap.Initialize";
+ //BA.debugLineNum = 196;BA.debugLine="currentprojectMap.Initialize";
 _currentprojectmap.Initialize();
- //BA.debugLineNum = 96;BA.debugLine="Try";
-try { //BA.debugLineNum = 97;BA.debugLine="currentprojectMap = DBUtils.ExecuteMap(Starter.s";
-_currentprojectmap = mostCurrent._dbutils._executemap /*anywheresoftware.b4a.objects.collections.Map*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"SELECT * FROM evals ORDER BY id DESC LIMIT 1",(String[])(anywheresoftware.b4a.keywords.Common.Null));
- //BA.debugLineNum = 98;BA.debugLine="Dim usernameNoAccent As String";
+ //BA.debugLineNum = 197;BA.debugLine="Try";
+if (true) break;
+
+case 91:
+//try
+this.state = 102;
+this.catchState = 101;
+this.state = 93;
+if (true) break;
+
+case 93:
+//C
+this.state = 94;
+this.catchState = 101;
+ //BA.debugLineNum = 198;BA.debugLine="currentprojectMap = DBUtils.ExecuteMap(Starter.s";
+_currentprojectmap = parent.mostCurrent._dbutils._executemap /*anywheresoftware.b4a.objects.collections.Map*/ (mostCurrent.activityBA,parent.mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"SELECT * FROM evals ORDER BY id DESC LIMIT 1",(String[])(anywheresoftware.b4a.keywords.Common.Null));
+ //BA.debugLineNum = 199;BA.debugLine="Dim usernameNoAccent As String";
 _usernamenoaccent = "";
- //BA.debugLineNum = 99;BA.debugLine="usernameNoAccent = Main.username.Replace(\"á\", \"a";
-_usernamenoaccent = mostCurrent._main._username /*String*/ .replace("á","a");
- //BA.debugLineNum = 100;BA.debugLine="usernameNoAccent = Main.username.Replace(\"é\", \"e";
-_usernamenoaccent = mostCurrent._main._username /*String*/ .replace("é","e");
- //BA.debugLineNum = 101;BA.debugLine="usernameNoAccent = Main.username.Replace(\"í\", \"i";
-_usernamenoaccent = mostCurrent._main._username /*String*/ .replace("í","i");
- //BA.debugLineNum = 102;BA.debugLine="usernameNoAccent = Main.username.Replace(\"ó\", \"o";
-_usernamenoaccent = mostCurrent._main._username /*String*/ .replace("ó","o");
- //BA.debugLineNum = 103;BA.debugLine="usernameNoAccent = Main.username.Replace(\"ú\", \"u";
-_usernamenoaccent = mostCurrent._main._username /*String*/ .replace("ú","u");
- //BA.debugLineNum = 104;BA.debugLine="usernameNoAccent = Main.username.Replace(\"ñ\", \"n";
-_usernamenoaccent = mostCurrent._main._username /*String*/ .replace("ñ","n");
- //BA.debugLineNum = 105;BA.debugLine="usernameNoAccent = Main.username.Replace(\"@\", \"a";
-_usernamenoaccent = mostCurrent._main._username /*String*/ .replace("@","ae");
- //BA.debugLineNum = 107;BA.debugLine="If currentprojectMap = Null Or currentprojectMap";
+ //BA.debugLineNum = 200;BA.debugLine="usernameNoAccent = Main.username.Replace(\"á\", \"a";
+_usernamenoaccent = parent.mostCurrent._main._username /*String*/ .replace("á","a");
+ //BA.debugLineNum = 201;BA.debugLine="usernameNoAccent = Main.username.Replace(\"é\", \"e";
+_usernamenoaccent = parent.mostCurrent._main._username /*String*/ .replace("é","e");
+ //BA.debugLineNum = 202;BA.debugLine="usernameNoAccent = Main.username.Replace(\"í\", \"i";
+_usernamenoaccent = parent.mostCurrent._main._username /*String*/ .replace("í","i");
+ //BA.debugLineNum = 203;BA.debugLine="usernameNoAccent = Main.username.Replace(\"ó\", \"o";
+_usernamenoaccent = parent.mostCurrent._main._username /*String*/ .replace("ó","o");
+ //BA.debugLineNum = 204;BA.debugLine="usernameNoAccent = Main.username.Replace(\"ú\", \"u";
+_usernamenoaccent = parent.mostCurrent._main._username /*String*/ .replace("ú","u");
+ //BA.debugLineNum = 205;BA.debugLine="usernameNoAccent = Main.username.Replace(\"ñ\", \"n";
+_usernamenoaccent = parent.mostCurrent._main._username /*String*/ .replace("ñ","n");
+ //BA.debugLineNum = 206;BA.debugLine="usernameNoAccent = Main.username.Replace(\"@\", \"a";
+_usernamenoaccent = parent.mostCurrent._main._username /*String*/ .replace("@","ae");
+ //BA.debugLineNum = 208;BA.debugLine="If currentprojectMap = Null Or currentprojectMap";
+if (true) break;
+
+case 94:
+//if
+this.state = 99;
 if (_currentprojectmap== null || _currentprojectmap.IsInitialized()==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 108;BA.debugLine="currentproject = 1";
-_currentproject = BA.NumberToString(1);
- //BA.debugLineNum = 109;BA.debugLine="Main.currentproject = currentproject";
-mostCurrent._main._currentproject /*String*/  = _currentproject;
- //BA.debugLineNum = 110;BA.debugLine="Dim Map1 As Map";
+this.state = 96;
+}else {
+this.state = 98;
+}if (true) break;
+
+case 96:
+//C
+this.state = 99;
+ //BA.debugLineNum = 209;BA.debugLine="currentproject = 1";
+parent._currentproject = BA.NumberToString(1);
+ //BA.debugLineNum = 210;BA.debugLine="Main.currentproject = currentproject";
+parent.mostCurrent._main._currentproject /*String*/  = parent._currentproject;
+ //BA.debugLineNum = 211;BA.debugLine="Dim Map1 As Map";
 _map1 = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 111;BA.debugLine="Map1.Initialize";
+ //BA.debugLineNum = 212;BA.debugLine="Map1.Initialize";
 _map1.Initialize();
- //BA.debugLineNum = 112;BA.debugLine="Map1.Put(\"Id\", currentproject)";
-_map1.Put((Object)("Id"),(Object)(_currentproject));
- //BA.debugLineNum = 113;BA.debugLine="DateTime.DateFormat = \"dd-MM-yyyy\"";
+ //BA.debugLineNum = 213;BA.debugLine="Map1.Put(\"Id\", currentproject)";
+_map1.Put((Object)("Id"),(Object)(parent._currentproject));
+ //BA.debugLineNum = 214;BA.debugLine="DateTime.DateFormat = \"dd-MM-yyyy\"";
 anywheresoftware.b4a.keywords.Common.DateTime.setDateFormat("dd-MM-yyyy");
- //BA.debugLineNum = 114;BA.debugLine="datecurrentproject = DateTime.Date(DateTime.Now";
-_datecurrentproject = anywheresoftware.b4a.keywords.Common.DateTime.Date(anywheresoftware.b4a.keywords.Common.DateTime.getNow());
- //BA.debugLineNum = 116;BA.debugLine="fullidcurrentproject = usernameNoAccent & \"_\" &";
-_fullidcurrentproject = _usernamenoaccent+"_"+_currentproject+"_"+_datecurrentproject;
- //BA.debugLineNum = 117;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
-mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","fullID",(Object)(_fullidcurrentproject),_map1);
- //BA.debugLineNum = 118;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"t";
-mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","terminado",(Object)("no"),_map1);
- //BA.debugLineNum = 119;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"e";
-mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","evalsent",(Object)("no"),_map1);
- }else {
- //BA.debugLineNum = 121;BA.debugLine="currentproject = currentprojectMap.Get(\"id\")";
-_currentproject = BA.ObjectToString(_currentprojectmap.Get((Object)("id")));
- //BA.debugLineNum = 122;BA.debugLine="Main.currentproject = currentproject";
-mostCurrent._main._currentproject /*String*/  = _currentproject;
- //BA.debugLineNum = 123;BA.debugLine="Dim Map1 As Map";
+ //BA.debugLineNum = 215;BA.debugLine="datecurrentproject = DateTime.Date(DateTime.Now";
+parent._datecurrentproject = anywheresoftware.b4a.keywords.Common.DateTime.Date(anywheresoftware.b4a.keywords.Common.DateTime.getNow());
+ //BA.debugLineNum = 217;BA.debugLine="fullidcurrentproject = usernameNoAccent & \"_\" &";
+parent._fullidcurrentproject = _usernamenoaccent+"_"+parent._currentproject+"_"+parent._datecurrentproject;
+ //BA.debugLineNum = 218;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
+parent.mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,parent.mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","fullID",(Object)(parent._fullidcurrentproject),_map1);
+ //BA.debugLineNum = 219;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"t";
+parent.mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,parent.mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","terminado",(Object)("no"),_map1);
+ //BA.debugLineNum = 220;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"e";
+parent.mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,parent.mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","evalsent",(Object)("no"),_map1);
+ if (true) break;
+
+case 98:
+//C
+this.state = 99;
+ //BA.debugLineNum = 222;BA.debugLine="currentproject = currentprojectMap.Get(\"id\")";
+parent._currentproject = BA.ObjectToString(_currentprojectmap.Get((Object)("id")));
+ //BA.debugLineNum = 223;BA.debugLine="Main.currentproject = currentproject";
+parent.mostCurrent._main._currentproject /*String*/  = parent._currentproject;
+ //BA.debugLineNum = 224;BA.debugLine="Dim Map1 As Map";
 _map1 = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 124;BA.debugLine="Map1.Initialize";
+ //BA.debugLineNum = 225;BA.debugLine="Map1.Initialize";
 _map1.Initialize();
- //BA.debugLineNum = 125;BA.debugLine="Map1.Put(\"Id\", currentproject)";
-_map1.Put((Object)("Id"),(Object)(_currentproject));
- //BA.debugLineNum = 126;BA.debugLine="DateTime.DateFormat = \"dd-MM-yyyy\"";
+ //BA.debugLineNum = 226;BA.debugLine="Map1.Put(\"Id\", currentproject)";
+_map1.Put((Object)("Id"),(Object)(parent._currentproject));
+ //BA.debugLineNum = 227;BA.debugLine="DateTime.DateFormat = \"dd-MM-yyyy\"";
 anywheresoftware.b4a.keywords.Common.DateTime.setDateFormat("dd-MM-yyyy");
- //BA.debugLineNum = 127;BA.debugLine="datecurrentproject = DateTime.Date(DateTime.Now";
-_datecurrentproject = anywheresoftware.b4a.keywords.Common.DateTime.Date(anywheresoftware.b4a.keywords.Common.DateTime.getNow());
- //BA.debugLineNum = 128;BA.debugLine="fullidcurrentproject = usernameNoAccent & \"_\" &";
-_fullidcurrentproject = _usernamenoaccent+"_"+_currentproject+"_"+_datecurrentproject;
- //BA.debugLineNum = 129;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
-mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","fullID",(Object)(_fullidcurrentproject),_map1);
- //BA.debugLineNum = 130;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"t";
-mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","terminado",(Object)("no"),_map1);
- //BA.debugLineNum = 131;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"e";
-mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","evalsent",(Object)("no"),_map1);
- };
- } 
-       catch (Exception e49) {
-			processBA.setLastException(e49); //BA.debugLineNum = 134;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("440435768",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
- //BA.debugLineNum = 135;BA.debugLine="ToastMessageShow(\"Hubo un error, intente de nuev";
+ //BA.debugLineNum = 228;BA.debugLine="datecurrentproject = DateTime.Date(DateTime.Now";
+parent._datecurrentproject = anywheresoftware.b4a.keywords.Common.DateTime.Date(anywheresoftware.b4a.keywords.Common.DateTime.getNow());
+ //BA.debugLineNum = 229;BA.debugLine="fullidcurrentproject = usernameNoAccent & \"_\" &";
+parent._fullidcurrentproject = _usernamenoaccent+"_"+parent._currentproject+"_"+parent._datecurrentproject;
+ //BA.debugLineNum = 230;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"f";
+parent.mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,parent.mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","fullID",(Object)(parent._fullidcurrentproject),_map1);
+ //BA.debugLineNum = 231;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"t";
+parent.mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,parent.mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","terminado",(Object)("no"),_map1);
+ //BA.debugLineNum = 232;BA.debugLine="DBUtils.UpdateRecord(Starter.sqlDB, \"evals\", \"e";
+parent.mostCurrent._dbutils._updaterecord /*String*/ (mostCurrent.activityBA,parent.mostCurrent._starter._sqldb /*anywheresoftware.b4a.sql.SQL*/ ,"evals","evalsent",(Object)("no"),_map1);
+ if (true) break;
+
+case 99:
+//C
+this.state = 102;
+;
+ if (true) break;
+
+case 101:
+//C
+this.state = 102;
+this.catchState = 0;
+ //BA.debugLineNum = 235;BA.debugLine="Log(LastException)";
+anywheresoftware.b4a.keywords.Common.LogImpl("07078045",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+ //BA.debugLineNum = 236;BA.debugLine="ToastMessageShow(\"Hubo un error, intente de nuev";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Hubo un error, intente de nuevo"),anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 136;BA.debugLine="Return";
-if (true) return "";
- };
- //BA.debugLineNum = 139;BA.debugLine="End Sub";
-return "";
+ //BA.debugLineNum = 237;BA.debugLine="Return";
+if (true) return ;
+ if (true) break;
+if (true) break;
+
+case 102:
+//C
+this.state = -1;
+this.catchState = 0;
+;
+ //BA.debugLineNum = 240;BA.debugLine="End Sub";
+if (true) break;
+}} 
+       catch (Exception e0) {
+			
+if (catchState == 0)
+    throw e0;
+else {
+    state = catchState;
+processBA.setLastException(e0);}
+            }
+        }
+    }
 }
 public static String  _process_globals() throws Exception{
  //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";

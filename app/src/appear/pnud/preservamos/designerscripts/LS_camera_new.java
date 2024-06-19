@@ -6,6 +6,12 @@ import anywheresoftware.b4a.BA;
 
 public class LS_camera_new{
 
+public static void LS_800x1280_1(anywheresoftware.b4a.BA ba, android.view.View parent, anywheresoftware.b4a.keywords.LayoutValues lv, java.util.Map props,
+java.util.Map<String, anywheresoftware.b4a.keywords.LayoutBuilder.ViewWrapperAndAnchor> views, int width, int height, float scale) throws Exception {
+anywheresoftware.b4a.keywords.LayoutBuilder.setScaleRate(0.3);
+views.get("btnrecord").vw.setLeft((int)((views.get("pnlcamera").vw.getLeft() + views.get("pnlcamera").vw.getWidth()/2) - (views.get("btnrecord").vw.getWidth() / 2)));
+
+}
 public static void LS_general(anywheresoftware.b4a.BA ba, android.view.View parent, anywheresoftware.b4a.keywords.LayoutValues lv, java.util.Map props,
 java.util.Map<String, anywheresoftware.b4a.keywords.LayoutBuilder.ViewWrapperAndAnchor> views, int width, int height, float scale) throws Exception {
 anywheresoftware.b4a.keywords.LayoutBuilder.setScaleRate(0.3);

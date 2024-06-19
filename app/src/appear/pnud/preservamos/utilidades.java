@@ -14,53 +14,54 @@ public static Object getObject() {
 public b4a.example.dateutils _dateutils = null;
 public appear.pnud.preservamos.main _main = null;
 public appear.pnud.preservamos.form_main _form_main = null;
-public appear.pnud.preservamos.frmabout _frmabout = null;
+public appear.pnud.preservamos.form_reporte _form_reporte = null;
+public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
+public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
+public appear.pnud.preservamos.frmdatossinenviar _frmdatossinenviar = null;
+public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
 public appear.pnud.preservamos.alerta_fotos _alerta_fotos = null;
 public appear.pnud.preservamos.alertas _alertas = null;
 public appear.pnud.preservamos.aprender_muestreo _aprender_muestreo = null;
 public appear.pnud.preservamos.dbutils _dbutils = null;
 public appear.pnud.preservamos.downloadservice _downloadservice = null;
 public appear.pnud.preservamos.firebasemessaging _firebasemessaging = null;
-public appear.pnud.preservamos.form_reporte _form_reporte = null;
+public appear.pnud.preservamos.frmabout _frmabout = null;
 public appear.pnud.preservamos.frmdatosanteriores _frmdatosanteriores = null;
-public appear.pnud.preservamos.frmdatossinenviar _frmdatossinenviar = null;
 public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
 public appear.pnud.preservamos.frmfelicitaciones _frmfelicitaciones = null;
-public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
 public appear.pnud.preservamos.frmmapa _frmmapa = null;
 public appear.pnud.preservamos.frmmunicipioestadisticas _frmmunicipioestadisticas = null;
 public appear.pnud.preservamos.frmpoliticadatos _frmpoliticadatos = null;
 public appear.pnud.preservamos.frmtiporeporte _frmtiporeporte = null;
-public appear.pnud.preservamos.httputils2service _httputils2service = null;
 public appear.pnud.preservamos.imagedownloader _imagedownloader = null;
 public appear.pnud.preservamos.inatcheck _inatcheck = null;
 public appear.pnud.preservamos.mod_hidro _mod_hidro = null;
 public appear.pnud.preservamos.mod_hidro_fotos _mod_hidro_fotos = null;
 public appear.pnud.preservamos.mod_residuos _mod_residuos = null;
 public appear.pnud.preservamos.mod_residuos_fotos _mod_residuos_fotos = null;
-public appear.pnud.preservamos.register _register = null;
-public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
 public appear.pnud.preservamos.reporte_fotos _reporte_fotos = null;
 public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
-public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
-public appear.pnud.preservamos.reporte_habitat_rio_bu _reporte_habitat_rio_bu = null;
 public appear.pnud.preservamos.reporte_habitat_rio_sierras _reporte_habitat_rio_sierras = null;
+public appear.pnud.preservamos.reporte_habitat_rio_sierras_bu _reporte_habitat_rio_sierras_bu = null;
 public appear.pnud.preservamos.starter _starter = null;
 public appear.pnud.preservamos.uploadfiles _uploadfiles = null;
+public appear.pnud.preservamos.character_creation _character_creation = null;
+public appear.pnud.preservamos.register _register = null;
 public appear.pnud.preservamos.xuiviewsutils _xuiviewsutils = null;
+public appear.pnud.preservamos.httputils2service _httputils2service = null;
 public static String  _bmsgbox3_click(anywheresoftware.b4a.BA _ba) throws Exception{
 anywheresoftware.b4a.objects.ButtonWrapper _b = null;
 anywheresoftware.b4a.objects.PanelWrapper _p = null;
- //BA.debugLineNum = 124;BA.debugLine="Sub BMsgBox3_Click";
- //BA.debugLineNum = 125;BA.debugLine="Dim B As Button = Sender";
+ //BA.debugLineNum = 120;BA.debugLine="Sub BMsgBox3_Click";
+ //BA.debugLineNum = 121;BA.debugLine="Dim B As Button = Sender";
 _b = new anywheresoftware.b4a.objects.ButtonWrapper();
 _b = (anywheresoftware.b4a.objects.ButtonWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ButtonWrapper(), (android.widget.Button)(anywheresoftware.b4a.keywords.Common.Sender(_ba)));
- //BA.debugLineNum = 126;BA.debugLine="Dim P As Panel = B.Parent";
+ //BA.debugLineNum = 122;BA.debugLine="Dim P As Panel = B.Parent";
 _p = new anywheresoftware.b4a.objects.PanelWrapper();
 _p = (anywheresoftware.b4a.objects.PanelWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.PanelWrapper(), (android.view.ViewGroup)(_b.getParent()));
- //BA.debugLineNum = 128;BA.debugLine="P.Tag=B.Tag";
+ //BA.debugLineNum = 124;BA.debugLine="P.Tag=B.Tag";
 _p.setTag(_b.getTag());
- //BA.debugLineNum = 129;BA.debugLine="End Sub";
+ //BA.debugLineNum = 125;BA.debugLine="End Sub";
 return "";
 }
 public static void  _createhaloeffect(anywheresoftware.b4a.BA _ba,anywheresoftware.b4a.objects.B4XViewWrapper _parent,anywheresoftware.b4a.objects.ButtonWrapper _objeto,int _clr) throws Exception{
@@ -102,32 +103,32 @@ return;
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 82;BA.debugLine="Dim cvs As B4XCanvas";
+ //BA.debugLineNum = 78;BA.debugLine="Dim cvs As B4XCanvas";
 _cvs = new anywheresoftware.b4a.objects.B4XCanvas();
- //BA.debugLineNum = 83;BA.debugLine="Dim xui As XUI";
+ //BA.debugLineNum = 79;BA.debugLine="Dim xui As XUI";
 _xui = new anywheresoftware.b4a.objects.B4XViewWrapper.XUI();
- //BA.debugLineNum = 84;BA.debugLine="Dim p As B4XView = xui.CreatePanel(\"\")";
+ //BA.debugLineNum = 80;BA.debugLine="Dim p As B4XView = xui.CreatePanel(\"\")";
 _p = new anywheresoftware.b4a.objects.B4XViewWrapper();
 _p = _xui.CreatePanel((_ba.processBA == null ? _ba : _ba.processBA),"");
- //BA.debugLineNum = 85;BA.debugLine="Dim radius As Int = 150dip";
+ //BA.debugLineNum = 81;BA.debugLine="Dim radius As Int = 150dip";
 _radius = anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (150));
- //BA.debugLineNum = 86;BA.debugLine="Dim x,y As Int";
+ //BA.debugLineNum = 82;BA.debugLine="Dim x,y As Int";
 _x = 0;
 _y = 0;
- //BA.debugLineNum = 87;BA.debugLine="x = objeto.left + (objeto.Width / 2)";
+ //BA.debugLineNum = 83;BA.debugLine="x = objeto.left + (objeto.Width / 2)";
 _x = (int) (_objeto.getLeft()+(_objeto.getWidth()/(double)2));
- //BA.debugLineNum = 88;BA.debugLine="y = objeto.top + (objeto.Height / 2)";
+ //BA.debugLineNum = 84;BA.debugLine="y = objeto.top + (objeto.Height / 2)";
 _y = (int) (_objeto.getTop()+(_objeto.getHeight()/(double)2));
- //BA.debugLineNum = 90;BA.debugLine="p.SetLayoutAnimated(0, 0, 0, radius * 2, radius *";
+ //BA.debugLineNum = 86;BA.debugLine="p.SetLayoutAnimated(0, 0, 0, radius * 2, radius *";
 _p.SetLayoutAnimated((int) (0),(int) (0),(int) (0),(int) (_radius*2),(int) (_radius*2));
- //BA.debugLineNum = 91;BA.debugLine="cvs.Initialize(p)";
+ //BA.debugLineNum = 87;BA.debugLine="cvs.Initialize(p)";
 _cvs.Initialize(_p);
- //BA.debugLineNum = 92;BA.debugLine="cvs.DrawCircle(cvs.TargetRect.CenterX, cvs.Target";
+ //BA.debugLineNum = 88;BA.debugLine="cvs.DrawCircle(cvs.TargetRect.CenterX, cvs.Target";
 _cvs.DrawCircle(_cvs.getTargetRect().getCenterX(),_cvs.getTargetRect().getCenterY(),(float) (_cvs.getTargetRect().getWidth()/(double)2),_clr,anywheresoftware.b4a.keywords.Common.True,(float) (0));
- //BA.debugLineNum = 93;BA.debugLine="Dim bmp As B4XBitmap = cvs.CreateBitmap";
+ //BA.debugLineNum = 89;BA.debugLine="Dim bmp As B4XBitmap = cvs.CreateBitmap";
 _bmp = new anywheresoftware.b4a.objects.B4XViewWrapper.B4XBitmapWrapper();
 _bmp = _cvs.CreateBitmap();
- //BA.debugLineNum = 94;BA.debugLine="For i = 1 To 2";
+ //BA.debugLineNum = 90;BA.debugLine="For i = 1 To 2";
 if (true) break;
 
 case 1:
@@ -154,9 +155,9 @@ if (true) break;
 case 3:
 //C
 this.state = 6;
- //BA.debugLineNum = 95;BA.debugLine="CreateHaloEffectHelper(Parent,bmp, x, y, clr, ra";
+ //BA.debugLineNum = 91;BA.debugLine="CreateHaloEffectHelper(Parent,bmp, x, y, clr, ra";
 _createhaloeffecthelper(_ba,_parent,_bmp,_x,_y,_clr,_radius);
- //BA.debugLineNum = 96;BA.debugLine="Sleep(200)";
+ //BA.debugLineNum = 92;BA.debugLine="Sleep(200)";
 anywheresoftware.b4a.keywords.Common.Sleep(_ba,this,(int) (200));
 this.state = 7;
 return;
@@ -171,7 +172,7 @@ case 4:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 98;BA.debugLine="End Sub";
+ //BA.debugLineNum = 94;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -216,24 +217,24 @@ return;
 case 0:
 //C
 this.state = -1;
- //BA.debugLineNum = 101;BA.debugLine="Dim iv As ImageView";
+ //BA.debugLineNum = 97;BA.debugLine="Dim iv As ImageView";
 _iv = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 102;BA.debugLine="iv.Initialize(\"\")";
+ //BA.debugLineNum = 98;BA.debugLine="iv.Initialize(\"\")";
 _iv.Initialize(_ba,"");
- //BA.debugLineNum = 103;BA.debugLine="Dim p As B4XView = iv";
+ //BA.debugLineNum = 99;BA.debugLine="Dim p As B4XView = iv";
 _p = new anywheresoftware.b4a.objects.B4XViewWrapper();
 _p = (anywheresoftware.b4a.objects.B4XViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.B4XViewWrapper(), (java.lang.Object)(_iv.getObject()));
- //BA.debugLineNum = 104;BA.debugLine="p.SetBitmap(bmp)";
+ //BA.debugLineNum = 100;BA.debugLine="p.SetBitmap(bmp)";
 _p.SetBitmap((android.graphics.Bitmap)(_bmp.getObject()));
- //BA.debugLineNum = 105;BA.debugLine="Parent.AddView(p, x, y, 0, 0)";
+ //BA.debugLineNum = 101;BA.debugLine="Parent.AddView(p, x, y, 0, 0)";
 _parent.AddView((android.view.View)(_p.getObject()),_x,_y,(int) (0),(int) (0));
- //BA.debugLineNum = 106;BA.debugLine="Dim duration As Int = 1000";
+ //BA.debugLineNum = 102;BA.debugLine="Dim duration As Int = 1000";
 _duration = (int) (1000);
- //BA.debugLineNum = 107;BA.debugLine="p.SetLayoutAnimated(duration, x - radius, y - rad";
+ //BA.debugLineNum = 103;BA.debugLine="p.SetLayoutAnimated(duration, x - radius, y - rad";
 _p.SetLayoutAnimated(_duration,(int) (_x-_radius),(int) (_y-_radius),(int) (2*_radius),(int) (2*_radius));
- //BA.debugLineNum = 108;BA.debugLine="p.SetVisibleAnimated(duration, False)";
+ //BA.debugLineNum = 104;BA.debugLine="p.SetVisibleAnimated(duration, False)";
 _p.SetVisibleAnimated(_duration,anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 109;BA.debugLine="Sleep(duration)";
+ //BA.debugLineNum = 105;BA.debugLine="Sleep(duration)";
 anywheresoftware.b4a.keywords.Common.Sleep(_ba,this,_duration);
 this.state = 1;
 return;
@@ -241,9 +242,9 @@ case 1:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 110;BA.debugLine="p.RemoveViewFromParent";
+ //BA.debugLineNum = 106;BA.debugLine="p.RemoveViewFromParent";
 _p.RemoveViewFromParent();
- //BA.debugLineNum = 111;BA.debugLine="End Sub";
+ //BA.debugLineNum = 107;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -273,13 +274,13 @@ return "";
 }
 public static String  _panelmsgbox3_touch(anywheresoftware.b4a.BA _ba,int _action,float _x,float _y) throws Exception{
 anywheresoftware.b4a.objects.PanelWrapper _p = null;
- //BA.debugLineNum = 118;BA.debugLine="Sub PanelMsgBox3_Touch (Action As Int, X As Float,";
- //BA.debugLineNum = 119;BA.debugLine="Dim P As Panel = Sender";
+ //BA.debugLineNum = 114;BA.debugLine="Sub PanelMsgBox3_Touch (Action As Int, X As Float,";
+ //BA.debugLineNum = 115;BA.debugLine="Dim P As Panel = Sender";
 _p = new anywheresoftware.b4a.objects.PanelWrapper();
 _p = (anywheresoftware.b4a.objects.PanelWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.PanelWrapper(), (android.view.ViewGroup)(anywheresoftware.b4a.keywords.Common.Sender(_ba)));
- //BA.debugLineNum = 121;BA.debugLine="P.RemoveView";
+ //BA.debugLineNum = 117;BA.debugLine="P.RemoveView";
 _p.RemoveView();
- //BA.debugLineNum = 122;BA.debugLine="End Sub";
+ //BA.debugLineNum = 118;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{
@@ -291,69 +292,69 @@ public static String  _randomnumber(anywheresoftware.b4a.BA _ba,int _length) thr
 String _abc = "";
 String _randomstr = "";
 int _i = 0;
- //BA.debugLineNum = 150;BA.debugLine="Sub RandomNumber(length As Int) As String";
- //BA.debugLineNum = 151;BA.debugLine="Dim abc As String = \"0123456789\"";
+ //BA.debugLineNum = 146;BA.debugLine="Sub RandomNumber(length As Int) As String";
+ //BA.debugLineNum = 147;BA.debugLine="Dim abc As String = \"0123456789\"";
 _abc = "0123456789";
- //BA.debugLineNum = 152;BA.debugLine="Dim RandomStr As String = \"\"";
+ //BA.debugLineNum = 148;BA.debugLine="Dim RandomStr As String = \"\"";
 _randomstr = "";
- //BA.debugLineNum = 153;BA.debugLine="For i = 0 To length - 1";
+ //BA.debugLineNum = 149;BA.debugLine="For i = 0 To length - 1";
 {
 final int step3 = 1;
 final int limit3 = (int) (_length-1);
 _i = (int) (0) ;
 for (;_i <= limit3 ;_i = _i + step3 ) {
- //BA.debugLineNum = 154;BA.debugLine="RandomStr = RandomStr & (abc.CharAt(Rnd(0,abc.Le";
+ //BA.debugLineNum = 150;BA.debugLine="RandomStr = RandomStr & (abc.CharAt(Rnd(0,abc.Le";
 _randomstr = _randomstr+BA.ObjectToString((_abc.charAt(anywheresoftware.b4a.keywords.Common.Rnd((int) (0),_abc.length()))));
  }
 };
- //BA.debugLineNum = 156;BA.debugLine="Return RandomStr";
+ //BA.debugLineNum = 152;BA.debugLine="Return RandomStr";
 if (true) return _randomstr;
- //BA.debugLineNum = 157;BA.debugLine="End Sub";
+ //BA.debugLineNum = 153;BA.debugLine="End Sub";
 return "";
 }
 public static String  _randomstring(anywheresoftware.b4a.BA _ba,int _length) throws Exception{
 String _abc = "";
 String _randomstr = "";
 int _i = 0;
- //BA.debugLineNum = 141;BA.debugLine="Sub RandomString(length As Int) As String";
- //BA.debugLineNum = 142;BA.debugLine="Dim abc As String = \"0123456789ABCDEFGHIJKLMNOPQR";
+ //BA.debugLineNum = 137;BA.debugLine="Sub RandomString(length As Int) As String";
+ //BA.debugLineNum = 138;BA.debugLine="Dim abc As String = \"0123456789ABCDEFGHIJKLMNOPQR";
 _abc = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
- //BA.debugLineNum = 143;BA.debugLine="Dim RandomStr As String = \"\"";
+ //BA.debugLineNum = 139;BA.debugLine="Dim RandomStr As String = \"\"";
 _randomstr = "";
- //BA.debugLineNum = 144;BA.debugLine="For i = 0 To length - 1";
+ //BA.debugLineNum = 140;BA.debugLine="For i = 0 To length - 1";
 {
 final int step3 = 1;
 final int limit3 = (int) (_length-1);
 _i = (int) (0) ;
 for (;_i <= limit3 ;_i = _i + step3 ) {
- //BA.debugLineNum = 145;BA.debugLine="RandomStr = RandomStr & (abc.CharAt(Rnd(0,abc.Le";
+ //BA.debugLineNum = 141;BA.debugLine="RandomStr = RandomStr & (abc.CharAt(Rnd(0,abc.Le";
 _randomstr = _randomstr+BA.ObjectToString((_abc.charAt(anywheresoftware.b4a.keywords.Common.Rnd((int) (0),_abc.length()))));
  }
 };
- //BA.debugLineNum = 147;BA.debugLine="Return RandomStr";
+ //BA.debugLineNum = 143;BA.debugLine="Return RandomStr";
 if (true) return _randomstr;
- //BA.debugLineNum = 148;BA.debugLine="End Sub";
+ //BA.debugLineNum = 144;BA.debugLine="End Sub";
 return "";
 }
 public static String  _setprogressdrawable(anywheresoftware.b4a.BA _ba,anywheresoftware.b4a.objects.ProgressBarWrapper _p,Object _drawable,Object _backgrounddrawable) throws Exception{
 anywheresoftware.b4a.agraham.reflection.Reflection _r = null;
 Object _clipdrawable = null;
- //BA.debugLineNum = 42;BA.debugLine="Sub SetProgressDrawable(p As ProgressBar, drawable";
- //BA.debugLineNum = 43;BA.debugLine="Dim r As Reflector";
+ //BA.debugLineNum = 38;BA.debugLine="Sub SetProgressDrawable(p As ProgressBar, drawable";
+ //BA.debugLineNum = 39;BA.debugLine="Dim r As Reflector";
 _r = new anywheresoftware.b4a.agraham.reflection.Reflection();
- //BA.debugLineNum = 45;BA.debugLine="Dim clipDrawable As Object";
+ //BA.debugLineNum = 41;BA.debugLine="Dim clipDrawable As Object";
 _clipdrawable = new Object();
- //BA.debugLineNum = 46;BA.debugLine="clipDrawable = r.CreateObject2(\"android.graphics.";
+ //BA.debugLineNum = 42;BA.debugLine="clipDrawable = r.CreateObject2(\"android.graphics.";
 _clipdrawable = _r.CreateObject2("android.graphics.drawable.ClipDrawable",new Object[]{_drawable,(Object)(anywheresoftware.b4a.keywords.Common.Gravity.LEFT),(Object)(1)},new String[]{"android.graphics.drawable.Drawable","java.lang.int","java.lang.int"});
- //BA.debugLineNum = 49;BA.debugLine="r.Target = p";
+ //BA.debugLineNum = 45;BA.debugLine="r.Target = p";
 _r.Target = (Object)(_p.getObject());
- //BA.debugLineNum = 50;BA.debugLine="r.Target = r.RunMethod(\"getProgressDrawable\") 'Ge";
+ //BA.debugLineNum = 46;BA.debugLine="r.Target = r.RunMethod(\"getProgressDrawable\") 'Ge";
 _r.Target = _r.RunMethod("getProgressDrawable");
- //BA.debugLineNum = 51;BA.debugLine="r.RunMethod4(\"setDrawableByLayerId\", _       Arra";
+ //BA.debugLineNum = 47;BA.debugLine="r.RunMethod4(\"setDrawableByLayerId\", _       Arra";
 _r.RunMethod4("setDrawableByLayerId",new Object[]{(Object)(16908288),_backgrounddrawable},new String[]{"java.lang.int","android.graphics.drawable.Drawable"});
- //BA.debugLineNum = 54;BA.debugLine="r.RunMethod4(\"setDrawableByLayerId\", _       Arra";
+ //BA.debugLineNum = 50;BA.debugLine="r.RunMethod4(\"setDrawableByLayerId\", _       Arra";
 _r.RunMethod4("setDrawableByLayerId",new Object[]{_r.GetStaticField("android.R$id","progress"),_clipdrawable},new String[]{"java.lang.int","android.graphics.drawable.Drawable"});
- //BA.debugLineNum = 58;BA.debugLine="End Sub";
+ //BA.debugLineNum = 54;BA.debugLine="End Sub";
 return "";
 }
 }

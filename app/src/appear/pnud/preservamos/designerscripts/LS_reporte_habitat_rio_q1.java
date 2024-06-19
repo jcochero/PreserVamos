@@ -12,11 +12,13 @@ anywheresoftware.b4a.keywords.LayoutBuilder.setScaleRate(0.3);
 views.get("pnlcrums").vw.setLeft((int)((50d / 100 * width)-(views.get("pnlcrums").vw.getWidth())/2d));
 views.get("logopreservamoscheck").vw.setLeft((int)((50d / 100 * width) - (views.get("logopreservamoscheck").vw.getWidth() / 2)));
 views.get("imgq1_1_a").vw.setLeft((int)((50d / 100 * width)-((views.get("imgq1_1_a").vw.getWidth())/2d)-(5d * scale) - (views.get("imgq1_1_a").vw.getWidth() / 2)));
-views.get("imgq1_1_c").vw.setLeft((int)((50d / 100 * width)-((views.get("imgq1_1_a").vw.getWidth())/2d)-(5d * scale) - (views.get("imgq1_1_c").vw.getWidth() / 2)));
+views.get("imgq1_1_d").vw.setLeft((int)((50d / 100 * width)-((views.get("imgq1_1_a").vw.getWidth())/2d)-(5d * scale) - (views.get("imgq1_1_d").vw.getWidth() / 2)));
 views.get("imgq1_1_b").vw.setLeft((int)((50d / 100 * width)+((views.get("imgq1_1_a").vw.getWidth())/2d)+(5d * scale) - (views.get("imgq1_1_b").vw.getWidth() / 2)));
 views.get("lblq1_1_a").vw.setLeft((int)((views.get("imgq1_1_a").vw.getLeft() + views.get("imgq1_1_a").vw.getWidth()/2) - (views.get("lblq1_1_a").vw.getWidth() / 2)));
 views.get("lblq1_1_b").vw.setLeft((int)((views.get("imgq1_1_b").vw.getLeft() + views.get("imgq1_1_b").vw.getWidth()/2) - (views.get("lblq1_1_b").vw.getWidth() / 2)));
-views.get("lblq1_1_c").vw.setLeft((int)((views.get("imgq1_1_c").vw.getLeft() + views.get("imgq1_1_c").vw.getWidth()/2) - (views.get("lblq1_1_c").vw.getWidth() / 2)));
+views.get("lblq1_1_d").vw.setLeft((int)((views.get("imgq1_1_d").vw.getLeft() + views.get("imgq1_1_d").vw.getWidth()/2) - (views.get("lblq1_1_d").vw.getWidth() / 2)));
+views.get("imgq1_1_c").vw.setLeft((int)((views.get("imgq1_1_b").vw.getLeft() + views.get("imgq1_1_b").vw.getWidth()/2) - (views.get("imgq1_1_c").vw.getWidth() / 2)));
+views.get("lblq1_1_c").vw.setLeft((int)((views.get("imgq1_1_b").vw.getLeft() + views.get("imgq1_1_b").vw.getWidth()/2) - (views.get("lblq1_1_c").vw.getWidth() / 2)));
 
 }
 }

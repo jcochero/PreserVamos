@@ -356,40 +356,41 @@ public appear.pnud.preservamos.gauge _gauge_exoticas = null;
 public b4a.example.dateutils _dateutils = null;
 public appear.pnud.preservamos.main _main = null;
 public appear.pnud.preservamos.form_main _form_main = null;
-public appear.pnud.preservamos.frmabout _frmabout = null;
+public appear.pnud.preservamos.form_reporte _form_reporte = null;
+public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
+public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
+public appear.pnud.preservamos.utilidades _utilidades = null;
+public appear.pnud.preservamos.frmdatossinenviar _frmdatossinenviar = null;
+public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
 public appear.pnud.preservamos.alerta_fotos _alerta_fotos = null;
 public appear.pnud.preservamos.alertas _alertas = null;
 public appear.pnud.preservamos.aprender_muestreo _aprender_muestreo = null;
 public appear.pnud.preservamos.dbutils _dbutils = null;
 public appear.pnud.preservamos.downloadservice _downloadservice = null;
 public appear.pnud.preservamos.firebasemessaging _firebasemessaging = null;
-public appear.pnud.preservamos.form_reporte _form_reporte = null;
+public appear.pnud.preservamos.frmabout _frmabout = null;
 public appear.pnud.preservamos.frmdatosanteriores _frmdatosanteriores = null;
-public appear.pnud.preservamos.frmdatossinenviar _frmdatossinenviar = null;
 public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
 public appear.pnud.preservamos.frmfelicitaciones _frmfelicitaciones = null;
-public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
 public appear.pnud.preservamos.frmmapa _frmmapa = null;
 public appear.pnud.preservamos.frmpoliticadatos _frmpoliticadatos = null;
 public appear.pnud.preservamos.frmtiporeporte _frmtiporeporte = null;
-public appear.pnud.preservamos.httputils2service _httputils2service = null;
 public appear.pnud.preservamos.imagedownloader _imagedownloader = null;
 public appear.pnud.preservamos.inatcheck _inatcheck = null;
 public appear.pnud.preservamos.mod_hidro _mod_hidro = null;
 public appear.pnud.preservamos.mod_hidro_fotos _mod_hidro_fotos = null;
 public appear.pnud.preservamos.mod_residuos _mod_residuos = null;
 public appear.pnud.preservamos.mod_residuos_fotos _mod_residuos_fotos = null;
-public appear.pnud.preservamos.register _register = null;
-public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
 public appear.pnud.preservamos.reporte_fotos _reporte_fotos = null;
 public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
-public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
-public appear.pnud.preservamos.reporte_habitat_rio_bu _reporte_habitat_rio_bu = null;
 public appear.pnud.preservamos.reporte_habitat_rio_sierras _reporte_habitat_rio_sierras = null;
+public appear.pnud.preservamos.reporte_habitat_rio_sierras_bu _reporte_habitat_rio_sierras_bu = null;
 public appear.pnud.preservamos.starter _starter = null;
 public appear.pnud.preservamos.uploadfiles _uploadfiles = null;
-public appear.pnud.preservamos.utilidades _utilidades = null;
+public appear.pnud.preservamos.character_creation _character_creation = null;
+public appear.pnud.preservamos.register _register = null;
 public appear.pnud.preservamos.xuiviewsutils _xuiviewsutils = null;
+public appear.pnud.preservamos.httputils2service _httputils2service = null;
 
 public static void initializeProcessGlobals() {
              try {
@@ -440,7 +441,7 @@ _hidropromedio = _hidropromedio+(double)(BA.ObjectToNumber(_listahidro_promedio.
  //BA.debugLineNum = 52;BA.debugLine="hidroPromedio = Round2(hidroPromedio / listaHidr";
 _hidropromedio = anywheresoftware.b4a.keywords.Common.Round2(_hidropromedio/(double)_listahidro_promedio.getSize(),(int) (2));
  //BA.debugLineNum = 53;BA.debugLine="Log(\"hidroPromedio: \" & hidroPromedio)";
-anywheresoftware.b4a.keywords.Common.LogImpl("448168979","hidroPromedio: "+BA.NumberToString(_hidropromedio),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("035782675","hidroPromedio: "+BA.NumberToString(_hidropromedio),0);
  //BA.debugLineNum = 55;BA.debugLine="For l = 0 To listaAgua_Promedio.Size - 1";
 {
 final int step18 = 1;
@@ -457,7 +458,7 @@ _aguapromedio = _aguapromedio+(double)(BA.ObjectToNumber(_listaagua_promedio.Get
  //BA.debugLineNum = 60;BA.debugLine="aguaPromedio = Round2(aguaPromedio / listaAgua_P";
 _aguapromedio = anywheresoftware.b4a.keywords.Common.Round2(_aguapromedio/(double)_listaagua_promedio.getSize(),(int) (2));
  //BA.debugLineNum = 61;BA.debugLine="Log(\"aguaPromedio: \" & aguaPromedio)";
-anywheresoftware.b4a.keywords.Common.LogImpl("448168987","aguaPromedio: "+BA.NumberToString(_aguapromedio),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("035782683","aguaPromedio: "+BA.NumberToString(_aguapromedio),0);
  //BA.debugLineNum = 63;BA.debugLine="For m = 0 To listaBio_Promedio.Size - 1";
 {
 final int step25 = 1;
@@ -474,7 +475,7 @@ _biopromedio = _biopromedio+(double)(BA.ObjectToNumber(_listabio_promedio.Get(_m
  //BA.debugLineNum = 68;BA.debugLine="bioPromedio = Round2(bioPromedio / listaBio_Prom";
 _biopromedio = anywheresoftware.b4a.keywords.Common.Round2(_biopromedio/(double)_listabio_promedio.getSize(),(int) (2));
  //BA.debugLineNum = 69;BA.debugLine="Log(\"bioPromedio: \" & bioPromedio)";
-anywheresoftware.b4a.keywords.Common.LogImpl("448168995","bioPromedio: "+BA.NumberToString(_biopromedio),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("035782691","bioPromedio: "+BA.NumberToString(_biopromedio),0);
  //BA.debugLineNum = 71;BA.debugLine="For n = 0 To listaUsos_Promedio.Size - 1";
 {
 final int step32 = 1;
@@ -491,7 +492,7 @@ _usospromedio = _usospromedio+(double)(BA.ObjectToNumber(_listausos_promedio.Get
  //BA.debugLineNum = 76;BA.debugLine="UsosPromedio = Round2(UsosPromedio / listaUsos_P";
 _usospromedio = anywheresoftware.b4a.keywords.Common.Round2(_usospromedio/(double)_listausos_promedio.getSize(),(int) (2));
  //BA.debugLineNum = 77;BA.debugLine="Log(\"UsosPromedio: \" & UsosPromedio)";
-anywheresoftware.b4a.keywords.Common.LogImpl("448169003","UsosPromedio: "+BA.NumberToString(_usospromedio),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("035782699","UsosPromedio: "+BA.NumberToString(_usospromedio),0);
  //BA.debugLineNum = 79;BA.debugLine="For o = 0 To listaExoticas_Promedio.Size - 1";
 {
 final int step39 = 1;
@@ -508,7 +509,7 @@ _exoticaspromedio = _exoticaspromedio+(double)(BA.ObjectToNumber(_listaexoticas_
  //BA.debugLineNum = 84;BA.debugLine="ExoticasPromedio = Round2(ExoticasPromedio / lis";
 _exoticaspromedio = anywheresoftware.b4a.keywords.Common.Round2(_exoticaspromedio/(double)_listaexoticas_promedio.getSize(),(int) (2));
  //BA.debugLineNum = 85;BA.debugLine="Log(\"ExoticasPromedio: \" & ExoticasPromedio)";
-anywheresoftware.b4a.keywords.Common.LogImpl("448169011","ExoticasPromedio: "+BA.NumberToString(_exoticaspromedio),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("035782707","ExoticasPromedio: "+BA.NumberToString(_exoticaspromedio),0);
  //BA.debugLineNum = 88;BA.debugLine="gauge_Hidro.SetRanges(Array(gauge_Hidro.CreateRa";
 mostCurrent._gauge_hidro._setranges /*String*/ (anywheresoftware.b4a.keywords.Common.ArrayToList(new Object[]{(Object)(mostCurrent._gauge_hidro._createrange /*appear.pnud.preservamos.gauge._gaugerange*/ ((float) (0),(float) (20),mostCurrent._xui.Color_DarkGray)),(Object)(mostCurrent._gauge_hidro._createrange /*appear.pnud.preservamos.gauge._gaugerange*/ ((float) (20),(float) (40),mostCurrent._xui.Color_Red)),(Object)(mostCurrent._gauge_hidro._createrange /*appear.pnud.preservamos.gauge._gaugerange*/ ((float) (40),(float) (60),mostCurrent._xui.Color_Yellow)),(Object)(mostCurrent._gauge_hidro._createrange /*appear.pnud.preservamos.gauge._gaugerange*/ ((float) (60),(float) (80),mostCurrent._xui.Color_Green)),(Object)(mostCurrent._gauge_hidro._createrange /*appear.pnud.preservamos.gauge._gaugerange*/ ((float) (80),(float) (100),mostCurrent._xui.Color_Blue))}));
  //BA.debugLineNum = 89;BA.debugLine="gauge_Hidro.CurrentValue = 0";
@@ -544,7 +545,7 @@ mostCurrent._gauge_exoticas._setcurrentvalue /*float*/ ((float) (_exoticaspromed
 			processBA.setLastException(e62); //BA.debugLineNum = 108;BA.debugLine="ToastMessageShow(\"No se pudieron cargar las esta";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("No se pudieron cargar las estadísticas detalladas de este municipio :("),anywheresoftware.b4a.keywords.Common.False);
  //BA.debugLineNum = 109;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("448169035",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("035782731",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 110;BA.debugLine="Activity.RemoveAllViews";
 mostCurrent._activity.RemoveAllViews();
  //BA.debugLineNum = 111;BA.debugLine="Activity.Finish";

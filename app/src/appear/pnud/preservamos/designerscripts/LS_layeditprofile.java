@@ -18,6 +18,7 @@ views.get("lblfechadenacimiento").vw.setTop((int)((views.get("lblfecha").vw.getT
 views.get("label4").vw.setTop((int)((views.get("lblfecha").vw.getTop() + views.get("lblfecha").vw.getHeight())-(2d * scale)));
 views.get("btneditfechadenacimiento").vw.setTop((int)((views.get("lblfechadenacimiento").vw.getTop())));
 views.get("txtemail").vw.setTop((int)((views.get("lblemail").vw.getTop())));
+anywheresoftware.b4a.keywords.LayoutBuilder.scaleAll(views);
 
 }
 }

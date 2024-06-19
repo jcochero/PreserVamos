@@ -31,41 +31,42 @@ public anywheresoftware.b4a.objects.B4XViewWrapper.XUI _xui = null;
 public b4a.example.dateutils _dateutils = null;
 public appear.pnud.preservamos.main _main = null;
 public appear.pnud.preservamos.form_main _form_main = null;
-public appear.pnud.preservamos.frmabout _frmabout = null;
+public appear.pnud.preservamos.form_reporte _form_reporte = null;
+public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
+public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
+public appear.pnud.preservamos.utilidades _utilidades = null;
+public appear.pnud.preservamos.frmdatossinenviar _frmdatossinenviar = null;
+public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
 public appear.pnud.preservamos.alerta_fotos _alerta_fotos = null;
 public appear.pnud.preservamos.alertas _alertas = null;
 public appear.pnud.preservamos.aprender_muestreo _aprender_muestreo = null;
 public appear.pnud.preservamos.dbutils _dbutils = null;
 public appear.pnud.preservamos.downloadservice _downloadservice = null;
 public appear.pnud.preservamos.firebasemessaging _firebasemessaging = null;
-public appear.pnud.preservamos.form_reporte _form_reporte = null;
+public appear.pnud.preservamos.frmabout _frmabout = null;
 public appear.pnud.preservamos.frmdatosanteriores _frmdatosanteriores = null;
-public appear.pnud.preservamos.frmdatossinenviar _frmdatossinenviar = null;
 public appear.pnud.preservamos.frmeditprofile _frmeditprofile = null;
 public appear.pnud.preservamos.frmfelicitaciones _frmfelicitaciones = null;
-public appear.pnud.preservamos.frmlocalizacion _frmlocalizacion = null;
 public appear.pnud.preservamos.frmmapa _frmmapa = null;
 public appear.pnud.preservamos.frmmunicipioestadisticas _frmmunicipioestadisticas = null;
 public appear.pnud.preservamos.frmpoliticadatos _frmpoliticadatos = null;
 public appear.pnud.preservamos.frmtiporeporte _frmtiporeporte = null;
-public appear.pnud.preservamos.httputils2service _httputils2service = null;
 public appear.pnud.preservamos.imagedownloader _imagedownloader = null;
 public appear.pnud.preservamos.inatcheck _inatcheck = null;
 public appear.pnud.preservamos.mod_hidro _mod_hidro = null;
 public appear.pnud.preservamos.mod_hidro_fotos _mod_hidro_fotos = null;
 public appear.pnud.preservamos.mod_residuos _mod_residuos = null;
 public appear.pnud.preservamos.mod_residuos_fotos _mod_residuos_fotos = null;
-public appear.pnud.preservamos.register _register = null;
-public appear.pnud.preservamos.reporte_envio _reporte_envio = null;
 public appear.pnud.preservamos.reporte_fotos _reporte_fotos = null;
 public appear.pnud.preservamos.reporte_habitat_laguna _reporte_habitat_laguna = null;
-public appear.pnud.preservamos.reporte_habitat_rio _reporte_habitat_rio = null;
-public appear.pnud.preservamos.reporte_habitat_rio_bu _reporte_habitat_rio_bu = null;
 public appear.pnud.preservamos.reporte_habitat_rio_sierras _reporte_habitat_rio_sierras = null;
+public appear.pnud.preservamos.reporte_habitat_rio_sierras_bu _reporte_habitat_rio_sierras_bu = null;
 public appear.pnud.preservamos.starter _starter = null;
 public appear.pnud.preservamos.uploadfiles _uploadfiles = null;
-public appear.pnud.preservamos.utilidades _utilidades = null;
+public appear.pnud.preservamos.character_creation _character_creation = null;
+public appear.pnud.preservamos.register _register = null;
 public appear.pnud.preservamos.xuiviewsutils _xuiviewsutils = null;
+public appear.pnud.preservamos.httputils2service _httputils2service = null;
 public static class _b4xformatdata{
 public boolean IsInitialized;
 public String Prefix;
@@ -105,27 +106,27 @@ FractionPaddingChar = "";
 		}}
 public String  _addformatdata(appear.pnud.preservamos.b4xformatter._b4xformatdata _data,double _rangestart,double _rangeend,boolean _includeedges) throws Exception{
 double _factor = 0;
- //BA.debugLineNum = 63;BA.debugLine="Public Sub AddFormatData (Data As B4XFormatData, R";
- //BA.debugLineNum = 64;BA.debugLine="Dim factor As Double = Power(10, -Data.MaximumFra";
+ //BA.debugLineNum = 65;BA.debugLine="Public Sub AddFormatData (Data As B4XFormatData, R";
+ //BA.debugLineNum = 66;BA.debugLine="Dim factor As Double = Power(10, -Data.MaximumFra";
 _factor = __c.Power(10,-_data.MaximumFractions /*int*/ );
- //BA.debugLineNum = 65;BA.debugLine="If IncludeEdges = False Then";
+ //BA.debugLineNum = 67;BA.debugLine="If IncludeEdges = False Then";
 if (_includeedges==__c.False) { 
- //BA.debugLineNum = 66;BA.debugLine="RangeStart = RangeStart + factor";
+ //BA.debugLineNum = 68;BA.debugLine="RangeStart = RangeStart + factor";
 _rangestart = _rangestart+_factor;
- //BA.debugLineNum = 67;BA.debugLine="RangeEnd = RangeEnd - factor";
+ //BA.debugLineNum = 69;BA.debugLine="RangeEnd = RangeEnd - factor";
 _rangeend = _rangeend-_factor;
  };
- //BA.debugLineNum = 69;BA.debugLine="RangeStart = RangeStart - factor / 2";
+ //BA.debugLineNum = 71;BA.debugLine="RangeStart = RangeStart - factor / 2";
 _rangestart = _rangestart-_factor/(double)2;
- //BA.debugLineNum = 70;BA.debugLine="RangeEnd = RangeEnd + factor / 2";
+ //BA.debugLineNum = 72;BA.debugLine="RangeEnd = RangeEnd + factor / 2";
 _rangeend = _rangeend+_factor/(double)2;
- //BA.debugLineNum = 71;BA.debugLine="Data.RangeStart = RangeStart";
+ //BA.debugLineNum = 73;BA.debugLine="Data.RangeStart = RangeStart";
 _data.RangeStart /*double*/  = _rangestart;
- //BA.debugLineNum = 72;BA.debugLine="Data.RangeEnd = RangeEnd";
+ //BA.debugLineNum = 74;BA.debugLine="Data.RangeEnd = RangeEnd";
 _data.RangeEnd /*double*/  = _rangeend;
- //BA.debugLineNum = 73;BA.debugLine="formats.Add(Data)";
+ //BA.debugLineNum = 75;BA.debugLine="formats.Add(Data)";
 _formats.Add((Object)(_data));
- //BA.debugLineNum = 74;BA.debugLine="End Sub";
+ //BA.debugLineNum = 76;BA.debugLine="End Sub";
 return "";
 }
 public String  _class_globals() throws Exception{
@@ -137,76 +138,76 @@ _formats = new anywheresoftware.b4a.objects.collections.List();
  //BA.debugLineNum = 7;BA.debugLine="Public Const MAX_VALUE = 0x7fffffff, MIN_VALUE =";
 _max_value = ((int)0x7fffffff);
 _min_value = ((int)0x80000000);
- //BA.debugLineNum = 8;BA.debugLine="Private xui As XUI";
+ //BA.debugLineNum = 9;BA.debugLine="Private xui As XUI";
 _xui = new anywheresoftware.b4a.objects.B4XViewWrapper.XUI();
- //BA.debugLineNum = 9;BA.debugLine="End Sub";
+ //BA.debugLineNum = 11;BA.debugLine="End Sub";
 return "";
 }
 public appear.pnud.preservamos.b4xformatter._b4xformatdata  _copyformatdata(appear.pnud.preservamos.b4xformatter._b4xformatdata _data) throws Exception{
 appear.pnud.preservamos.b4xformatter._b4xformatdata _d = null;
- //BA.debugLineNum = 36;BA.debugLine="Public Sub CopyFormatData (Data As B4XFormatData)";
- //BA.debugLineNum = 37;BA.debugLine="Dim d As B4XFormatData";
+ //BA.debugLineNum = 38;BA.debugLine="Public Sub CopyFormatData (Data As B4XFormatData)";
+ //BA.debugLineNum = 39;BA.debugLine="Dim d As B4XFormatData";
 _d = new appear.pnud.preservamos.b4xformatter._b4xformatdata();
- //BA.debugLineNum = 38;BA.debugLine="d.Initialize";
+ //BA.debugLineNum = 40;BA.debugLine="d.Initialize";
 _d.Initialize();
- //BA.debugLineNum = 39;BA.debugLine="d.DecimalPoint = Data.DecimalPoint";
+ //BA.debugLineNum = 41;BA.debugLine="d.DecimalPoint = Data.DecimalPoint";
 _d.DecimalPoint /*String*/  = _data.DecimalPoint /*String*/ ;
- //BA.debugLineNum = 40;BA.debugLine="If Data.FormatFont.IsInitialized Then";
+ //BA.debugLineNum = 42;BA.debugLine="If Data.FormatFont.IsInitialized Then";
 if (_data.FormatFont /*anywheresoftware.b4a.objects.B4XViewWrapper.B4XFont*/ .getIsInitialized()) { 
- //BA.debugLineNum = 42;BA.debugLine="d.FormatFont = xui.CreateFont(Data.FormatFont.To";
+ //BA.debugLineNum = 44;BA.debugLine="d.FormatFont = xui.CreateFont(Data.FormatFont.To";
 _d.FormatFont /*anywheresoftware.b4a.objects.B4XViewWrapper.B4XFont*/  = _xui.CreateFont((android.graphics.Typeface)(_data.FormatFont /*anywheresoftware.b4a.objects.B4XViewWrapper.B4XFont*/ .ToNativeFont().getObject()),_data.FormatFont /*anywheresoftware.b4a.objects.B4XViewWrapper.B4XFont*/ .getSize());
  };
- //BA.debugLineNum = 45;BA.debugLine="d.GroupingCharacter = Data.GroupingCharacter";
+ //BA.debugLineNum = 47;BA.debugLine="d.GroupingCharacter = Data.GroupingCharacter";
 _d.GroupingCharacter /*String*/  = _data.GroupingCharacter /*String*/ ;
- //BA.debugLineNum = 46;BA.debugLine="d.MaximumFractions = Data.MaximumFractions";
+ //BA.debugLineNum = 48;BA.debugLine="d.MaximumFractions = Data.MaximumFractions";
 _d.MaximumFractions /*int*/  = _data.MaximumFractions /*int*/ ;
- //BA.debugLineNum = 47;BA.debugLine="d.MinimumFractions = Data.MinimumFractions";
+ //BA.debugLineNum = 49;BA.debugLine="d.MinimumFractions = Data.MinimumFractions";
 _d.MinimumFractions /*int*/  = _data.MinimumFractions /*int*/ ;
- //BA.debugLineNum = 48;BA.debugLine="d.MinimumIntegers = Data.MinimumIntegers";
+ //BA.debugLineNum = 50;BA.debugLine="d.MinimumIntegers = Data.MinimumIntegers";
 _d.MinimumIntegers /*int*/  = _data.MinimumIntegers /*int*/ ;
- //BA.debugLineNum = 49;BA.debugLine="d.Postfix = Data.Postfix";
+ //BA.debugLineNum = 51;BA.debugLine="d.Postfix = Data.Postfix";
 _d.Postfix /*String*/  = _data.Postfix /*String*/ ;
- //BA.debugLineNum = 50;BA.debugLine="d.Prefix = Data.Prefix";
+ //BA.debugLineNum = 52;BA.debugLine="d.Prefix = Data.Prefix";
 _d.Prefix /*String*/  = _data.Prefix /*String*/ ;
- //BA.debugLineNum = 51;BA.debugLine="d.RangeEnd = Data.RangeEnd";
+ //BA.debugLineNum = 53;BA.debugLine="d.RangeEnd = Data.RangeEnd";
 _d.RangeEnd /*double*/  = _data.RangeEnd /*double*/ ;
- //BA.debugLineNum = 52;BA.debugLine="d.RangeStart = Data.RangeStart";
+ //BA.debugLineNum = 54;BA.debugLine="d.RangeStart = Data.RangeStart";
 _d.RangeStart /*double*/  = _data.RangeStart /*double*/ ;
- //BA.debugLineNum = 53;BA.debugLine="d.RemoveMinusSign = Data.RemoveMinusSign";
+ //BA.debugLineNum = 55;BA.debugLine="d.RemoveMinusSign = Data.RemoveMinusSign";
 _d.RemoveMinusSign /*boolean*/  = _data.RemoveMinusSign /*boolean*/ ;
- //BA.debugLineNum = 54;BA.debugLine="d.TextColor = Data.TextColor";
+ //BA.debugLineNum = 56;BA.debugLine="d.TextColor = Data.TextColor";
 _d.TextColor /*int*/  = _data.TextColor /*int*/ ;
- //BA.debugLineNum = 55;BA.debugLine="d.FractionPaddingChar = Data.FractionPaddingChar";
+ //BA.debugLineNum = 57;BA.debugLine="d.FractionPaddingChar = Data.FractionPaddingChar";
 _d.FractionPaddingChar /*String*/  = _data.FractionPaddingChar /*String*/ ;
- //BA.debugLineNum = 56;BA.debugLine="d.IntegerPaddingChar = Data.IntegerPaddingChar";
+ //BA.debugLineNum = 58;BA.debugLine="d.IntegerPaddingChar = Data.IntegerPaddingChar";
 _d.IntegerPaddingChar /*String*/  = _data.IntegerPaddingChar /*String*/ ;
- //BA.debugLineNum = 57;BA.debugLine="Return d";
+ //BA.debugLineNum = 59;BA.debugLine="Return d";
 if (true) return _d;
- //BA.debugLineNum = 58;BA.debugLine="End Sub";
+ //BA.debugLineNum = 60;BA.debugLine="End Sub";
 return null;
 }
 public appear.pnud.preservamos.b4xformatter._b4xformatdata  _createdefaultformat() throws Exception{
 appear.pnud.preservamos.b4xformatter._b4xformatdata _d = null;
- //BA.debugLineNum = 17;BA.debugLine="Private Sub CreateDefaultFormat As B4XFormatData";
- //BA.debugLineNum = 18;BA.debugLine="Dim d As B4XFormatData";
+ //BA.debugLineNum = 19;BA.debugLine="Private Sub CreateDefaultFormat As B4XFormatData";
+ //BA.debugLineNum = 20;BA.debugLine="Dim d As B4XFormatData";
 _d = new appear.pnud.preservamos.b4xformatter._b4xformatdata();
- //BA.debugLineNum = 19;BA.debugLine="d.Initialize";
+ //BA.debugLineNum = 21;BA.debugLine="d.Initialize";
 _d.Initialize();
- //BA.debugLineNum = 20;BA.debugLine="d.GroupingCharacter = \",\"";
+ //BA.debugLineNum = 22;BA.debugLine="d.GroupingCharacter = \",\"";
 _d.GroupingCharacter /*String*/  = ",";
- //BA.debugLineNum = 21;BA.debugLine="d.DecimalPoint = \".\"";
+ //BA.debugLineNum = 23;BA.debugLine="d.DecimalPoint = \".\"";
 _d.DecimalPoint /*String*/  = ".";
- //BA.debugLineNum = 22;BA.debugLine="d.MaximumFractions = 3";
+ //BA.debugLineNum = 24;BA.debugLine="d.MaximumFractions = 3";
 _d.MaximumFractions /*int*/  = (int) (3);
- //BA.debugLineNum = 23;BA.debugLine="d.MinimumIntegers = 1";
+ //BA.debugLineNum = 25;BA.debugLine="d.MinimumIntegers = 1";
 _d.MinimumIntegers /*int*/  = (int) (1);
- //BA.debugLineNum = 24;BA.debugLine="d.IntegerPaddingChar = \"0\"";
+ //BA.debugLineNum = 26;BA.debugLine="d.IntegerPaddingChar = \"0\"";
 _d.IntegerPaddingChar /*String*/  = "0";
- //BA.debugLineNum = 25;BA.debugLine="d.FractionPaddingChar = \"0\"";
+ //BA.debugLineNum = 27;BA.debugLine="d.FractionPaddingChar = \"0\"";
 _d.FractionPaddingChar /*String*/  = "0";
- //BA.debugLineNum = 26;BA.debugLine="Return d";
+ //BA.debugLineNum = 28;BA.debugLine="Return d";
 if (true) return _d;
- //BA.debugLineNum = 27;BA.debugLine="End Sub";
+ //BA.debugLineNum = 29;BA.debugLine="End Sub";
 return null;
 }
 public String  _format(double _number) throws Exception{
@@ -221,179 +222,179 @@ int _fracstartindex = 0;
 int _lastzerocount = 0;
 int _multipler = 0;
 int _w = 0;
- //BA.debugLineNum = 90;BA.debugLine="Public Sub Format (Number As Double) As String";
- //BA.debugLineNum = 91;BA.debugLine="If Number < MIN_VALUE Or Number > MAX_VALUE Then";
+ //BA.debugLineNum = 92;BA.debugLine="Public Sub Format (Number As Double) As String";
+ //BA.debugLineNum = 93;BA.debugLine="If Number < MIN_VALUE Or Number > MAX_VALUE Then";
 if (_number<_min_value || _number>_max_value) { 
 if (true) return "OVERFLOW";};
- //BA.debugLineNum = 92;BA.debugLine="Dim data As B4XFormatData = GetFormatData (Number";
+ //BA.debugLineNum = 94;BA.debugLine="Dim data As B4XFormatData = GetFormatData (Number";
 _data = _getformatdata(_number);
- //BA.debugLineNum = 93;BA.debugLine="Dim sb As StringBuilder";
+ //BA.debugLineNum = 95;BA.debugLine="Dim sb As StringBuilder";
 _sb = new anywheresoftware.b4a.keywords.StringBuilderWrapper();
- //BA.debugLineNum = 94;BA.debugLine="sb.Initialize";
+ //BA.debugLineNum = 96;BA.debugLine="sb.Initialize";
 _sb.Initialize();
- //BA.debugLineNum = 95;BA.debugLine="sb.Append(data.Prefix)";
+ //BA.debugLineNum = 97;BA.debugLine="sb.Append(data.Prefix)";
 _sb.Append(_data.Prefix /*String*/ );
- //BA.debugLineNum = 96;BA.debugLine="Dim NumberStartIndex As Int = sb.Length";
+ //BA.debugLineNum = 98;BA.debugLine="Dim NumberStartIndex As Int = sb.Length";
 _numberstartindex = _sb.getLength();
- //BA.debugLineNum = 97;BA.debugLine="Dim factor As Double = Power(10, -data.MaximumFra";
+ //BA.debugLineNum = 99;BA.debugLine="Dim factor As Double = Power(10, -data.MaximumFra";
 _factor = __c.Power(10,-_data.MaximumFractions /*int*/ -1)*5;
- //BA.debugLineNum = 98;BA.debugLine="If Number < -factor And data.RemoveMinusSign = Fa";
+ //BA.debugLineNum = 100;BA.debugLine="If Number < -factor And data.RemoveMinusSign = Fa";
 if (_number<-_factor && _data.RemoveMinusSign /*boolean*/ ==__c.False) { 
- //BA.debugLineNum = 99;BA.debugLine="sb.Append(\"-\")";
+ //BA.debugLineNum = 101;BA.debugLine="sb.Append(\"-\")";
 _sb.Append("-");
- //BA.debugLineNum = 100;BA.debugLine="NumberStartIndex = NumberStartIndex + 1";
+ //BA.debugLineNum = 102;BA.debugLine="NumberStartIndex = NumberStartIndex + 1";
 _numberstartindex = (int) (_numberstartindex+1);
  };
- //BA.debugLineNum = 102;BA.debugLine="Number = Abs(Number) + factor";
+ //BA.debugLineNum = 104;BA.debugLine="Number = Abs(Number) + factor";
 _number = __c.Abs(_number)+_factor;
- //BA.debugLineNum = 103;BA.debugLine="Dim whole As Int = Number";
+ //BA.debugLineNum = 105;BA.debugLine="Dim whole As Int = Number";
 _whole = (int) (_number);
- //BA.debugLineNum = 104;BA.debugLine="Dim frac As Double = Number - whole";
+ //BA.debugLineNum = 106;BA.debugLine="Dim frac As Double = Number - whole";
 _frac = _number-_whole;
- //BA.debugLineNum = 105;BA.debugLine="Dim g As Int";
+ //BA.debugLineNum = 107;BA.debugLine="Dim g As Int";
 _g = 0;
- //BA.debugLineNum = 106;BA.debugLine="Do While whole > 0";
+ //BA.debugLineNum = 108;BA.debugLine="Do While whole > 0";
 while (_whole>0) {
- //BA.debugLineNum = 107;BA.debugLine="If g > 0 And g Mod 3 = 0 And data.GroupingCharac";
+ //BA.debugLineNum = 109;BA.debugLine="If g > 0 And g Mod 3 = 0 And data.GroupingCharac";
 if (_g>0 && _g%3==0 && _data.GroupingCharacter /*String*/ .length()>0) { 
- //BA.debugLineNum = 108;BA.debugLine="sb.Insert(NumberStartIndex, data.GroupingCharac";
+ //BA.debugLineNum = 110;BA.debugLine="sb.Insert(NumberStartIndex, data.GroupingCharac";
 _sb.Insert(_numberstartindex,_data.GroupingCharacter /*String*/ );
  };
- //BA.debugLineNum = 110;BA.debugLine="g = g + 1";
+ //BA.debugLineNum = 112;BA.debugLine="g = g + 1";
 _g = (int) (_g+1);
- //BA.debugLineNum = 111;BA.debugLine="sb.Insert(NumberStartIndex, whole Mod 10)";
+ //BA.debugLineNum = 113;BA.debugLine="sb.Insert(NumberStartIndex, whole Mod 10)";
 _sb.Insert(_numberstartindex,BA.NumberToString(_whole%10));
- //BA.debugLineNum = 112;BA.debugLine="whole = whole / 10";
+ //BA.debugLineNum = 114;BA.debugLine="whole = whole / 10";
 _whole = (int) (_whole/(double)10);
  }
 ;
- //BA.debugLineNum = 114;BA.debugLine="Do While sb.Length - NumberStartIndex < data.Mini";
+ //BA.debugLineNum = 116;BA.debugLine="Do While sb.Length - NumberStartIndex < data.Mini";
 while (_sb.getLength()-_numberstartindex<_data.MinimumIntegers /*int*/ ) {
- //BA.debugLineNum = 115;BA.debugLine="sb.Insert(NumberStartIndex, data.IntegerPaddingC";
+ //BA.debugLineNum = 117;BA.debugLine="sb.Insert(NumberStartIndex, data.IntegerPaddingC";
 _sb.Insert(_numberstartindex,_data.IntegerPaddingChar /*String*/ );
  }
 ;
- //BA.debugLineNum = 117;BA.debugLine="If data.MaximumFractions > 0 And (data.MinimumFra";
+ //BA.debugLineNum = 119;BA.debugLine="If data.MaximumFractions > 0 And (data.MinimumFra";
 if (_data.MaximumFractions /*int*/ >0 && (_data.MinimumFractions /*int*/ >0 || _frac>0)) { 
- //BA.debugLineNum = 118;BA.debugLine="Dim FracStartIndex As Int = sb.Length";
+ //BA.debugLineNum = 120;BA.debugLine="Dim FracStartIndex As Int = sb.Length";
 _fracstartindex = _sb.getLength();
- //BA.debugLineNum = 119;BA.debugLine="Dim LastZeroCount As Int";
+ //BA.debugLineNum = 121;BA.debugLine="Dim LastZeroCount As Int";
 _lastzerocount = 0;
- //BA.debugLineNum = 120;BA.debugLine="Dim Multipler As Int = 10";
+ //BA.debugLineNum = 122;BA.debugLine="Dim Multipler As Int = 10";
 _multipler = (int) (10);
- //BA.debugLineNum = 121;BA.debugLine="Do While frac >= 2 * factor And sb.Length - Frac";
+ //BA.debugLineNum = 123;BA.debugLine="Do While frac >= 2 * factor And sb.Length - Frac";
 while (_frac>=2*_factor && _sb.getLength()-_fracstartindex<_data.MaximumFractions /*int*/ ) {
- //BA.debugLineNum = 122;BA.debugLine="Dim w As Int = (frac * Multipler)";
+ //BA.debugLineNum = 124;BA.debugLine="Dim w As Int = (frac * Multipler)";
 _w = (int) ((_frac*_multipler));
- //BA.debugLineNum = 123;BA.debugLine="w = w Mod 10";
+ //BA.debugLineNum = 125;BA.debugLine="w = w Mod 10";
 _w = (int) (_w%10);
- //BA.debugLineNum = 124;BA.debugLine="If w = 0 Then LastZeroCount = LastZeroCount + 1";
+ //BA.debugLineNum = 126;BA.debugLine="If w = 0 Then LastZeroCount = LastZeroCount + 1";
 if (_w==0) { 
 _lastzerocount = (int) (_lastzerocount+1);}
 else {
 _lastzerocount = (int) (0);};
- //BA.debugLineNum = 125;BA.debugLine="sb.Append(w)";
+ //BA.debugLineNum = 127;BA.debugLine="sb.Append(w)";
 _sb.Append(BA.NumberToString(_w));
- //BA.debugLineNum = 126;BA.debugLine="Multipler = Multipler * 10";
+ //BA.debugLineNum = 128;BA.debugLine="Multipler = Multipler * 10";
 _multipler = (int) (_multipler*10);
  }
 ;
- //BA.debugLineNum = 128;BA.debugLine="If data.FractionPaddingChar <> \"0\" And LastZeroC";
+ //BA.debugLineNum = 130;BA.debugLine="If data.FractionPaddingChar <> \"0\" And LastZeroC";
 if ((_data.FractionPaddingChar /*String*/ ).equals("0") == false && _lastzerocount>0) { 
- //BA.debugLineNum = 129;BA.debugLine="sb.Remove(sb.Length - LastZeroCount, sb.Length)";
+ //BA.debugLineNum = 131;BA.debugLine="sb.Remove(sb.Length - LastZeroCount, sb.Length)";
 _sb.Remove((int) (_sb.getLength()-_lastzerocount),_sb.getLength());
- //BA.debugLineNum = 130;BA.debugLine="LastZeroCount = 0";
+ //BA.debugLineNum = 132;BA.debugLine="LastZeroCount = 0";
 _lastzerocount = (int) (0);
  };
- //BA.debugLineNum = 132;BA.debugLine="Do While sb.Length - FracStartIndex < data.Minim";
+ //BA.debugLineNum = 134;BA.debugLine="Do While sb.Length - FracStartIndex < data.Minim";
 while (_sb.getLength()-_fracstartindex<_data.MinimumFractions /*int*/ ) {
- //BA.debugLineNum = 133;BA.debugLine="sb.Append(data.FractionPaddingChar)";
+ //BA.debugLineNum = 135;BA.debugLine="sb.Append(data.FractionPaddingChar)";
 _sb.Append(_data.FractionPaddingChar /*String*/ );
- //BA.debugLineNum = 134;BA.debugLine="LastZeroCount = 0";
+ //BA.debugLineNum = 136;BA.debugLine="LastZeroCount = 0";
 _lastzerocount = (int) (0);
  }
 ;
- //BA.debugLineNum = 136;BA.debugLine="LastZeroCount = Min(LastZeroCount, sb.Length - F";
+ //BA.debugLineNum = 138;BA.debugLine="LastZeroCount = Min(LastZeroCount, sb.Length - F";
 _lastzerocount = (int) (__c.Min(_lastzerocount,_sb.getLength()-_fracstartindex-_data.MinimumFractions /*int*/ ));
- //BA.debugLineNum = 137;BA.debugLine="If LastZeroCount > 0 Then";
+ //BA.debugLineNum = 139;BA.debugLine="If LastZeroCount > 0 Then";
 if (_lastzerocount>0) { 
- //BA.debugLineNum = 138;BA.debugLine="sb.Remove(sb.Length - LastZeroCount, sb.Length)";
+ //BA.debugLineNum = 140;BA.debugLine="sb.Remove(sb.Length - LastZeroCount, sb.Length)";
 _sb.Remove((int) (_sb.getLength()-_lastzerocount),_sb.getLength());
  };
- //BA.debugLineNum = 140;BA.debugLine="If sb.Length > FracStartIndex Then sb.Insert(Fra";
+ //BA.debugLineNum = 142;BA.debugLine="If sb.Length > FracStartIndex Then sb.Insert(Fra";
 if (_sb.getLength()>_fracstartindex) { 
 _sb.Insert(_fracstartindex,_data.DecimalPoint /*String*/ );};
  };
- //BA.debugLineNum = 142;BA.debugLine="sb.Append(data.Postfix)";
+ //BA.debugLineNum = 144;BA.debugLine="sb.Append(data.Postfix)";
 _sb.Append(_data.Postfix /*String*/ );
- //BA.debugLineNum = 143;BA.debugLine="Return sb.ToString";
+ //BA.debugLineNum = 145;BA.debugLine="Return sb.ToString";
 if (true) return _sb.ToString();
- //BA.debugLineNum = 144;BA.debugLine="End Sub";
+ //BA.debugLineNum = 146;BA.debugLine="End Sub";
 return "";
 }
 public String  _formatlabel(double _number,anywheresoftware.b4a.objects.B4XViewWrapper _label) throws Exception{
 appear.pnud.preservamos.b4xformatter._b4xformatdata _data = null;
- //BA.debugLineNum = 148;BA.debugLine="Public Sub FormatLabel (Number As Double, Label As";
- //BA.debugLineNum = 149;BA.debugLine="Label.Text = Format(Number)";
+ //BA.debugLineNum = 150;BA.debugLine="Public Sub FormatLabel (Number As Double, Label As";
+ //BA.debugLineNum = 151;BA.debugLine="Label.Text = Format(Number)";
 _label.setText(BA.ObjectToCharSequence(_format(_number)));
- //BA.debugLineNum = 150;BA.debugLine="Dim data As B4XFormatData = GetFormatData(Number)";
+ //BA.debugLineNum = 152;BA.debugLine="Dim data As B4XFormatData = GetFormatData(Number)";
 _data = _getformatdata(_number);
- //BA.debugLineNum = 151;BA.debugLine="If data.TextColor <> 0 Then Label.TextColor = dat";
+ //BA.debugLineNum = 153;BA.debugLine="If data.TextColor <> 0 Then Label.TextColor = dat";
 if (_data.TextColor /*int*/ !=0) { 
 _label.setTextColor(_data.TextColor /*int*/ );};
- //BA.debugLineNum = 152;BA.debugLine="If data.FormatFont.IsInitialized Then Label.Font";
+ //BA.debugLineNum = 154;BA.debugLine="If data.FormatFont.IsInitialized Then Label.Font";
 if (_data.FormatFont /*anywheresoftware.b4a.objects.B4XViewWrapper.B4XFont*/ .getIsInitialized()) { 
 _label.setFont(_data.FormatFont /*anywheresoftware.b4a.objects.B4XViewWrapper.B4XFont*/ );};
- //BA.debugLineNum = 153;BA.debugLine="End Sub";
+ //BA.debugLineNum = 155;BA.debugLine="End Sub";
 return "";
 }
 public appear.pnud.preservamos.b4xformatter._b4xformatdata  _getdefaultformat() throws Exception{
- //BA.debugLineNum = 76;BA.debugLine="Public Sub GetDefaultFormat As B4XFormatData";
- //BA.debugLineNum = 77;BA.debugLine="Return formats.Get(0)";
+ //BA.debugLineNum = 78;BA.debugLine="Public Sub GetDefaultFormat As B4XFormatData";
+ //BA.debugLineNum = 79;BA.debugLine="Return formats.Get(0)";
 if (true) return (appear.pnud.preservamos.b4xformatter._b4xformatdata)(_formats.Get((int) (0)));
- //BA.debugLineNum = 78;BA.debugLine="End Sub";
+ //BA.debugLineNum = 80;BA.debugLine="End Sub";
 return null;
 }
 public appear.pnud.preservamos.b4xformatter._b4xformatdata  _getformatdata(double _number) throws Exception{
 int _i = 0;
 appear.pnud.preservamos.b4xformatter._b4xformatdata _d = null;
- //BA.debugLineNum = 81;BA.debugLine="Public Sub GetFormatData (Number As Double) As B4X";
- //BA.debugLineNum = 82;BA.debugLine="For i = formats.Size - 1 To 1 Step - 1";
+ //BA.debugLineNum = 83;BA.debugLine="Public Sub GetFormatData (Number As Double) As B4X";
+ //BA.debugLineNum = 84;BA.debugLine="For i = formats.Size - 1 To 1 Step - 1";
 {
 final int step1 = -1;
 final int limit1 = (int) (1);
 _i = (int) (_formats.getSize()-1) ;
 for (;_i >= limit1 ;_i = _i + step1 ) {
- //BA.debugLineNum = 83;BA.debugLine="Dim d As B4XFormatData = formats.Get(i)";
+ //BA.debugLineNum = 85;BA.debugLine="Dim d As B4XFormatData = formats.Get(i)";
 _d = (appear.pnud.preservamos.b4xformatter._b4xformatdata)(_formats.Get(_i));
- //BA.debugLineNum = 84;BA.debugLine="If Number <= d.RangeEnd And Number >= d.RangeSta";
+ //BA.debugLineNum = 86;BA.debugLine="If Number <= d.RangeEnd And Number >= d.RangeSta";
 if (_number<=_d.RangeEnd /*double*/  && _number>=_d.RangeStart /*double*/ ) { 
 if (true) return _d;};
  }
 };
- //BA.debugLineNum = 86;BA.debugLine="Return formats.Get(0)";
+ //BA.debugLineNum = 88;BA.debugLine="Return formats.Get(0)";
 if (true) return (appear.pnud.preservamos.b4xformatter._b4xformatdata)(_formats.Get((int) (0)));
- //BA.debugLineNum = 87;BA.debugLine="End Sub";
+ //BA.debugLineNum = 89;BA.debugLine="End Sub";
 return null;
 }
 public String  _initialize(anywheresoftware.b4a.BA _ba) throws Exception{
 innerInitialize(_ba);
 appear.pnud.preservamos.b4xformatter._b4xformatdata _d = null;
- //BA.debugLineNum = 11;BA.debugLine="Public Sub Initialize";
- //BA.debugLineNum = 12;BA.debugLine="formats.Initialize";
+ //BA.debugLineNum = 13;BA.debugLine="Public Sub Initialize";
+ //BA.debugLineNum = 14;BA.debugLine="formats.Initialize";
 _formats.Initialize();
- //BA.debugLineNum = 13;BA.debugLine="Dim d As B4XFormatData = CreateDefaultFormat";
+ //BA.debugLineNum = 15;BA.debugLine="Dim d As B4XFormatData = CreateDefaultFormat";
 _d = _createdefaultformat();
- //BA.debugLineNum = 14;BA.debugLine="AddFormatData(d, MIN_VALUE, MAX_VALUE, True)";
+ //BA.debugLineNum = 16;BA.debugLine="AddFormatData(d, MIN_VALUE, MAX_VALUE, True)";
 _addformatdata(_d,_min_value,_max_value,__c.True);
- //BA.debugLineNum = 15;BA.debugLine="End Sub";
+ //BA.debugLineNum = 17;BA.debugLine="End Sub";
 return "";
 }
 public appear.pnud.preservamos.b4xformatter._b4xformatdata  _newformatdata() throws Exception{
- //BA.debugLineNum = 30;BA.debugLine="Public Sub NewFormatData As B4XFormatData";
- //BA.debugLineNum = 31;BA.debugLine="Return CopyFormatData(GetDefaultFormat)";
+ //BA.debugLineNum = 32;BA.debugLine="Public Sub NewFormatData As B4XFormatData";
+ //BA.debugLineNum = 33;BA.debugLine="Return CopyFormatData(GetDefaultFormat)";
 if (true) return _copyformatdata(_getdefaultformat());
- //BA.debugLineNum = 32;BA.debugLine="End Sub";
+ //BA.debugLineNum = 34;BA.debugLine="End Sub";
 return null;
 }
 public Object callSub(String sub, Object sender, Object[] args) throws Exception {
